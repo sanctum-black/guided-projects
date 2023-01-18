@@ -41,6 +41,6 @@ You can also directly consult the [Guided Projects](https://pabloagn.com/guided-
 If you have any questions, suggestions or requests, contact me directly using the [Contact Form](https://pabloagn.com/contact/).
 
 ## License
-All content on this repo is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/legalcode). You can find the license for this repo [here](https://github.com/pabloaguirrenck/guided-projects/blob/master/LICENSE).
+All content on this repo is licensed under a [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). You can find the license for this repo [here](https://github.com/pabloaguirrenck/guided-projects/blob/master/LICENSE).
 
 You are welcome to clone & distribute my content, given that you stick to the license standards above.
