@@ -22,20 +22,6 @@ Some projects are adaptations from existing ones, and others are my creations. E
 5. [Writing & Formatting](https://github.com/pabloagn/documentation/tree/master/writing-and-formatting)
 	1. [Markdown](https://github.com/pabloagn/documentation/blob/master/writing-and-formatting/markdown.md)
 
-## Pipeline
-Below is the current pipeline limited to 6 entries for the **guided-projects** repo. For now, I will only specify what's next and abstain from setting delivery dates, though dynamics might change in the future.
-
-| Priority | Technology | Category | Change Required &nbsp; &nbsp; &nbsp;|
-|---|---|---|---|
-| 1 | [Julia](https://github.com/pabloagn/documentation/blob/master/programming-languages/julia.md) | [Programming Languages](https://github.com/pabloagn/documentation/tree/master/programming-languages) | Conclude Documentation |
-| 2 | [QNAP NAS](https://github.com/pabloagn/documentation/blob/master/network-and-servers/NAS.md) | [Network & Servers](https://github.com/pabloagn/documentation/tree/master/network-and-servers) | Conclude Documentation |
-| 3 | [PowerShell 7](https://github.com/pabloagn/documentation/tree/master/terminal) | [Terminal](https://github.com/pabloagn/documentation/tree/master/terminal) | Conclude Documentation |
-| 4 | [WinSCP](https://github.com/pabloagn/documentation/blob/master/network-and-servers/WinSCP.md) | [Network & Servers](https://github.com/pabloagn/documentation/tree/master/network-and-servers) | Conclude Documentation |
-| 5 | LaTeX | [Writing & Formatting](https://github.com/pabloagn/documentation/tree/master/writing-and-formatting) | Create Documentation |
-| 6 | Python | [Programming Languages](https://github.com/pabloagn/documentation/tree/master/programming-languages) | Create Documentation |
-
-_Updated 18-Jan-2023_
-
 ## Website
 You can also directly consult the [Guided Projects](https://pabloagn.com/guided-projects/) page on my website.
 If you have any questions, suggestions or requests, contact me directly using the [Contact Form](https://pabloagn.com/contact/).
