@@ -15,37 +15,63 @@ The generated plots and test results from last segment can also be found in the 
 ---
 
 ## Table of Contents
-- Classification model design
-	- Selecting our methods
-	- Preparing the data
-	- Logistic Regression
-	- Decision Tree
-	- Random Forest
-	- Support Vector Machine
-	- K-Nearest Neighbors
-	- K-Means Clustering
-	- Gaussian Naïve Bayes
-	- Stochastic Gradient Descent
-	- Kernel Approximation
-	- Method comparison
+- [Classification model design](#classification-model-design)
+	- [Selecting our methods](#1-selecting-our-methods)
+	- [Preparing the data](#2-preparing-the-data)
+	- [Logistic Regression](#3-logistic-regression)
+	- [Decision Tree](#4-decision-tree)
+	- [Random Forest](#5-random-forest)
+	- [Support Vector Machine](#6-support-vector-machine)
+	- [K-Nearest Neighbors](#7-k-nearest-neighbors)
+	- [K-Means Clustering](#8-k-means-clustering)
+	- [Gaussian Naïve Bayes](#9-gaussian-naive-bayes)
+	- [Stochastic Gradient Descent](#10-stochastic-gradient-descent)
+	- [Kernel Approximation](#11-kernel-approximation)
+	- [Method comparison](#12-method-comparison)
 - [Conclusions](#conclusions)
 - [References](#references)
 
 ---
 
-## Predictive model design
+## Classification model design
 There are multiple models we can implement to try to predict the severity of Lung Cancer for a given patient. It's always a good idea to test at least a couple of different models and compare their accuracy.
 
 Since we have categorical ordinal variables, there are three simple models we can use:
 
+### 1. Selecting our methods
 
 
+### 2. Preparing the data
 
 
+### 3. Logistic Regression
 
 
+### 4. Decision Tree
 
 
+### 5. Random Forest
+
+
+### 6. Support Vector Machine
+
+
+### 7. K-Nearest Neighbors
+
+
+### 8. K-Means Clustering
+
+
+### 9. Gaussian Naïve Bayes
+
+
+### 10. Stochastic Gradient Descent
+
+
+### 11. Kernel Approximation
+
+
+### 12. Method comparison
 
 
 
