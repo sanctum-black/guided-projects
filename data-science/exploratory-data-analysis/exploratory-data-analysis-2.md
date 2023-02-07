@@ -24,7 +24,7 @@ The generated plots and test results from last segment can also be found in the 
 	- [Support Vector Machine](#6-support-vector-machine)
 	- [K-Nearest Neighbors](#7-k-nearest-neighbors)
 	- [K-Means Clustering](#8-k-means-clustering)
-	- [Gaussian Naïve Bayes](#9-gaussian-naive-bayes)
+	- [Gaussian Naïve Bayes](#9-gaussian-naïve-bayes)
 	- [Stochastic Gradient Descent](#10-stochastic-gradient-descent)
 	- [Kernel Approximation](#11-kernel-approximation)
 	- [Method comparison](#12-method-comparison)
@@ -74,13 +74,12 @@ Since we have categorical ordinal variables, there are three simple models we ca
 ### 12. Method comparison
 
 
-
 ## Conclusions
 
 
 ## References
-- https://www.kaggle.com/code/ekami66/detailed-exploratory-data-analysis-with-python/notebook
-- https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet
+- A
+- A
 
 ## Pendings
 - https://data-flair.training/blogs/machine-learning-classification-algorithms/

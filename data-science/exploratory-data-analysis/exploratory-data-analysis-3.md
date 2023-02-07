@@ -15,27 +15,18 @@ The generated plots and test results from the last two segments can also be foun
 ---
 
 ## Table of Contents
-- Consolidating the results
-- Generating a technical reference deliverable
-	- Managing expectations
-	- Using the right tools
-	- Designing our layout
-		- Executive summary
-		- Business guide
-		- Plot results
-		- Tabular results
-		- Method considerations & limitations
-		- Conclusions & recommendations
-		- Appendix
-- Building a PowerBI Dashboard
-	- Designing the dashboard
-		- General layout
-		- User manual
-		- Business guide
-		- Plot results
-		- Tabular results
-	- Publishing the dashboard to a Workspace
-	- Sharing the dashboard with our client
+- Consolidating the results](#consolidating-the-results)
+- Generating a technical reference deliverable](#generating-a-technical-deliverable)
+	- Managing expectations](#1-managing-expectations)
+	- Using the right tools](#2-using-the-right-tools)
+	- Designing our layout](#3-designing-our-layout)
+		- Executive summary](#31-executive-summary)
+		- Business guide](#32-business-guide)
+		- Plot results](#33-plot-results)
+		- Tabular results](#34-tabular-results)
+		- Method considerations & limitations](#35-method-considerations--limitations)
+		- Conclusions & recommendations](#36-conclusions--recommendations)
+		- Appendix](#37-appendix)
 - [Conclusions](#conclusions)
 - [References](#references)
 
@@ -80,26 +71,13 @@ Thankfully, there are some really nice tools out there that will help us achieve
 #### 3.7 Appendix
 
 
-## Building a PowerBI Dashboard
 
-### 1. Designing the dashboard
-
-#### 1.1 General layout
-#### 1.2 User manual
-#### 1.3 Business guide
-#### 1.4 Plot results
-#### 1.5 Tabular results
-
-### 2. Publishing the dashboard to a Workspace
-
-
-### 3. Sharing the dashboard with our client
 
 
 ## Conclusions
 
 
 ## References
-- https://www.kaggle.com/code/ekami66/detailed-exploratory-data-analysis-with-python/notebook
-- https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet
+- A
+- A
 
