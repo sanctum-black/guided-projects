@@ -1,0 +1,6 @@
+﻿Correlation Coefficient for a Direct Relationship,Correlation Coefficient for an Indirect Relationship,Relationship Strength of the Variables
+0,0,None/trivial
+0.1,-0.1,Weak/small
+0.3,-0.3,Moderate/medium
+0.5,-0.5,Strong/large
+1,-1,Perfect

@@ -709,5 +709,5 @@ Finally, choosing the proper visualization methods is vital since each object ha
 [^2]: [Investopedia, P-Value: What It Is, How to Calculate It, and Why It Matters](https://www.investopedia.com/terms/p/p-value.asp#:~:text=A%20p%2Dvalue%20is%20a,significance%20of%20the%20observed%20difference.)
 
 ## References
-- https://www.kaggle.com/code/ekami66/detailed-exploratory-data-analysis-with-python/notebook
-- https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet
+- [Kaggle, Detailed Exploratory Analysis With Python](https://www.kaggle.com/code/ekami66/detailed-exploratory-data-analysis-with-python/notebook)
+- [Lung.org, Lung Cancer Fact Sheet](https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet)
