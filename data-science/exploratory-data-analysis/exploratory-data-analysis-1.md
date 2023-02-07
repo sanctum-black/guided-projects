@@ -4,9 +4,9 @@
 
 [![type](https://img.shields.io/static/v1?label=Type&message=guided-project&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-projects/) [![category](https://img.shields.io/static/v1?label=Category&message=data-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-projects/exploratory-data-analysis-pt-1/)
 
-**Exploratory data analysis** (*EDA*) is a scientific technique developed by the mathematician John Tukey in the 1970s widely used in Data Science. It consists of performing initial investigations on a data set so as to have a better understanding of its nature, and potentially use it for business or academic applications. This technique provides valuable insight in a quick way, and is useful when we are working with large data sets.
+**Exploratory data analysis** (*EDA*) is a scientific technique developed by the mathematician John Tukey in the 1970s widely used in Data Science. It consists of performing initial investigations on a data set to better understand its nature and potentially use it for business or academic applications. This technique provides insight quickly and is useful when working with large data sets.
 
-There is no rule of thumb regarding the steps to take in order to perform an EDA, because data varies between cases. Additionally, the purpose of why we're using this technique in the first place also varies.
+There is no rule of thumb regarding the steps to perform an EDA because data varies between cases. Additionally, the purpose of why we're using this technique in the first place also varies.
 
 In a general way, an EDA could consist of the following:
 1. Understand the structure of the data.
@@ -15,67 +15,73 @@ In a general way, an EDA could consist of the following:
 	1. Using statistical descriptions.
 	2. Using visualization techniques.
 
-For more specific applications, we could include more advanced methods such as studying variable correlations using statistical methods, or even testing ML methods such as linear regression or classification techniques to evaluate if the information could be useful to us.
+For more specific applications, we could include more advanced methods, such as studying variable correlations using statistical methods or even testing ML methods, such as linear regression or classification techniques, to evaluate if the information could be helpful to us.
 
-In this 3-article Guided Project, we will discuss some popular EDA approaches, specific libraries to perform diagnostics & statistical analysis, visualization techniques for better understanding our data, and more advanced ML techniques.
+In this 3-article Guided Project, we will discuss some popular EDA approaches, specific libraries to perform diagnostics & statistical analysis, visualization techniques for a better understanding of our data, and more advanced ML techniques.
 
-We'll be using Python scripts which can be found in the [Guided Project Repo](https://github.com/pabloagn/guided-projects/tree/master/data-science/exploratory-data-analysis).
+We'll use Python scripts found in the [Guided Project Repo](https://github.com/pabloagn/guided-projects/tree/master/data-science/exploratory-data-analysis).
 
 ---
 
 ## Table of Contents
-- Exploratory Data Analysis methods
-- Why perform an EDA?
-- A simple business case
-	- Data set usability
-	- Understanding our data set
-	- Initial investigations
-	- Variable correlation study
+- Exploratory Data Analysis methods]()
+	- Univariate, non-graphic]()
+	- Bivariate, graphic]()
+	- Multivariate, non-graphic]()
+	- Multivariate, graphic]()
+- Why perform an EDA?]()
+- A simple business case]()
+	- Data set usability]()
+	- Understanding our data set]()
+	- Initial investigations]()
+	- Variable correlation study]()
+		- Using a correlation matrix]()
+		- Calculating p-values]()
 - [Conclusions](#conclusions)
 - [References](#references)
 
 ---
 
 ## Exploratory Data Analysis methods
-EDA can be divided into four types, depending on the nature of our data set, and the tools we use to analyze it:
+EDA can be divided into four types, depending on the nature of our data set and the tools we use to analyze it:
 
 ### 1. Univariate, non-graphic
-This analysis contemplates the study of a single variable, using non-graphical methods. It's the simplest one of the four. We can have a large data set with multiple potential variables of study, but if we decide to leave them all out and just focus on one, it will be a univariate analysis. This is somewhat tricky, because stating the variables that we will study could in itself be part of our EDA. The decision of which method to use should be product of the problem statement, *i.e. what we're trying to achieve with our analysis*. 
+This analysis contemplates the study of a single variable using non-graphical methods. It's the simplest one of the four. We can have an extensive data set with multiple potential study variables. Still, if we leave them all out and focus on one, it will be a univariate analysis. This is tricky because stating the variables we will study could be part of our EDA. The decision of which method to use should be a product of the problem statement, *i.e. what we're trying to achieve with our analysis*. 
 
 ### 2. Bivariate, graphic
-This analysis contemplates the study of two variables and their potential correlation. It includes visualization methods useful for studying multiple variable correlations. Some of the visualization methods most commonly used include:
+This analysis contemplates the study of two variables and their potential correlation. It includes visualization methods helpful in studying multiple variable correlations. Some of the visualization methods most commonly used include:
 - **Histograms** for studying the overall distribution of each variable. 
 - **Box plots** for studying the data distribution of each variable, along with some important statistics such as mean and quartiles.
 - **Scatterplots** for studying the correlation between two variables.
 
 ### 3. Multivariate, non-graphic
-This analysis contemplates the correlation study between 3 or more variables. If we are to approach this non-graphically, we can use tools such as correlation matrices and other descriptive statistics.
+This analysis contemplates the correlation study between 3 or more variables. If we approach this non-graphically, we can use tools such as correlation matrices and other descriptive statistics.
 
 ### 4. Multivariate, graphic
-This analysis contemplates the same study as above, but with the inclusion of visualization methods. We can use multiple plots, but the most commonly used are:
-- **Bar charts** with x axis including multiple independent variables, and Y axis including one dependent variable.
+This analysis contemplates the same study as above but includes visualization methods. We can use multiple plots, but the most commonly used are:
+- **Bar charts** with an x-axis including multiple independent variables and a y-axis including one dependent variable.
 - **Pair plots** including scatter plots and histograms.
 
 ## Why perform an EDA?
-EDA has become a big thing in Data Science. It's sometimes referred to as a vital step in understanding data, and it's true, but we need to remember that not because everyone's using it, we should also be using it, at least as the step-by-step approach we mentioned earlier.
+EDA has become a big thing in Data Science. It's sometimes referred to as a vital step in understanding data, and it's true. Still, we need to remember that not because everyone's using it, we should also be using it, at least as the step-by-step approach we mentioned earlier.
 
-It's very easy to get our hands on some data, and start performing tests which could be completely useless for our case. Before attempting to write any code, it's important to first understand what are we trying to achieve, where did this data set came from, how was it generated, what is expected out of the analysis, and only then design a methodology that will help us solve our business problem. True, we don't always know all this variables, and an EDA could answer some of them, but we should at least try to have clarity on what we're trying to do.
+It's very easy to get our hands on some data and start performing tests which could be useless for our case. Before attempting to write any code, it's vital first to understand what we are trying to achieve, where this data set came from, how it was generated and what is expected out of the analysis, and only then design a methodology that will help us solve our business problem. True, we don't always know all these variables, and an EDA could answer some of them, but we should at least try to have clarity on what we're trying to do.
 
-In cases like this, it's useful to first state a business case and then try to design a flowchart that will help us solve that problem logically and methodologically.
+In cases like this, it's helpful to state a business case and then design a scientific methodology that will help us solve that problem logically.
 
 ## A simple business case
-Lung cancer is the most common cancer worldwide, accounting for 2.1 million new cases and 1.8 million deaths in 2018. In 1987, it surpassed breast cancer to become the leading cause of cancer deaths in women. An estimated 154,050 Americans are expected to die from lung cancer in 2018, accounting for approximately 25 percent of all cancer deaths. The number of deaths caused by lung cancer peaked at 159,292 in 2005 and has since decreased by 6.5% to 148,945 in 2016. [^1]
+Lung cancer is the most common cancer worldwide, accounting for 2.1 million new cases and 1.8 million deaths in 2018. In 1987, it surpassed breast cancer to become the leading cause of cancer deaths in women. An estimated 154,050 Americans are expected to die from lung cancer in 2018, accounting for approximately 25 per cent of all cancer deaths. The number of deaths caused by lung cancer peaked at 159,292 in 2005 and has since decreased by 6.5% to 148,945 in 2016. [^1]
 
-Smoking, a main cause of small cell and non-small cell lung cancer, contributes to 80% and 90% of lung cancer deaths in women and men, respectively. Men who smoke are 23 times more likely to develop lung cancer. Women are 13 times more likely, compared to never smokers. [^1]
+Smoking, a main cause of small and non-small cell lung cancer, contributes to 80% and 90% of lung cancer deaths in women and men, respectively. Men who smoke are 23 times more likely to develop lung cancer. Women are 13 times more likely than compared to non-smokers. [^1]
 
 Lung cancer can also be caused by occupational exposures, including asbestos, uranium and coke (an important fuel in the manufacture of iron in smelters, blast furnaces and foundries). The combination of asbestos exposure and smoking greatly increases the risk of developing lung cancer.[^1]
 
-Our client, an insurance company, has asked us to conduct a correlational study between different behavioral & genetic characteristics and lung cancer incidence. For this, they have provided a medical dataset containing a set of anonymous patients along with their medical file generated upon hospital admission. 
+Our client, an insurance company, has asked us to conduct a correlational study between different behavioural & genetic characteristics and lung cancer incidence. For this, they provided a medical dataset containing a set of anonymous patients and their medical files generated upon hospital admission.
 
-### Data set usability
+### 1. Data set usability
 For this example, we will use the [Lung Cancer Prediction Dataset](https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link) by [The Devastator](https://www.kaggle.com/thedevastator) which can be found on Kaggle.
 
-One crucial step before selecting a data set, is to verify its usability. Typically, this would be part of the actual EDA process, but in this case Kaggle already gives us helpful information. We can head to the **Usability** section where we will find a usability score along with a detailed breakdown.
+One crucial step before selecting a data set is to verify its usability. Typically, this would be part of the actual EDA process, but Kaggle already gives us helpful information. We can head to the **Usability** section, where we will find a usability score and a detailed breakdown.
 
 For our case, we have the following parameters as of February 2023:
 
@@ -96,16 +102,15 @@ For our case, we have the following parameters as of February 2023:
 - File Description
 - Column Description
 
-This tells us that according to Kaggle, our data set is fully usable, complete, fully credible & fully compatible.
+This tells us that according to Kaggle, our data set is entirely usable, complete, fully credible & fully compatible.
 
-Evaluating usability is important because we might have an initial idea which is simply not feasible due to the nature of the data set. Of course, in real life situations, we might not have the privilege of choosing between data sets and selecting the most complete or the most credible. What we can do though, is talk to the people responsible of the data generation in order to better understand what we're dealing with. This is a common practice in the industry, specifically when data is generated in-house and not from an external source; we can talk with the data engineers responsible for data sourcing and get a full description of the data structure, and maybe even some usability descriptors. In some cases, we can even request a data reformatting previous to data import if this is something we would deploy in a production environment and notice inconsistencies with data formatting. Again, every situation is different and there is no rule of thumb for how to deal with data sets during the preprocessing steps.
+Evaluating usability is important because we might have an initial idea which is not feasible due to the nature of the data set. In real life, we may not have the privilege of choosing between data sets and selecting the most complete or credible. Still, we can talk to the people responsible for the data generation to understand better what we're dealing with. This is a common practice in the industry, especially when the data is generated in-house and does not come from an external source; we can talk with the data engineers responsible for data sourcing and get a complete description of the data structure and maybe even some usability parameters. In some cases, we can even request a data reformatting previous to data import if this is something we would deploy in a production environment and notice inconsistencies with how the data is being handled. Again, every situation is different, and there is no rule of thumb for how to deal with data sets during the preprocessing steps.
 
-Kaggle also offers a section including the data set head, along with a simple histogram for each column. Since this is a feature that would most likely not be in our hands when working with real data, we will skip it and figure it out by ourselves.
+Kaggle also offers a section including the data set head and a simple histogram for each column. Since this feature would most likely not be in our hands when working with real-world data, we will skip it and figure it out ourselves.
 
-Now that we know more about our the usability of our data set, we can download it.
+Now that we know more about the usability of our data set, we can download it.
 
-## Understanding our data set
-
+### 2. Understanding our data set
 We will first import the required modules. These will be used throughout the entire Guided Project:
 
 ##### **Code**
@@ -170,7 +175,7 @@ We will then load our `.csv` file as a Pandas DataFrame object:
 df = pd.read_csv('cancer patient data sets.csv')
 ```
 
-The first thing we can do, is get a general understanding of the data set shape and its data types:
+The first thing we can do is grasp a general understanding of the data set shape and its data types:
 
 ##### **Code**
 ```Python
@@ -211,7 +216,7 @@ Level                       object
 dtype: object
 ```
 
-We can see that our Data Frame contains 1000 rows and 26 columns. We can also see that 24 columns have `int64` as data type, and 2 have `object` as data type, in  this case meaning `string` types.
+We can see that our Data Frame contains 1,000 rows and 26 columns. We can also see that 24 columns have `int64` as their data type, and two have `object`, in this case, meaning `string` types.
 
 We can then proceed to print the head of our object to see what our data looks like:
 
@@ -232,19 +237,19 @@ print(df.head())
 [5 rows x 26 columns]
 ```
 
-Upon taking a closer look at the output, we can confirm that the two `object` type variables are in fact strings. The other variables appear to be categorical, except for `age`, which is numerical.
+Upon taking a closer look at the output, we can confirm that the two `object` type variables are, in fact, strings. The other variables appear to be categorical, except for `age`, which is numerical.
 
-A categorical variable is a variable that can take on one of a limited, and usually fixed, number of possible values. A categorical variable is limited by the data set itself, and its meaning is assigned by the data set author.
+A categorical variable is a variable that can take on one of a limited and usually fixed range of possible values. A categorical variable is limited by the data set itself, and its meaning and magnitude are assigned by the data set author.
 
 Categorical variables can be classified as nominal or ordinal.
 
-A categorical nominal variable is one that describes a name, label or category without natural order. An example could be a binary representation of sex, *i.e. male = 0, female = 1*.
+A categorical nominal variable describes a name, label or category without natural order. An example could be a binary representation of sex, *i.e. male = 0, female = 1*.
 
-A categorical ordinal variable is one whose values are defined by an order relation between the different categories. An example could be the level of exposure to a given chemical, *i.e. low exposure = 1, medium exposure = 2, high exposure = 3*.
+A categorical, ordinal variable is one whose values are defined by an order relation between the different categories. An example could be the level of exposure to a given chemical, *i.e. low exposure = 1, medium exposure = 2, high exposure = 3*.
 
-As we will see soon, having categorical variables as integers instead of strings is actually useful, since many of the ML methods accept categorical variables as arrays of integers. 
+As we will see soon, having categorical variables as integers instead of strings is helpful since many ML methods accept categorical variables as arrays of integers. The act of converting non-numerical variables to numerical values is called **dummifying**, though we will not cover it here in detail.
 
-This information will also be extremely useful once we start designing our features for a ML model implementation, a process also called **feature engineering**.
+This information will also be beneficial once we start designing our features for an ML model implementation, a process also called **feature engineering**.
 
 Before moving to the next step, we can check for `null` values in any of our columns:
 
@@ -279,10 +284,10 @@ print(df['Patient Id'].nunique())
 1000
 ```
 
-## Initial investigations
-In order for us to make more sense of the data set, we can perform some simple statistical descriptions to each variable. This will help us understand how we can start using our data, its limitations, and eventually, start designing potential prediction methodologies.
+### 3. Initial investigations
+In order to make more sense of the data set, we can perform some simple statistical descriptions of each variable. This will help us understand how we can start using our data, its limitations and, eventually, start designing potential prediction methodologies.
 
-We can begin by performing a statistical description of our variables. This will provide a general overview of what to expect with out data set.
+We can begin by performing a statistical description of our variables:
 
 ##### Code
 ```Python
@@ -317,9 +322,9 @@ Dry Cough                  3.85   2.04   1.0   2.00   4.0   6.0   7.0
 Snoring                    2.93   1.47   1.0   2.00   3.0   4.0   7.0
 ```
 
-Some of these variables can be verified by common sense. We know for example that `Age` values should belong to a close interval. We also know that we should have two unique values for the `Gender` variable.
+Some of these variables can be verified by common sense. We know, for example, that `Age` values should belong to a close interval. We also know we should have two unique values for the `Gender` variable.
 
-We can get to know our sample better by plotting a Kernel Density Estimate (*KDE*) plot to visualize the `Age` distribution. This method will return a plot for a smoothed probability density function.
+We can get to know our sample better by plotting a Kernel Density Estimate (*KDE*) plot to visualize the `Age` distribution. This method will return a plot for a smoothed probability density function:
 
 ##### **Code**
 ```Python
@@ -354,9 +359,9 @@ plt.close()
 
 *Figure 1. Patient age Kernel Density Estimate plot*
 
-We can see that our population distribution is skewed towards the center-left. The range of age with the highest number of incidences lies between 22 and 26 years of age. We can also notice a high number of cases in the range between 38 to 40 years.
+We can see that our population distribution is skewed towards the centre-left. The range of age with the highest number of incidences lies between 22 and 26 years of age. We can also notice an increased number of cases in the range of 38 to 40 years.
 
-Now that we have an idea of the overall age distribution for our sample, we can try to understand the age distribution for each level of Cancer affectation. For this, we have available the `Level` variable denoting illness severity.
+Now that we have an idea of the overall age distribution for our sample, we can try to understand the age distribution for each level of Cancer affectation. For this, we have the `Level` variable available, denoting illness severity.
 
 The way we can do this is by using a **boxplot**:
 
@@ -402,7 +407,7 @@ plt.close()
 
 *Figure 2. Patient age distribution for different severities*
 
-This gives us little information; for low severity, patients range mainly from 25 to 43 years, the median being roughly 33 years of age. For medium & high severity, the median age appears to be slightly higher, being roughly 38 and 36 years of age consecutively. We also appear to have one outlier in the Medium severity group.
+This gives us little information; for low severity, patients range primarily from 25 to 43 years, the median being roughly 33 years of age. For medium & high severity, the median age appears to be slightly higher, approximately 38 and 36 years, consecutively. We also seem to have one outlier in the Medium severity group.
 
 We can further investigate if the `Gender` variable plays a role in the illness severity for our sample. We can do so by using a **grouped bar chart**:
 
@@ -451,35 +456,35 @@ plt.close()
 
 *Figure 3. Patient gender count for different severities*
 
-This tells us a little bit more about the nature of illness affectation in our sample; it appears that medium and high affectation levels are more prevalent in men, while low affectation levels are roughly equal. This is by no means a quantitative analysis, and does not provide a potential correlation. We must employ more rigorous statistical methods in order to start generating a hypothesis.
+This tells us more about the potential nature of illness affectation in our sample; medium and high affectation levels are more prevalent in men, while low affectation levels are roughly equal. This is by no means a quantitative analysis and does not provide a potential correlation. We must employ more rigorous statistical methods to start generating a valid hypothesis.
 
-## Variable correlation study
-There are multiple statistical methods and visualization techniques that can come in handy. For studying a potential bivariate correlation, we typically use **correlation matrices** for tabular-like visualizations, or **scatterplots** for graphical visualizations. The first one provides a quantitative result, while the latter provides a qualitative result.
+### 4. Variable correlation study
+There are multiple statistical methods and visualization techniques that can come in handy. For studying a potential bivariate correlation, we typically use **correlation matrices** for tabular-like visualizations or **scatterplots** for graphical visualizations. The first provides a quantitative result, while the latter provides a qualitative result.
 
-Since we have a large quantity of variables and we don't know which ones we could use to predict illness severity, we will start by using a variation of the correlation matrix by employing a **heat map**.
+Since we have a large number of variables and we don't know which ones we could use to predict illness severity, we will start by using a variation of the correlation matrix by employing a **correlation heat map**.
 
-### 1. Using a correlation matrix
-A correlation matrix is a common statistical technique which generates pairs for all variables and calculates a correlation coefficient, including all variables paired with itself denoted in the matrix diagonal.
+#### 4.1 Using a correlation matrix
+A correlation matrix is a standard statistical technique which generates pairs for all variables and calculates a correlation coefficient, including all variables paired with themselves denoted in the matrix diagonal.
 
-Pandas has a built-in method `df.corr()` that accepts a Data Frame and returns a correlation matrix populated with correlation coefficients for each pair of variables. The advantage of this method is that we can decide between three different correlation methods, the default being the *Pearson correlation coefficient*. This will be important because of the nature of our data.
+Pandas has a built-in method, `df.corr()`, which accepts a Data Frame and returns a correlation matrix populated with correlation coefficients for each pair of variables. The advantage of this method is that we can decide between three different correlation methods, the default being the *Pearson correlation coefficient*. This will be important because of the nature of our data.
 
-For our example, the *Pearson coefficient* is not useful since we have categorical ordinal data (*The Pearson correlation method is more adequate for continuous, linear variables*). A better approach for our case would be to employ a rank correlation coefficient such as *Spearman's* or *Kendall's*, both included in the `df.corr()` method.
+For our example, the *Pearson coefficient* is not helpful since we have categorical, ordinal data (*The Pearson correlation method is adequate for continuous, linear variables*). A better approach for our case would be to employ a rank correlation coefficient such as *Spearman's* or *Kendall's*; both are included in the `df.corr()` method.
 
 If we are to use the *Spearman correlation*, we must consider some assumptions:
 - Our data must be at least ordinal.
 - The scores on one variable must be monotonically related to the other variable.
 
-The first assumption is covered. The second assumption is a little trickier, since we don't yet know if all of our variable pairs are monotonic, *i.e. as one variable increases the other one increases (monotonically increasing), or as one variable decreases the other one decreases (monotonically decreasing)*.
+The first assumption is covered. The second assumption is more problematic since we have yet to determine if all of our variable pairs are monotonic, *i.e. as one variable increases, the other one increases (monotonically increasing), or as one variable decreases, the other one decreases (monotonically decreasing)*.
 
-We can perform a simple test by using a **pair plot**. This visualization technique plots pairwise relationships in a dataset in the form of scatterplots, including all variables with themselves denoted in the diagonal of the output matrix as histograms. It's very similar to our heat map approach, only that we're actually plotting the variables, so first we will need to make a selection of the ones we will include.
+We can perform a simple test by using a **pair plot**. This visualization technique plots pairwise relationships in a dataset in the form of scatterplots, including all variables with themselves denoted in the diagonal of the output matrix as histograms. It's very similar to our heat map approach, only that we're plotting the variables, so first, we will need to select the ones we will include.
 
 Referring back to our business case:
-- We're looking for risk factors that could result in higher Lung Cancer severity levels such as smoking habits and air pollution exposure levels.
-- We're not looking for variables describing the patient's actual health status such as sneezing, coughing or snoring. This would be irrelevant for our client.
+- We're looking for risk factors that could result in higher Lung Cancer severity levels, such as smoking habits and air pollution exposure levels.
+- We're not looking for symptomatic variables describing the patient's actual health status, such as sneezing, coughing or snoring. This would be irrelevant to our client.
 - We will also not include the `Gender` variable since it does not comply with our ordinal assumption.
 
 In the end, we're left with the following:
-- `Patient Id` (*As identifier, though we will not include it in the correlation analysis*)
+- `Patient Id` (*As an identifier, though we will not include it in the correlation analysis*)
 - `Age`
 - `Air Pollution`
 - `Alcohol use`
@@ -493,7 +498,7 @@ In the end, we're left with the following:
 - `Passive Smoker`
 - `Level`
 
-We will also need to convert our `Levels` variable to a categorical ordinal numerical format.
+We will also need to convert our `Levels` variable to a categorical, ordinal numerical format:
 
 ##### **Code**
 ```Python
@@ -553,7 +558,7 @@ plt.close()
 
 *Figure 4. Pair plot for categorical risk factors*
 
-It's very hard to see the actual data points data because of the number of variables we have. Also, our data set is small and we're working with discrete categorical data so our scatterplots will display separated data points in many cases. Nevertheless, if we pay close attention we will notice that in most cases, variable combinations present increasing monotonicity. We could go pair by pair and analyze each case but this would take more time and in our case is not necessary. 
+It's challenging to see the actual data points data because of our number of variables. We could analyze our variables pair by pair and investigate each case, but this would take more time and, in our case, is unnecessary. Also, our data set is small, and we're working with discrete categorical data, so our scatterplots will display separated data points in many cases. Nevertheless, if we pay close attention, we will notice that, in most cases, variable combinations present increasing monotonicity. 
 
 Now that we have a general notion of our variable pair trends, we can conduct a *Spearman correlation* analysis:
 
@@ -593,9 +598,9 @@ plt.close()
 
 *Figure 5. Spearman correlation heatmap for categorical risk factors*
 
-We can see that most of our variables have at least a degree of correlation (*Spearman's Rank Correlation Coefficient goes from -1 to +1*).
+We can see that most of our variables have at least some degree of correlation (*Spearman's Rank Correlation Coefficient goes from -1 to +1*).
 
-The variable with the weakest correlation in all cases is `Age`, while the variable presenting the strongest correlation with the `Level` variable appears to be `Obesity` followed by `Balanced Diet` and interestingly enough, `Passive Smoker` along with `Alcohol Use` and `Genetic Risk`.
+The variable with the weakest correlation in all cases is `Age`, while the variable presenting the strongest correlation with the `Level` variable appears to be `Obesity` followed by `Balanced Diet` and, interestingly enough, `Passive Smoker` along with `Alcohol Use` and `Genetic Risk`.
 
 To make more sense of our results, we can consult a table of correlation coefficient values and their interpretation:
 
@@ -610,12 +615,12 @@ To make more sense of our results, we can consult a table of correlation coeffic
 *Table 1. Correlation Coefficient Values and Their Interpretation*
 *Taken from “Nonparametric Statistics for Non-Statisticians: A Step-by-Step Approach”.*
 
-### 2. Calculating p-values
-Calculating correlation coefficients is not enough to determine the degree of correlation of two variables. If we were to deliver our analysis as is, the results would lack statistical significance; as we know, there's a possibility that two variables can be correlated by chance, and that in reality, one or both of the variables were generated randomly. A *p-value* test will help us analyze that.
+#### 4.2 Calculating p-values
+Calculating correlation coefficients is not enough to determine the degree of correlation between two variables. If we were to deliver our analysis as is, the results would lack statistical significance; as we know, there's a possibility that two variables can be correlated by chance and that, in reality, one or both of the variables were generated randomly. A *p-value* test will help us analyze that.
 
 Formally, a *p-value* is a statistical measurement used to validate a hypothesis against observed data. It measures the probability of obtaining the observed results, assuming that the null hypothesis is true. The lower the *p-value*, the greater the statistical significance of the observed difference.[^2]
 
-We can perform a *p-value* test for the Spearman Correlation analysis by using the `scipy.stats` `spearmanr` module. If we wanted to report these results to our client, we could opt for a tabular format. We write the `df_corr_ms` and the `df_pvals_ms` `DataFrame` objects to an Excel Workbook as part of our client deliverable.
+We can perform a *p-value* test for the Spearman Correlation analysis using the `scipy.stats` `spearmanr` module. We write the `df_corr_ms` and the `df_pvals_ms` `DataFrame` objects to an Excel Workbook as part of our client deliverable. If we wanted to report these results to our client, we could opt for a tabular format.
 
 For this, we can use the `ExcelWriter` handler method along with the `xlsxwriter` engine, which can be installed using `pip` if required:
 
@@ -687,16 +692,18 @@ We can take a look at our correlation test results as well as the associated p-v
 
 *Table 3. Spearman p-values for Chosen Potential Risk Factor Categorical Variables*
 
-If we look closer at our p-values, we can see that for virtually all variables except for `Age`, the result is negligible (*very close to 0*). This means that there is practically 0%  chance that results from our sample were generated by a random process. In contrast, for `Age` with `Level` correlation there's a 1.2% chance of events being random.
+If we look closer at our p-values, we can see that for virtually all variables except for `Age`, the result is negligible (*very close to 0*). This means there is a 0% chance that a random process generated the results from our sample. In contrast, there's a 1.2% chance of random events causing the ' Age' with 'Level' correlation.
 
-This tells us enough of what we need to know in order to start designing a predictive model.
+This tells us enough of what we need to know to start designing a predictive model.
 
-In the [next part](https://pabloagn.com/guided-projects/exploratory-data-analysis-pt-2/) of this 3-segment [Guided Project](), we will go over 9 different classification algorithms and compare their performance.
+In the [next part](https://pabloagn.com/guided-projects/exploratory-data-analysis-pt-2/) of this 3-segment [Guided Project](), we will go over nine different classification algorithms and compare their performance.
 
 ## Conclusions
-There are countless articles and posts out there suggesting x or y methods without any theoretical background. It's important to understand the underlying theory behind the methods we're using for our analysis.
+In this segment, we introduced the concept of EDA. We put it into practice by conducting correlational studies, specifically, the Spearman correlation test and a statistical significance analysis to unveil potential risk factors for patients with three different severity levels of Lung Cancer.
 
-It's easy to get biased or incorrect results using statistical methods. How to Lie with Statistics by Darrell Huff provides an assortment of nice examples. We must avoid biases.
+Countless articles and posts suggest different statistical methods without any theoretical background. It's essential to understand the underlying theory behind the methods we're using for our analysis. This is easier said than done, but we must be rigorous in our techniques. Otherwise, we could be delivering biased information to our client.
+
+Finally, choosing the proper visualization methods is vital since each object has a purpose; we could also be misleading our client if we chose incorrect visualization techniques.
 
 [^1]: [American Lung Association, Lung Cancer Fact Sheet](https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet)
 [^2]: [Investopedia, P-Value: What It Is, How to Calculate It, and Why It Matters](https://www.investopedia.com/terms/p/p-value.asp#:~:text=A%20p%2Dvalue%20is%20a,significance%20of%20the%20observed%20difference.)
