@@ -1,0 +1,10 @@
+matplotlib
+seaborn
+numpy
+pandas
+scipy
+scikit-learn
+keras
+xgboost
+tensorflow==2.10
+xlsxwriter

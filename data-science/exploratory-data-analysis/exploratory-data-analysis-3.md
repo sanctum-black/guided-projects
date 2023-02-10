@@ -166,7 +166,17 @@ pdfproducer={LaTeX with hyperref and ClassicThesis} % PDF producer
 }
 ```
 
-This is actually a really simple & straightforward template, mostly due to the fact that it's using the `classicthesis` underlying layout.
+This is actually a really simple & straightforward template, mostly due to the fact that it's using the `classicthesis` as underlying layout.
+
+We will start by making some modifications to our structure:
+
+##### **Code**
+```LaTeX
+Aa
+```
+
+
+
 
 #### 3.1 Executive summary
 
