@@ -25,7 +25,6 @@ The generated plots and test results from last segment can also be found in the 
 	- Random Forest
 	- Nonlinear Support Vector Machine
 	- K-Nearest Neighbors
-	- K-Means Clustering
 	- Gaussian Naïve Bayes
 	- Bernoulli Naïve Bayes
 	- Stochastic Gradient Descent
@@ -200,9 +199,7 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 
 # Preprocessing modules
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler, StandardScaler, FunctionTransformer
 from sklearn.feature_selection import SelectKBest
 from sklearn.model_selection import train_test_split, GridSearchCV, RepeatedStratifiedKFold
 from sklearn.pipeline import Pipeline
@@ -274,7 +271,13 @@ As we have multiple models, it will be best to build a dictionary with each mode
 ##### **Code**
 ```Python
 model_dictionary = {
-    'Multinomial Logistic Regressor': LogisticRegression(random_state=42, max_iter=100000),
+    'Multinomial Logistic Regressor': LogisticRegression(multi_class='multinomial',
+							  solver='lbfgs',
+							 random_state=42,
+							 max_iter=100000,
+							    penalty='l2',
+							           C=24),
+    'Logistic Regressor' : LogisticRegression(C=24),
     'Decision Tree Classifier': DecisionTreeClassifier(),
     'Random Forest Classifier': RandomForestClassifier(),
     'Support Vector Classifier': SVC(),
@@ -282,27 +285,253 @@ model_dictionary = {
 	'K-Means Clustering' : KMeans(),
     'Gaussian Naive Bayes Classifier': GaussianNB(),
     'Bernoulli Naive Bayes Classifier': BernoulliNB(),
-    'Stochastic Gradient Descent': SGDClassifier(loss='squared_error', max_iter=10000, random_state=42),
+    'Stochastic Gradient Descent': SGDClassifier(loss='squared_error',
+                                                 max_iter=10000,
+                                                 random_state=42),
 	'Gradient Boosting Classifier': GradientBoostingClassifier(),
 	'Extreme Gradient Boosting Classifier' : XGBClassifier(),
 	'Deep Neural Network' : Sequential()
 }
 ```
 
+We can then define a dictionary which will contain all the preprocessing functions that we will need:
+
+##### **Code**
+```Python
+preprocessing_dictionary = {'Right Skew Gaussian' : FunctionTransformer(func = np.square),
+                            'Left Skew Gaussian' : FunctionTransformer(func = np.log1p),
+                            'Standard Scaler' : StandardScaler()
+}
+```
+
+We can also define a third dictionary which contain all the evaluation techniques:
+
+##### **Code**
+```Python
+# Define evaluation techniques
+evaluation_dictionary = {'KFold' : RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+}
+```
+
+We can then import our data set, and do some preprocessing:
+
+##### **Code**
+```Python
+# Read the data set
+df = pd.read_csv('cancer patient data sets.csv')
+
+# Remove index column
+df.drop(columns = "index", inplace = True)
+
+# Map Level to numeric values
+illness_level_dict = {'Low' : 1,
+                      'Medium' : 2,
+                      'High': 3}
+
+df['Level'] = df['Level'].map(illness_level_dict)
+
+# Remove columns that we will not study
+remove_cols = ['Patient Id',
+               'Gender',
+               'Age',
+               'Chest Pain',
+               'Coughing of Blood',
+               'Fatigue',
+               'Weight Loss',
+               'Shortness of Breath',
+               'Wheezing',
+               'Swallowing Difficulty',
+               'Clubbing of Finger Nails',
+               'Frequent Cold',
+               'Dry Cough',
+               'Snoring']
+
+df = df.drop(columns = remove_cols)
+
+print(df.shape)
+print(list(df.columns))
+```
+
+We end up with a DataFrame with the following characteristics:
+
+##### **Output**
+```
+(1000, 26)
+
+['Air Pollution', 'Alcohol use', 'Dust Allergy', 'OccuPational Hazards', 'Genetic Risk', 'chronic Lung Disease', 'Balanced Diet', 'Obesity', 'Smoking', 'Passive Smoker', 'Level']
+```
+
+If we recall from last section, these are the potential risk factors that our client is looking to study. We had to remove all the other symptomatic characteristics as our client is not interested on these.
+
+We will now define a simple function that will help us split our data into train and test sets:
+
+##### **Code**
+```Python
+def sep(dataframe):
+    '''
+    Parameters
+    ----------
+    dataframe : DataFrame
+        Contains our data as a DataFrame object.
+
+    Returns
+    -------
+    x : DataFrame
+        Contains our features.
+    y : DataFrame
+        Contains our labels.
+    '''
+    target = ["Level"]
+    x = dataframe.drop(target , axis = 1)
+    y = dataframe[target]
+    
+    return x, y
+```
+
+We will now define three functions that will help us with the results generation:
+- `cm_plot` will plot a confusion matrix for each method. Confusion matrixes are a special kind of contingency table, with two dimensions (*actual* and *predicted*). The idea behind the confusion matrix, is to get a quick graphical grasp of how our model performed in predicting compared to the test data. It is a widely used method and a very simple one to implement and explain to a non-technical audience.
+- `model_score` will calculate the model score as the $R^2$ coefficient.
+- `classification_rep` will calculate $\text{precision}$, $\text{recall}$, $\text{f1-score}$ and $\text{support}$ for each label, and return it as a DataFrame object.
+
+##### **Code**
+```Python
+# Define Confusion Matrix Function
+def cm_plot(model_name, model, test_y, predicted_y):
+    '''
+    Parameters
+    ----------
+    model_name : Str
+        Contains the used model name.
+    model : sklearn or keras model object
+        Contains a model object depending on the model used.
+    test_y : DataFrame
+        Contains the non-scaled test values for our data set.
+    predicted_y : Array
+        Contains the predicted values for a given method.
+
+    Returns
+    -------
+    None.
+    '''
+    cm = confusion_matrix(test_y, predicted_y)
+    plt.figure(f'{model_name}_confusion_matrix')
+    sn.heatmap(cm, annot=True, linewidth=0.7, cmap="rocket")
+    plt.title(f'{model_name} Confusion Matrix\n')
+    plt.xlabel('y Predicted')
+    plt.ylabel('y Test')
+    plt.savefig('plots/' + f'{model_name}_confusion_matrix.png', format = 'png', dpi = 300, transparent = True)
+    plt.close()
+    return None
+
+# Define model score
+def model_score(model, test_x, test_y):
+    '''
+    Parameters
+    ----------
+    model : sklearn or keras model object
+        Contains a model object depending on the model used.
+    test_x : Array
+        Contains the transformed / scaled test values for the features.
+    test_y : DataFrame
+        Contains the un-scaled / un-transformed test values for the labels.
+
+    Returns
+    -------
+    sc : Float
+        Contains the score model.
+    '''
+    sc = model.score(test_x, test_y)
+
+    return sc
+
+# Define Classification Report Function
+def classification_rep(test_y, predicted_y):
+    '''
+    Parameters
+    ----------
+    test_y : DataFrame
+        Contains the non-scaled test values for our data set.
+    predicted_y : Array
+        Contains the predicted values for a given method.
+
+    Returns
+    -------
+    cr : DataFrame
+        Contains a report showing the main classification metrics.
+    '''
+    cr = classification_report(test_y, predicted_y, output_dict=True)
+    cr = pd.DataFrame(cr).transpose()
+    
+    return cr
+```
+
+We will now transform our data in order to make it usable for each model:
+
+##### **Code**
+```Python
+# For Normal Distribution Methods, we can approximate our data set to
+# a normal distribution
+right_skew = []
+left_skew = []
+for i in df_x.columns:
+    if df_x[i].skew() > 0:
+        right_skew.append(i)
+    else:
+        left_skew.append(i)
+
+right_skew_transformed = preprocessing_dictionary['Right Skew Gaussian'].fit_transform(df_x[right_skew])
+left_skew_transformed = preprocessing_dictionary['Left Skew Gaussian'].fit_transform(df_x[left_skew])
+
+df_gaussian = pd.concat([right_skew_transformed,
+                         left_skew_transformed ,
+                         df_y] ,
+                         axis = 1,
+                         join = "inner")
+
+# We can divide into train & text, x & y
+train_G, test_G = train_test_split(df_gaussian, test_size=0.2)
+train_Gx, train_Gy = sep(train_G)
+test_Gx, test_Gy = sep(test_G)
+
+# For other methods, we can scale using Standard Scaler
+train, test = train_test_split(df, test_size=0.2)
+train_x, train_Sy = sep(train)
+test_x, test_Sy = sep(test)
+
+train_Sx = preprocessing_dictionary['Standard Scaler'].fit_transform(train_x)
+test_Sx = preprocessing_dictionary['Standard Scaler'].transform(test_x)
+```
+
+Now that we have our transformed sets, we can start talking about the selected models. For each case, we will briefly describe what the model is about, it's general mathematical intuition and it's assumptions.
+
+We need to consider that the mathematical background provided in this segment is by any means a rigorous derivation. We could spend an entire series talking about one model's mathematical background. Instead, we will simply review the main mathematical formulae involved in each model.
+
 ### 4. A word on model assumptions
 Assumptions denote the collection of explicitly stated (*or implicit premised*) conventions, choices and other specifications on which any model is based.
 
 Every model is built on top of assumptions. They provide the theoretical foundation for it to exist and be valid, and machine learning models are no exception. That is not to say that every assumption must be rigorously met for a given model to work as expected, but also, we cannot bypass every assumption and expect our model to work as designed.
 
-If we understand the underlying theory behind our model, we can be selective in the assumptions we can live without; we can gain knowledge on the implications of bypassing a certain assumption, and can thus make a supported decision on which model to use. It's a matter of balance, and finding out what's good for our specific application.
-
-We will discuss in a very general way, the underlying theory behind each model. We will also list their assumptions and explain what they signify.
+If we understand the underlying theory behind our model, we can be selective in the assumptions we can live without; we can gain knowledge on the implications of bypassing a certain assumption, and can thus make a supported decision on which model to use. It's a matter of balance, and finding out what's good for our case.
 
 ### 5. Multinomial Logistic Regression
 Multinomial Logistic Regression is a classification method that generalizes logistic regression to multiclass problems, *i.e. when we have more than two possible discrete outcomes*.
 
+Logistic Regression, or Logit Model, contrary to what it's name may suggest, is not a regression model but a **parametric classification** one. In reality, this model is very similar to [Linear Regression](https://www.ibm.com/topics/linear-regression); the main difference between the two, is that in Logistic regression we don’t fit a straight line to our data. Instead, we fit an $S$ shaped curve, called **Sigmoid**, to our observations.
+
 #### 5.1 Mathematical intuition overview
-Multinomial Logistic regression uses a linear predictor function $f(k,i)$ to predict the probability that observation $i$ has outcome $k$, of the following form: 
+**Logistic Regression** fits data to a $\text{Sigmoid}$ function:
+
+$$\text{sigmoid}(x)=\frac{1}{1+e^{-x}}$$
+
+It first calculates a weighted sum of inputs:
+
+$$x=\Theta \cdot feature + b$$
+It then calculates the probability of the weighted feature belonging to a given group:
+
+$$P(x)=\frac{1}{1+e^{-x}}$$
+Weights are calculated using different optimization models, such as **Gradient Descent** or **Maximum Likelihood**.
+
+**Multinomial Logistic Regression** uses a linear predictor function $f(k,i)$ to predict the probability that observation $i$ has outcome $k$, of the following form: 
 
 $$f(k,i)=\beta_{0,k}+\beta_{1,kX_1,i}+\beta_{2,kX_2,i}+\cdots+\beta_{M,kX_M,i}$$
 Where:
@@ -335,6 +564,87 @@ $$Pr(Y_i=K-1)={Pr(Y_i=K)} \cdot e^{\beta_K-1 \cdot X_i}$$
 - Usually works best with large data sets and also requires sufficient training examples for all the categories to make correct predictions.
 
 #### 5.3 Implementation
+We can start by fitting our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Multinomial Logistic Regressor'].fit(train_Sx, train_Sy)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_MLogReg = model_dictionary['Multinomial Logistic Regressor'].predict(test_Sx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Multinomial Logistic Regressor',
+        model_dictionary['Multinomial Logistic Regressor'],
+        test_Sy,
+        y_predicted_MLogReg)
+
+# Define model score
+score_MLogReg = model_score(model_dictionary['Multinomial Logistic Regressor'],
+                            test_Sx,
+                            test_Sy)
+
+# Define Classification Report Function
+report_MLogReg = classification_rep(test_Sy,
+                                    y_predicted_MLogReg)
+                                    
+print(score_MLogReg)
+```
+
+If we take a look at our results, we can see that it predicted with a **91.5%** accuracy:
+
+##### Output
+```
+0.915
+```
+
+Not to worry, we will explore the results in more detail in the [Method Comparison](#17-method-comparison) section.
+
+We can now use a Binomial Logistic Regression model and see what we get:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Logistic Regressor'].fit(train_Sx, train_Sy)
+
+# Predict
+y_predicted_BLogReg = model_dictionary['Logistic Regressor'].predict(test_Sx)
+
+# Evaluate the model and collect the scores
+cm_plot('Logistic Regressor',
+        model_dictionary['Logistic Regressor'],
+        test_Sy,
+        y_predicted_BLogReg)
+
+# Define model score
+score_BLogReg = model_score(model_dictionary['Logistic Regressor'],
+                            test_Sx,
+                            test_Sy)
+
+# Define Classification Report Function
+report_BLogReg = classification_rep(test_Sy,
+                                    y_predicted_BLogReg)
+
+print(score_BLogReg)
+```
+
+If we take a look at our results, we can see that it predicted with a **91.5%** accuracy. Same as its multinomial cousin:
+
+##### **Output**
+```
+0.915
+```
 
 ### 6. Decision Tree
 A Decision Tree is a technique than can be used for both classification and regression problems. In our case, we'll be using a Decision Tree Classifier.
@@ -380,6 +690,134 @@ Where:
 - Records are distributed recursively on the basis of attribute values.
 
 #### 6.3 Implementation
+We can start by fitting our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Decision Tree Classifier'].fit(train_Sx, train_Sy)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_DecTree = model_dictionary['Decision Tree Classifier'].predict(test_Sx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Decision Tree Classifier',
+        model_dictionary['Decision Tree Classifier'],
+        test_Sy,
+        y_predicted_DecTree)
+
+# Define model score
+score_DecTree = model_score(model_dictionary['Decision Tree Classifier'],
+                            test_Sx,
+                            test_Sy)
+
+# Define Classification Report Function
+report_DecTree = classification_rep(test_Sy,
+                                    y_predicted_DecTree)
+
+print(score_DecTree)
+```
+
+If we take a look at our results, we can see that it predicted with a **100%** accuracy:
+
+##### Output
+```
+1.0
+```
+
+The interesting thing about Decision Trees, is that we can actually visualize them using multiple methods,
+
+We can display a simple text representation:
+
+##### **Code**
+```Python
+# Text Representation
+DecTree_text_rep = tree.export_text(model_dictionary['Decision Tree Classifier'])
+
+print(DecTree_text_rep)
+```
+
+##### **Output**
+```
+|--- feature_7 <= 0.99
+| |--- feature_2 <= -1.29
+| | |--- feature_6 <= 0.50
+| | | |--- class: 1
+| | |--- feature_6 > 0.50
+| | | |--- class: 3
+| |--- feature_2 > -1.29
+| | |--- feature_9 <= 1.03
+| | | |--- feature_1 <= -0.00
+| | | | |--- feature_7 <= -0.89
+| | | | | |--- feature_1 <= -1.16
+| | | | | | |--- feature_3 <= -0.63
+| | | | | | | |--- class: 2
+| | | | | | |--- feature_3 > -0.63
+| | | | | | | |--- class: 1
+| | | | | |--- feature_1 > -1.16
+| | | | | | |--- class: 1
+| | | | |--- feature_7 > -0.89
+| | | | | |--- feature_6 <= -0.42
+| | | | | | |--- feature_1 <= -0.77
+| | | | | | | |--- feature_0 <= -0.14
+| | | | | | | | |--- feature_1 <= -1.16
+| | | | | | | | | |--- feature_7 <= -0.42
+| | | | | | | | | | |--- class: 1
+| | | | | | | | | |--- feature_7 > -0.42
+| | | | | | | | | | |--- class: 2
+| | | | | | | | |--- feature_1 > -1.16
+| | | | | | | | | |--- class: 2
+| | | | | | | |--- feature_0 > -0.14
+| | | | | | | | |--- class: 1
+| | | | | | |--- feature_1 > -0.77
+| | | | | | | |--- feature_6 <= -0.89
+| | | | | | | | |--- class: 1
+| | | | | | | |--- feature_6 > -0.89
+| | | | | | | | |--- class: 2
+| | | | | |--- feature_6 > -0.42
+| | | | | | |--- feature_7 <= 0.28
+| | | | | | | |--- class: 1
+| | | | | | |--- feature_7 > 0.28
+| | | | | | | |--- class: 2
+| | | |--- feature_1 > -0.00
+| | | | |--- feature_5 <= 1.17
+| | | | | |--- class: 2
+| | | | |--- feature_5 > 1.17
+| | | | | |--- class: 1
+| | |--- feature_9 > 1.03
+| | | |--- class: 3
+|--- feature_7 > 0.99
+| |--- feature_0 <= -0.63
+| | |--- class: 2
+| |--- feature_0 > -0.63
+| | |--- class: 3
+```
+
+We can also plot the tree using `plot_tree`:
+
+##### Code
+```Python
+# Tree plot using plot_tree
+fig = plt.figure('Decision Tree plot_tree')
+tree.plot_tree(model_dictionary['Decision Tree Classifier'],
+                   feature_names=df_x.columns,
+                   class_names=df_y['Level'].astype('str'),
+                   filled=True)
+
+plt.title('Decision Tree Plot')
+plt.savefig('plots/' + 'decision_tree.png', format = 'png', dpi = 300, transparent = True)
+plt.close()
+```
 
 ### 7. Random Forest
 Random Forest is an ensemble learning method for classification, regression and other methods. It works by constructing a multitude of decision trees at training time; the output of the random forest is the class selected by most trees.
@@ -399,6 +837,50 @@ We can also include a measure of the uncertainty of the prediction calculating t
 - The predictions from each tree must have very low correlations.
 
 #### 7.3 Implementation
+We can start by fitting our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Random Forest Classifier'].fit(train_Sx, train_Sy)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_RandomFor = model_dictionary['Random Forest Classifier'].predict(test_Sx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Random Forest Classifier',
+        model_dictionary['Random Forest Classifier'],
+        test_Sy,
+        y_predicted_RandomFor)
+
+# Define model score
+score_RandomFor = model_score(model_dictionary['Random Forest Classifier'],
+                            test_Sx,
+                            test_Sy)
+
+# Define Classification Report Function
+report_RandomFor = classification_rep(test_Sy,
+                                    y_predicted_RandomFor)
+
+print(score_RandomFor)
+```
+
+If we take a look at our results, we can see that it predicted with a **100%** accuracy:
+
+##### Output
+```
+1.0
+```
 
 ### 8. Nonlinear Support Vector Machine
 Support Vector Machines (*SVM*) are a class of supervised models originally developed for linear applications, although a nonlinear implementation using nonlinear Kernels was also developed; the resulting algorithm is similar, except that every dot product is replaced by a nonlinear kernel function.
@@ -415,13 +897,95 @@ Where:
 With the different nonlinear Kernels being:
 - Polynomial homogeneous (*when $d=1$, this becomes the linear kernel*): $k(X_i, X_j)=(X_i \cdot X_j)^d$
 - Polynomial homogeneous: $k(X_i, X_j)=(X_i \cdot X_j + r)^d$
-- Gaussian radial basis function: $k(X_i, X_j)=e^{-\lambda \cdot||X_i-X_j||^2}$, for $\lambda > 0$
+- Gaussian Radial Basis Function (*RBF*): $k(X_i, X_j)=e^\frac{-||X_i-X_j||^2}{2 \sigma^2}$, for $\lambda > 0$
 - Sigmoid function: $k(X_i, X_j)=tanh(kX_i \cdot X_j+c)$, for some $k>0$ and $c<0$
 
 #### 8.2 Assumptions
 There are no particular assumptions for this model. If we scale our variables, it might increase performance, but is not required.
 
 #### 8.3 Implementation
+For this part, we'll be using 3 different approaches; we mentioned that Support Vector Machines are fit for linear applications, although we can use nonlinear Kernels to fit nonlinear data.
+
+There are two particular Kernels we will implement:
+
+- **Polynomial Kernel:** As its name suggests, this Kernel represents the similarity of vectors in a feature space over polynomials of the original variables. We can select the order of the polynomial as a parameter.
+- **Radial Basis Function Kernel:** This Kernel is the most generalized form of kernelization and is one of the most widely used in SVM due to its similarity to the Gaussian distribution. 
+
+We can start by fitting our models to our data:
+
+##### **Code**
+```Python
+# Train models
+model_dictionary['Support Vector Classifier'].fit(train_Sx, train_Sy)
+model_dictionary['Support Vector Classifier Polynomial Kernel'].fit(train_Sx, train_Sy)
+model_dictionary['Support Vector Classifier Radial Kernel'].fit(train_Sx, train_Sy)
+```
+
+We can then predict some values using our trained models:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_SVM = model_dictionary['Support Vector Classifier'].predict(test_Sx)
+y_predicted_SVMp = model_dictionary['Support Vector Classifier Polynomial Kernel'].predict(test_Sx)
+y_predicted_SVMr = model_dictionary['Support Vector Classifier Radial Kernel'].predict(test_Sx)
+```
+
+We can finally evaluate our models using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Support Vector Classifier',
+        model_dictionary['Support Vector Classifier'],
+        test_Sy,
+        y_predicted_SVM)
+        
+cm_plot('Support Vector Classifier Polynomial Kernel',
+        model_dictionary['Support Vector Classifier Polynomial Kernel'],
+        test_Sy,
+        y_predicted_SVMp)
+
+cm_plot('Support Vector Classifier Radial Kernel',
+        model_dictionary['Support Vector Classifier Radial Kernel'],
+        test_Sy,
+        y_predicted_SVMr)
+
+# Define model score
+score_SVM = model_score(model_dictionary['Support Vector Classifier'],
+                        test_Sx,
+                        test_Sy)
+                                
+score_SVMp = model_score(model_dictionary['Support Vector Classifier Polynomial Kernel'], test_Sx, test_Sy)
+
+score_SVMr = model_score(model_dictionary['Support Vector Classifier Radial Kernel'], test_Sx, test_Sy)
+
+# Define Classification Report Function
+report_SVM = classification_rep(test_Sy,
+                                y_predicted_SVM)
+                                
+report_SVMp = classification_rep(test_Sy,
+                                y_predicted_SVMp)
+
+report_SVMr = classification_rep(test_Sy,
+                                y_predicted_SVMr)
+
+print(score_SVM)
+print(score_SVMp)
+print(score_SVMr)
+```
+
+If we take a look at our results, we can see that we get the following accuracies:
+- **Linear SVM:** 89.5%
+- **Polynomial SVM, 8th degree:** 100%
+- **Radial Kernel:** 100%
+
+##### Output
+```
+0.895
+1.0
+1.0
+```
 
 ### 9. K-Nearest Neighbors
 K-Nearest Neighbors (*KNN*) is a non-parametric, supervised learning classifier which uses proximity to classify and group data points. A class label is assigned on the basis of a majority vote *i.e. the label that is most frequently represented around a given data point is used*. The KNN model chooses $k$ nearest points by calculating distances using different metrics, and finally calculates an average to make a prediction.
@@ -454,27 +1018,50 @@ $$D_H=\sum_{i=1}^{k}|X_i-Y_i|$$
 - Items close together in the data set are typically similar
 
 #### 9.3 Implementation
+We can start by fitting our model to our data:
 
-### 10. K-Means Clustering
-K-Means Clustering is a classification method originally used in **signal processing**, that aims to partition $n$ observations into $k$ clusters in which each observation belongs to the cluster with the nearest mean.
+##### **Code**
+```Python
+# Train model
+model_dictionary['K-Nearest Neighbors Classifier'].fit(train_Sx, train_Sy)
+```
 
-#### 10.1 Mathematical intuition overview
-The K-Means Clustering algorithm aims to minimize an objective function also called the squared error function:
+We can then predict some values using our trained model:
 
-$$J(V)=\sum_{i=l}^{c}\sum_{j=l}^{c_i}(||x_i-v_i||)^2$$
-Where:
-- $||x_i-v_i||$ is the Euclidean distance between $x_i$ and $v_j$.
-- $c_i$ is the number of data points in $ith$ cluster.
-- $c$ is the number of cluster centers.
+##### **Code**
+```Python
+# Predict
+y_predicted_KNN = model_dictionary['K-Nearest Neighbors Classifier'].predict(test_Sx)
+```
 
-#### 10.2 Assumptions
-- The learning algorithm requires apriori specification of the number of cluster centers.
-- Points can be measured using Euclidean distances.
-- The learning algorithm provides the local optimal of the squared error function.
-- Unable to handle noisy data and outliers.
-- Applicable only when mean is defined.
+We can finally evaluate our model using the evaluation metrics we defined earlier:
 
-#### 10.3 Implementation
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('K-Nearest Neighbors Classifier',
+        model_dictionary['K-Nearest Neighbors Classifier'],
+        test_Sy,
+        y_predicted_KNN)
+
+# Define model score
+score_KNN = model_score(model_dictionary['K-Nearest Neighbors Classifier'],
+                        test_Sx,
+                        test_Sy)
+
+# Define Classification Report Function
+report_KNN = classification_rep(test_Sy,
+                                y_predicted_KNN)
+
+print(score_KNN)
+```
+
+If we take a look at our results, we can see that it predicted with an **100%** accuracy:
+
+##### Output
+```
+1.0
+```
 
 ### 11. Gaussian Naïve Bayes
 Gaussian Naïve Bayes (*GNB*) is a probabilistic machine learning algorithm based on the [Bayes' Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). It is the extension of the Naïve Bayes algorithm, and as its name suggest, it approximates class-conditional distributions as a Gaussian distribution, with a mean $\mu$ and a standard deviation $\sigma$.
@@ -503,6 +1090,50 @@ $$f(X|\mu,\sigma^2)=\frac{1}{ \sqrt{2 \pi \sigma_y ^2}}e\left(-\frac{(x-\mu)^2}{
 - Class-conditional densities are normally distributed.
 
 #### 11.3 Implementation
+Since we are using the Gaussian variant of the model, we will use the normally-approximated values we generated earlier. We can start by fitting our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Gaussian Naive Bayes Classifier'].fit(train_Gx, train_Gy)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_GNB = model_dictionary['Gaussian Naive Bayes Classifier'].predict(test_Gx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Gaussian Naive Bayes Classifier',
+        model_dictionary['Gaussian Naive Bayes Classifier'],
+        test_Gy,
+        y_predicted_GNB)
+
+# Define model score
+score_GNB = model_score(model_dictionary['Gaussian Naive Bayes Classifier'],
+                        test_Gx,
+                        test_Gy)
+
+# Define Classification Report Function
+report_GNB = classification_rep(test_Gy,
+                                y_predicted_GNB)
+
+print(score_GNB)
+```
+
+If we take a look at our results, we can see that it predicted with a **71.5%** accuracy. This is the lowest score we've gotten so far:
+
+##### Output
+```
+0.715
+```
 
 ### 12. Bernoulli Naïve Bayes
 Bernoulli Naïve Bayes (*BNB*) is similar to Gaussian Naïve Bayes, in that it also uses Bayes' Theorem as foundation. The difference is that Bernoulli Naïve Bayes approximates class-conditional distributions as a Bernoulli distribution. This fact makes this variation more appropriate for discrete random variables instead of continuous ones.
@@ -528,6 +1159,50 @@ $$P(x_i|y)=P(i|y)x_i+(1-P(i|y))(1-x_i)$$
 - All of the features are given equal importance.
 
 #### 12.3 Implementation
+We can start by fitting our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Bernoulli Naive Bayes Classifier'].fit(train_Sx, train_Sy)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_BNB = model_dictionary['Bernoulli Naive Bayes Classifier'].predict(test_Sx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Bernoulli Naive Bayes Classifier',
+        model_dictionary['Bernoulli Naive Bayes Classifier'],
+        test_Sy,
+        y_predicted_BNB)
+
+# Define model score
+score_BNB = model_score(model_dictionary['Bernoulli Naive Bayes Classifier'],
+                        test_Sx,
+                        test_Sy)
+
+# Define Classification Report Function
+report_BNB = classification_rep(test_Sy,
+                                y_predicted_BNB)
+
+print(score_BNB)
+```
+
+If we take a look at our results, we can see that it predicted with a **77.5%** accuracy:
+
+##### Output
+```
+0.775
+```
 
 ### 13. Stochastic Gradient Descent
 Stochastic Gradient Descent (*SGD*) is an optimization method. It can be used in conjunction with other machine learning algorithms.
@@ -560,6 +1235,50 @@ As the algorithm sweeps through the training set, it performs the above update f
 - The expected value of the observation picked at random is a subgradient of the function at point $\theta$.
 
 #### 13.3 Implementation
+For this example, we'll use a Logistic Regressor with a SGD training. We can start by fitting our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Stochastic Gradient Descent'].fit(train_Sx, train_Sy)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_SGD = model_dictionary['Stochastic Gradient Descent'].predict(test_Sx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Stochastic Gradient Descent',
+        model_dictionary['Stochastic Gradient Descent'],
+        test_Sy,
+        y_predicted_SGD)
+
+# Define model score
+score_SGD = model_score(model_dictionary['Stochastic Gradient Descent'],
+                        test_Sx,
+                        test_Sy)
+
+# Define Classification Report Function
+report_SGD = classification_rep(test_Sy,
+                                y_predicted_SGD)
+
+print(score_SGD)
+```
+
+If we take a look at our results, we can see that it predicted with a **90.5%** accuracy:
+
+##### Output
+```
+0.905
+```
 
 ### 14. Gradient Boosting
 Gradient Boosting (*GBM*) is a machine learning technique used in regression and classification tasks to create a stronger model by using an ensemble of weaker models. The objective of Gradient Boosting classifiers is to minimize the loss, or the difference between the actual class value of the training example and the predicted class value. As with other classifiers, GBM depends on a loss function, which can be customized to improve performance.
@@ -605,6 +1324,50 @@ Where:
 - The sum of its residuals is 0, *i.e. the residuals should be spread randomly around zero*.
 
 #### 14.3 Implementation
+For this example, we'll use a Gradient Boosting Classifier. We will leave parameters as default (*100 estimators*), although these can be fine-tuned. We can start by fitting our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Gradient Boosting Classifier'].fit(train_Sx, train_Sy)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_GBC = model_dictionary['Gradient Boosting Classifier'].predict(test_Sx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Gradient Boosting Classifier',
+        model_dictionary['Gradient Boosting Classifier'],
+        test_Sy,
+        y_predicted_GBC)
+
+# Define model score
+score_GBC = model_score(model_dictionary['Gradient Boosting Classifier'],
+                        test_Sx,
+                        test_Sy)
+
+# Define Classification Report Function
+report_GBC = classification_rep(test_Sy,
+                                y_predicted_GBC)
+
+print(score_GBC)
+```
+
+If we take a look at our results, we can see that it predicted with a **100%** accuracy:
+
+##### Output
+```
+1.0
+```
 
 ### 15. Extreme Gradient Boosting
 Extreme Gradient Boosting (*XGBoost*) is a more regularized form of the previous Gradient Boosting technique. This means that it controls overfitting better, resulting in better performance; as opposed to GBM, XGBoost uses advanced regularization (*L1 & L2*), which improves model generalization capabilities. It also has faster training capabilities and can be parallelized across clusters, reducing training times.
@@ -620,6 +1383,61 @@ We will skip the mathematical intuition for XGBoost since it's extense and simil
 - The data may not be complete (*can handle sparsity*)
 
 #### 15.3 Implementation
+For this implementation, we'll use a different library called `XGBoost`. Apart from the advantages on the mathematical treatment, `XGBoost` is written on C++, making it comparatively faster than other Gradient Boosting libraries. Also, `XGBoost` was specifically designed to support parallelization onto GPUs and computer networks. These make this library extremely powerful when handling extense data sets.
+
+Before we can start, we will need to re-encode our labels, since `XGBoost` requires our values to start from 0 and not 1:
+
+##### **Code**
+```Python
+# Re-encode labels
+train_Sy_XGBC = LabelEncoder().fit_transform(train_Sy)
+test_Sy_XGBC = LabelEncoder().fit_transform(test_Sy)
+```
+
+We will then fit our model to our data:
+
+##### **Code**
+```Python
+# Train model
+model_dictionary['Extreme Gradient Boosting Classifier'].fit(train_Sx, train_Sy_XGBC)
+```
+
+We can then predict some values using our trained model:
+
+##### **Code**
+```Python
+# Predict
+y_predicted_XGBC = model_dictionary['Extreme Gradient Boosting Classifier'].predict(test_Sx)
+```
+
+We can finally evaluate our model using the evaluation metrics we defined earlier:
+
+##### **Code**
+```Python
+# Evaluate the model and collect the scores
+cm_plot('Extreme Gradient Boosting Classifier',
+        model_dictionary['Extreme Gradient Boosting Classifier'],
+        test_Sy_XGBC,
+        y_predicted_XGBC)
+
+# Define model score
+score_XGBC = model_score(model_dictionary['Extreme Gradient Boosting Classifier'],
+                        test_Sx,
+                        test_Sy_XGBC)
+
+# Define Classification Report Function
+report_XGBC = classification_rep(test_Sy_XGBC,
+                                y_predicted_XGBC)
+
+print(score_XGBC)
+```
+
+If we take a look at our results, we can see that it predicted with a **100%** accuracy:
+
+##### Output
+```
+1.0
+```
 
 ### 16. Deep Neural Networks
 A Deep Neural Network is simply a Neural Network containing at least two interconnected layers of neurons. Its functioning as well as the theory behind them are somewhat different to what we've seen so far. Also, they belong to a different branch of Artificial Intelligence called [Deep Learning](https://www.mathworks.com/discovery/deep-learning.html), which is itself a subgroup of [Neural Networks](https://www.ibm.com/topics/neural-networks). The model that would assimilate more (*in a sense*) would be Decision Trees, although even they process data differently.
@@ -676,6 +1494,8 @@ $$
 
 A perceptron is the simplest case, and of course, the more layers we have, the more complex the mathematical derivation gets. Also, there are more complex and appropriate activation functions available, since the binary activation functions presents important disadvantages.
 
+The theory behind Deep Neural Networks is extense and complex, so we will not be explaining each step on detail; instead, we will stick with a general description of what is being done. A rigorous & exhaustive explanation of these models can be found in [Philipp Christian Petersen's Neural Network Theory](http://pc-petersen.eu/Neural_Network_Theory.pdf).
+
 #### 16.2 Assumptions
 - Artificial Neurons are arranged in layers, which are sequentially arranged.
 - Neurons within the same layer do not interact or communicate to each other.
@@ -685,9 +1505,434 @@ A perceptron is the simplest case, and of course, the more layers we have, the m
 - Every inter-connected neural network has it’s own weight and biased associated with it.
 
 #### 16.3 Implementation
+Deep Neural Networks require a different treatment than the ones we've already seen. The first thing we'll need to do, is to define which model we're going to use. For this case, a simpler 5-layer Sequential model will suffice.
+
+A Sequential Neural Network passes on the data and flows in sequential order from top to bottom approach till the data reaches at end of the model.
+
+We can start by making defining our model:
+
+##### **Code**
+```Python
+# Define model
+DNN = model_dictionary['Sequential Deep Neural Network']
+```
+
+Then, we can add the first two dense layers, both using $\text{ReLU}$ activation functions:
+
+##### **Code**
+```Python
+# Add first two layers using ReLU activation function
+DNN.add(Dense(8, activation = "relu", input_dim = train_Sx.shape[1]))
+DNN.add(Dense(16, activation = "relu"))
+```
+
+Next, we will add a Dropout regularization layer. A dropout layer randomly sets input units to 0 with a frequency of rate at each step during training time:
+
+##### **Code**
+```Python
+# Add Dropout regularization layer
+DNN.add(Dropout(0.1))
+```
+
+We will conclude with our model by adding one last dense $\text{ReLU}$ activation layer, and one dense $\text{softmax}$ layer which will serve as activation for our output layer:
+
+##### **Code**
+```Python
+# Add third layer using ReLU, and output layer using softmax
+DNN.add(Dense(8, activation = "relu"))
+DNN.add(Dense(3, activation = "softmax"))
+```
+
+We will finally compile our model using $\text{categorical cross entropy}$ as our loss function, and $\text{adam}$ as our optimization function:
+
+##### **Code**
+```Python
+DNN.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
+```
+
+Before training our model, we will need to re-encode & dummify our labels:
+
+##### **Code**
+```Python
+df_y_D = LabelEncoder().fit_transform(df_y)
+df_y_D = pd.get_dummies(df_y_D)
+```
+
+We will then fit our model:
+
+##### **Code**
+```Python
+DNN_Fit = DNN.fit(df_x, df_y_D, epochs = 150, validation_split = 0.3)
+```
+
+##### **Output**
+```
+Epoch 1/150
+22/22 [==============================] - 0s 6ms/step - loss: 1.3269 - accuracy: 0.3643 - val_loss: 1.1804 - val_accuracy: 0.4033
+Epoch 2/150
+22/22 [==============================] - 0s 2ms/step - loss: 1.1279 - accuracy: 0.3957 - val_loss: 1.0665 - val_accuracy: 0.4367
+Epoch 3/150
+22/22 [==============================] - 0s 2ms/step - loss: 1.0480 - accuracy: 0.4357 - val_loss: 1.0114 - val_accuracy: 0.4700
+Epoch 4/150
+22/22 [==============================] - 0s 2ms/step - loss: 1.0003 - accuracy: 0.4514 - val_loss: 0.9586 - val_accuracy: 0.4233
+Epoch 5/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.9571 - accuracy: 0.5271 - val_loss: 0.8948 - val_accuracy: 0.7167
+Epoch 6/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.8857 - accuracy: 0.6414 - val_loss: 0.8201 - val_accuracy: 0.6367
+Epoch 7/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.8307 - accuracy: 0.6071 - val_loss: 0.7594 - val_accuracy: 0.6300
+Epoch 8/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.7781 - accuracy: 0.6443 - val_loss: 0.6931 - val_accuracy: 0.7200
+Epoch 9/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.7272 - accuracy: 0.6643 - val_loss: 0.6362 - val_accuracy: 0.7367
+Epoch 10/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.6683 - accuracy: 0.7057 - val_loss: 0.5889 - val_accuracy: 0.7367
+Epoch 11/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.6249 - accuracy: 0.7471 - val_loss: 0.5391 - val_accuracy: 0.8467
+Epoch 12/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.5764 - accuracy: 0.7800 - val_loss: 0.4978 - val_accuracy: 0.8267
+Epoch 13/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.5556 - accuracy: 0.7914 - val_loss: 0.4609 - val_accuracy: 0.8600
+Epoch 14/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.4973 - accuracy: 0.8271 - val_loss: 0.4248 - val_accuracy: 0.8267
+Epoch 15/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.4708 - accuracy: 0.8000 - val_loss: 0.3859 - val_accuracy: 0.8267
+Epoch 16/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.4336 - accuracy: 0.8100 - val_loss: 0.3528 - val_accuracy: 0.8267
+Epoch 17/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.4099 - accuracy: 0.8271 - val_loss: 0.3288 - val_accuracy: 0.8467
+Epoch 18/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.3881 - accuracy: 0.8486 - val_loss: 0.3014 - val_accuracy: 0.8767
+Epoch 19/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.3664 - accuracy: 0.8500 - val_loss: 0.2831 - val_accuracy: 0.8667
+Epoch 20/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.3305 - accuracy: 0.8586 - val_loss: 0.2621 - val_accuracy: 0.8967
+Epoch 21/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.3112 - accuracy: 0.8829 - val_loss: 0.2456 - val_accuracy: 0.9000
+Epoch 22/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.3110 - accuracy: 0.8700 - val_loss: 0.2340 - val_accuracy: 0.9000
+Epoch 23/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2728 - accuracy: 0.8871 - val_loss: 0.2196 - val_accuracy: 0.9000
+Epoch 24/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2628 - accuracy: 0.9000 - val_loss: 0.2122 - val_accuracy: 0.9000
+Epoch 25/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2495 - accuracy: 0.8986 - val_loss: 0.1986 - val_accuracy: 0.9067
+Epoch 26/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2574 - accuracy: 0.8914 - val_loss: 0.1865 - val_accuracy: 0.9000
+Epoch 27/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2327 - accuracy: 0.8986 - val_loss: 0.1759 - val_accuracy: 0.9067
+Epoch 28/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2183 - accuracy: 0.9143 - val_loss: 0.1662 - val_accuracy: 0.9067
+Epoch 29/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2102 - accuracy: 0.9086 - val_loss: 0.1666 - val_accuracy: 0.9300
+Epoch 30/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.2030 - accuracy: 0.9186 - val_loss: 0.1500 - val_accuracy: 0.9533
+Epoch 31/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1947 - accuracy: 0.9271 - val_loss: 0.1381 - val_accuracy: 0.9533
+Epoch 32/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1783 - accuracy: 0.9314 - val_loss: 0.1294 - val_accuracy: 0.9533
+Epoch 33/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1817 - accuracy: 0.9257 - val_loss: 0.1189 - val_accuracy: 0.9833
+Epoch 34/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1620 - accuracy: 0.9514 - val_loss: 0.1201 - val_accuracy: 0.9833
+Epoch 35/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1648 - accuracy: 0.9500 - val_loss: 0.1146 - val_accuracy: 0.9933
+Epoch 36/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1481 - accuracy: 0.9586 - val_loss: 0.1028 - val_accuracy: 0.9933
+Epoch 37/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1669 - accuracy: 0.9543 - val_loss: 0.0932 - val_accuracy: 0.9833
+Epoch 38/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1263 - accuracy: 0.9771 - val_loss: 0.0851 - val_accuracy: 0.9933
+Epoch 39/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1379 - accuracy: 0.9600 - val_loss: 0.0799 - val_accuracy: 0.9933
+Epoch 40/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1250 - accuracy: 0.9571 - val_loss: 0.0779 - val_accuracy: 0.9833
+Epoch 41/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1099 - accuracy: 0.9786 - val_loss: 0.0719 - val_accuracy: 0.9933
+Epoch 42/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1331 - accuracy: 0.9614 - val_loss: 0.0724 - val_accuracy: 0.9933
+Epoch 43/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1310 - accuracy: 0.9671 - val_loss: 0.0661 - val_accuracy: 0.9933
+Epoch 44/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1210 - accuracy: 0.9671 - val_loss: 0.0630 - val_accuracy: 0.9933
+Epoch 45/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0987 - accuracy: 0.9700 - val_loss: 0.0575 - val_accuracy: 1.0000
+Epoch 46/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.1037 - accuracy: 0.9743 - val_loss: 0.0545 - val_accuracy: 1.0000
+Epoch 47/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0807 - accuracy: 0.9857 - val_loss: 0.0491 - val_accuracy: 1.0000
+Epoch 48/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0886 - accuracy: 0.9829 - val_loss: 0.0449 - val_accuracy: 1.0000
+Epoch 49/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0938 - accuracy: 0.9771 - val_loss: 0.0422 - val_accuracy: 1.0000
+Epoch 50/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0836 - accuracy: 0.9871 - val_loss: 0.0376 - val_accuracy: 1.0000
+Epoch 51/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0936 - accuracy: 0.9757 - val_loss: 0.0382 - val_accuracy: 1.0000
+Epoch 52/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0825 - accuracy: 0.9800 - val_loss: 0.0348 - val_accuracy: 1.0000
+Epoch 53/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0798 - accuracy: 0.9814 - val_loss: 0.0380 - val_accuracy: 1.0000
+Epoch 54/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0900 - accuracy: 0.9743 - val_loss: 0.0300 - val_accuracy: 1.0000
+Epoch 55/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0701 - accuracy: 0.9871 - val_loss: 0.0297 - val_accuracy: 1.0000
+Epoch 56/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0673 - accuracy: 0.9814 - val_loss: 0.0290 - val_accuracy: 1.0000
+Epoch 57/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0673 - accuracy: 0.9900 - val_loss: 0.0258 - val_accuracy: 1.0000
+Epoch 58/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0543 - accuracy: 0.9900 - val_loss: 0.0248 - val_accuracy: 1.0000
+Epoch 59/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0619 - accuracy: 0.9857 - val_loss: 0.0218 - val_accuracy: 1.0000
+Epoch 60/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0655 - accuracy: 0.9829 - val_loss: 0.0212 - val_accuracy: 1.0000
+Epoch 61/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0589 - accuracy: 0.9871 - val_loss: 0.0209 - val_accuracy: 1.0000
+Epoch 62/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0598 - accuracy: 0.9871 - val_loss: 0.0192 - val_accuracy: 1.0000
+Epoch 63/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0509 - accuracy: 0.9900 - val_loss: 0.0193 - val_accuracy: 1.0000
+Epoch 64/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0370 - accuracy: 0.9943 - val_loss: 0.0178 - val_accuracy: 1.0000
+Epoch 65/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0395 - accuracy: 0.9929 - val_loss: 0.0159 - val_accuracy: 1.0000
+Epoch 66/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0429 - accuracy: 0.9914 - val_loss: 0.0150 - val_accuracy: 1.0000
+Epoch 67/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0418 - accuracy: 0.9943 - val_loss: 0.0143 - val_accuracy: 1.0000
+Epoch 68/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0369 - accuracy: 0.9957 - val_loss: 0.0160 - val_accuracy: 1.0000
+Epoch 69/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0527 - accuracy: 0.9900 - val_loss: 0.0122 - val_accuracy: 1.0000
+Epoch 70/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0333 - accuracy: 0.9943 - val_loss: 0.0122 - val_accuracy: 1.0000
+Epoch 71/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0517 - accuracy: 0.9914 - val_loss: 0.0125 - val_accuracy: 1.0000
+Epoch 72/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0481 - accuracy: 0.9900 - val_loss: 0.0152 - val_accuracy: 1.0000
+Epoch 73/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0390 - accuracy: 0.9900 - val_loss: 0.0106 - val_accuracy: 1.0000
+Epoch 74/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0280 - accuracy: 0.9957 - val_loss: 0.0103 - val_accuracy: 1.0000
+Epoch 75/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0445 - accuracy: 0.9871 - val_loss: 0.0099 - val_accuracy: 1.0000
+Epoch 76/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0323 - accuracy: 0.9943 - val_loss: 0.0094 - val_accuracy: 1.0000
+Epoch 77/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0442 - accuracy: 0.9871 - val_loss: 0.0093 - val_accuracy: 1.0000
+Epoch 78/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0266 - accuracy: 0.9957 - val_loss: 0.0085 - val_accuracy: 1.0000
+Epoch 79/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0409 - accuracy: 0.9929 - val_loss: 0.0108 - val_accuracy: 1.0000
+Epoch 80/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0423 - accuracy: 0.9857 - val_loss: 0.0100 - val_accuracy: 1.0000
+Epoch 81/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0262 - accuracy: 0.9943 - val_loss: 0.0080 - val_accuracy: 1.0000
+Epoch 82/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0406 - accuracy: 0.9900 - val_loss: 0.0078 - val_accuracy: 1.0000
+Epoch 83/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0330 - accuracy: 0.9929 - val_loss: 0.0079 - val_accuracy: 1.0000
+Epoch 84/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0308 - accuracy: 0.9957 - val_loss: 0.0071 - val_accuracy: 1.0000
+Epoch 85/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0242 - accuracy: 0.9943 - val_loss: 0.0069 - val_accuracy: 1.0000
+Epoch 86/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0335 - accuracy: 0.9900 - val_loss: 0.0066 - val_accuracy: 1.0000
+Epoch 87/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0318 - accuracy: 0.9914 - val_loss: 0.0074 - val_accuracy: 1.0000
+Epoch 88/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0254 - accuracy: 0.9929 - val_loss: 0.0062 - val_accuracy: 1.0000
+Epoch 89/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0304 - accuracy: 0.9943 - val_loss: 0.0067 - val_accuracy: 1.0000
+Epoch 90/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0210 - accuracy: 0.9957 - val_loss: 0.0056 - val_accuracy: 1.0000
+Epoch 91/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0188 - accuracy: 0.9986 - val_loss: 0.0051 - val_accuracy: 1.0000
+Epoch 92/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0213 - accuracy: 0.9957 - val_loss: 0.0051 - val_accuracy: 1.0000
+Epoch 93/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0150 - accuracy: 1.0000 - val_loss: 0.0048 - val_accuracy: 1.0000
+Epoch 94/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0317 - accuracy: 0.9914 - val_loss: 0.0052 - val_accuracy: 1.0000
+Epoch 95/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0370 - accuracy: 0.9957 - val_loss: 0.0050 - val_accuracy: 1.0000
+Epoch 96/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0227 - accuracy: 0.9986 - val_loss: 0.0050 - val_accuracy: 1.0000
+Epoch 97/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0269 - accuracy: 0.9900 - val_loss: 0.0049 - val_accuracy: 1.0000
+Epoch 98/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0316 - accuracy: 0.9886 - val_loss: 0.0045 - val_accuracy: 1.0000
+Epoch 99/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0265 - accuracy: 0.9957 - val_loss: 0.0044 - val_accuracy: 1.0000
+Epoch 100/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0207 - accuracy: 0.9986 - val_loss: 0.0039 - val_accuracy: 1.0000
+Epoch 101/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0192 - accuracy: 0.9971 - val_loss: 0.0038 - val_accuracy: 1.0000
+Epoch 102/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0199 - accuracy: 0.9957 - val_loss: 0.0038 - val_accuracy: 1.0000
+Epoch 103/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0215 - accuracy: 0.9943 - val_loss: 0.0036 - val_accuracy: 1.0000
+Epoch 104/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0161 - accuracy: 0.9986 - val_loss: 0.0036 - val_accuracy: 1.0000
+Epoch 105/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0269 - accuracy: 0.9929 - val_loss: 0.0069 - val_accuracy: 1.0000
+Epoch 106/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0283 - accuracy: 0.9914 - val_loss: 0.0035 - val_accuracy: 1.0000
+Epoch 107/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0169 - accuracy: 0.9986 - val_loss: 0.0038 - val_accuracy: 1.0000
+Epoch 108/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0232 - accuracy: 0.9943 - val_loss: 0.0034 - val_accuracy: 1.0000
+Epoch 109/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0344 - accuracy: 0.9900 - val_loss: 0.0035 - val_accuracy: 1.0000
+Epoch 110/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0167 - accuracy: 0.9971 - val_loss: 0.0035 - val_accuracy: 1.0000
+Epoch 111/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0144 - accuracy: 0.9971 - val_loss: 0.0029 - val_accuracy: 1.0000
+Epoch 112/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0118 - accuracy: 1.0000 - val_loss: 0.0028 - val_accuracy: 1.0000
+Epoch 113/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0169 - accuracy: 0.9943 - val_loss: 0.0026 - val_accuracy: 1.0000
+Epoch 114/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0165 - accuracy: 0.9943 - val_loss: 0.0026 - val_accuracy: 1.0000
+Epoch 115/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0215 - accuracy: 0.9957 - val_loss: 0.0026 - val_accuracy: 1.0000
+Epoch 116/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0221 - accuracy: 0.9957 - val_loss: 0.0026 - val_accuracy: 1.0000
+Epoch 117/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0190 - accuracy: 0.9886 - val_loss: 0.0030 - val_accuracy: 1.0000
+Epoch 118/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0158 - accuracy: 0.9971 - val_loss: 0.0025 - val_accuracy: 1.0000
+Epoch 119/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0147 - accuracy: 0.9957 - val_loss: 0.0026 - val_accuracy: 1.0000
+Epoch 120/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0121 - accuracy: 0.9986 - val_loss: 0.0038 - val_accuracy: 1.0000
+Epoch 121/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0157 - accuracy: 0.9971 - val_loss: 0.0034 - val_accuracy: 1.0000
+Epoch 122/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0164 - accuracy: 0.9971 - val_loss: 0.0022 - val_accuracy: 1.0000
+Epoch 123/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0140 - accuracy: 0.9957 - val_loss: 0.0022 - val_accuracy: 1.0000
+Epoch 124/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0203 - accuracy: 0.9914 - val_loss: 0.0021 - val_accuracy: 1.0000
+Epoch 125/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0118 - accuracy: 1.0000 - val_loss: 0.0020 - val_accuracy: 1.0000
+Epoch 126/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0131 - accuracy: 0.9971 - val_loss: 0.0035 - val_accuracy: 1.0000
+Epoch 127/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0100 - accuracy: 1.0000 - val_loss: 0.0017 - val_accuracy: 1.0000
+Epoch 128/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0199 - accuracy: 0.9943 - val_loss: 0.0020 - val_accuracy: 1.0000
+Epoch 129/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0162 - accuracy: 0.9971 - val_loss: 0.0020 - val_accuracy: 1.0000
+Epoch 130/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0109 - accuracy: 0.9971 - val_loss: 0.0019 - val_accuracy: 1.0000
+Epoch 131/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0100 - accuracy: 0.9986 - val_loss: 0.0017 - val_accuracy: 1.0000
+Epoch 132/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0130 - accuracy: 0.9943 - val_loss: 0.0016 - val_accuracy: 1.0000
+Epoch 133/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0146 - accuracy: 0.9971 - val_loss: 0.0018 - val_accuracy: 1.0000
+Epoch 134/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0193 - accuracy: 0.9943 - val_loss: 0.0014 - val_accuracy: 1.0000
+Epoch 135/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0111 - accuracy: 0.9986 - val_loss: 0.0016 - val_accuracy: 1.0000
+Epoch 136/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0190 - accuracy: 0.9943 - val_loss: 0.0021 - val_accuracy: 1.0000
+Epoch 137/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0103 - accuracy: 0.9971 - val_loss: 0.0016 - val_accuracy: 1.0000
+Epoch 138/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0174 - accuracy: 0.9929 - val_loss: 0.0014 - val_accuracy: 1.0000
+Epoch 139/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0122 - accuracy: 0.9971 - val_loss: 0.0014 - val_accuracy: 1.0000
+Epoch 140/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0123 - accuracy: 0.9957 - val_loss: 0.0013 - val_accuracy: 1.0000
+Epoch 141/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0138 - accuracy: 0.9943 - val_loss: 0.0014 - val_accuracy: 1.0000
+Epoch 142/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0121 - accuracy: 0.9986 - val_loss: 0.0013 - val_accuracy: 1.0000
+Epoch 143/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0102 - accuracy: 0.9986 - val_loss: 0.0011 - val_accuracy: 1.0000
+Epoch 144/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0081 - accuracy: 1.0000 - val_loss: 0.0011 - val_accuracy: 1.0000
+Epoch 145/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0116 - accuracy: 0.9971 - val_loss: 0.0012 - val_accuracy: 1.0000
+Epoch 146/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0105 - accuracy: 0.9971 - val_loss: 0.0011 - val_accuracy: 1.0000
+Epoch 147/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0074 - accuracy: 0.9986 - val_loss: 0.0012 - val_accuracy: 1.0000
+Epoch 148/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0122 - accuracy: 0.9957 - val_loss: 9.7937e-04 - val_accuracy: 1.0000
+Epoch 149/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0118 - accuracy: 0.9986 - val_loss: 0.0010 - val_accuracy: 1.0000
+Epoch 150/150
+22/22 [==============================] - 0s 2ms/step - loss: 0.0081 - accuracy: 0.9986 - val_loss: 9.0221e-04 - val_accuracy: 1.0000
+```
+
+This output shows us each epoch, the training accuracy achieved, the validation accuracy achieved, and the loss for each step. Here we can see that 150 epochs was barely enough for our model to achieve a training accuracy of 100%. We can also see that in the beginning, our accuracy increases in a higher rate; this makes sense since the gradient for the first epochs is bigger, as we'll confirm shortly using visualization methods.
+
+We can get a model summary:
+
+##### **Code**
+```Python
+# Get model summary
+DNN.summary()
+```
+
+##### **Output**
+```
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 8)                 88                                                                  
+ dense_1 (Dense)             (None, 16)                144                                                                
+ dropout (Dropout)           (None, 16)                0                                                                    
+ dense_2 (Dense)             (None, 8)                 136                                                                  
+ dense_3 (Dense)             (None, 3)                 27                                                                   
+=================================================================
+Total params: 395
+Trainable params: 395
+Non-trainable params: 0
+_________________________________________________________________
+```
+
+We can visualize the 5 layers we specified previously, their shape, the number of parameters (*inputs*) for each layer and the total number of trainable parameters.
+
+We can also create two plots that will help us visualize how our model performed. The first one will plot epochs on the $x$ axis and training accuracy & validation accuracy on the $y$ axis. The second one will plot epochs on the $x$ axis and training & validation loss on the $y$ axis:
+
+##### **Code**
+```Python
+# Plot epochs vs training accuracy & validation accuracy
+plt.figure('Epochs vs Accuracy')
+plt.xlabel("Number of Epochs")
+plt.ylabel("Accuracy of Data")
+plt.plot(DNN_Fit.history["accuracy"], label = "Training Accuracy", color = 'k', linewidth = 0.7, marker = 'o', markersize=2)
+plt.plot(DNN_Fit.history["val_accuracy"],label = "Validation Accuracy", color = '#24c98d', linewidth = 0.7, marker = 'o', markersize=2)
+plt.title("Training Vs. Validation Accuracy")
+plt.legend()
+plt.savefig('plots/' + 'G001A008_Deep Neural Network_Epochs vs Accuracy.png', format = 'png', dpi = 300, transparent = True)
+plt.close()
+
+# Plot training vs validation loss
+plt.figure('Training vs Validation Loss')
+plt.xlabel("Number of Epochs")
+plt.ylabel("Loss in Data")
+plt.plot(DNN_Fit.history["loss"], label= "Training Loss", color = 'k', linewidth = 0.7, marker = 'o', markersize=2)
+plt.plot(DNN_Fit.history["val_loss"], label= "Validation Loss", color = '#24c98d', linewidth = 0.7, marker = 'o', markersize=2)
+plt.title("Training Vs. Validation loss")
+plt.legend()
+plt.savefig('plots/' + 'G001A008_Deep Neural Network_Training vs Validation Loss.png', format = 'png', dpi = 300, transparent = True)
+plt.close()
+```
+
+##### **Output**
+
+IMAGE
+IMAGE
+
 
 ### 17. Method comparison
-
 
 ## Conclusions
 
@@ -698,9 +1943,9 @@ A perceptron is the simplest case, and of course, the more layers we have, the m
 - [OpenGenus, Bernoulli Naïve Bayes](https://iq.opengenus.org/bernoulli-naive-bayes/)
 - [Michael Fuchs, Introduction to SGD Classifier](https://michael-fuchs-python.netlify.app/2019/11/11/introduction-to-sgd-classifier/)
 - [Jerry Friedman, Greedy Function Approximation: A Gradient Boosting Machine](https://jerryfriedman.su.domains/ftp/trebst.pdf)
+- [Machine Learning Mastery, Multinomial Logistic Regression With Python](https://machinelearningmastery.com/multinomial-logistic-regression-with-python/)
+- [Philipp Christian Petersen, Neural Network Theory](http://pc-petersen.eu/Neural_Network_Theory.pdf)
 
-## Pendings
-- https://www.educative.io/answers/implement-neural-network-for-classification-using-scikit-learn
 
 ## Model Implementation
 - https://www.kaggle.com/code/ayushs9020/lung-cancer-prediction-99-98
@@ -715,4 +1960,4 @@ A perceptron is the simplest case, and of course, the more layers we have, the m
 - https://www.kaggle.com/code/stpeteishii/lung-cancer-predict-visualize-importance
 - https://www.kaggle.com/code/ayushb6732/lungs-dataset-gdsc
 - https://machinelearningmastery.com/gradient-boosting-with-scikit-learn-xgboost-lightgbm-and-catboost/
-
+- https://www.educative.io/answers/implement-neural-network-for-classification-using-scikit-learn
