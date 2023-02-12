@@ -10,17 +10,10 @@ Keep in mind that this section contains guided projects I design for educational
 Some projects are adaptations from existing ones, and others are my creations. Either way, the source is specified in each case, and credit is acknowledged where it’s due. Projects are classified by category/topic, difficulty, tech stack used, and approximate execution time. Also, suggested prerequisites are specified in case it applies.
 
 ## Table of Contents
-1. [Network & Servers](https://github.com/pabloagn/documentation/tree/master/network-and-servers)
-	1. [QNAP NAS](https://github.com/pabloagn/documentation/blob/master/network-and-servers/NAS.md)
-	2. [WinSCP](https://github.com/pabloagn/documentation/blob/master/network-and-servers/WinSCP.md)
-2. [Programming Languages](https://github.com/pabloagn/documentation/tree/master/programming-languages)
-	1. [Julia](https://github.com/pabloagn/documentation/blob/master/programming-languages/julia.md)
-3. [Terminal](https://github.com/pabloagn/documentation/tree/master/terminal)
-	1. [PowerShell 7](https://github.com/pabloagn/documentation/blob/master/terminal/powershell-7.md)
-4. [Visualization & Graphic Design](https://github.com/pabloagn/documentation/tree/master/visualization-and-graphic-design)
-	1. [GIMP](https://github.com/pabloagn/documentation/blob/master/visualization-and-graphic-design/GIMP.md)
-5. [Writing & Formatting](https://github.com/pabloagn/documentation/tree/master/writing-and-formatting)
-	1. [Markdown](https://github.com/pabloagn/documentation/blob/master/writing-and-formatting/markdown.md)
+1. [Data Science](https://github.com/pabloagn/guided-projects/tree/master/data-science)
+	1. [exploratory-data-analysis-pt-1](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-1.md)
+	2. [exploratory-data-analysis-pt-2](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-2.md)
+	3. [exploratory-data-analysis-pt-3](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-3.md)
 
 ## Website
 You can also directly consult the [Guided Projects](https://pabloagn.com/guided-projects/) page on my website.

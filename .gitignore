@@ -16,5 +16,8 @@
 **/*.jpg
 **/*.png
 
+# Except plots
+!**/plots/
+
 # Ignore desktop.ini
 desktop.ini
