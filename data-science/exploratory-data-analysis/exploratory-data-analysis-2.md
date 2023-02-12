@@ -18,21 +18,59 @@ The generated plots and test results from the last segment can also be found in 
 - [Classification model implementation](#classification-model-implementation)
 	- [Selecting our methods](#1-selecting-our-methods)
 	- [Creating a Virtual Environment](#2-creating-a-virtual-environment)
-	- [Preparing our environment](#2-preparing-our-environment)
-	- A word on model assumptions
-	- Multinomial Logistic Regression
-	- Decision Tree
-	- Random Forest
-	- Nonlinear Support Vector Machine
-	- K-Nearest Neighbors
-	- Gaussian Naïve Bayes
-	- Bernoulli Naïve Bayes
-	- Stochastic Gradient Descent
-	- Gradient Boosting
-	- Extreme Gradient Boosting
-	- Deep Neural Networks
-	- Results consolidation
-	- [Method comparison](#12-method-comparison)
+	- [Preparing our environment](#3-preparing-our-environment)
+	- [A word on model assumptions](#4-a-word-on-model-assumptions)
+	- [Multinomial Logistic Regression](#5-multinomial-logistic-regression)
+		- [Mathematical Intuition Overview](#51-mathematical-intuition-overview)
+		- [Assumptions](#52-assumptions)
+		- [Implementation](#53-implementation)
+	- [Decision Tree](#6-decision-tree)
+		- [Mathematical Intuition Overview](#61-mathematical-intuition-overview)
+			- [Information Gain](#611-information-gain)
+			- [Gini Index](#612-gini-index)
+		- [Assumptions](#62-assumptions)
+		- [Implementation](#63-implementation)
+	- [Random Forest](#7-random-forest)
+		- [Mathematical Intuition Overview](#71-mathematical-intuition-overview)
+		- [Assumptions](#72-assumptions)
+		- [Implementation](#73-implementation)
+	- [Nonlinear Support Vector Machine](#8-nonlinear-support-vector-machine)
+		- [Mathematical Intuition Overview](#81-mathematical-intuition-overview)
+		- [Assumptions](#82-assumptions)
+		- [Implementation](#83-implementation)
+	- [K-Nearest Neighbors](#9-k-nearest-neighbors)
+		- [Mathematical Intuition Overview](#91-mathematical-intuition-overview)
+			- [Euclidean Distance](#911-euclidean-distance)
+			- [Manhattan Distance](#912-manhattan-distance)
+			- [Minkowski Distance](#913-minkowski-distance)
+			- [Hamming Distance](#914-hamming-distance)
+		- [Assumptions](#92-assumptions)
+		- [Implementation](#93-implementation)
+	- [Gaussian Naïve Bayes](#11-gaussian-naïve-bayes)
+		- [Mathematical Intuition Overview](#111-mathematical-intuition-overview)
+		- [Assumptions](#112-assumptions)
+		- [Implementation](#113-implementation)
+	- [Bernoulli Naïve Bayes](#12-bernoulli-naïve-bayes)
+		- [Mathematical Intuition Overview](#121-mathematical-intuition-overview)
+		- [Assumptions](#122-assumptions)
+		- [Implementation](#123-implementation)
+	- [Stochastic Gradient Descent](#13-stochastic-gradient-descent)
+		- [Mathematical Intuition Overview](#131-mathematical-intuition-overview)
+		- [Assumptions](#132-assumptions)
+		- [Implementation](#133-implementation)
+	- [Gradient Boosting](#14-gradient-boosting)
+		- [Mathematical Intuition Overview](#141-mathematical-intuition-overview)
+		- [Assumptions](#142-assumptions)
+		- [Implementation](#143-implementation)
+	- [Extreme Gradient Boosting](#15-extreme-gradient-boosting)
+		- [Assumptions](#151-assumptions)
+		- [Implementation](#153-implementation)
+	- [Deep Neural Networks](#16-deep-neural-networks)
+		- [Mathematical Intuition Overview](#161-mathematical-intuition-overview)
+		- [Assumptions](#162-assumptions)
+		- [Implementation](#163-implementation)
+	- [Results consolidation](#17-results-consolidation)
+	- [Method comparison](#18-method-comparison)
 - [Conclusions](#conclusions)
 - [References](#references)
 
@@ -1659,11 +1697,11 @@ Some other differences between XGBoost over GBM are:
 
 We will skip the mathematical intuition for XGBoost since it's extensive and similar to its GBM cousin.
 
-#### 15.2 Assumptions
+#### 15.1 Assumptions
 - Encoded integer values for each input variable have an ordinal relationship.
 - The data may not be complete (*can handle sparsity*)
 
-#### 15.3 Implementation
+#### 15.2 Implementation
 We'll use a different library called `XGBoost` for this implementation. Apart from the advantages of the mathematical treatment, `XGBoost` is written in C++, making it comparatively faster than other Gradient Boosting libraries. Also, `XGBoost` was specifically designed to support parallelization onto GPUs and computer networks. These make this library extremely powerful when handling extensive data sets.
 
 Before we can start, we will need to re-encode our labels since `XGBoost` requires our values to start from 0 and not 1:
