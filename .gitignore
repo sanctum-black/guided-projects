@@ -13,11 +13,7 @@
 .obsidian/
 
 # Ignore all featured images and plots
-**/*.jpg
-**/*.png
-
-# Except plots
-!/**/**/plots/
+**/**/featured_images/
 
 # Ignore desktop.ini
 desktop.ini
