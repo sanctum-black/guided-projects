@@ -104,7 +104,7 @@ In this example, we will be working with 12 classification models, which we'll e
 Before anything else, we need to check our current Python version. This is important because although we'll not be using `tensorflow` directly, we will require it for our Deep Neural Network model using `keras`, and `tensorflow` currently supports **Python versions 3.7 - 3.10*:
 
 ##### **Code**
-```
+```Python
 import sys
 sys.version
 ```
@@ -237,7 +237,6 @@ import numpy as np
 import xlsxwriter
 import re
 
-# Plotting modules
 # Plotting modules
 import matplotlib
 import matplotlib.pyplot as plt
@@ -1872,7 +1871,7 @@ Next, we will add a $\text{Dropout}$ regularization layer. A dropout layer rando
 DNN.add(Dropout(0.1))
 ```
 
-We will conclude with our model by adding one last dense $\text{ReLU}$ activation layer and one dense $\text{softmax}$ (*normalized exponential function*) activation layer, which will serve as the activation function for our output layer. The $softmax$ activation function converts an input vector of real values to an output vector that can be interpreted as categorical probabilities. It is specially used for categorical variables:
+We will conclude with our model by adding one last dense $\text{ReLU}$ activation layer and one dense $\text{softmax}$ (*normalized exponential function*) activation layer, which will serve as the activation function for our output layer. The $\text{softmax}$ activation function converts an input vector of real values to an output vector that can be interpreted as categorical probabilities. It is specially used for categorical variables:
 
 ##### **Code**
 ```Python
@@ -2342,7 +2341,7 @@ plt.close()
 
 Finally, we will perform a k-fold Cross-validation on our data. This methodology is used to estimate the model accuracy on new data; it splits our data into $k$ groups of samples, also called folds. The model is trained using $k-1$ of the folds as training data, and the resulting model is validated on the remaining part of the data.
 
-We can use the `KFold` method from the `sklearn.model_selection` library to implement a K-Folds validation. We will start with $k = 10$ folds and our original Dep Neural Network model and see if the accuracy results are satisfactory:
+We can use the `KFold` method from the `sklearn.model_selection` library to implement a K-Folds validation. We will start with $k = 10$ folds and our original Deep Neural Network model and see if the accuracy results are satisfactory:
 
 ##### **Code**
 ```Python
