@@ -38,17 +38,15 @@ import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sn
 from sklearn import tree
+import visualkeras
+from PIL import ImageFont
 
 # Preprocessing modules
-from sklearn.preprocessing import LabelEncoder, MinMaxScaler, StandardScaler, FunctionTransformer
-from sklearn.feature_selection import SelectKBest
-from sklearn.model_selection import train_test_split, GridSearchCV, KFold, cross_val_score
-from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import LabelEncoder, StandardScaler, FunctionTransformer
+from sklearn.model_selection import train_test_split, KFold
 
 # Evaluation & performance modules
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, recall_score, precision_score, f1_score, mean_absolute_error, r2_score, mean_squared_error, mean_absolute_percentage_error, log_loss
-from scipy import stats
-from scipy.stats import norm, skew
+from sklearn.metrics import confusion_matrix, classification_report
 
 # Machine Learning models
 from sklearn.linear_model import LogisticRegression
@@ -56,13 +54,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.cluster import KMeans
 from sklearn.naive_bayes import GaussianNB, BernoulliNB
 from sklearn.linear_model import SGDClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from xgboost import XGBClassifier
-import keras
-import keras.activations, keras.losses, keras.metrics
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
 
@@ -297,6 +292,9 @@ test_x, test_Sy = sep(test)
 
 train_Sx = preprocessing_dictionary['Standard Scaler'].fit_transform(train_x)
 test_Sx = preprocessing_dictionary['Standard Scaler'].transform(test_x)
+
+# Test for balanced label class
+df.groupby('Level')['Level'].count() / len(df) * 100
 
 
 # Multinomial Logistic Regression
@@ -725,6 +723,15 @@ plt.savefig('plots/' + 'G001A008_Deep Neural Network_Training vs Validation Loss
 plt.savefig('plots/' + 'G001A008_Deep Neural Network_Training vs Validation Loss_bg.jpg', format = 'jpg', dpi = 300, transparent = False)
 plt.close()
 
+# Plot Deep Neural Network structure
+
+# Using visualkeras layered_view
+visualkeras.layered_view(DNN,
+                         legend=True,
+                         to_file='plots/' + 'G001A008_Deep Neural Network_Model.png',
+                         scale_z=5,
+                         spacing=30)
+
 # K-Fold Cross Validation
 
 # Define 10-fold cross validation test harness
@@ -780,6 +787,7 @@ acc_df = pd.DataFrame(columns=['Model', 'Accuracy'])
 acc_df['Model'] = model_list
 acc_df['Accuracy'] = acc_list
 
+# Write to Excel document
 writer = pd.ExcelWriter('outputs/Model_Results.xlsx', engine = 'xlsxwriter')
 report_MLogReg.to_excel(writer, sheet_name = 'REP_MLOGREG')
 report_BLogReg.to_excel(writer, sheet_name = 'REP_BLOGREG')
@@ -790,6 +798,8 @@ report_SVMp.to_excel(writer, sheet_name = 'REP_SVMPOL')
 report_SVMr.to_excel(writer, sheet_name = 'REP_SVMRAD')
 report_KNN.to_excel(writer, sheet_name = 'REP_KNN')
 report_GNB.to_excel(writer, sheet_name = 'REP_GNB')
+report_BNB.to_excel(writer, sheet_name = 'REP_BNB')
+report_SGD.to_excel(writer, sheet_name = 'REP_SGD')
 report_GBC.to_excel(writer, sheet_name = 'REP_GBC')
 report_XGBC.to_excel(writer, sheet_name = 'REP_XGBC')
 DNN_summary.to_excel(writer, sheet_name = 'SUM_DNN')

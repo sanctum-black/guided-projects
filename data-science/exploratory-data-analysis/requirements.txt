@@ -8,3 +8,6 @@ keras
 xgboost
 tensorflow==2.10
 xlsxwriter
+visualkeras
+pydot
+pydotplus
