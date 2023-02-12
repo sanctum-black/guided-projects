@@ -15,7 +15,7 @@ The generated plots and test results from last segment can also be found in the 
 ---
 
 ## Table of Contents
-- [Classification model design](#classification-model-design)
+- [Classification model implementation](#classification-model-implementation)
 	- [Selecting our methods](#1-selecting-our-methods)
 	- Creating a Virtual Environment
 	- [Preparing our environment](#2-preparing-our-environment)
@@ -31,13 +31,14 @@ The generated plots and test results from last segment can also be found in the 
 	- Gradient Boosting
 	- Extreme Gradient Boosting
 	- Deep Neural Networks
+	- Results consolidation
 	- [Method comparison](#12-method-comparison)
 - [Conclusions](#conclusions)
 - [References](#references)
 
 ---
 
-## Classification model design
+## Classification model implementation
 **Classification models** are a subset of **supervised machine learning algorithms**. A typical classification model reads an input and tries to classify it based on some predefined properties. A very simple example would be the classification of a mail *containing spam* vs one *without spam*.
 
 The other type of supervised algorithms, perhaps more familiar, are **regression models**. These differ in that they don't classify our inputs into categories, but predict continuous variables. A common example would be predicting the stock market behavior for a given asset.
@@ -514,9 +515,9 @@ Every model is built on top of assumptions. They provide the theoretical foundat
 If we understand the underlying theory behind our model, we can be selective in the assumptions we can live without; we can gain knowledge on the implications of bypassing a certain assumption, and can thus make a supported decision on which model to use. It's a matter of balance, and finding out what's good for our case.
 
 ### 5. Multinomial Logistic Regression
-Multinomial Logistic Regression is a classification method that generalizes logistic regression to multiclass problems, *i.e. when we have more than two possible discrete outcomes*.
+**Multinomial Logistic Regression** is a classification method that generalizes logistic regression to multiclass problems, *i.e. when we have more than two possible discrete outcomes*.
 
-Logistic Regression, or Logit Model, contrary to what it's name may suggest, is not a regression model but a **parametric classification** one. In reality, this model is very similar to [Linear Regression](https://www.ibm.com/topics/linear-regression); the main difference between the two, is that in Logistic regression we don’t fit a straight line to our data. Instead, we fit an $S$ shaped curve, called **Sigmoid**, to our observations.
+**Logistic Regression**, or Logit Model, contrary to what it's name may suggest, is not a regression model but a **parametric classification** one. In reality, this model is very similar to [Linear Regression](https://www.ibm.com/topics/linear-regression); the main difference between the two, is that in Logistic regression we don’t fit a straight line to our data. Instead, we fit an $S$ shaped curve, called **Sigmoid**, to our observations.
 
 #### 5.1 Mathematical intuition overview
 **Logistic Regression** fits data to a $\text{Sigmoid}$ function:
@@ -602,6 +603,16 @@ report_MLogReg = classification_rep(test_Sy,
 print(score_MLogReg)
 ```
 
+##### **Output**
+
+<div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Multinomial-Logistic-Regressor_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 01"/></div>
+
+*Figure 1: Confusion Matrix for Multinomial Logistic Regression*
+
+##### **Output**
+
+TABLE01
+
 If we take a look at our results, we can see that it predicted with a **91.5%** accuracy:
 
 ##### Output
@@ -611,7 +622,7 @@ If we take a look at our results, we can see that it predicted with a **91.5%** 
 
 Not to worry, we will explore the results in more detail in the [Method Comparison](#17-method-comparison) section.
 
-We can now use a Binomial Logistic Regression model and see what we get:
+We can now use a **Binomial Logistic Regression** model and see what we get:
 
 ##### **Code**
 ```Python
@@ -642,12 +653,20 @@ print(score_BLogReg)
 If we take a look at our results, we can see that it predicted with a **91.5%** accuracy. Same as its multinomial cousin:
 
 ##### **Output**
+
+FIGURE02
+
+##### **Output**
+
+TABLE02
+
+##### **Output**
 ```
 0.915
 ```
 
 ### 6. Decision Tree
-A Decision Tree is a technique than can be used for both classification and regression problems. In our case, we'll be using a Decision Tree Classifier.
+A **Decision Tree** is a technique than can be used for both classification and regression problems. In our case, we'll be using a Decision Tree Classifier.
 
 A Decision Tree has two types of nodes:
 - **Decision Node:** Are in charge of making decisions, and branch in multiple nodes. 
@@ -730,12 +749,20 @@ print(score_DecTree)
 
 If we take a look at our results, we can see that it predicted with a **100%** accuracy:
 
+##### **Output**
+
+FIGURE03
+
+##### **Output**
+
+TABLE03
+
 ##### Output
 ```
 1.0
 ```
 
-The interesting thing about Decision Trees, is that we can actually visualize them using multiple methods,
+The interesting thing about Decision Trees, is that we can actually visualize them using multiple methods.
 
 We can display a simple text representation:
 
@@ -819,8 +846,15 @@ plt.savefig('plots/' + 'decision_tree.png', format = 'png', dpi = 300, transpare
 plt.close()
 ```
 
+##### **Output**
+
+FIGURE04
+
+
+*Figure 4. Graphical Representation of our Decision Tree*
+
 ### 7. Random Forest
-Random Forest is an ensemble learning method for classification, regression and other methods. It works by constructing a multitude of decision trees at training time; the output of the random forest is the class selected by most trees.
+**Random Forest** is an ensemble learning method for classification, regression and other methods. It works by constructing a multitude of decision trees at training time; the output of the random forest is the class selected by most trees.
 
 #### 7.1 Mathematical intuition overview
 The training algorithm for random forests applies a generalization of **bagging**.
@@ -877,13 +911,21 @@ print(score_RandomFor)
 
 If we take a look at our results, we can see that it predicted with a **100%** accuracy:
 
+##### **Output**
+
+FIGURE05
+
+##### **Output**
+
+TABLE04
+
 ##### Output
 ```
 1.0
 ```
 
 ### 8. Nonlinear Support Vector Machine
-Support Vector Machines (*SVM*) are a class of supervised models originally developed for linear applications, although a nonlinear implementation using nonlinear Kernels was also developed; the resulting algorithm is similar, except that every dot product is replaced by a nonlinear kernel function.
+**Support Vector Machines** (*SVM*) are a class of supervised models originally developed for linear applications, although a nonlinear implementation using nonlinear Kernels was also developed; the resulting algorithm is similar, except that every dot product is replaced by a nonlinear kernel function.
 
 #### 8.1 Mathematical intuition overview
 The SVM model amounts to minimizing an expression of the following form:
@@ -976,19 +1018,31 @@ print(score_SVMr)
 ```
 
 If we take a look at our results, we can see that we get the following accuracies:
-- **Linear SVM:** 89.5%
+- **Linear SVM:** 88.5%
 - **Polynomial SVM, 8th degree:** 100%
 - **Radial Kernel:** 100%
 
+##### **Output**
+
+FIGURE06
+FIGURE07
+FIGURE08
+
+##### **Output**
+
+TABLE05
+TABLE06
+TABLE07
+
 ##### Output
 ```
-0.895
+0.885
 1.0
 1.0
 ```
 
 ### 9. K-Nearest Neighbors
-K-Nearest Neighbors (*KNN*) is a non-parametric, supervised learning classifier which uses proximity to classify and group data points. A class label is assigned on the basis of a majority vote *i.e. the label that is most frequently represented around a given data point is used*. The KNN model chooses $k$ nearest points by calculating distances using different metrics, and finally calculates an average to make a prediction.
+**K-Nearest Neighbors** (*KNN*) is a non-parametric, supervised learning classifier which uses proximity to classify and group data points. A class label is assigned on the basis of a majority vote *i.e. the label that is most frequently represented around a given data point is used*. The KNN model chooses $k$ nearest points by calculating distances using different metrics, and finally calculates an average to make a prediction.
 
 #### 9.1 Mathematical intuition overview
 There are several distance metrics that can be used:
@@ -1058,13 +1112,21 @@ print(score_KNN)
 
 If we take a look at our results, we can see that it predicted with an **100%** accuracy:
 
+##### **Output**
+
+FIGURE09
+
+##### **Output**
+
+TABLE08
+
 ##### Output
 ```
 1.0
 ```
 
 ### 11. Gaussian Naïve Bayes
-Gaussian Naïve Bayes (*GNB*) is a probabilistic machine learning algorithm based on the [Bayes' Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). It is the extension of the Naïve Bayes algorithm, and as its name suggest, it approximates class-conditional distributions as a Gaussian distribution, with a mean $\mu$ and a standard deviation $\sigma$.
+**Gaussian Naïve Bayes** (*GNB*) is a probabilistic machine learning algorithm based on the [Bayes' Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). It is the extension of the Naïve Bayes algorithm, and as its name suggest, it approximates class-conditional distributions as a Gaussian distribution, with a mean $\mu$ and a standard deviation $\sigma$.
 
 #### 11.1 Mathematical intuition overview
 We can start from the Bayes' Theorem:
@@ -1128,15 +1190,23 @@ report_GNB = classification_rep(test_Gy,
 print(score_GNB)
 ```
 
-If we take a look at our results, we can see that it predicted with a **71.5%** accuracy. This is the lowest score we've gotten so far:
+If we take a look at our results, we can see that it predicted with a **60.5%** accuracy. This is the lowest score we've gotten so far:
+
+##### **Output**
+
+FIGURE10
+
+##### **Output**
+
+TABLE09
 
 ##### Output
 ```
-0.715
+0.605
 ```
 
 ### 12. Bernoulli Naïve Bayes
-Bernoulli Naïve Bayes (*BNB*) is similar to Gaussian Naïve Bayes, in that it also uses Bayes' Theorem as foundation. The difference is that Bernoulli Naïve Bayes approximates class-conditional distributions as a Bernoulli distribution. This fact makes this variation more appropriate for discrete random variables instead of continuous ones.
+**Bernoulli Naïve Bayes** (*BNB*) is similar to Gaussian Naïve Bayes, in that it also uses Bayes' Theorem as foundation. The difference is that Bernoulli Naïve Bayes approximates class-conditional distributions as a Bernoulli distribution. This fact makes this variation more appropriate for discrete random variables instead of continuous ones.
 
 #### 12.1 Mathematical intuition overview
 Since we already went over the Bayes' Theorem, we can start by defining the Bernoulli distribution function:
@@ -1199,13 +1269,21 @@ print(score_BNB)
 
 If we take a look at our results, we can see that it predicted with a **77.5%** accuracy:
 
+##### **Output**
+
+FIGURE11
+
+##### **Output**
+
+TABLE10
+
 ##### Output
 ```
 0.775
 ```
 
 ### 13. Stochastic Gradient Descent
-Stochastic Gradient Descent (*SGD*) is an optimization method. It can be used in conjunction with other machine learning algorithms.
+**Stochastic Gradient Descent** (*SGD*) is an optimization method. It can be used in conjunction with other machine learning algorithms.
 
 In general, gradient descent is used to minimize a cost function. There are three main types:
 
@@ -1273,15 +1351,23 @@ report_SGD = classification_rep(test_Sy,
 print(score_SGD)
 ```
 
-If we take a look at our results, we can see that it predicted with a **90.5%** accuracy:
+If we take a look at our results, we can see that it predicted with an **80.5%** accuracy:
+
+##### **Output**
+
+FIGURE12
+
+##### **Output**
+
+TABLE11
 
 ##### Output
 ```
-0.905
+0.85
 ```
 
 ### 14. Gradient Boosting
-Gradient Boosting (*GBM*) is a machine learning technique used in regression and classification tasks to create a stronger model by using an ensemble of weaker models. The objective of Gradient Boosting classifiers is to minimize the loss, or the difference between the actual class value of the training example and the predicted class value. As with other classifiers, GBM depends on a loss function, which can be customized to improve performance.
+**Gradient Boosting** (*GBM*) is a machine learning technique used in regression and classification tasks to create a stronger model by using an ensemble of weaker models. The objective of Gradient Boosting classifiers is to minimize the loss, or the difference between the actual class value of the training example and the predicted class value. As with other classifiers, GBM depends on a loss function, which can be customized to improve performance.
 
 Gradient Boosting Classifiers consist of three main parts:
 - The weak model, usually a Decision Tree
@@ -1364,13 +1450,21 @@ print(score_GBC)
 
 If we take a look at our results, we can see that it predicted with a **100%** accuracy:
 
+##### **Output**
+
+FIGURE13
+
+##### **Output**
+
+TABLE12
+
 ##### Output
 ```
 1.0
 ```
 
 ### 15. Extreme Gradient Boosting
-Extreme Gradient Boosting (*XGBoost*) is a more regularized form of the previous Gradient Boosting technique. This means that it controls overfitting better, resulting in better performance; as opposed to GBM, XGBoost uses advanced regularization (*L1 & L2*), which improves model generalization capabilities. It also has faster training capabilities and can be parallelized across clusters, reducing training times.
+**Extreme Gradient Boosting** (*XGBoost*) is a more regularized form of the previous Gradient Boosting technique. This means that it controls overfitting better, resulting in better performance; as opposed to GBM, XGBoost uses advanced regularization (*L1 & L2*), which improves model generalization capabilities. It also has faster training capabilities and can be parallelized across clusters, reducing training times.
 
 Some other differences of XGBoost over GBM are:
 - The use of sparse matrices with sparsity aware algorithms.
@@ -1434,13 +1528,21 @@ print(score_XGBC)
 
 If we take a look at our results, we can see that it predicted with a **100%** accuracy:
 
+##### **Output**
+
+FIGURE14
+
+##### **Output**
+
+TABLE13
+
 ##### Output
 ```
 1.0
 ```
 
 ### 16. Deep Neural Networks
-A Deep Neural Network is simply a Neural Network containing at least two interconnected layers of neurons. Its functioning as well as the theory behind them are somewhat different to what we've seen so far. Also, they belong to a different branch of Artificial Intelligence called [Deep Learning](https://www.mathworks.com/discovery/deep-learning.html), which is itself a subgroup of [Neural Networks](https://www.ibm.com/topics/neural-networks). The model that would assimilate more (*in a sense*) would be Decision Trees, although even they process data differently.
+**Deep Neural Networks** are simply Neural Networks containing at least two interconnected layers of neurons. Its functioning as well as the theory behind them are somewhat different to what we've seen so far. Also, they belong to a different branch of Artificial Intelligence called [Deep Learning](https://www.mathworks.com/discovery/deep-learning.html), which is itself a subgroup of [Neural Networks](https://www.ibm.com/topics/neural-networks). The model that would assimilate more (*in a sense*) would be Decision Trees, although even they process data differently.
 
 Neural Networks were created based on how actual neurons work (*in a very general way*); they are comprised of node layers containing an input layer, one or more hidden layers, and an output layer. Each node connects to another and has an associated weight and threshold. These parameters are what define the signal intensity from one neuron to another; if the output of a given individual node is above the specified threshold value, that node is activated, sending a signal to the next layer of the network, else, the signal doesn't pass through.
 
@@ -1568,305 +1670,305 @@ DNN_Fit = DNN.fit(df_x, df_y_D, epochs = 150, validation_split = 0.3)
 ##### **Output**
 ```
 Epoch 1/150
-22/22 [==============================] - 0s 6ms/step - loss: 1.3269 - accuracy: 0.3643 - val_loss: 1.1804 - val_accuracy: 0.4033
+22/22 [==============================] - 0s 6ms/step - loss: 1.1964 - accuracy: 0.3643 - val_loss: 0.9955 - val_accuracy: 0.3967
 Epoch 2/150
-22/22 [==============================] - 0s 2ms/step - loss: 1.1279 - accuracy: 0.3957 - val_loss: 1.0665 - val_accuracy: 0.4367
+22/22 [==============================] - 0s 2ms/step - loss: 1.0430 - accuracy: 0.3871 - val_loss: 0.9412 - val_accuracy: 0.4600
 Epoch 3/150
-22/22 [==============================] - 0s 2ms/step - loss: 1.0480 - accuracy: 0.4357 - val_loss: 1.0114 - val_accuracy: 0.4700
+22/22 [==============================] - 0s 2ms/step - loss: 0.9726 - accuracy: 0.4986 - val_loss: 0.9127 - val_accuracy: 0.5367
 Epoch 4/150
-22/22 [==============================] - 0s 2ms/step - loss: 1.0003 - accuracy: 0.4514 - val_loss: 0.9586 - val_accuracy: 0.4233
+22/22 [==============================] - 0s 2ms/step - loss: 0.9428 - accuracy: 0.5214 - val_loss: 0.8785 - val_accuracy: 0.5733
 Epoch 5/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.9571 - accuracy: 0.5271 - val_loss: 0.8948 - val_accuracy: 0.7167
+22/22 [==============================] - 0s 2ms/step - loss: 0.8994 - accuracy: 0.5729 - val_loss: 0.8400 - val_accuracy: 0.5833
 Epoch 6/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.8857 - accuracy: 0.6414 - val_loss: 0.8201 - val_accuracy: 0.6367
+22/22 [==============================] - 0s 2ms/step - loss: 0.8901 - accuracy: 0.5843 - val_loss: 0.8042 - val_accuracy: 0.6400
 Epoch 7/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.8307 - accuracy: 0.6071 - val_loss: 0.7594 - val_accuracy: 0.6300
+22/22 [==============================] - 0s 2ms/step - loss: 0.8438 - accuracy: 0.6057 - val_loss: 0.7630 - val_accuracy: 0.6500
 Epoch 8/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.7781 - accuracy: 0.6443 - val_loss: 0.6931 - val_accuracy: 0.7200
+22/22 [==============================] - 0s 2ms/step - loss: 0.8136 - accuracy: 0.6471 - val_loss: 0.7340 - val_accuracy: 0.6800
 Epoch 9/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.7272 - accuracy: 0.6643 - val_loss: 0.6362 - val_accuracy: 0.7367
+22/22 [==============================] - 0s 2ms/step - loss: 0.7942 - accuracy: 0.6271 - val_loss: 0.7032 - val_accuracy: 0.7200
 Epoch 10/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.6683 - accuracy: 0.7057 - val_loss: 0.5889 - val_accuracy: 0.7367
+22/22 [==============================] - 0s 2ms/step - loss: 0.7768 - accuracy: 0.6457 - val_loss: 0.6817 - val_accuracy: 0.7067
 Epoch 11/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.6249 - accuracy: 0.7471 - val_loss: 0.5391 - val_accuracy: 0.8467
+22/22 [==============================] - 0s 2ms/step - loss: 0.7246 - accuracy: 0.6871 - val_loss: 0.6524 - val_accuracy: 0.7600
 Epoch 12/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.5764 - accuracy: 0.7800 - val_loss: 0.4978 - val_accuracy: 0.8267
+22/22 [==============================] - 0s 2ms/step - loss: 0.7206 - accuracy: 0.7086 - val_loss: 0.6272 - val_accuracy: 0.7367
 Epoch 13/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.5556 - accuracy: 0.7914 - val_loss: 0.4609 - val_accuracy: 0.8600
+22/22 [==============================] - 0s 2ms/step - loss: 0.6841 - accuracy: 0.7086 - val_loss: 0.6084 - val_accuracy: 0.7700
 Epoch 14/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.4973 - accuracy: 0.8271 - val_loss: 0.4248 - val_accuracy: 0.8267
+22/22 [==============================] - 0s 2ms/step - loss: 0.6706 - accuracy: 0.7171 - val_loss: 0.5760 - val_accuracy: 0.7967
 Epoch 15/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.4708 - accuracy: 0.8000 - val_loss: 0.3859 - val_accuracy: 0.8267
+22/22 [==============================] - 0s 2ms/step - loss: 0.6454 - accuracy: 0.7371 - val_loss: 0.5556 - val_accuracy: 0.8200
 Epoch 16/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.4336 - accuracy: 0.8100 - val_loss: 0.3528 - val_accuracy: 0.8267
+22/22 [==============================] - 0s 2ms/step - loss: 0.6189 - accuracy: 0.7371 - val_loss: 0.5415 - val_accuracy: 0.7967
 Epoch 17/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.4099 - accuracy: 0.8271 - val_loss: 0.3288 - val_accuracy: 0.8467
+22/22 [==============================] - 0s 2ms/step - loss: 0.6040 - accuracy: 0.7500 - val_loss: 0.5121 - val_accuracy: 0.7567
 Epoch 18/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.3881 - accuracy: 0.8486 - val_loss: 0.3014 - val_accuracy: 0.8767
+22/22 [==============================] - 0s 2ms/step - loss: 0.5769 - accuracy: 0.7586 - val_loss: 0.4923 - val_accuracy: 0.8133
 Epoch 19/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.3664 - accuracy: 0.8500 - val_loss: 0.2831 - val_accuracy: 0.8667
+22/22 [==============================] - 0s 2ms/step - loss: 0.5599 - accuracy: 0.7643 - val_loss: 0.4731 - val_accuracy: 0.7833
 Epoch 20/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.3305 - accuracy: 0.8586 - val_loss: 0.2621 - val_accuracy: 0.8967
+22/22 [==============================] - 0s 2ms/step - loss: 0.5339 - accuracy: 0.7757 - val_loss: 0.4536 - val_accuracy: 0.8133
 Epoch 21/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.3112 - accuracy: 0.8829 - val_loss: 0.2456 - val_accuracy: 0.9000
+22/22 [==============================] - 0s 2ms/step - loss: 0.5142 - accuracy: 0.7814 - val_loss: 0.4372 - val_accuracy: 0.8300
 Epoch 22/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.3110 - accuracy: 0.8700 - val_loss: 0.2340 - val_accuracy: 0.9000
+22/22 [==============================] - 0s 2ms/step - loss: 0.5214 - accuracy: 0.7929 - val_loss: 0.4202 - val_accuracy: 0.8767
 Epoch 23/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2728 - accuracy: 0.8871 - val_loss: 0.2196 - val_accuracy: 0.9000
+22/22 [==============================] - 0s 2ms/step - loss: 0.4892 - accuracy: 0.7957 - val_loss: 0.4068 - val_accuracy: 0.7800
 Epoch 24/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2628 - accuracy: 0.9000 - val_loss: 0.2122 - val_accuracy: 0.9000
+22/22 [==============================] - 0s 2ms/step - loss: 0.4669 - accuracy: 0.8071 - val_loss: 0.3943 - val_accuracy: 0.8533
 Epoch 25/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2495 - accuracy: 0.8986 - val_loss: 0.1986 - val_accuracy: 0.9067
+22/22 [==============================] - 0s 2ms/step - loss: 0.4572 - accuracy: 0.8243 - val_loss: 0.3826 - val_accuracy: 0.8400
 Epoch 26/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2574 - accuracy: 0.8914 - val_loss: 0.1865 - val_accuracy: 0.9000
+22/22 [==============================] - 0s 2ms/step - loss: 0.4411 - accuracy: 0.8171 - val_loss: 0.3701 - val_accuracy: 0.7900
 Epoch 27/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2327 - accuracy: 0.8986 - val_loss: 0.1759 - val_accuracy: 0.9067
+22/22 [==============================] - 0s 2ms/step - loss: 0.4304 - accuracy: 0.8314 - val_loss: 0.3587 - val_accuracy: 0.8400
 Epoch 28/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2183 - accuracy: 0.9143 - val_loss: 0.1662 - val_accuracy: 0.9067
+22/22 [==============================] - 0s 2ms/step - loss: 0.4302 - accuracy: 0.8343 - val_loss: 0.3470 - val_accuracy: 0.9033
 Epoch 29/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2102 - accuracy: 0.9086 - val_loss: 0.1666 - val_accuracy: 0.9300
+22/22 [==============================] - 0s 2ms/step - loss: 0.4032 - accuracy: 0.8643 - val_loss: 0.3367 - val_accuracy: 0.9033
 Epoch 30/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.2030 - accuracy: 0.9186 - val_loss: 0.1500 - val_accuracy: 0.9533
+22/22 [==============================] - 0s 2ms/step - loss: 0.4106 - accuracy: 0.8471 - val_loss: 0.3283 - val_accuracy: 0.8533
 Epoch 31/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1947 - accuracy: 0.9271 - val_loss: 0.1381 - val_accuracy: 0.9533
+22/22 [==============================] - 0s 2ms/step - loss: 0.3970 - accuracy: 0.8543 - val_loss: 0.3197 - val_accuracy: 0.8933
 Epoch 32/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1783 - accuracy: 0.9314 - val_loss: 0.1294 - val_accuracy: 0.9533
+22/22 [==============================] - 0s 2ms/step - loss: 0.3964 - accuracy: 0.8414 - val_loss: 0.3114 - val_accuracy: 0.8933
 Epoch 33/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1817 - accuracy: 0.9257 - val_loss: 0.1189 - val_accuracy: 0.9833
+22/22 [==============================] - 0s 2ms/step - loss: 0.3795 - accuracy: 0.8614 - val_loss: 0.2986 - val_accuracy: 0.9300
 Epoch 34/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1620 - accuracy: 0.9514 - val_loss: 0.1201 - val_accuracy: 0.9833
+22/22 [==============================] - 0s 2ms/step - loss: 0.3663 - accuracy: 0.8800 - val_loss: 0.2885 - val_accuracy: 0.9300
 Epoch 35/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1648 - accuracy: 0.9500 - val_loss: 0.1146 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.3590 - accuracy: 0.8786 - val_loss: 0.2829 - val_accuracy: 0.8933
 Epoch 36/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1481 - accuracy: 0.9586 - val_loss: 0.1028 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.3729 - accuracy: 0.8671 - val_loss: 0.2737 - val_accuracy: 0.9300
 Epoch 37/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1669 - accuracy: 0.9543 - val_loss: 0.0932 - val_accuracy: 0.9833
+22/22 [==============================] - 0s 2ms/step - loss: 0.3536 - accuracy: 0.8614 - val_loss: 0.2659 - val_accuracy: 0.9300
 Epoch 38/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1263 - accuracy: 0.9771 - val_loss: 0.0851 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.3436 - accuracy: 0.8700 - val_loss: 0.2655 - val_accuracy: 0.9033
 Epoch 39/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1379 - accuracy: 0.9600 - val_loss: 0.0799 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.3260 - accuracy: 0.8829 - val_loss: 0.2550 - val_accuracy: 0.9300
 Epoch 40/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1250 - accuracy: 0.9571 - val_loss: 0.0779 - val_accuracy: 0.9833
+22/22 [==============================] - 0s 2ms/step - loss: 0.3210 - accuracy: 0.9000 - val_loss: 0.2519 - val_accuracy: 0.9300
 Epoch 41/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1099 - accuracy: 0.9786 - val_loss: 0.0719 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.3401 - accuracy: 0.8714 - val_loss: 0.2525 - val_accuracy: 0.8633
 Epoch 42/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1331 - accuracy: 0.9614 - val_loss: 0.0724 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.2945 - accuracy: 0.8957 - val_loss: 0.2467 - val_accuracy: 0.8633
 Epoch 43/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1310 - accuracy: 0.9671 - val_loss: 0.0661 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.3014 - accuracy: 0.8900 - val_loss: 0.2291 - val_accuracy: 0.9400
 Epoch 44/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1210 - accuracy: 0.9671 - val_loss: 0.0630 - val_accuracy: 0.9933
+22/22 [==============================] - 0s 2ms/step - loss: 0.2970 - accuracy: 0.8914 - val_loss: 0.2270 - val_accuracy: 0.9600
 Epoch 45/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0987 - accuracy: 0.9700 - val_loss: 0.0575 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2764 - accuracy: 0.9029 - val_loss: 0.2181 - val_accuracy: 0.9600
 Epoch 46/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.1037 - accuracy: 0.9743 - val_loss: 0.0545 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2774 - accuracy: 0.9171 - val_loss: 0.2132 - val_accuracy: 0.9600
 Epoch 47/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0807 - accuracy: 0.9857 - val_loss: 0.0491 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2787 - accuracy: 0.9071 - val_loss: 0.2091 - val_accuracy: 0.9600
 Epoch 48/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0886 - accuracy: 0.9829 - val_loss: 0.0449 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2893 - accuracy: 0.8971 - val_loss: 0.2058 - val_accuracy: 0.9600
 Epoch 49/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0938 - accuracy: 0.9771 - val_loss: 0.0422 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2826 - accuracy: 0.8986 - val_loss: 0.2049 - val_accuracy: 0.9600
 Epoch 50/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0836 - accuracy: 0.9871 - val_loss: 0.0376 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2684 - accuracy: 0.9043 - val_loss: 0.1988 - val_accuracy: 0.9600
 Epoch 51/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0936 - accuracy: 0.9757 - val_loss: 0.0382 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2594 - accuracy: 0.9186 - val_loss: 0.1996 - val_accuracy: 0.9600
 Epoch 52/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0825 - accuracy: 0.9800 - val_loss: 0.0348 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2597 - accuracy: 0.9157 - val_loss: 0.1939 - val_accuracy: 0.9600
 Epoch 53/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0798 - accuracy: 0.9814 - val_loss: 0.0380 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2674 - accuracy: 0.9086 - val_loss: 0.1891 - val_accuracy: 0.9600
 Epoch 54/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0900 - accuracy: 0.9743 - val_loss: 0.0300 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2608 - accuracy: 0.9129 - val_loss: 0.1852 - val_accuracy: 0.9600
 Epoch 55/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0701 - accuracy: 0.9871 - val_loss: 0.0297 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2460 - accuracy: 0.9143 - val_loss: 0.1840 - val_accuracy: 0.9600
 Epoch 56/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0673 - accuracy: 0.9814 - val_loss: 0.0290 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2544 - accuracy: 0.9186 - val_loss: 0.1809 - val_accuracy: 0.9600
 Epoch 57/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0673 - accuracy: 0.9900 - val_loss: 0.0258 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2419 - accuracy: 0.9200 - val_loss: 0.1799 - val_accuracy: 0.9600
 Epoch 58/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0543 - accuracy: 0.9900 - val_loss: 0.0248 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2395 - accuracy: 0.9086 - val_loss: 0.1761 - val_accuracy: 0.9600
 Epoch 59/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0619 - accuracy: 0.9857 - val_loss: 0.0218 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2383 - accuracy: 0.9114 - val_loss: 0.1728 - val_accuracy: 0.9600
 Epoch 60/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0655 - accuracy: 0.9829 - val_loss: 0.0212 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2389 - accuracy: 0.9114 - val_loss: 0.1691 - val_accuracy: 0.9600
 Epoch 61/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0589 - accuracy: 0.9871 - val_loss: 0.0209 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2411 - accuracy: 0.9171 - val_loss: 0.1680 - val_accuracy: 0.9600
 Epoch 62/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0598 - accuracy: 0.9871 - val_loss: 0.0192 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2472 - accuracy: 0.9071 - val_loss: 0.1678 - val_accuracy: 0.9600
 Epoch 63/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0509 - accuracy: 0.9900 - val_loss: 0.0193 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2140 - accuracy: 0.9229 - val_loss: 0.1699 - val_accuracy: 0.9600
 Epoch 64/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0370 - accuracy: 0.9943 - val_loss: 0.0178 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2362 - accuracy: 0.9129 - val_loss: 0.1635 - val_accuracy: 0.9600
 Epoch 65/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0395 - accuracy: 0.9929 - val_loss: 0.0159 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2199 - accuracy: 0.9314 - val_loss: 0.1638 - val_accuracy: 0.9700
 Epoch 66/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0429 - accuracy: 0.9914 - val_loss: 0.0150 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2270 - accuracy: 0.9200 - val_loss: 0.1539 - val_accuracy: 0.9700
 Epoch 67/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0418 - accuracy: 0.9943 - val_loss: 0.0143 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2263 - accuracy: 0.9243 - val_loss: 0.1531 - val_accuracy: 0.9600
 Epoch 68/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0369 - accuracy: 0.9957 - val_loss: 0.0160 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2363 - accuracy: 0.9071 - val_loss: 0.1525 - val_accuracy: 0.9600
 Epoch 69/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0527 - accuracy: 0.9900 - val_loss: 0.0122 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2056 - accuracy: 0.9329 - val_loss: 0.1476 - val_accuracy: 0.9700
 Epoch 70/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0333 - accuracy: 0.9943 - val_loss: 0.0122 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2016 - accuracy: 0.9343 - val_loss: 0.1443 - val_accuracy: 0.9700
 Epoch 71/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0517 - accuracy: 0.9914 - val_loss: 0.0125 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2262 - accuracy: 0.9243 - val_loss: 0.1434 - val_accuracy: 0.9600
 Epoch 72/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0481 - accuracy: 0.9900 - val_loss: 0.0152 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2043 - accuracy: 0.9371 - val_loss: 0.1485 - val_accuracy: 0.9600
 Epoch 73/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0390 - accuracy: 0.9900 - val_loss: 0.0106 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2023 - accuracy: 0.9329 - val_loss: 0.1361 - val_accuracy: 0.9600
 Epoch 74/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0280 - accuracy: 0.9957 - val_loss: 0.0103 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.2071 - accuracy: 0.9171 - val_loss: 0.1358 - val_accuracy: 0.9600
 Epoch 75/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0445 - accuracy: 0.9871 - val_loss: 0.0099 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1905 - accuracy: 0.9286 - val_loss: 0.1285 - val_accuracy: 0.9700
 Epoch 76/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0323 - accuracy: 0.9943 - val_loss: 0.0094 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1780 - accuracy: 0.9286 - val_loss: 0.1301 - val_accuracy: 0.9867
 Epoch 77/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0442 - accuracy: 0.9871 - val_loss: 0.0093 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1859 - accuracy: 0.9443 - val_loss: 0.1224 - val_accuracy: 0.9867
 Epoch 78/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0266 - accuracy: 0.9957 - val_loss: 0.0085 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1764 - accuracy: 0.9371 - val_loss: 0.1251 - val_accuracy: 0.9867
 Epoch 79/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0409 - accuracy: 0.9929 - val_loss: 0.0108 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1901 - accuracy: 0.9357 - val_loss: 0.1146 - val_accuracy: 0.9867
 Epoch 80/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0423 - accuracy: 0.9857 - val_loss: 0.0100 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1672 - accuracy: 0.9500 - val_loss: 0.1103 - val_accuracy: 0.9867
 Epoch 81/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0262 - accuracy: 0.9943 - val_loss: 0.0080 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1693 - accuracy: 0.9414 - val_loss: 0.1093 - val_accuracy: 0.9867
 Epoch 82/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0406 - accuracy: 0.9900 - val_loss: 0.0078 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1764 - accuracy: 0.9429 - val_loss: 0.1065 - val_accuracy: 0.9867
 Epoch 83/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0330 - accuracy: 0.9929 - val_loss: 0.0079 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1694 - accuracy: 0.9486 - val_loss: 0.1038 - val_accuracy: 0.9867
 Epoch 84/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0308 - accuracy: 0.9957 - val_loss: 0.0071 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1666 - accuracy: 0.9529 - val_loss: 0.1140 - val_accuracy: 0.9467
 Epoch 85/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0242 - accuracy: 0.9943 - val_loss: 0.0069 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1829 - accuracy: 0.9400 - val_loss: 0.0973 - val_accuracy: 0.9867
 Epoch 86/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0335 - accuracy: 0.9900 - val_loss: 0.0066 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1432 - accuracy: 0.9614 - val_loss: 0.0950 - val_accuracy: 0.9867
 Epoch 87/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0318 - accuracy: 0.9914 - val_loss: 0.0074 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1502 - accuracy: 0.9614 - val_loss: 0.0924 - val_accuracy: 0.9867
 Epoch 88/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0254 - accuracy: 0.9929 - val_loss: 0.0062 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1630 - accuracy: 0.9386 - val_loss: 0.0934 - val_accuracy: 0.9867
 Epoch 89/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0304 - accuracy: 0.9943 - val_loss: 0.0067 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1558 - accuracy: 0.9471 - val_loss: 0.0943 - val_accuracy: 0.9633
 Epoch 90/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0210 - accuracy: 0.9957 - val_loss: 0.0056 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1529 - accuracy: 0.9543 - val_loss: 0.0856 - val_accuracy: 0.9867
 Epoch 91/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0188 - accuracy: 0.9986 - val_loss: 0.0051 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1563 - accuracy: 0.9514 - val_loss: 0.0852 - val_accuracy: 0.9867
 Epoch 92/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0213 - accuracy: 0.9957 - val_loss: 0.0051 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1481 - accuracy: 0.9600 - val_loss: 0.0828 - val_accuracy: 0.9933
 Epoch 93/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0150 - accuracy: 1.0000 - val_loss: 0.0048 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1333 - accuracy: 0.9643 - val_loss: 0.0829 - val_accuracy: 0.9867
 Epoch 94/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0317 - accuracy: 0.9914 - val_loss: 0.0052 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1366 - accuracy: 0.9643 - val_loss: 0.0793 - val_accuracy: 0.9933
 Epoch 95/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0370 - accuracy: 0.9957 - val_loss: 0.0050 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1353 - accuracy: 0.9629 - val_loss: 0.0823 - val_accuracy: 0.9767
 Epoch 96/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0227 - accuracy: 0.9986 - val_loss: 0.0050 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1273 - accuracy: 0.9671 - val_loss: 0.0776 - val_accuracy: 0.9867
 Epoch 97/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0269 - accuracy: 0.9900 - val_loss: 0.0049 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1388 - accuracy: 0.9500 - val_loss: 0.0755 - val_accuracy: 0.9933
 Epoch 98/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0316 - accuracy: 0.9886 - val_loss: 0.0045 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1349 - accuracy: 0.9657 - val_loss: 0.0733 - val_accuracy: 0.9867
 Epoch 99/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0265 - accuracy: 0.9957 - val_loss: 0.0044 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1198 - accuracy: 0.9600 - val_loss: 0.0702 - val_accuracy: 0.9933
 Epoch 100/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0207 - accuracy: 0.9986 - val_loss: 0.0039 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1276 - accuracy: 0.9657 - val_loss: 0.0687 - val_accuracy: 0.9867
 Epoch 101/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0192 - accuracy: 0.9971 - val_loss: 0.0038 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1298 - accuracy: 0.9629 - val_loss: 0.0701 - val_accuracy: 0.9867
 Epoch 102/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0199 - accuracy: 0.9957 - val_loss: 0.0038 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1092 - accuracy: 0.9686 - val_loss: 0.0734 - val_accuracy: 0.9933
 Epoch 103/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0215 - accuracy: 0.9943 - val_loss: 0.0036 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1232 - accuracy: 0.9614 - val_loss: 0.0729 - val_accuracy: 0.9867
 Epoch 104/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0161 - accuracy: 0.9986 - val_loss: 0.0036 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1154 - accuracy: 0.9714 - val_loss: 0.0661 - val_accuracy: 0.9933
 Epoch 105/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0269 - accuracy: 0.9929 - val_loss: 0.0069 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1138 - accuracy: 0.9700 - val_loss: 0.0609 - val_accuracy: 0.9933
 Epoch 106/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0283 - accuracy: 0.9914 - val_loss: 0.0035 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1202 - accuracy: 0.9643 - val_loss: 0.0633 - val_accuracy: 0.9867
 Epoch 107/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0169 - accuracy: 0.9986 - val_loss: 0.0038 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1128 - accuracy: 0.9657 - val_loss: 0.0599 - val_accuracy: 0.9933
 Epoch 108/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0232 - accuracy: 0.9943 - val_loss: 0.0034 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1131 - accuracy: 0.9743 - val_loss: 0.0583 - val_accuracy: 0.9867
 Epoch 109/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0344 - accuracy: 0.9900 - val_loss: 0.0035 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1015 - accuracy: 0.9686 - val_loss: 0.0574 - val_accuracy: 0.9933
 Epoch 110/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0167 - accuracy: 0.9971 - val_loss: 0.0035 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1164 - accuracy: 0.9671 - val_loss: 0.0597 - val_accuracy: 0.9867
 Epoch 111/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0144 - accuracy: 0.9971 - val_loss: 0.0029 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1072 - accuracy: 0.9671 - val_loss: 0.0575 - val_accuracy: 0.9933
 Epoch 112/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0118 - accuracy: 1.0000 - val_loss: 0.0028 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1007 - accuracy: 0.9729 - val_loss: 0.0568 - val_accuracy: 0.9933
 Epoch 113/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0169 - accuracy: 0.9943 - val_loss: 0.0026 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1103 - accuracy: 0.9729 - val_loss: 0.0520 - val_accuracy: 0.9933
 Epoch 114/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0165 - accuracy: 0.9943 - val_loss: 0.0026 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1025 - accuracy: 0.9729 - val_loss: 0.0529 - val_accuracy: 0.9933
 Epoch 115/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0215 - accuracy: 0.9957 - val_loss: 0.0026 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0866 - accuracy: 0.9729 - val_loss: 0.0530 - val_accuracy: 0.9933
 Epoch 116/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0221 - accuracy: 0.9957 - val_loss: 0.0026 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0949 - accuracy: 0.9714 - val_loss: 0.0555 - val_accuracy: 0.9933
 Epoch 117/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0190 - accuracy: 0.9886 - val_loss: 0.0030 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0967 - accuracy: 0.9686 - val_loss: 0.0474 - val_accuracy: 0.9933
 Epoch 118/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0158 - accuracy: 0.9971 - val_loss: 0.0025 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1023 - accuracy: 0.9714 - val_loss: 0.0479 - val_accuracy: 0.9933
 Epoch 119/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0147 - accuracy: 0.9957 - val_loss: 0.0026 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1047 - accuracy: 0.9729 - val_loss: 0.0473 - val_accuracy: 0.9933
 Epoch 120/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0121 - accuracy: 0.9986 - val_loss: 0.0038 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1154 - accuracy: 0.9643 - val_loss: 0.0603 - val_accuracy: 0.9933
 Epoch 121/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0157 - accuracy: 0.9971 - val_loss: 0.0034 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1046 - accuracy: 0.9657 - val_loss: 0.0505 - val_accuracy: 0.9867
 Epoch 122/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0164 - accuracy: 0.9971 - val_loss: 0.0022 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.1065 - accuracy: 0.9643 - val_loss: 0.0467 - val_accuracy: 0.9933
 Epoch 123/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0140 - accuracy: 0.9957 - val_loss: 0.0022 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0988 - accuracy: 0.9700 - val_loss: 0.0442 - val_accuracy: 0.9933
 Epoch 124/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0203 - accuracy: 0.9914 - val_loss: 0.0021 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0812 - accuracy: 0.9757 - val_loss: 0.0436 - val_accuracy: 0.9933
 Epoch 125/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0118 - accuracy: 1.0000 - val_loss: 0.0020 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0962 - accuracy: 0.9743 - val_loss: 0.0469 - val_accuracy: 0.9933
 Epoch 126/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0131 - accuracy: 0.9971 - val_loss: 0.0035 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0841 - accuracy: 0.9786 - val_loss: 0.0421 - val_accuracy: 0.9933
 Epoch 127/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0100 - accuracy: 1.0000 - val_loss: 0.0017 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0951 - accuracy: 0.9757 - val_loss: 0.0420 - val_accuracy: 0.9933
 Epoch 128/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0199 - accuracy: 0.9943 - val_loss: 0.0020 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0892 - accuracy: 0.9743 - val_loss: 0.0397 - val_accuracy: 0.9933
 Epoch 129/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0162 - accuracy: 0.9971 - val_loss: 0.0020 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0760 - accuracy: 0.9771 - val_loss: 0.0381 - val_accuracy: 0.9933
 Epoch 130/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0109 - accuracy: 0.9971 - val_loss: 0.0019 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0781 - accuracy: 0.9771 - val_loss: 0.0368 - val_accuracy: 0.9933
 Epoch 131/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0100 - accuracy: 0.9986 - val_loss: 0.0017 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0854 - accuracy: 0.9714 - val_loss: 0.0428 - val_accuracy: 0.9933
 Epoch 132/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0130 - accuracy: 0.9943 - val_loss: 0.0016 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0747 - accuracy: 0.9729 - val_loss: 0.0336 - val_accuracy: 0.9933
 Epoch 133/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0146 - accuracy: 0.9971 - val_loss: 0.0018 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0740 - accuracy: 0.9771 - val_loss: 0.0336 - val_accuracy: 0.9933
 Epoch 134/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0193 - accuracy: 0.9943 - val_loss: 0.0014 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0872 - accuracy: 0.9771 - val_loss: 0.0348 - val_accuracy: 0.9933
 Epoch 135/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0111 - accuracy: 0.9986 - val_loss: 0.0016 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0750 - accuracy: 0.9814 - val_loss: 0.0321 - val_accuracy: 0.9933
 Epoch 136/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0190 - accuracy: 0.9943 - val_loss: 0.0021 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0722 - accuracy: 0.9771 - val_loss: 0.0327 - val_accuracy: 0.9933
 Epoch 137/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0103 - accuracy: 0.9971 - val_loss: 0.0016 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0807 - accuracy: 0.9757 - val_loss: 0.0353 - val_accuracy: 0.9933
 Epoch 138/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0174 - accuracy: 0.9929 - val_loss: 0.0014 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0762 - accuracy: 0.9786 - val_loss: 0.0322 - val_accuracy: 0.9933
 Epoch 139/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0122 - accuracy: 0.9971 - val_loss: 0.0014 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0699 - accuracy: 0.9771 - val_loss: 0.0303 - val_accuracy: 0.9933
 Epoch 140/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0123 - accuracy: 0.9957 - val_loss: 0.0013 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0627 - accuracy: 0.9829 - val_loss: 0.0282 - val_accuracy: 0.9933
 Epoch 141/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0138 - accuracy: 0.9943 - val_loss: 0.0014 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0784 - accuracy: 0.9757 - val_loss: 0.0272 - val_accuracy: 0.9933
 Epoch 142/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0121 - accuracy: 0.9986 - val_loss: 0.0013 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0748 - accuracy: 0.9800 - val_loss: 0.0289 - val_accuracy: 0.9933
 Epoch 143/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0102 - accuracy: 0.9986 - val_loss: 0.0011 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0770 - accuracy: 0.9757 - val_loss: 0.0271 - val_accuracy: 0.9933
 Epoch 144/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0081 - accuracy: 1.0000 - val_loss: 0.0011 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0629 - accuracy: 0.9800 - val_loss: 0.0276 - val_accuracy: 0.9933
 Epoch 145/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0116 - accuracy: 0.9971 - val_loss: 0.0012 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0634 - accuracy: 0.9800 - val_loss: 0.0260 - val_accuracy: 0.9933
 Epoch 146/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0105 - accuracy: 0.9971 - val_loss: 0.0011 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0799 - accuracy: 0.9743 - val_loss: 0.0279 - val_accuracy: 0.9933
 Epoch 147/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0074 - accuracy: 0.9986 - val_loss: 0.0012 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0723 - accuracy: 0.9771 - val_loss: 0.0252 - val_accuracy: 0.9933
 Epoch 148/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0122 - accuracy: 0.9957 - val_loss: 9.7937e-04 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0556 - accuracy: 0.9800 - val_loss: 0.0235 - val_accuracy: 0.9933
 Epoch 149/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0118 - accuracy: 0.9986 - val_loss: 0.0010 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0525 - accuracy: 0.9857 - val_loss: 0.0235 - val_accuracy: 0.9933
 Epoch 150/150
-22/22 [==============================] - 0s 2ms/step - loss: 0.0081 - accuracy: 0.9986 - val_loss: 9.0221e-04 - val_accuracy: 1.0000
+22/22 [==============================] - 0s 2ms/step - loss: 0.0597 - accuracy: 0.9800 - val_loss: 0.0225 - val_accuracy: 0.9933
 ```
 
 This output shows us each epoch, the training accuracy achieved, the validation accuracy achieved, and the loss for each step. Here we can see that 150 epochs was barely enough for our model to achieve a training accuracy of 100%. We can also see that in the beginning, our accuracy increases in a higher rate; this makes sense since the gradient for the first epochs is bigger, as we'll confirm shortly using visualization methods.
@@ -1899,6 +2001,26 @@ _________________________________________________________________
 
 We can visualize the 5 layers we specified previously, their shape, the number of parameters (*inputs*) for each layer and the total number of trainable parameters.
 
+We will save this summary as a DataFrame object so we can export ir later and add it to our client's report:
+
+##### **Code**
+```Python
+# Convert model summary to DataFrame object
+stringlist = []
+DNN.summary(print_fn=lambda x: stringlist.append(x))
+summ_string = "\n".join(stringlist)
+print(summ_string)
+
+table = stringlist[1:-4][1::2]
+
+new_table = []
+for entry in table:
+    entry = re.split(r'\s{2,}', entry)[:-1]
+    new_table.append(entry)
+
+DNN_summary = pd.DataFrame(new_table[1:], columns=new_table[0])
+```
+
 We can also create two plots that will help us visualize how our model performed. The first one will plot epochs on the $x$ axis and training accuracy & validation accuracy on the $y$ axis. The second one will plot epochs on the $x$ axis and training & validation loss on the $y$ axis:
 
 ##### **Code**
@@ -1928,14 +2050,179 @@ plt.close()
 
 ##### **Output**
 
-IMAGE
-IMAGE
+FIGURE14
+FIGURE15
 
+Finally, we will perform a k-fold Cross-validation on our data. This methodology is used to estimate the model accuracy on new data; it splits our data into $k$ groups of samples, also called folds. The model is trained using $k-1$ of the folds as training data, and the resulting model is validated on the remaining part of the data.
 
-### 17. Method comparison
+To implement a K-Folds validation, we can use the `KFold` method from the `sklearn.model_selection` library. We will start with $k = 10$ folds and our original Dep Neural Network model, and see if the accuracy results are satisfactory:
+
+##### **Code**
+```Python
+# Define 10-fold cross validation test harness
+kfold = KFold(n_splits=10, shuffle=True)
+DNN_accuracy_scores = []
+DNN_loss = []
+for train, test in kfold.split(df_x, df_y_D):
+    # Create model
+    DNN = Sequential()
+    DNN.add(Dense(8, activation = "relu", input_dim = train_Sx.shape[1]))
+    DNN.add(Dense(16, activation = "relu"))
+    DNN.add(Dropout(0.1))
+    DNN.add(Dense(8, activation = "relu"))
+    DNN.add(Dense(3, activation = "softmax"))
+    DNN.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
+    # Fit the model
+    DNN.fit(df_x.iloc[train], df_y_D.iloc[train], epochs=150, verbose=0)
+    # Evaluate the model
+    scores = DNN.evaluate(df_x.iloc[test], df_y_D.iloc[test], verbose=0)
+    print(f'{DNN.metrics_names[0]}: {round(scores[0]*100, 2)}%')
+    print(f'{DNN.metrics_names[1]}: {round(scores[1]*100, 2)}%')
+    print('\n')
+    DNN_loss.append(scores[0])
+    DNN_accuracy_scores.append(scores[1])
+
+print(f'{round(np.mean(DNN_accuracy_scores),2)*100}%, +/-{round(np.std(DNN_accuracy_scores),2)*100}%')
+
+DNN_scores_df = pd.DataFrame(columns=['Accuracy', 'Loss'])
+DNN_scores_df['Accuracy'] = DNN_accuracy_scores
+DNN_scores_df['Loss'] = DNN_loss
+```
+
+##### **Output**
+```
+loss: 0.71%
+accuracy: 100.0%
+
+loss: 1.5%
+accuracy: 100.0%
+
+loss: 0.25%
+accuracy: 100.0%
+
+loss: 0.28%
+accuracy: 100.0%
+
+loss: 3.91%
+accuracy: 98.0%
+
+loss: 0.85%
+accuracy: 100.0%
+
+loss: 1.32%
+accuracy: 100.0%
+
+loss: 0.19%
+accuracy: 100.0%
+
+loss: 1.08%
+accuracy: 100.0%
+
+loss: 0.15%
+accuracy: 100.0%
+
+100.0%, +/-1.0%
+```
+
+The Cross-validation analysis gives us 2 different metrics for $k = 10$ number of folds:
+
+**Loss** is a value that represents the summation of errors in our model. It measures how well our model is doing. If the errors are high, the loss will be high. In contrast, the lower it is, the better our model works.
+
+**Accuracy** measures how well our model predicts by comparing the model predictions with the true values in terms of percentage.
+
+### 17. Results consolidation
+Now that we have all the results, we can consolidate them in an Excel sheet using the `xlsxwriter` engine:
+
+##### **Code**
+```Python
+# Create a DataFrame containing accuracy values
+acc_list = [score_MLogReg,
+            score_BLogReg,
+            score_DecTree,
+            score_RandomFor,
+            score_SVM,
+            score_SVMp,
+            score_SVMr,
+            score_KNN,
+            score_GNB,
+            score_BNB,
+            score_SGD,
+            score_GBC,
+            score_XGBC,
+            round(np.mean(DNN_accuracy_scores),2)
+            ]
+
+model_list = list(model_dictionary.keys())
+
+acc_df = pd.DataFrame(columns=['Model', 'Accuracy'])
+acc_df['Model'] = model_list
+acc_df['Accuracy'] = acc_list
+
+writer = pd.ExcelWriter('outputs/Model_Results.xlsx', engine = 'xlsxwriter')
+report_MLogReg.to_excel(writer, sheet_name = 'REP_MLOGREG')
+report_BLogReg.to_excel(writer, sheet_name = 'REP_BLOGREG')
+report_DecTree.to_excel(writer, sheet_name = 'REP_DECTREE')
+report_RandomFor.to_excel(writer, sheet_name = 'REP_RANDOMFOR')
+report_SVM.to_excel(writer, sheet_name = 'REP_SVMLIN')
+report_SVMp.to_excel(writer, sheet_name = 'REP_SVMPOL')
+report_SVMr.to_excel(writer, sheet_name = 'REP_SVMRAD')
+report_KNN.to_excel(writer, sheet_name = 'REP_KNN')
+report_GNB.to_excel(writer, sheet_name = 'REP_GNB')
+report_GBC.to_excel(writer, sheet_name = 'REP_GBC')
+report_XGBC.to_excel(writer, sheet_name = 'REP_XGBC')
+DNN_summary.to_excel(writer, sheet_name = 'SUM_DNN')
+DNN_scores_df.to_excel(writer, sheet_name = 'REP_DNN')
+acc_df.to_excel(writer, sheet_name = 'ACC_ALL')
+writer.close()
+```
+
+### 18. Method comparison
+If we look at our `Model_Results.xlsx` consolidate, we can see that 8 out of the 14 models we tested predicted the correct Lung Cancer severity level with **100%** accuracy. 2 of them presented **91%** accuracy, while the other 4 presented **88%**, **85%**, **78%** and **65%** accuracy respectively:
+
+| Model                                       | Accuracy |
+| ------------------------------------------- | -------- |
+| Multinomial Logistic Regressor              | 91%      |
+| Logistic Regressor                          | 91%      |
+| Decision Tree Classifier                    | 100%     |
+| Random Forest Classifier                    | 100%     |
+| Support Vector Classifier                   | 88%      |
+| Support Vector Classifier Polynomial Kernel | 100%     |
+| Support Vector Classifier Radial Kernel     | 100%     |
+| K-Nearest Neighbors Classifier              | 100%     |
+| Gaussian Naïve Bayes Classifier             | 65%      |
+| Bernoulli Naïve Bayes Classifier            | 78%      |
+| Stochastic Gradient Descent                 | 85%      |
+| Gradient Boosting Classifier                | 100%     |
+| Extreme Gradient Boosting Classifier        | 100%     |
+| Sequential Deep Neural Network              | 100%     |
+
+*Table 13. Prediction accuracies for all models* 
+
+The models which presented highest accuracy were:
+- Decision Tree Classifier
+- Random Forest Classifier 
+- Support Vector Classifier Polynomial Kernel
+- Support Vector Classifier Radial Kernel
+- K-Nearest Neighbors Classifier
+- Gradient Boosting Classifier
+- Extreme Gradient Boosting Classifier
+- Sequential Deep Neural Network
+
+While the models with the lowest prediction accuracy were:
+- Stochastic Gradient Descent
+- Bernoulli Naïve Bayes Classifier
+- Gaussian Naïve Bayes Classifier
+
+We can see that in general, the linear models presented lower accuracies, which makes sense since our data has presumably non-linear relationships. In general, most of the the non-linear models predicted with **100%** accuracy, further sustaining our hypothesis.
 
 ## Conclusions
+In this segment, we reviewed 13 different machine learning classification models. First, we performed a general overview of each model and explained the mathematical intuition behind each case. We then tested linear and non-linear implementations.
 
+We also trained and tested a Deep Neural Network model by using 5 layers. We performed a k-folds Cross validation on it, and saw that the accuracies were close to or 100%, meaning our implementation was capable of predicting on different random subsets of data.
+
+Finally, we compared the prediction accuracies for all of the models, and concluded that for our specific data set, there were 8 models which scored 100% prediction accuracy.
+
+On the [third and final segment](https://pabloagn.com/guided-projects/exploratory-data-analysis-pt-3/) of this Guided Project series, we will use everything that we've gathered so far to build a client deliverable using [LaTeX](https://pabloagn.com/technologies/latex/) and [Texmaker](https://pabloagn.com/technologies/texmaker/).
 
 ## References
 - [IBM, KNN](https://www.ibm.com/topics/knn)
@@ -1945,7 +2232,7 @@ IMAGE
 - [Jerry Friedman, Greedy Function Approximation: A Gradient Boosting Machine](https://jerryfriedman.su.domains/ftp/trebst.pdf)
 - [Machine Learning Mastery, Multinomial Logistic Regression With Python](https://machinelearningmastery.com/multinomial-logistic-regression-with-python/)
 - [Philipp Christian Petersen, Neural Network Theory](http://pc-petersen.eu/Neural_Network_Theory.pdf)
-
+- [Machine Learning Mastery, Evaluate the Performance of Deep Learning Models in Keras](https://machinelearningmastery.com/evaluate-performance-deep-learning-models-keras/)
 
 ## Model Implementation
 - https://www.kaggle.com/code/ayushs9020/lung-cancer-prediction-99-98

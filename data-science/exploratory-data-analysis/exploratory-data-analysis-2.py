@@ -30,6 +30,8 @@ https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-
 # Data manipulation modules
 import pandas as pd
 import numpy as np
+import xlsxwriter
+import re
 
 # Plotting modules
 import matplotlib
@@ -40,7 +42,7 @@ from sklearn import tree
 # Preprocessing modules
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler, StandardScaler, FunctionTransformer
 from sklearn.feature_selection import SelectKBest
-from sklearn.model_selection import train_test_split, GridSearchCV, RepeatedStratifiedKFold, cross_val_score
+from sklearn.model_selection import train_test_split, GridSearchCV, KFold, cross_val_score
 from sklearn.pipeline import Pipeline
 
 # Evaluation & performance modules
@@ -131,10 +133,6 @@ preprocessing_dictionary = {'Right Skew Gaussian' : FunctionTransformer(func = n
                             'Standard Scaler' : StandardScaler()
 }
 
-# Define evaluation techniques
-evaluation_dictionary = {'KFold' : RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
-}
-
 # Preprocessing
 # --------------------
 
@@ -217,7 +215,8 @@ def cm_plot(model_name, model, test_y, predicted_y):
     plt.title(f'{model_name} Confusion Matrix\n')
     plt.xlabel('y Predicted')
     plt.ylabel('y Test')
-    plt.savefig('plots/' + f'G001A008_{model_name}_confusion_matrix.png', format = 'png', dpi = 300, transparent = True)
+    plt.savefig('plots/' + f'G001A008_{model_name}_confusion_matrix_tp.png', format = 'png', dpi = 300, transparent = True)
+    plt.savefig('plots/' + f'G001A008_{model_name}_confusion_matrix_bg.jpg', format = 'jpg', dpi = 300, transparent = False)
     plt.close()
     return None
 
@@ -389,7 +388,8 @@ tree.plot_tree(model_dictionary['Decision Tree Classifier'],
                    filled=True)
 
 plt.title('Decision Tree Plot')
-plt.savefig('plots/' + 'G001A008_Decision Tree Classifier_Decision Tree.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('plots/' + 'G001A008_Decision Tree Classifier_Decision Tree_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('plots/' + 'G001A008_Decision Tree Classifier_Decision Tree_bg.jpg', format = 'jpg', dpi = 300, transparent = False)
 plt.close()
 
 
@@ -683,8 +683,23 @@ df_y_D = pd.get_dummies(df_y_D)
 # Fit our compiled model
 DNN_Fit = DNN.fit(df_x, df_y_D, epochs = 150, validation_split = 0.3)
 
-# Get model summary
+# Print model summary
 DNN.summary()
+
+# Convert model summary to DataFrame object
+stringlist = []
+DNN.summary(print_fn=lambda x: stringlist.append(x))
+summ_string = "\n".join(stringlist)
+print(summ_string)
+
+table = stringlist[1:-4][1::2]
+
+new_table = []
+for entry in table:
+    entry = re.split(r'\s{2,}', entry)[:-1]
+    new_table.append(entry)
+
+DNN_summary = pd.DataFrame(new_table[1:], columns=new_table[0])
 
 # Plot epochs vs training accuracy & validation accuracy
 plt.figure('Epochs vs Accuracy')
@@ -694,7 +709,8 @@ plt.plot(DNN_Fit.history["accuracy"], label = "Training Accuracy", color = 'k', 
 plt.plot(DNN_Fit.history["val_accuracy"],label = "Validation Accuracy", color = '#24c98d', linewidth = 0.7, marker = 'o', markersize=2)
 plt.title("Training Vs. Validation Accuracy")
 plt.legend()
-plt.savefig('plots/' + 'G001A008_Deep Neural Network_Epochs vs Accuracy.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('plots/' + 'G001A008_Deep Neural Network_Epochs vs Accuracy_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('plots/' + 'G001A008_Deep Neural Network_Epochs vs Accuracy_bg.jpg', format = 'jpg', dpi = 300, transparent = False)
 plt.close()
 
 # Plot training vs validation loss
@@ -705,6 +721,78 @@ plt.plot(DNN_Fit.history["loss"], label= "Training Loss", color = 'k', linewidth
 plt.plot(DNN_Fit.history["val_loss"], label= "Validation Loss", color = '#24c98d', linewidth = 0.7, marker = 'o', markersize=2)
 plt.title("Training Vs. Validation loss")
 plt.legend()
-plt.savefig('plots/' + 'G001A008_Deep Neural Network_Training vs Validation Loss.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('plots/' + 'G001A008_Deep Neural Network_Training vs Validation Loss_tp.png', format = 'png', dpi = 300, transparent = True)
+plt.savefig('plots/' + 'G001A008_Deep Neural Network_Training vs Validation Loss_bg.jpg', format = 'jpg', dpi = 300, transparent = False)
 plt.close()
 
+# K-Fold Cross Validation
+
+# Define 10-fold cross validation test harness
+kfold = KFold(n_splits=10, shuffle=True)
+DNN_accuracy_scores = []
+DNN_loss = []
+for train, test in kfold.split(df_x, df_y_D):
+    # Create model
+    DNN = Sequential()
+    DNN.add(Dense(8, activation = "relu", input_dim = train_Sx.shape[1]))
+    DNN.add(Dense(16, activation = "relu"))
+    DNN.add(Dropout(0.1))
+    DNN.add(Dense(8, activation = "relu"))
+    DNN.add(Dense(3, activation = "softmax"))
+    DNN.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
+    # Fit the model
+    DNN.fit(df_x.iloc[train], df_y_D.iloc[train], epochs=150, verbose=0)
+    # Evaluate the model
+    scores = DNN.evaluate(df_x.iloc[test], df_y_D.iloc[test], verbose=0)
+    print(f'{DNN.metrics_names[0]}: {round(scores[0]*100, 2)}%')
+    print(f'{DNN.metrics_names[1]}: {round(scores[1]*100, 2)}%')
+    print('')
+    DNN_loss.append(scores[0])
+    DNN_accuracy_scores.append(scores[1])
+
+print(f'{round(np.mean(DNN_accuracy_scores),2)*100}%, +/-{round(np.std(DNN_accuracy_scores),2)*100}%')
+
+DNN_scores_df = pd.DataFrame(columns=['Accuracy', 'Loss'])
+DNN_scores_df['Accuracy'] = DNN_accuracy_scores
+DNN_scores_df['Loss'] = DNN_loss
+
+# Export results to Excel sheet
+# Create a DataFrame containing accuracy values
+acc_list = [score_MLogReg,
+            score_BLogReg,
+            score_DecTree,
+            score_RandomFor,
+            score_SVM,
+            score_SVMp,
+            score_SVMr,
+            score_KNN,
+            score_GNB,
+            score_BNB,
+            score_SGD,
+            score_GBC,
+            score_XGBC,
+            round(np.mean(DNN_accuracy_scores),2)
+            ]
+
+model_list = list(model_dictionary.keys())
+
+acc_df = pd.DataFrame(columns=['Model', 'Accuracy'])
+acc_df['Model'] = model_list
+acc_df['Accuracy'] = acc_list
+
+writer = pd.ExcelWriter('outputs/Model_Results.xlsx', engine = 'xlsxwriter')
+report_MLogReg.to_excel(writer, sheet_name = 'REP_MLOGREG')
+report_BLogReg.to_excel(writer, sheet_name = 'REP_BLOGREG')
+report_DecTree.to_excel(writer, sheet_name = 'REP_DECTREE')
+report_RandomFor.to_excel(writer, sheet_name = 'REP_RANDOMFOR')
+report_SVM.to_excel(writer, sheet_name = 'REP_SVMLIN')
+report_SVMp.to_excel(writer, sheet_name = 'REP_SVMPOL')
+report_SVMr.to_excel(writer, sheet_name = 'REP_SVMRAD')
+report_KNN.to_excel(writer, sheet_name = 'REP_KNN')
+report_GNB.to_excel(writer, sheet_name = 'REP_GNB')
+report_GBC.to_excel(writer, sheet_name = 'REP_GBC')
+report_XGBC.to_excel(writer, sheet_name = 'REP_XGBC')
+DNN_summary.to_excel(writer, sheet_name = 'SUM_DNN')
+DNN_scores_df.to_excel(writer, sheet_name = 'REP_DNN')
+acc_df.to_excel(writer, sheet_name = 'ACC_ALL')
+writer.close()
