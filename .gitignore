@@ -6,6 +6,10 @@
 # Ignore screenshots folder on all category subfolders using ** wildcard
 **/screenshots/
 
+# Ignore all byte-compiled / optimized / DLL files
+**/__pycache__/
+**/*.py[cod]
+
 # Ignore all virtual envs (termination venv)
 **/*_venv/
 
