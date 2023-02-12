@@ -64,7 +64,7 @@ The generated plots and test results from the last segment can also be found in 
 		- [Implementation](#143-implementation)
 	- [Extreme Gradient Boosting](#15-extreme-gradient-boosting)
 		- [Assumptions](#151-assumptions)
-		- [Implementation](#153-implementation)
+		- [Implementation](#152-implementation)
 	- [Deep Neural Networks](#16-deep-neural-networks)
 		- [Mathematical Intuition Overview](#161-mathematical-intuition-overview)
 		- [Assumptions](#162-assumptions)
