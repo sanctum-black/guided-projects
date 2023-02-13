@@ -139,7 +139,7 @@ We will then create the environment using the built-in `venv` package. We can pr
 
 ##### **Code**
 ```PowerShell
-C:/Users/our_username/AppData/Local/Programs/Python/Python310/python.exe -m venv 'eda_venv'
+C:\Users\our_username\AppData\Local\Programs\Python\Python310\python.exe -m venv 'eda_venv'
 ```
 
 We will see that a new folder was created on our working directory:

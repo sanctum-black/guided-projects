@@ -31,7 +31,7 @@ The generated plots and test results from the last two segments can be found in 
 
 ---
 
-## Consolidating the results
+## Recalling our results
 
 
 ## Generating a technical deliverable
@@ -56,7 +56,155 @@ LaTeX syntax is not easy; it presents a steep learning curve specially if we are
 
 The nice thing about templates, is that they're fully customizable; we can download a `.cls` class file and tailor it to our needs until we have exactly what we're looking for. At first it takes some time, but in the end it's really worth it.
 
-### 3. Preparing our environment and downloading a template
+## 3. Why LaTeX?
+There are tons of word processors out there that would presumably make it easier for us to generate a client deliverable. In contrast, LaTeX requires us to install a TeX distribution and a dedicated text editor. Also, LaTeX syntax has a learning curve associated. This seems too much trouble just to generate a simple text document, so why bother using LaTeX?
+
+Well, let's enumerate some of the things we will need to include on this report, and see if LaTeX offers any advantage over other methods such as Microsoft Word or Markdown:
+
+### 3.1 Basic header and paragraph formatting
+On **Microsoft Word**, we need to type a header and then format it as header using a menu. This could be convenient but we can sometimes lose track of which header tag we used for each case, since there's no explicit code showing us this. Also, if we copy our headers, there's no guarantee that the formatting will translate when pasting on other word processors. For paragraph formatting, we need to make sure we're setting the properties such as spacing correctly, again, by using a menu. Also, when copying and pasting, formatting could get lost. 
+
+On **Markdown** it's much easier; all we have to do is define headers by using a hash `#` symbol. H1 will have a single hash prepended, H2 will have two hashes prepended, and so on. We can easily visualize this syntax using any text editor, and when copying and pasting content, the formatting will stay the exact same (*provided the target supports Markdown*). The problem with Markdown, is that it does not support formatting inside the actual document; we would have to create separate `.html` & `.css` files in order to customize our header styles.
+
+On **LaTeX** it gets even better; we can define our own custom section formatting rules, and use them by simply making the calls when writing our document:
+
+We can define a new `section` style on our style sheet:
+
+##### **Code**
+```LaTeX
+{\section*{\contentsname}}
+```
+
+We can style the title format:
+
+##### **Code**
+```LaTeX
+\titleformat{\section}
+    {\relax}{\textsc{\MakeTextLowercase{\thesection}}}{1em}{\spacedlowsmallcaps}
+```
+
+Then, we can simply define a new section, and input the title:
+
+##### **Code**
+```LaTeX
+\section*{Abstract}
+```
+
+It will get formatted with the parameters we defined on our style sheet.
+
+### 3.2 Tables
+Microsoft Word makes it very straightforward to include tables in a document; we just have to specify its dimensions, insert the figure, input the values, and we're done. While it's a very straightforward process, the formatting options are limited, and everything is done via our beloved menu. This is suboptimal and can take more time if we're looking to extensively customize out figure.
+
+Markdown also offers table support. We can use the following syntax:
+
+##### **Code**
+```
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| Entry 1  | Entry 2  | Entry 3  |
+| Entry 4  | Entry 5  | Entry 6  |
+```
+
+##### **Output**
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| Entry 1  | Entry 2  | Entry 3  |
+| Entry 4  | Entry 5  | Entry 6  |
+
+This process is far from optimal, extremely limited, and often times makes it impossible to  follow where we're writing since the pipes move whenever we're inputting values in a cell. There are some plugins for certain editors that will help, such as [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) for Obsidian, but still, what we can do is very limited. Also, we cannot natively import a `.csv` table into a Markdown table; there are some web-based applications that can do this for us, *e.g. [CSV to Markdown Converter](https://www.convertcsv.com/csv-to-markdown.htm)*, but it's simply not functional and scalable having to use an external program to convert every table we generate.
+
+LaTeX offers multiple ways to generate tables. We can generate them from scratch:
+
+##### **Code**
+```LaTeX
+\begin{table}[hbt]
+\caption{Table of Grades}
+\centering
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{Name} \\
+\cmidrule(r){1-2}
+First name & Last Name & Grade \\
+\midrule
+John & Doe & $7.5$ \\
+Richard & Miles & $2$ \\
+\bottomrule
+\end{tabular}
+\label{tab:label}
+\end{table}
+
+Reference to Table~\vref{tab:label}
+```
+
+### 3.3 Images
+**Microsoft Word** lets us include images by importing them. This is undoubtedly one of the most painstaking processes in the whole Word ecosystem; we cannot include an image by just specifying its path, we need to import the actual image. Also, if we need to include nice-looking captions, we need to create a table, insert our image on the top cell, and our caption on the bottom cell. To make things worst, formatting the picture often times leads to inconsistent outputs if we're not careful.
+
+**Markdown** offers two ways to include images in our document.
+
+We can include them inline:
+
+##### **Code**
+```
+![Image](path_to_image)
+```
+
+##### **Output**
+
+![Image](https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Extreme-Gradient-Boosting-Classifier_confusion_matrix_bg-scaled.jpg)
+
+We can also use HTML:
+
+##### **Code**
+```HTML
+<img src="path_to_image" alt="Image" />
+```
+
+<img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Extreme-Gradient-Boosting-Classifier_confusion_matrix_bg-scaled.jpg" alt="Image" />
+
+This is convenient if we want to specify custom dimensions, but again, customizability is limited, *e.g. we cannot create an image gallery using simple Markdown*.
+
+LaTeX offers multiple ways to include images in our document. We can include a single image:
+
+##### **Code**
+```LaTeX
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.5\columnwidth]{GalleriaStampe} 
+\caption[An example of a floating figure]{An example of a floating figure (a reproduction from the \emph{Gallery of prints}, M.~Escher,\index{Escher, M.~C.} from \url{http://www.mcescher.com/}).}
+\label{fig:gallery} 
+\end{figure}
+```
+
+We can even create an image gallery with custom layout,  and dimensions:
+
+##### **Code**
+```LaTeX
+\begin{figure}[tb]
+\centering
+\subfloat[A city market.]{\includegraphics[width=.45\columnwidth]{Lorem}} \quad
+\subfloat[Forest landscape.]{\includegraphics[width=.45\columnwidth]{Ipsum}\label{fig:ipsum}} \\
+\subfloat[Mountain landscape.]{\includegraphics[width=.45\columnwidth]{Dolor}} \quad
+\subfloat[A tile decoration.]{\includegraphics[width=.45\columnwidth]{Sit}}
+\caption[A number of pictures.]{A number of pictures with no common theme.}
+\label{fig:esempio}
+\end{figure}
+```
+
+Here, we previously defined a `Figures` folder which contains all the figures for this document. We simply reference them by their name, without any need for path and extension specification. Clean, simple and straightforward.
+
+### 3.3 Mathematical expressions
+**Microsoft Word** offers an equation handler where we can write mathematical formulae by selecting each mathematical symbol from a menu. This process can become tiresome after our 6th equation. Fortunately, Word also offers LaTeX integration; we can insert a new equation and then select LaTeX mode, where we'll be able to write using LaTeX syntax. The problem is, we have to do this every time we insert a new expression. Also, if we write an equation using the default Word method, translating that into LaTeX code frequently results in syntax errors. In short, Microsoft Word was not created for mathematical writing purposes.
+
+**Markdown** offers LaTeX compatibility, but it's not consistent between all editors; some natively support it, some require additional plugins, some offer inconsistent previewing, and others even require different expression enclosures. Also, we cannot install LaTeX packages to extend its functionality on Markdown. [Obsidian](https://pabloagn.com/technologies/obsidian/) is a great Markdown editor option since it supports LaTeX writing and previewing out of the box, but is limited in what it can perform.
+
+This field is where **LaTeX** excels. We might have noticed that the two previous options support LaTeX as their mathematical expression input language, and that's for a reason; LaTeX is the gold standard for mathematical writing. It supports [every symbol, operand and Greek letter available on the mathematical language](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols). If we're missing some exotic symbol with the default distribution packages, we can always install new ones thus extending the functionality. We can even use [FontAwesome](http://mirrors.ibiblio.org/CTAN/fonts/fontawesome/doc/fontawesome.pdf) custom icons out of the box by simply calling them from inside our document.
+
+### 3.4 Everything else
+It is true that LaTeX syntax presents a considerable learning curve, but once we master it, a beautiful document generation heaven awaits (*in the most literal sense, since LaTeX documents are can be very aesthetical if done right*). It provides us with considerably more customizability than other word processors, there's no arguing about that; the [Comprehensive TeX Archive Network](https://ctan.org/pkg/) (*CTAN*) currently hosts about 4,000 packages, meaning endless possibilities. From diagramming to drawing little [Marmots in TikZ](https://ctan.org/pkg/tikzmarmots?lang=en), LaTeX can tackle everything we throw at it.
+
+Now that we're convinced (*hopefully*) that LaTeX is our best friend, we can continue downloading everything we will need in order to make our client shriek with delight.
+
+## 4. Preparing our environment and downloading a template
 For this segment we will use the TeX Live distribution along with the Texmaker editor. We will also download a template from [LaTeX Templates](https://www.latextemplates.com/template/sullivan-business-report), a phenomenal website providing free, fully-fledged material.
 
 This tutorial will be specifically oriented towards Windows, but can easily be tailored for macOS or Linux operating systems.
@@ -101,7 +249,7 @@ We could use this template as-is by simply editing our `article_4.tex` file. Thi
 
 We are now ready to start customizing our template.
 
-### 3. Designing our layout
+## 3. Designing our layout
 If we take a close look at our `structure.tex` file, we can see that it's already nicely divided by sections.
 
 The first section imports the required packages:
@@ -178,25 +326,25 @@ Aa
 
 
 
-#### 3.1 Executive summary
+### 3.1 Executive summary
 
 
-#### 3.2 Business guide
+### 3.2 Business guide
 
 
-#### 3.3 Plot results
+### 3.3 Plot results
 
 
-#### 3.4 Tabular results
+### 3.4 Tabular results
 
 
-#### 3.5 Method considerations & limitations
+### 3.5 Method considerations & limitations
 
 
-#### 3.6 Conclusions & recommendations
+### 3.6 Conclusions & recommendations
 
 
-#### 3.7 Appendix
+### 3.7 Appendix
 
 
 
