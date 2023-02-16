@@ -1,4 +1,10 @@
-# Exploratory Data Analysis, Pt. 2
+<article class="first">
+  <div class="title">
+    <h1>Exploratory Data Analysis, Pt. 2</h1>
+  </div>
+</article>
+
+---
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
@@ -14,7 +20,7 @@ The generated plots and test results from the last segment can also be found in 
 
 ---
 
-## Table of Contents
+# Table of Contents
 - [Classification model implementation](#classification-model-implementation)
 	- [Selecting our methods](#1-selecting-our-methods)
 	- [Creating a Virtual Environment](#2-creating-a-virtual-environment)
@@ -73,15 +79,16 @@ The generated plots and test results from the last segment can also be found in 
 	- [Method comparison](#18-method-comparison)
 - [Conclusions](#conclusions)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
-## Classification model implementation
+# Classification model implementation
 **Classification models** are a subset of **supervised machine learning algorithms**. A typical classification model reads an input and tries to classify it based on some predefined properties. A straightforward example would be the classification of a mail *containing spam* vs one *without spam*.
 
 The other type of supervised algorithm, perhaps more familiar, is **regression models**. These differ because they don't classify our inputs but predict continuous variables. A typical example would be predicting the stock market behaviour for a given asset.
 
-### 1. Selecting our methods
+## 1. Selecting our methods
 We can implement multiple supervised models to try to predict the severity of Lung Cancer for a given patient. It's always a good idea to test at least a set of different models and compare their accuracy. Since we have categorical, ordinal variables, we will test different classification algorithms.
 
 It's also important to consider that not every classification algorithm is appropriate for every classification problem. Each model is based on assumptions that may render it unusable for certain applications.
@@ -100,7 +107,7 @@ In this example, we will be working with 12 classification models, which we'll e
 - Extreme Gradient Boosting
 - Deep Neural Networks
 
-### 2. Creating a Virtual Environment
+## 2. Creating a Virtual Environment
 Before anything else, we need to check our current Python version. This is important because although we'll not be using `tensorflow` directly, we will require it for our Deep Neural Network model using `keras`, and `tensorflow` currently supports **Python versions 3.7 - 3.10*:
 
 ##### **Code**
@@ -215,7 +222,7 @@ If we're using a Windows machine, we can install `tensorflow r2.10` since this w
 
 We will also need to install the NVIDIA CUDA Toolkit & the CUDA Deep Neural Network (*cuDNN*) library if we wish to enable GPU processing. We can head to the [CUDA Toolkit Downloads page](https://developer.nvidia.com/cuda-downloads) and get the version for our case (*it's important to read all CUDA requirements, i.e. Visual Studio is required for it to work properly. Also, `tensorflow` requires a specific CUDA version*). For cuDNN, we can head to the [NVIDIA cuDNN](https://developer.nvidia.com/cudnn) page (*we will have to create an NVIDIA developer account for this one*).
 
-### 3. Preparing our environment
+## 3. Preparing our environment
 Now that we have our environment ready, we can install all our packages using the `requirements.txt` file we just generated:
 
 ##### **Code**
@@ -540,14 +547,14 @@ Now that we have our transformed sets, we can start talking about the selected m
 
 The mathematical background provided in this segment is, by any means, a rigorous derivation. We could spend an entire series talking about one model's mathematical background. Instead, we will review the main mathematical formulae involved in each model.
 
-### 4. A word on model assumptions
+## 4. A word on model assumptions
 Assumptions denote the collection of explicitly stated (*or implicit premised*) conventions, choices and other specifications on which any model is based.
 
 Every model is built on top of assumptions. They provide the theoretical foundation for it to exist and be valid, and machine learning models are no exception. That is not to say that every assumption must be rigorously met for a given model to work as expected, but we cannot bypass every assumption and expect our model to work as designed.
 
 If we understand the underlying theory behind our model, we can be selective in the assumptions we can live without; we can gain knowledge on the implications of bypassing a particular assumption and thus make a supported decision on which model to use. It's a matter of balance and finding out what's suitable for our case.
 
-### 5. Multinomial Logistic Regression
+## 5. Multinomial Logistic Regression
 **Multinomial Logistic Regression** is a classification method that generalizes logistic regression to multiclass problems, *i.e. when we have more than two possible discrete outcomes*.
 
 **Logistic Regression**, or Logit Model, contrary to what its name may suggest, is not a regression model but a **parametric classification** one. In reality, this model is very similar to [Linear Regression](https://www.ibm.com/topics/linear-regression); the main difference between the two is that in Logistic Regression, we don’t fit a straight line to our data. Instead, we fit an $S$ shaped curve, called **Sigmoid**, to our observations.
@@ -591,13 +598,13 @@ $$Pr(Y_i=2)={Pr(Y_i=K)}\cdot e^{\beta_2 \cdot X_i}$$
 $$\cdots$$
 $$Pr(Y_i=K-1)={Pr(Y_i=K)} \cdot e^{\beta_K-1 \cdot X_i}$$
 
-#### 5.2 Assumptions
+### 5.2 Assumptions
 - It requires the dependent variable to be binary, multinomial or ordinal.
 - It has a linear decision surface, meaning it can’t solve non-linear problems.
 - Requires very little to no multicollinearity, meaning our independent variables must not be correlated with each other.
 - Usually works best with large data sets and requires sufficient training examples for all the categories to make correct predictions.
 
-#### 5.3 Implementation
+### 5.3 Implementation
 We can start by fitting our model to our data:
 
 ##### **Code**
@@ -640,7 +647,7 @@ print(score_MLogReg)
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Multinomial-Logistic-Regressor_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 01"/></div>
 
-*Figure 1: Confusion Matrix for Multinomial Logistic Regression*
+###### *Figure 1: Confusion Matrix for Multinomial Logistic Regression*
 
 As we discussed earlier, a confusion matrix tells us the number of predicted values for each severity level vs the test values we're comparing results with. The matrix diagonal denotes the predicted & test value match.
 
@@ -655,7 +662,7 @@ As we discussed earlier, a confusion matrix tells us the number of predicted val
 | macro avg    | 0.90303   | 0.901093 | 0.900657 | 200     |
 | weighted avg | 0.912182  | 0.91     | 0.909815 | 200     |
 
-*Table 1. Classification report for Multinomial Logistic Regression*
+###### *Table 1. Classification report for Multinomial Logistic Regression*
 
 A classification report has 7 different metrics:
 
@@ -756,7 +763,7 @@ If we look at our results, we can see that it predicted with a **91.5%** accurac
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Logistic-Regressor_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 02"/></div>
 
-*Figure 2: Confusion Matrix for Binomial Logistic Regression*
+###### *Figure 2: Confusion Matrix for Binomial Logistic Regression*
 
 ##### **Output**
 
@@ -776,7 +783,7 @@ If we look at our results, we can see that it predicted with a **91.5%** accurac
 0.915
 ```
 
-### 6. Decision Tree
+## 6. Decision Tree
 A **Decision Tree** is a technique that can be used for classification and regression problems. In our case, we'll be using a Decision Tree Classifier.
 
 A Decision Tree has two types of nodes:
@@ -785,10 +792,10 @@ A Decision Tree has two types of nodes:
 
 A Decision Tree algorithm starts from the tree's root node containing the entire data set. It then divides the root node into subsets containing possible values for the best attributes. It then compares values of the best attribute using **Attribute Selection Measures (*ASM*)**. It then generates a new node, which includes the best attribute. Finally, it recursively makes new decision trees using the subsets of the dataset and continues until a stage is reached where it cannot further classify the nodes. This is where the final node (*leaf node*) is created.
 
-#### 6.1 Mathematical intuition overview
+### 6.1 Mathematical intuition overview
 Attribute Selection Measures (*ASM*) determine which attribute to select as a decision node and branch further. There are two main ASMs: 
 
-##### 6.1.1 Information Gain
+#### 6.1.1 Information Gain
 Measures the change in entropy after the segmentation of a dataset based on an attribute occurs:
 
 $$Gain (S,a)= Entropy(S)-\sum_{v \in V(A)}\frac{|S_v|}{|S|} \cdot Entropy(S_v)$$
@@ -804,7 +811,7 @@ Where:
 
 The more entropy removed, the greater the information gain. The higher the information gain, the better the split.
 
-##### 6.1.2 Gini Index
+#### 6.1.2 Gini Index
 Measures impurity; if all the elements belong to a single class, it can be called pure. The degree of the Gini Index varies between 0 and 1. A Gini Index of 0 denotes that all elements belong to a certain class or only one class exists (*pure*). A Gini Index of 1 denotes that the elements are randomly distributed across various classes (*impure*).
 
 Gini Index is expressed with the following equation:
@@ -814,12 +821,12 @@ $$Gini = 1-\sum_{i=1}^{n}p^2(c_i)$$
 Where:
 - $p^2(c_i)$ is the squared probability of class $c_i$ in a node.
 
-#### 6.2 Assumptions
+### 6.2 Assumptions
 - In the beginning, the whole training set is considered the root.
 - Feature values are preferred to be categorical.
 - Records are distributed recursively based on attribute values.
 
-#### 6.3 Implementation
+### 6.3 Implementation
 We can start by fitting our model to our data:
 
 ##### **Code**
@@ -864,7 +871,7 @@ If we take a look at our results, we can see that it predicted with a **100%** a
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Decision-Tree-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 03"/></div>
 
-*Figure 3: Confusion Matrix for Decision Tree Classifier*
+###### *Figure 3: Confusion Matrix for Decision Tree Classifier*
 
 ##### **Output**
 
@@ -972,12 +979,12 @@ plt.close()
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Decision-Tree-Classifier_Decision-Tree_bg-scaled.jpg" alt="Decision Tree"/></div>
 
-*Figure 4. Graphical Representation of our Decision Tree Classifier*
+###### *Figure 4. Graphical Representation of our Decision Tree Classifier*
 
-### 7. Random Forest
+## 7. Random Forest
 **Random Forest** is an ensemble learning method for classification, regression and other methods. It works by constructing a multitude of decision trees at training time; the output of the random forest is the class selected by most trees.
 
-#### 7.1 Mathematical intuition overview
+### 7.1 Mathematical intuition overview
 The training algorithm for random forests applies a generalization of **bagging**.
 
 Given a training set $X = x_1, \cdots , x_n$ with responses $Y = y_1, \cdots , y_n$ bagging repeatedly (*B times*) selects a random sample with replacement of the training set and fits trees to these samples.
@@ -986,12 +993,12 @@ After training, predictions for unseen samples $x'$ can be made by averaging the
 
 We can also include a measure of the uncertainty of the prediction calculating the standard deviation of the predictions from all the individual regression trees on $x'$.
 
-#### 7.2 Assumptions
+### 7.2 Assumptions
 - It inherits assumptions from the decision tree model.
 - There should be some actual values in the feature variables of the dataset, which will give the classifier a better chance to predict accurate results.
 - The predictions from each tree must have very low correlations.
 
-#### 7.3 Implementation
+### 7.3 Implementation
 We can start by fitting our model to our data:
 
 ##### **Code**
@@ -1036,7 +1043,7 @@ If we take a look at our results, we can see that it predicted with a **100%** a
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Random-Forest-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 04"/></div>
 
-*Figure 5: Confusion Matrix for Random Forest Classifier*
+###### *Figure 5: Confusion Matrix for Random Forest Classifier*
 
 ##### **Output**
 
@@ -1049,17 +1056,17 @@ If we take a look at our results, we can see that it predicted with a **100%** a
 | macro avg    | 1         | 1      | 1        | 200     |
 | weighted avg | 1         | 1      | 1        | 200     |
 
-*Table 4. Model report for Random Forest Classifier*
+###### *Table 4. Model report for Random Forest Classifier*
 
 ##### Output
 ```
 1.0
 ```
 
-### 8. Nonlinear Support Vector Machine
+## 8. Nonlinear Support Vector Machine
 **Support Vector Machines** (*SVM*) are a class of supervised models originally developed for linear applications, although a nonlinear implementation using nonlinear Kernels was also developed; the resulting algorithm is similar, except that every dot product is replaced by a nonlinear kernel function.
 
-#### 8.1 Mathematical intuition overview
+### 8.1 Mathematical intuition overview
 The SVM model amounts to minimizing an expression of the following form:
 
 $$\left[\frac{1}{n} \sum_{i-1}^{n}max(0,1-y_i \cdot (W^\top x_i-b)) \right]+\lambda||w||^2$$
@@ -1074,10 +1081,10 @@ With the different nonlinear Kernels being:
 - Gaussian Radial Basis Function (*RBF*): $k(X_i, X_j)=e^\frac{-||X_i-X_j||^2}{2 \sigma^2}$, for $\lambda > 0$
 - Sigmoid function: $k(X_i, X_j)=tanh(kX_i \cdot X_j+c)$, for some $k>0$ and $c<0$
 
-#### 8.2 Assumptions
+### 8.2 Assumptions
 There are no particular assumptions for this model. If we scale our variables, we might increase its performance, but it is not required.
 
-#### 8.3 Implementation
+### 8.3 Implementation
 For this part, we'll be using three different approaches; we mentioned that Support Vector Machines are fit for linear applications, although we can use nonlinear Kernels to fit nonlinear data.
 
 There are two particular Kernels we will implement:
@@ -1158,15 +1165,15 @@ If we look at our results, we can see that we get the following accuracies:
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Support-Vector-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 06"/></div>
 
-*Figure 6: Confusion Matrix for Linear Support Vector Classifier*
+###### *Figure 6: Confusion Matrix for Linear Support Vector Classifier*
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Support-Vector-Classifier-Polynomial-Kernel_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 07"/></div>
 
-*Figure 7: Confusion Matrix for Support Vector Classifier with Polynomial Kernel*
+###### *Figure 7: Confusion Matrix for Support Vector Classifier with Polynomial Kernel*
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Support-Vector-Classifier-Radial-Kernel_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 08"/></div>
 
-*Figure 8: Confusion Matrix for Support Vector Classifier with Radial Basis Function Kernel*
+###### *Figure 8: Confusion Matrix for Support Vector Classifier with Radial Basis Function Kernel*
 
 ##### **Output**
 
@@ -1179,7 +1186,7 @@ If we look at our results, we can see that we get the following accuracies:
 | macro avg    | 0.873643  | 0.862812 | 0.860532 | 200     |
 | weighted avg | 0.880549  | 0.875    | 0.870782 | 200     |
 
-*Table 5. Model report for Linear Support Vector Classifier*
+###### *Table 5. Model report for Linear Support Vector Classifier*
 
 |      X       | precision | recall | f1-score | support |
 | ------------ | --------- | ------ | -------- | ------- |
@@ -1190,7 +1197,7 @@ If we look at our results, we can see that we get the following accuracies:
 | macro avg    | 1         | 1      | 1        | 200     |
 | weighted avg | 1         | 1      | 1        | 200     |
 
-*Table 6. Model report for Support Vector Classifier with Polynomial Kernel*
+###### *Table 6. Model report for Support Vector Classifier with Polynomial Kernel*
 
 |      X       | precision | recall | f1-score | support |
 | ------------ | --------- | ------ | -------- | ------- |
@@ -1201,7 +1208,7 @@ If we look at our results, we can see that we get the following accuracies:
 | macro avg    | 1         | 1      | 1        | 200     |
 | weighted avg | 1         | 1      | 1        | 200     |
 
-*Table 7. Model report for Support Vector Classifier with Radial Basis Function Kernel*
+###### *Table 7. Model report for Support Vector Classifier with Radial Basis Function Kernel*
 
 ##### Output
 ```
@@ -1210,37 +1217,37 @@ If we look at our results, we can see that we get the following accuracies:
 1.0
 ```
 
-### 9. K-Nearest Neighbors
+## 9. K-Nearest Neighbors
 **K-Nearest Neighbors** (*KNN*) is a non-parametric, supervised learning classifier which uses proximity to classify and group data points. A class label is assigned based on a majority vote *i.e. the label that is most frequently represented around a given data point is used*. The KNN model chooses $k$ nearest points by calculating distances using different metrics and calculating an average to make a prediction.
 
-#### 9.1 Mathematical intuition overview
+### 9.1 Mathematical intuition overview
 Several distance metrics can be used:
 
-##### 9.1.1 Euclidean distance
+#### 9.1.1 Euclidean distance
 This is the most one, and it is limited to real-valued vectors. It measures a straight line between two points: We can then predict some values using our trained models:
 
 $$d(x, y)=\sqrt{\sum_{i=1}^{n}(y_i-x_i)^2}$$
-##### 9.1.2 Manhattan distance
+#### 9.1.2 Manhattan distance
 It is also referred to as taxicab distance or city block distance as it is commonly visualized using a grid:
 
 $$d(x,y)=\sum_{i=1}^{m}|X_i-Y_i|$$
 
-##### 9.1.3 Minkowski distance
+#### 9.1.3 Minkowski distance
 This metric is the generalized form of Euclidean and Manhattan distance metrics. Euclidean distance takes $p=2$, while Manhattan distance takes $p=1$ 
 
 $$d(x,y)=\left(\sum_{i=1}^{m}|X_i-Y_i|\right)^\frac{1}{p}$$
 
-##### 9.1.4 Hamming distance
+#### 9.1.4 Hamming distance
 This technique is typically used with Boolean or string vectors. Interestingly, it's also used in **information theory** as a way to measure the distance between two strings of equal length:
 
 $$D_H=\sum_{i=1}^{k}|X_i-Y_i|$$
 - If $x=y$, $D=0$,
 - If $x \neq y$, $D \neq 1$
 
-#### 9.2 Assumptions
+### 9.2 Assumptions
 - Items close together in the data set are typically similar
 
-#### 9.3 Implementation
+### 9.3 Implementation
 We can start by fitting our model to our data:
 
 ##### **Code**
@@ -1285,7 +1292,7 @@ If we take a look at our results, we can see that it predicted with an **100%** 
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_K-Nearest-Neighbors-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 09"/></div>
 
-*Figure 9: Confusion Matrix for K-Nearest Neighbors Classifier*
+###### *Figure 9: Confusion Matrix for K-Nearest Neighbors Classifier*
 
 ##### **Output**
 
@@ -1298,17 +1305,17 @@ If we take a look at our results, we can see that it predicted with an **100%** 
 | macro avg    | 1         | 1      | 1        | 200     |
 | weighted avg | 1         | 1      | 1        | 200     |
 
-*Table 8. Model report for K-Nearest Neighbors Classifier*
+###### *Table 8. Model report for K-Nearest Neighbors Classifier*
 
 ##### Output
 ```
 1.0
 ```
 
-### 11. Gaussian Naïve Bayes
+## 11. Gaussian Naïve Bayes
 **Gaussian Naïve Bayes** (*GNB*) is a probabilistic machine learning algorithm based on the [Bayes' Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem). It is the extension of the Naïve Bayes algorithm, and as its name suggests, it approximates class-conditional distributions as a Gaussian distribution, with a mean $\mu$ and a standard deviation $\sigma$.
 
-#### 11.1 Mathematical intuition overview
+### 11.1 Mathematical intuition overview
 We can start with the Bayes' Theorem:
 
 $$P(A|B)=\frac{P(A \cap B)}{P(B)}=\frac{P(A) \cdot P(B|A)}{P(B)}$$
@@ -1327,11 +1334,11 @@ We can see that the form of this equation is almost identical to the Gaussian di
 
 $$f(X|\mu,\sigma^2)=\frac{1}{ \sqrt{2 \pi \sigma_y ^2}}e\left(-\frac{(x-\mu)^2}{2\sigma_y^2} \right)$$
 
-#### 11.2 Assumptions
+### 11.2 Assumptions
 - Features are independent (*hence Naïve*).
 - Class-conditional densities are normally distributed.
 
-#### 11.3 Implementation
+### 11.3 Implementation
 Since we are using the Gaussian variant of the model, we will use the normally-approximated values we generated earlier. We can start by fitting our model to our data:
 
 ##### **Code**
@@ -1376,7 +1383,7 @@ If we take a look at our results, we can see that it predicted with a **60.5%** 
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Gaussian-Naive-Bayes-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 10"/></div>
 
-*Figure 10: Confusion Matrix for Gaussian Naïve Bayes Classifier*
+###### *Figure 10: Confusion Matrix for Gaussian Naïve Bayes Classifier*
 
 ##### **Output**
 
@@ -1389,17 +1396,17 @@ If we take a look at our results, we can see that it predicted with a **60.5%** 
 | macro avg    | 0.616924  | 0.646346 | 0.612513 | 200     |
 | weighted avg | 0.62257   | 0.65     | 0.617906 | 200     |
 
-*Table 9. Model report for Gaussian Naïve Bayes Classifier*
+###### *Table 9. Model report for Gaussian Naïve Bayes Classifier*
 
 ##### Output
 ```
 0.605
 ```
 
-### 12. Bernoulli Naïve Bayes
+## 12. Bernoulli Naïve Bayes
 **Bernoulli Naïve Bayes** (*BNB*) is similar to Gaussian Naïve Bayes in that it also uses Bayes' Theorem as its foundation. The difference is that Bernoulli Naïve Bayes approximates class-conditional distributions as a Bernoulli distribution. This fact makes this variation more appropriate for discrete random variables instead of continuous ones.
 
-#### 12.1 Mathematical intuition overview
+### 12.1 Mathematical intuition overview
 Since we already went over Bayes' Theorem, we can start by defining the Bernoulli distribution function:
 
 $$
@@ -1415,11 +1422,11 @@ From the above, we can then define the Bernoulli Naïve Bayes Classifier:
 
 $$P(x_i|y)=P(i|y)x_i+(1-P(i|y))(1-x_i)$$
 
-#### 12.2 Assumptions
+### 12.2 Assumptions
 - The attributes are independent of each other and do not affect each other's performance (*hence Naïve*).
 - All of the features are given equal importance.
 
-#### 12.3 Implementation
+### 12.3 Implementation
 We can start by fitting our model to our data:
 
 ##### **Code**
@@ -1464,7 +1471,7 @@ If we take a look at our results, we can see that it predicted with a **77.5%** 
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Bernoulli-Naive-Bayes-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 11"/></div>
 
-*Figure 11: Confusion Matrix for Bernoulli Naïve Bayes Classifier*
+###### *Figure 11: Confusion Matrix for Bernoulli Naïve Bayes Classifier*
 
 ##### **Output**
 
@@ -1477,14 +1484,14 @@ If we take a look at our results, we can see that it predicted with a **77.5%** 
 | macro avg    | 0.780606  | 0.753037 | 0.728607 | 200     |
 | weighted avg | 0.787216  | 0.775    | 0.746246 | 200     |
 
-*Table 10. Model report for Bernoulli Naïve Bayes Classifier*
+###### *Table 10. Model report for Bernoulli Naïve Bayes Classifier*
 
 ##### Output
 ```
 0.775
 ```
 
-### 13. Stochastic Gradient Descent
+## 13. Stochastic Gradient Descent
 **Stochastic Gradient Descent** (*SGD*) is an optimization method. It can be used in conjunction with other Machine Learning algorithms.
 
 In general, gradient descent is used to minimize a cost function. There are three main types:
@@ -1497,7 +1504,7 @@ Stochastic Gradient Descent computes the gradient by calculating the derivative 
 
 The Stochastic Gradient Descent Classifier is a linear classification method with SGD training.
 
-#### 13.1 Mathematical intuition overview
+### 13.1 Mathematical intuition overview
 The SGD gradient function can be expressed as follows:
 
 $$\theta^{(t+1)} = \theta - \eta \cdot \nabla_\theta J( \theta; x^{(i)}; y^{(i)})$$
@@ -1510,11 +1517,11 @@ Where:
 
 As the algorithm sweeps through the training set, it performs the above update for each training sample. Several passes can be made over the training set until the algorithm converges.
 
-#### 13.2 Assumptions
+### 13.2 Assumptions
 - The errors at each point in the parameter space are additive
 - The expected value of the observation picked randomly is a subgradient of the function at point $\theta$.
 
-#### 13.3 Implementation
+### 13.3 Implementation
 For this example, we'll use a Logistic Regressor with SGD training. We can start by fitting our model to our data:
 
 ##### **Code**
@@ -1559,7 +1566,7 @@ If we take a look at our results, we can see that it predicted with an **80.5%**
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Stochastic-Gradient-Descent_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 12"/></div>
 
-*Figure 12: Confusion Matrix for Stochastic Gradient Descent*
+###### *Figure 12: Confusion Matrix for Stochastic Gradient Descent*
 
 ##### **Output**
 
@@ -1572,7 +1579,7 @@ If we take a look at our results, we can see that it predicted with an **80.5%**
 | macro avg    | 0.837667  | 0.834244 | 0.833152 | 200     |
 | weighted avg | 0.848128  | 0.85     | 0.846476 | 200     |
 
-*Table 11. Model report for Stochastic Gradient Descent*
+###### *Table 11. Model report for Stochastic Gradient Descent*
 
 ##### Output
 ```
@@ -1589,7 +1596,7 @@ Gradient Boosting Classifiers consist of three main parts:
 
 The main problem with Gradient Boosting is the potential of overfitting the model. We know that perfect training scores will lead to this phenomenon. This can be overcome by setting different regularization methods such as tree constraints, shrinkage and penalized learning.
 
-#### 14.1 Mathematical intuition overview
+### 14.1 Mathematical intuition overview
 We can generalize a Gradient-Boosted Decision Tree model.
 
 We can initialize our model with a constant loss function:
@@ -1619,10 +1626,10 @@ Where:
 - $\gamma_{jm1}$ is the value which minimizes the loss function on each terminal node.
 - $R_{jm}$ is the terminal node.
 
-#### 14.2 Assumptions
+### 14.2 Assumptions
 - The sum of its residuals is 0, *i.e. the residuals should be spread randomly around zero*.
 
-#### 14.3 Implementation
+### 14.3 Implementation
 For this example, we'll use a Gradient Boosting Classifier. We will leave parameters as default (*100 estimators*), although these can be fine-tuned. We can start by fitting our model to our data:
 
 ##### **Code**
@@ -1667,7 +1674,7 @@ If we take a look at our results, we can see that it predicted with a **100%** a
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Gradient-Boosting-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 13"/></div>
 
-*Figure 13: Confusion Matrix for Gradient Boosting Classifier*
+###### *Figure 13: Confusion Matrix for Gradient Boosting Classifier*
 
 ##### **Output**
 
@@ -1680,14 +1687,14 @@ If we take a look at our results, we can see that it predicted with a **100%** a
 | macro avg    | 1         | 1      | 1        | 200     |
 | weighted avg | 1         | 1      | 1        | 200     |
 
-*Table 12. Model report for Gradient Boosting Classifier*
+###### *Table 12. Model report for Gradient Boosting Classifier*
 
 ##### Output
 ```
 1.0
 ```
 
-### 15. Extreme Gradient Boosting
+## 15. Extreme Gradient Boosting
 **Extreme Gradient Boosting** (*XGBoost*) is a more regularized form of the previous Gradient Boosting technique. This means that it controls overfitting better, resulting in better performance; as opposed to GBM, XGBoost uses advanced regularization (*L1 & L2*), which improves model generalization capabilities. It also has faster training capabilities and can be parallelized across clusters, reducing training times.
 
 Some other differences between XGBoost over GBM are:
@@ -1696,11 +1703,11 @@ Some other differences between XGBoost over GBM are:
 
 We will skip the mathematical intuition for XGBoost since it's extensive and similar to its GBM cousin.
 
-#### 15.1 Assumptions
+### 15.1 Assumptions
 - Encoded integer values for each input variable have an ordinal relationship.
 - The data may not be complete (*can handle sparsity*)
 
-#### 15.2 Implementation
+### 15.2 Implementation
 We'll use a different library called `XGBoost` for this implementation. Apart from the advantages of the mathematical treatment, `XGBoost` is written in C++, making it comparatively faster than other Gradient Boosting libraries. Also, `XGBoost` was specifically designed to support parallelization onto GPUs and computer networks. These make this library extremely powerful when handling extensive data sets.
 
 Before we can start, we will need to re-encode our labels since `XGBoost` requires our values to start from 0 and not 1:
@@ -1756,7 +1763,7 @@ If we take a look at our results, we can see that it predicted with a **100%** a
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Extreme-Gradient-Boosting-Classifier_confusion_matrix_bg-scaled.jpg" alt="Confusion Matrix 14"/></div>
 
-*Figure 14: Confusion Matrix for Extreme Gradient Boosting Classifier*
+###### *Figure 14: Confusion Matrix for Extreme Gradient Boosting Classifier*
 
 ##### **Output**
 
@@ -1776,7 +1783,7 @@ If we take a look at our results, we can see that it predicted with a **100%** a
 1.0
 ```
 
-### 16. Deep Neural Networks
+## 16. Deep Neural Networks
 **Deep Neural Networks** are simply Neural Networks containing at least two interconnected layers of neurons. Its functioning and the theory behind them are somewhat different from what we've seen so far. Also, they belong to another branch of Artificial Intelligence called [Deep Learning](https://www.mathworks.com/discovery/deep-learning.html), which is itself a subgroup of [Neural Networks](https://www.ibm.com/topics/neural-networks). The model that would assimilate more (*in a sense *) is Decision Trees, although even they process data differently.
 
 Neural Networks were created based on how actual neurons work (*in a very general way*); they are comprised of node layers containing an input layer, one or more hidden layers, and an output layer. Each node connects to another and has an associated weight and threshold. These parameters define the signal intensity from one neuron to another; if the output of a given individual node is above the specified threshold value, that node is activated, sending a signal to the next layer of the network; else, the signal doesn't pass through.
@@ -1798,7 +1805,7 @@ Apart from all the points mentioned, there are also significant advantages:
 - They have good fault tolerance, meaning the output is not affected by the corruption of one or more than one cell.
 - They have distributed memory capabilities.
 
-#### 16.1 Mathematical intuition overview
+### 16.1 Mathematical intuition overview
 As we have mentioned, a Neural Network works by propagating signals depending on the weight and threshold of each neuron.
 
 The most basic Neural Network is called *perceptron* and consists of $n$ number of inputs, one neuron, and one output.
@@ -1833,7 +1840,7 @@ A perceptron is the simplest case, and of course, the more layers we have, the m
 
 The theory behind Deep Neural Networks is extensive and complex, so we will not explain each step in detail; instead, we will stick with a general description of what is being done. A rigorous & exhaustive explanation of these models can be found in [Philipp Christian Petersen's Neural Network Theory](http://pc-petersen.eu/Neural_Network_Theory.pdf).
 
-#### 16.2 Assumptions
+### 16.2 Assumptions
 - Artificial Neurons are arranged in layers, which are sequentially arranged.
 - Neurons within the same layer do not interact or communicate with each other.
 - All inputs enter the network through the input layer and pass through the output layer.
@@ -1841,7 +1848,7 @@ The theory behind Deep Neural Networks is extensive and complex, so we will not 
 - Artificial neurons at consecutive layers are densely connected.
 - Every inter-connected neural network has its weight and bias associated with it.
 
-#### 16.3 Implementation
+### 16.3 Implementation
 Deep Neural Networks require a different treatment than we've already seen. For this case, a simpler 5-layer Sequential model will suffice. The first thing we'll need to do is define which model we will use.
 
 A Sequential Neural Network passes on the data and flows in sequential order from top to bottom until the data reaches the end of the model.
@@ -2299,7 +2306,7 @@ visualkeras.layered_view(DNN,
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Deep-Neural-Network_Model.png" alt="DNN 01"/></div>
 
-*Figure 15: Deep Neural Network Layer Architecture, sizes relative to number of nodes*
+###### *Figure 15: Deep Neural Network Layer Architecture, sizes relative to number of nodes*
 
 We can also create two plots to help us visualize how our model performed. The first one will plot epochs on the $x$ axis and training accuracy & validation accuracy on the $y$ axis. The second one will plot epochs on the $x$ axis and training & validation loss on the $y$ axis:
 
@@ -2332,12 +2339,12 @@ plt.close()
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Deep-Neural-Network_Epochs-vs-Accuracy_bg-scaled.jpg" alt="DNN 02"/></div>
 
-*Figure 16: Training Accuracy vs. Validation Accuracy for Sequential Deep Neural Network*
+###### *Figure 16: Training Accuracy vs. Validation Accuracy for Sequential Deep Neural Network*
 
 
 <div><img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Deep-Neural-Network_Training-vs-Validation-Loss_bg-scaled.jpg" alt="DNN 03"/></div>
 
-*Figure 17: Training Accuracy vs. Validation Loss for Sequential Deep Neural Network*
+###### *Figure 17: Training Accuracy vs. Validation Loss for Sequential Deep Neural Network*
 
 Finally, we will perform a k-fold Cross-validation on our data. This methodology is used to estimate the model accuracy on new data; it splits our data into $k$ groups of samples, also called folds. The model is trained using $k-1$ of the folds as training data, and the resulting model is validated on the remaining part of the data.
 
@@ -2416,7 +2423,7 @@ The Cross-validation analysis gives us two different metrics for $k = 10$ number
 
 **Accuracy** measures how well our model predicts by comparing the model predictions with the true values in terms of percentage.
 
-### 17. Results consolidation
+## 17. Results consolidation
 Now that we have all the results, we can consolidate them in an Excel sheet using the `xlsxwriter` engine:
 
 ##### **Code**
@@ -2465,7 +2472,7 @@ acc_df.to_excel(writer, sheet_name = 'ACC_ALL')
 writer.close()
 ```
 
-### 18. Method comparison
+## 18. Method comparison
 If we look at our `Model_Results.xlsx` consolidate, we can see that 8 out of the 14 models we tested predicted the correct Lung Cancer severity level with **100%** accuracy. 2 of them presented **91%** accuracy, while the other four presented **88%**, **85%**, **78%** and **65%** accuracy respectively:
 
 | Model                                       | Accuracy |
@@ -2485,7 +2492,7 @@ If we look at our `Model_Results.xlsx` consolidate, we can see that 8 out of the
 | Extreme Gradient Boosting Classifier        | 100%     |
 | Sequential Deep Neural Network              | 100%     |
 
-*Table 13. Prediction accuracies for all models* 
+###### *Table 13. Prediction accuracies for all models* 
 
 The models who presented the highest accuracy scores were:
 - Decision Tree Classifier
@@ -2504,7 +2511,9 @@ While the models with the lowest prediction accuracy were:
 
 In general, the linear models presented lower accuracies, which makes sense since our data has presumably non-linear relationships. In general, most of the non-linear models predicted with **100%** accuracy, further sustaining our hypothesis.
 
-## Conclusions
+---
+
+# Conclusions
 In this segment, we reviewed 13 different Machine Learning classification models. First, we performed a general overview of each model and explained the mathematical intuition behind each case. We then tested linear and non-linear implementations.
 
 We also trained and tested a Deep Neural Network model using five layers. We performed a k-folds Cross-validation on it and saw that the accuracies were close to or 100%, meaning our implementation could predict different random subsets of data.
@@ -2513,7 +2522,8 @@ Finally, we compared the prediction accuracies for all of the models and conclud
 
 On the [third and final segment](https://pabloagn.com/guided-projects/exploratory-data-analysis-pt-3/) of this Guided Project series, we will use everything that we've gathered so far to build a technical and business-oriented client deliverable using [LaTeX](https://pabloagn.com/technologies/latex/) and [Texmaker](https://pabloagn.com/technologies/texmaker/).
 
-## References
+---
+# References
 - [IBM, KNN](https://www.ibm.com/topics/knn)
 - [OpenGenus, Gaussian Naïve Bayes](https://iq.opengenus.org/gaussian-naive-bayes/)
 - [OpenGenus, Bernoulli Naïve Bayes](https://iq.opengenus.org/bernoulli-naive-bayes/)
@@ -2523,3 +2533,8 @@ On the [third and final segment](https://pabloagn.com/guided-projects/explorator
 - [Philipp Christian Petersen, Neural Network Theory](http://pc-petersen.eu/Neural_Network_Theory.pdf)
 - [Machine Learning Mastery, Evaluate the Performance of Deep Learning Models in Keras](https://machinelearningmastery.com/evaluate-performance-deep-learning-models-keras/)
 - [Machine Learning Mastery, Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
+
+---
+
+# Copyright
+Pablo Aguirre, GNU General Public License v3.0, All Rights Reserved.

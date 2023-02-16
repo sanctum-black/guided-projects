@@ -1,4 +1,10 @@
-# Random Walk Simulator
+<article class="first">
+  <div class="title">
+    <h1>Random Walk Simulator</h1>
+  </div>
+</article>
+
+---
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
@@ -6,13 +12,13 @@
 
 **Exploratory data analysis** (*EDA*) is a scientific technique developed by the mathematician John Tukey in the 1970s widely used in Data Science. It consists of performing initial investigations on a data set so as to have a better understanding of its nature, and potentially use it for business or academic applications. This technique provides valuable insight in a quick way, and is useful when we are working with large data sets.
 
-
+In this Guided Project, we'll
 
 We'll be using Python scripts which can be found in the [Guided Project Repo](https://github.com/pabloagn/guided-projects/tree/master/probability-and-statistics).
 
 ---
 
-## Table of Contents
+# Table of Contents
 - Exploratory Data Analysis methods
 - Why perform an EDA?
 - A simple business case
@@ -22,10 +28,11 @@ We'll be using Python scripts which can be found in the [Guided Project Repo](h
 	- Variable correlation study
 - [Conclusions](#conclusions)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
-## Conclusions
+# Conclusions
 There are countless articles and posts out there suggesting x or y methods without any theoretical background. It's important to understand the underlying theory behind the methods we're using for our analysis.
 
 It's easy to get biased or incorrect results using statistical methods. How to Lie with Statistics by Darrell Huff provides an assortment of nice examples. We must avoid biases.
@@ -33,6 +40,13 @@ It's easy to get biased or incorrect results using statistical methods. How to L
 [^1]: [American Lung Association, Lung Cancer Fact Sheet](https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet)
 [^2]: [Investopedia, P-Value: What It Is, How to Calculate It, and Why It Matters](https://www.investopedia.com/terms/p/p-value.asp#:~:text=A%20p%2Dvalue%20is%20a,significance%20of%20the%20observed%20difference.)
 
-## References
+---
+
+# References
 - https://www.kaggle.com/code/ekami66/detailed-exploratory-data-analysis-with-python/notebook
 - https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet
+
+---
+
+# Copyright
+Pablo Aguirre, GNU General Public License v3.0, All Rights Reserved.

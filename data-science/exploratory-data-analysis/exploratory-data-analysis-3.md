@@ -1,4 +1,10 @@
-# Exploratory Data Analysis, Pt. 3
+<article class="first">
+  <div class="title">
+    <h1>Exploratory Data Analysis, Pt. 3</h1>
+  </div>
+</article>
+
+---
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
@@ -12,7 +18,7 @@ The generated plots and test results from the last two segments can be found in 
 
 ---
 
-## Table of Contents
+# Table of Contents
 - [Consolidating the results](#consolidating-the-results)
 - [Generating a technical reference deliverable](#generating-a-technical-deliverable)
 	- [Managing expectations](#1-managing-expectations)
@@ -28,15 +34,16 @@ The generated plots and test results from the last two segments can be found in 
 		- [Appendix](#37-appendix)
 - [Conclusions](#conclusions)
 - [References](#references)
+- [Copyright](#copyright)
 
 ---
 
-## Recalling our results
+# Recalling our results
 
 
-## Generating a technical deliverable
+# Generating a technical deliverable
 
-### 1. Managing expectations
+## 1. Managing expectations
 Before jumping right in we need to have something clear: We might have a high-performing model presenting extremely high accuracy results. Still, if we don't communicate our results properly and translate them into actionable insights, there's a chance that the client won't understand the value behind our hard work.
 
 Although things have changed drastically during the last years, it's common for companies to still not have an established team of data scientists and data analysts, specially when talking about small emerging businesses; managing an internal IT department is already expensive, so there is no assurance that our client will have a dedicated research team behind the curtains. And even if this is the case, there is no guarantee that they will be available for our project.
@@ -45,7 +52,7 @@ This is why we need to ensure that we're translating our results to a business-o
 
 Thankfully, there are some really nice tools out there that will help us achieve our goal.
 
-### 2. An introduction to LaTeX & Texmaker
+## 2. An introduction to LaTeX & Texmaker
 LaTeX is a software system for document preparation based on TeX, which can render complex mathematical formulae and multiple objects such as tables, headers, images, plots and other figures. It's the go-to language for scientific and technical journaling because of its flexibility, active community and beautiful document generating capabilities.
 
 There are multiple TeX distributions for different applications, the most common ones being TeX Live, MiKTeX, and MacTeX. They differ mainly in their package content and platform support.
@@ -56,12 +63,12 @@ LaTeX syntax is not easy; it presents a steep learning curve specially if we are
 
 The nice thing about templates, is that they're fully customizable; we can download a `.cls` class file and tailor it to our needs until we have exactly what we're looking for. At first it takes some time, but in the end it's really worth it.
 
-## 3. Why LaTeX?
+# 3. Why LaTeX?
 There are tons of word processors out there that would presumably make it easier for us to generate a client deliverable. In contrast, LaTeX requires us to install a TeX distribution and a dedicated text editor. Also, LaTeX syntax has a learning curve associated. This seems too much trouble just to generate a simple text document, so why bother using LaTeX?
 
 Well, let's enumerate some of the things we will need to include on this report, and see if LaTeX offers any advantage over other methods such as Microsoft Word or Markdown:
 
-### 3.1 Basic header and paragraph formatting
+## 3.1 Basic header and paragraph formatting
 On **Microsoft Word**, we need to type a header and then format it as header using a menu. This could be convenient but we can sometimes lose track of which header tag we used for each case, since there's no explicit code showing us this. Also, if we copy our headers, there's no guarantee that the formatting will translate when pasting on other word processors. For paragraph formatting, we need to make sure we're setting the properties such as spacing correctly, again, by using a menu. Also, when copying and pasting, formatting could get lost. 
 
 On **Markdown** it's much easier; all we have to do is define headers by using a hash `#` symbol. H1 will have a single hash prepended, H2 will have two hashes prepended, and so on. We can easily visualize this syntax using any text editor, and when copying and pasting content, the formatting will stay the exact same (*provided the target supports Markdown*). The problem with Markdown, is that it does not support formatting inside the actual document; we would have to create separate `.html` & `.css` files in order to customize our header styles.
@@ -92,7 +99,7 @@ Then, we can simply define a new section, and input the title:
 
 It will get formatted with the parameters we defined on our style sheet.
 
-### 3.2 Tables
+## 3.2 Tables
 Microsoft Word makes it very straightforward to include tables in a document; we just have to specify its dimensions, insert the figure, input the values, and we're done. While it's a very straightforward process, the formatting options are limited, and everything is done via our beloved menu. This is suboptimal and can take more time if we're looking to extensively customize out figure.
 
 Markdown also offers table support. We can use the following syntax:
@@ -136,7 +143,7 @@ Richard & Miles & $2$ \\
 Reference to Table~\vref{tab:label}
 ```
 
-### 3.3 Images
+## 3.3 Images
 **Microsoft Word** lets us include images by importing them. This is undoubtedly one of the most painstaking processes in the whole Word ecosystem; we cannot include an image by just specifying its path, we need to import the actual image. Also, if we need to include nice-looking captions, we need to create a table, insert our image on the top cell, and our caption on the bottom cell. To make things worst, formatting the picture often times leads to inconsistent outputs if we're not careful.
 
 **Markdown** offers two ways to include images in our document.
@@ -159,6 +166,7 @@ We can also use HTML:
 <img src="path_to_image" alt="Image" />
 ```
 
+##### **Output**
 <img src="https://pabloagn.com/wp-content/uploads/2023/02/G001A008_Extreme-Gradient-Boosting-Classifier_confusion_matrix_bg-scaled.jpg" alt="Image" />
 
 This is convenient if we want to specify custom dimensions, but again, customizability is limited, *e.g. we cannot create an image gallery using simple Markdown*.
@@ -192,19 +200,19 @@ We can even create an image gallery with custom layout,  and dimensions:
 
 Here, we previously defined a `Figures` folder which contains all the figures for this document. We simply reference them by their name, without any need for path and extension specification. Clean, simple and straightforward.
 
-### 3.3 Mathematical expressions
+## 3.3 Mathematical expressions
 **Microsoft Word** offers an equation handler where we can write mathematical formulae by selecting each mathematical symbol from a menu. This process can become tiresome after our 6th equation. Fortunately, Word also offers LaTeX integration; we can insert a new equation and then select LaTeX mode, where we'll be able to write using LaTeX syntax. The problem is, we have to do this every time we insert a new expression. Also, if we write an equation using the default Word method, translating that into LaTeX code frequently results in syntax errors. In short, Microsoft Word was not created for mathematical writing purposes.
 
 **Markdown** offers LaTeX compatibility, but it's not consistent between all editors; some natively support it, some require additional plugins, some offer inconsistent previewing, and others even require different expression enclosures. Also, we cannot install LaTeX packages to extend its functionality on Markdown. [Obsidian](https://pabloagn.com/technologies/obsidian/) is a great Markdown editor option since it supports LaTeX writing and previewing out of the box, but is limited in what it can perform.
 
 This field is where **LaTeX** excels. We might have noticed that the two previous options support LaTeX as their mathematical expression input language, and that's for a reason; LaTeX is the gold standard for mathematical writing. It supports [every symbol, operand and Greek letter available on the mathematical language](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols). If we're missing some exotic symbol with the default distribution packages, we can always install new ones thus extending the functionality. We can even use [FontAwesome](http://mirrors.ibiblio.org/CTAN/fonts/fontawesome/doc/fontawesome.pdf) custom icons out of the box by simply calling them from inside our document.
 
-### 3.4 Everything else
+## 3.4 Everything else
 It is true that LaTeX syntax presents a considerable learning curve, but once we master it, a beautiful document generation heaven awaits (*in the most literal sense, since LaTeX documents are can be very aesthetical if done right*). It provides us with considerably more customizability than other word processors, there's no arguing about that; the [Comprehensive TeX Archive Network](https://ctan.org/pkg/) (*CTAN*) currently hosts about 4,000 packages, meaning endless possibilities. From diagramming to drawing little [Marmots in TikZ](https://ctan.org/pkg/tikzmarmots?lang=en), LaTeX can tackle everything we throw at it.
 
 Now that we're convinced (*hopefully*) that LaTeX is our best friend, we can continue downloading everything we will need in order to make our client shriek with delight.
 
-## 4. Preparing our environment and downloading a template
+# 4. Preparing our environment and downloading a template
 For this segment we will use the TeX Live distribution along with the Texmaker editor. We will also download a template from [LaTeX Templates](https://www.latextemplates.com/template/sullivan-business-report), a phenomenal website providing free, fully-fledged material.
 
 This tutorial will be specifically oriented towards Windows, but can easily be tailored for macOS or Linux operating systems.
@@ -249,7 +257,7 @@ We could use this template as-is by simply editing our `article_4.tex` file. Thi
 
 We are now ready to start customizing our template.
 
-## 3. Designing our layout
+# 3. Designing our layout
 If we take a close look at our `structure.tex` file, we can see that it's already nicely divided by sections.
 
 The first section imports the required packages:
@@ -326,34 +334,40 @@ Aa
 
 
 
-### 3.1 Executive summary
+## 3.1 Executive summary
 
 
-### 3.2 Business guide
+## 3.2 Business guide
 
 
-### 3.3 Plot results
+## 3.3 Plot results
 
 
-### 3.4 Tabular results
+## 3.4 Tabular results
 
 
-### 3.5 Method considerations & limitations
+## 3.5 Method considerations & limitations
 
 
-### 3.6 Conclusions & recommendations
+## 3.6 Conclusions & recommendations
 
 
-### 3.7 Appendix
+## 3.7 Appendix
 
 
 
 
+---
 
-## Conclusions
+# Conclusions
 
+---
 
-## References
+# References
 - A
 - A
 
+---
+
+# Copyright
+Pablo Aguirre, GNU General Public License v3.0, All Rights Reserved.
