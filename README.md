@@ -11,9 +11,12 @@ Some projects are adaptations from existing ones, and others are my creations. E
 
 ## Table of Contents
 1. [Data Science](https://github.com/pabloagn/guided-projects/tree/master/data-science)
-	1. [exploratory-data-analysis-pt-1](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-1.md)
-	2. [exploratory-data-analysis-pt-2](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-2.md)
-	3. [exploratory-data-analysis-pt-3](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-3.md)
+	1. [Exploratory Data Analysis](https://github.com/pabloagn/guided-projects/tree/master/data-science/exploratory-data-analysis)
+		1. [Exploratory Data Analysis, Pt. 1](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-1.md)
+		2. [Exploratory Data Analysis, Pt. 2](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-2.md)
+		3. [Exploratory Data Analysis, Pt. 3](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-3.md)
+2. [Probability & Statistics](https://github.com/pabloagn/guided-projects/tree/master/probability-and-statistics)
+	1. [Random Walk Simulator](https://github.com/pabloagn/guided-projects/blob/master/probability-and-statistics/random-walk-simulator/random-walk-simulator.md)
 
 ## Website
 You can also directly consult the [Guided Projects](https://pabloagn.com/guided-projects/) page on my website.
