@@ -1,6 +1,6 @@
 # guided-projects
 
-![alt text](https://raw.githubusercontent.com/pabloagn/digital-assets/master/guided-projects-cover-image.jpg "Guided Projects Cover Image")
+![alt text](https://pabloagn.com/wp-content/uploads/2023/04/guided-projects-cover-image.jpg "Guided Projects Cover Image")
 
 ## About
 This section is about finding a cool project you’d like to replicate and getting your hands dirty.
