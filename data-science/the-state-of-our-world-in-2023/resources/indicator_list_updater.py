@@ -6,7 +6,7 @@ from pathlib import Path
 script_directory = Path(__file__).parent
 
 # Define the path to the Excel file and the output CSV file
-excel_file_path = script_directory / "resources" / "Indicator_List.xlsx"
+excel_file_path = script_directory / "Indicator_List.xlsx"
 csv_file_path = script_directory / "Indicator_List.csv"
 
 # Load the Excel file
