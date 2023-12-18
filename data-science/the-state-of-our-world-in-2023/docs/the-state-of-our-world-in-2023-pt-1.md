@@ -8,15 +8,19 @@
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
-[![type](https://img.shields.io/static/v1?label=Type&message=blog&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/) [![category](https://img.shields.io/static/v1?label=Category&message=data-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/blog/programming-best-practices-writing-better-code/)
+[![type](https://img.shields.io/static/v1?label=Type&message=guided-project&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-project/) [![category](https://img.shields.io/static/v1?label=Category&message=data-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python,%20R,%20RStudio,%20VS%20Code,%20PowerShell&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-projects/the-state-of-our-world-in-2023-pt-1/)
 
-Aaaaaa
+We live in an era where reliable data has become an invaluable asset. We're constantly bombarded with information from multiple sources, trying to grab our attention as quickly, effectively, and cheaply as possible. This has given rise to previously unheard phenomena that have been emerging over the past few years: anxiety-induced headlines & news fatigue, information overload, the surge of deepfakes, the perpetuation of clickbait culture, and many others. As we'll explore, this trend has resulted in a global decline in confidence in traditional news media outlets, with equally-significant impacts felt across non-traditional news sources such as X, Instagram, Facebook, YouTube, TikTok, and others.
 
-In this Blog Article, we'll provide the why and how of this series. We'll start by discussing motivations, expectations, and a brief overview of the state of the news today. We'll then define our document structure, provide an overview on measurement theory, & prepare our project using Python & R. Next, we'll provide a brief introduction to R, since it'll be our main language for this series (*an introduction to Python will also be provided when we get to the more advanced ML methods sections*).
+All of this has made it possible for alternative providers to search for reliable solutions; Ground News, NewsGuard, Full Fact, Snopes, and Media Bias/Fact Check are just some examples. These platforms and services aim to combat misinformation by providing fact-checking, bias ratings, and source comparisons, thereby offering a more grounded and comprehensive view of current events and claims.
+
+This is precisely where this series, *The State of Our World in 2023*, comes into play. Throughout a comprehensive series of blog articles & guided projects, we'll go over a comprehensive snapshot of our current global situation, utilizing reliable data sources, and analyzing the numbers for ourselves.
+
+In this first Guided Project, we'll provide the why and how of this series. We'll start by discussing motivations, expectations, and a brief overview of the state of the news today. We'll then define our document structure, provide an overview on measurement theory, & prepare our project using Python & R. Next, we'll provide a brief introduction to R for Data Science, since it'll be the main language for this series (*an introduction to Python will also be provided when we get to the more advanced ML methods sections*).
 
 Finally & with everything in place, we'll start by building our country hierarchy from public databases. This framework will conform the building blocks of all the analyses we'll be performing throughout this series.
 
-We'll be using R scripts which can be found in the [Blog Article Repo](https://github.com/ajourneythroughdatascience/blog/tree/master/ides/beloved-vs-code-extensions-i-use-daily).
+We'll be using R scripts which can be found in the [Guided Project Repo](https://github.com/ajourneythroughdatascience/guided-projects/tree/master/data-science/the-state-of-our-world-in-2023).
 
 ---
 
@@ -39,7 +43,7 @@ Turns out, ingesting information is a lot like ingesting food, but even more cri
 
 Over the last five months, I've dug into the task of creating a data repository filled with gigabytes of reliable data from credible sources – a quest that's been daunting & bleak but also extremely enlightening & comforting. What I've found is a wealth of incredible organizations providing information that doesn't often make it into the daily news cycle, data that can help us see beyond the headlines and draw our own conclusions, and that is most often used by Economists or Statisticians, when it should be readily accessible to the general public (*yeah, some of these datasets hardly get past 9 downloads...per month*).
 
-I'm not an Economist by any stretch. I'm simply a Data Scientist who's curious and a bit tired of all the misinformation and how it affects our capacity to focus resources on what really matters. This is why each week, throughout the month of December, I'll share my findings with you, examining different aspects of our world's current state – not to add to the noise, but to help us all make sense of it.
+I'm not an Economist by any stretch. I'm simply a Data Scientist who's curious and a bit tired of all the misinformation and how it affects our capacity to focus resources on what really matters. This is why each week, throughout the next 2 months, I'll share my findings with you, examining different aspects of our world's current state – not to add to the noise, but to help us all make sense of it.
 
 ---
 
@@ -59,62 +63,100 @@ For this series, we'll be mostly using [R](https://pabloagn.com/technologies/r/)
 ## 1. Media Confidence
 According to Reuters' Institute for the Study of Journalism [Digital News Report 2023](https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2023-06/Digital_News_Report_2023.pdf), only 10 out of 46 countries have a share of adult trust in news media as of February 2023 above 50%. This means that 78.2% of the surveyed countries have a trust share below 50%:
 
-![[statistic_id308468_trustworthiness-of-news-media-worldwide-2023.png]]
-
+01
 ###### Figure: [Share of adults who trust news media most of the time in selected countries worldwide as of February 2023, Reuters Institute for the Study of Journalism](https://www.statista.com/statistics/308468/importance-brand-journalist-creating-trust-news/)
 
-Additionally, according to Reuters Institute, the gap between trust in news on platforms vs trust in news in general is significant for most of the platforms under study:
+Additionally, according to Reuters Institute, the gap between trust in news on platforms vs trust in news in general is significant for most of the platforms under study. However, there are still some alternative news sources which content is often not verified, and whose gap vs traditional news confidence is not that significant.
 
 
-###### Figure: , Reproduced by Pablo Aguirre
+02
+###### Figure: [Percentage who trust information in the news media in general versus news on each platform in each country, Reuters Institute, Reproduced by Pablo Aguirre](https://reutersinstitute.politics.ox.ac.uk/trust-gap-how-and-why-news-digital-platforms-viewed-more-sceptically-versus-news-general)
 
 
-According to Gallup, in the US alone, public trust in mass media has plummeted to 2016 record low numbers (*2016 included Donald Trump's presidential candidacy*). Moreover, we can see that the trend of the percentage of people not trusting mass media at all, has been steadily increasing since Gallup first started with this survey in 1972, as we can see from the chart below:
+## Misinformation
+According to a study conducted by The Lloyd's Register Foundation, fifty-seven per cent of internet users across all parts of the world, socioeconomic groups and all ages, regard false information, or ‘fake news’, as a major concern. Concern is more prevalent in regions of high economic inequality and where ethnic, religious or political polarization exists, leading to weakening of social cohesion and trust. However, there is still a relevant number of developed countries with high percentages:
 
-![[americans-trust-in-mass-media-1972-2023-.png]]
+03_merged
+###### Figure: [Choropleth map of share of Internet users who see misinformation on the Internet as a threat, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)
 
-###### Figure: [Americans' Trust in Mass Media, 1972-2023, Gallup](https://news.gallup.com/poll/512861/media-confidence-matches-2016-record-low.aspx)
+We can see that this figure reveals some regional patterns; people in Eastern Europe (*46.9%, avg*) and Central Asia (*38.1%, avg*) express low levels of concern. In contrast, Western and Northern Europe present higher numbers (*64.5%, avg*). If we go to the Americas, we see that most countries stand out as regions where concern for misinformation is relatively high, particularly North America (*67.4%, avg*) & the Caribbean Countries (*74.2%, avg*).
 
-And this phenomenon is 
+Interestingly, The Harvard Kennedy School also performed a country-level correlational study between variables found in the [V-DEM dataset](https://v-dem.net/data/the-v-dem-dataset/) and the percentage of people that express concern regarding misinformation. They used a logistic regression model to model which variables predict risk perception of misinformation, and published the results in their peer-reviewed article [Who is afraid of fake news?](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/). Turns out the results are extremely interesting:
 
-So, why are people still misinformed?
+04
+###### Figure: [Results from a logistic regression model describing the effect of individual-level demographic variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)
+
+From the figure above, we can see that:
+- As discussed previously, there is a clear pattern when discussing regional-level likelihoods.
+- Closed autocratic regions, where the media is state-driven and strictly monitored, have a significantly lower likelihood of expressing concern about misinformation.
+- In contrast, electoral autocracies have a fairly higher percentage of likelihood, with liberal democracy having the highest.
+
+05
+###### Figure: [Results from a logistic regression model describing the effect of national-level variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)
+
+From the figure above, we can see that:
+- Older people tend to express less concern about misinformation. This change is statistically significant and presents a clear trend from younger to older people.
+- More educated people seem to express more concern about misinformation. This is specially significant when we look at the gap between Elementary Education & Secondary Education.
+- Gender has a 5% gap, where females perceive more concern than men.
+- Income levels are fairly similar, the only outlier being the middle income group (*above 40% & below 80%*) which express less concern vs the other income groups.
+
+In short, we can see that misinformation is a significant concern for a sufficient set of countries, and that there are also underlying patterns that can potentially help explain why this is happening.  
+
+So which steps can we take in order to ensure that at least the information we're ingesting is reliable? 
 
 ## 2. The QUIBBLE method
-This article would be incomplete without first going over what I call the QUIBBLE method (*Questioning Underlying Information Before Believing, Learning, and Endorsing*). You see, when we're hit with news, the headline is often much more prevalent than the actual information contained in the article. This is because ["we live in a hypercompetitive world, and clickbait titles simply sell more news"](https://www.apa.org/monitor/2022/11/strain-media-overload).
+There are a wide number of journalistic practices we can adopt as everyday newsreaders; the most important ones can be summarized into what I call the QUIBBLE method (*Questioning Underlying Information Before Believing, Learning, and Endorsing*). You see, when we're hit with news, the headline is often much more prevalent than the actual information contained in the article. This is because ["we live in a hypercompetitive world, and clickbait titles simply sell more news"](https://www.apa.org/monitor/2022/11/strain-media-overload).
 
 Thus, when the data arrives, we already have a certain predisposition, and more specifically, we already felt something. This not only causes a potential bias, but is increasingly affecting people emotionally, as observed by Dr. Steven Stosny in his [_Washington Post_ opinion piece in 2017](https://www.washingtonpost.com/news/inspired-life/wp/2017/02/06/suffering-from-headline-stress-disorder-since-trumps-win-youre-definitely-not-alone/).
 
 ## 2. Breaking patterns
-So how can we bypass this initial reaction, and focus on weather the piece is valid in the first place. Turns out there are some techniques we can (consciously) practice whenever we're exposed to news articles:
-1. **Verifying the Primary Source**:
-    - Ensure the primary source is credible and authoritative.
-    - Check if the sources cited actually exist and are accessible.
-    - Confirm that the data matches the information provided by the sources.
-2. **Understanding Source Bias and Funding**:
-    - Research the inclinations or biases of the source.
-    - Identify the funding behind the research or data collection to uncover potential conflicts of interest.
-3. **Analyzing the Metrics Used**:
-    - Understand the metrics or indicators being used and how they are defined.
-    - Assess the appropriateness of the metrics for the context or claim being made.
-4. **Evaluating Data Collection Methods**:
-    - Examine how the data was collected (e.g., surveys, experiments, administrative data).
-    - Check for potential biases or errors in the data collection process.
-5. **Inspecting Data Visualization Techniques**:
-    - Look at the types of visualizations (graphs, charts, maps) used to present the data.
-    - Assess whether the scales (linear, logarithmic) are appropriate and not misleading.
-    - Ensure legends and labels are clear and accurate.
-6. **Checking for Data Consistency and Timeliness**:
-    - Ensure the data is consistent internally and with other credible sources.
-    - Confirm that the data is current or relevant to the time period being discussed.
-7. **Reviewing Statistical Analysis Methods**:
-    - Understand the statistical methods used to analyze the data.
-    - Check if the conclusions drawn are statistically valid and reasonably derived from the data.
-8. **Considering Data Transparency and Reproducibility**:
+So how can we bypass this initial reaction, and focus on weather the piece is valid in the first place? There are some techniques we can (*consciously*) practice whenever we're exposed to news articles:
+
+### Verifying the primary source
+- **Ensure the primary source is credible and authoritative**: This includes trusted authors, credible research institutions, peer-reviewed material.
+- **Check if the sources are cited correctly, actually exist, and are accessible to the public**: This one is a bit tricky since studies can sometimes reference data sources (*most of the times this happens for secondary sources*) provided by organizations that require registration, that have paywalls, or that require an application procedure for us to be able to access the data. However, most socioeconomic data sources (*public organizations such as The World Bank, ILOSTAT, OECD, IMF, etc*) are completely free for public consultation (*there are some private organizations that offer built indexes for private use, and those can charge for subscription fees*) and even offer public APIs.
+- **Confirm that the data matches the information provided by the sources**: Sometimes the author may include a reference (*by mistake or purposefully*) that does not match the data being displayed. This can be caused by negligence, bad URLs, or even mistakes when writing the piece.
+
+### Understanding source bias and funding
+- **Research the inclinations or biases of the source**: This is specially relevant since some news outlets can have mild to strong political inclinations, and can even be partially or completely funded by governmental organs.
+- **Identify the funding behind the research or data collection**: This helps uncover potential conflicts of interest. Of course, this is not always possible, since public organizations can be partially or fully funded by private organizations (*this is not always a problem; the trick lies in simply knowing this fact before fully committing to an opinion*). Nice examples of this phenomenon are pharmaceutical companies funding medical studies, privacy studies can be funded by technology companies, etc.
+
+### Analyzing the metrics used
+- **Understand the metrics or indicators being used and how they are defined**: Having at least a general notion of which metrics are being used to present conclusions is relevant, since one metric might even be in different units than another one.
+- **Assess the appropriateness & validness of the metrics**: This is specially relevant when we discuss the context being discussed. A given metric might not be adequate for measuring a given phenomena, and often times a single metric will not fully explain the actual situation being described. This is why often times the study of socioeconomic phenomena is tackled from multiple angles.
+
+### Evaluating data collection methods
+- **Examine how the data was collected, and if there could be any errors in this process**: Often times the authors will cite how the data was collected (*e.g., surveys, experiments, administrative data*), and the parameters of said collection. This is relevant when talking about surveys & polls, for example; an incorrect sample size and an unstratified sampling technique, among others, are factors that can drastically skew the outcome of the study
+
+### Inspecting Data Visualization Techniques
+I would argue that a big part of the misinformation comes from incorrect visualization practices, since it's easy to make mistakes or purposefully lie to the public using this technique; a simple change in the axis scales can completely transform how data is perceived by the audience. Below are a couple of nice resources with examples of what not to do when visualizing data:
+- [Misleading Graphs: Real Life Examples, Statistics How To](https://www.statisticshowto.com/probability-and-statistics/descriptive-statistics/misleading-graphs/)
+- [Bad Data Visualizations, Real Life Examples Out There in the Wild, Tom Ellyatt](https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb0)
+
+- **Look at the types of visualizations (*graphs, charts, maps*) used to present the data**: Not all visualizations fit all scenarios. In fact, there are several best practices in place when selecting the most optimal visual object to show results. An excellent resource is the [Best Practices for Data Visualization Guideline by the Royal Statistical Society](https://royal-statistical-society.github.io/datavisguide/).
+- **Assess whether the scales (*linear, logarithmic*) are appropriate and not misleading**: This is where a great deal of the confusion might come from, since many data sources don't even report the units they're using. Another nice example widely found in line charts is what's known as "exaggerated scaling", where the minimum or maximum values of a given scale are exaggerated in order to reduce or increase apparent change.
+- Ensure legends and labels are clear and accurate: As we mentioned, some times, the axis does not even have labels or units. This can cause misinterpretation or plain lack of understanding.
+
+### Checking for Data Consistency and Timeliness
+- **Ensure the data is consistent internally and with other credible sources**: Aaa
+- **Confirm that the data is current or relevant to the time period being discussed**: Aaa
+
+
+### Reviewing Statistical Analysis Methods
+- **If a statistical analysis is included in the piece, check that said analysis is well-documented**: Most of the times, the analyses used will be referenced from external research papers, or created in-house and validated by a peer review process.
+- **Understand or at least have some notion of the statistical methods used to analyze the data**: This is of course not always possible, since some methods can be fairly technical. However, many authors sometimes make efforts in order to summarize the methods used in the executive summary or the body of the article.
+- **Check if the conclusions drawn are statistically valid and reasonably derived from the data**: This is specially relevant since, as we have discussed, statistics is a powerful tool that can be used to mislead (*purposefully or by ignorance*) from the very simple descriptive statistics such as mean & standard deviation.
+
+
+3. **Reviewing Statistical Analysis Methods**:
+
+4. **Considering Data Transparency and Reproducibility**:
     - Determine if the data and methodologies are transparent enough for independent verification.
     - Assess if the study or data analysis can be replicated or peer-reviewed.
 
 ## It happens to everyone, really
 As a Data Scientist, I've gone over countless occasions where information is presented incorrectly (*I myself am guilty of this error*).
+
 
 
 ---
@@ -127,162 +169,7 @@ Since we'll be managing a lot of information & results, we'll keep an organized 
 	2. **Subjects**: Indicate a more specific topic, and contain a group of metrics.
 	3. **Metrics**: Measurements used to track and assess the status of a specific process. As we'll see soon, metrics can be classified into subgroups.
 
-Below you will find a detailed breakdown of the Segments, Subjects & Metrics we'll tackle:
-
-| Metric Code | Segment                            | Subject                                 | Source                                                                    |
-| ----------- | ---------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
-| 01_01       | Macroeconomics                     | GDP                                     | The World Bank                                                            |
-| 01_02       | Macroeconomics                     | GDP                                     | The World Bank                                                            |
-| 01_03       | Macroeconomics                     | GDP                                     | The World Bank                                                            |
-| 01_04       | Macroeconomics                     | GDP                                     | The World Bank                                                            |
-| 01_05       | Macroeconomics                     | GDP                                     | The World Bank                                                            |
-| 01_06       | Macroeconomics                     | Economic Metrics                        | The World Bank                                                            |
-| 01_07       | Macroeconomics                     | Economic Metrics                        | International Monetary Fund (IMF)                                         |
-| 01_08       | Macroeconomics                     | Economic Metrics                        | The World Bank                                                            |
-| 01_09       | Macroeconomics                     | Economic Metrics                        | The Economist                                                             |
-| 01_10       | Macroeconomics                     | Economic Metrics                        | United Nations Environment Programme (UNEP)                               |
-| 01_11       | Macroeconomics                     | Economic Metrics                        | (blank)                                                                   |
-| 01_12       | Macroeconomics                     | Economic Metrics                        | The World Bank                                                            |
-| 01_13       | Macroeconomics                     | Economic Metrics                        | The World Bank                                                            |
-| 01_14       | Macroeconomics                     | Unemployment & Underemployment          | The World Bank                                                            |
-| 01_15       | Macroeconomics                     | Unemployment & Underemployment          | The World Bank                                                            |
-| 01_16       | Macroeconomics                     | Unemployment & Underemployment          | International Labor Organization (ILOSTAT)                                |
-| 01_17       | Macroeconomics                     | Debt & Deficit                          | International Monetary Fund (IMF)                                         |
-| 01_18       | Macroeconomics                     | Debt & Deficit                          | Central Intelligence Agency (CIA)                                         |
-| 01_19       | Macroeconomics                     | Income Inequality                       | The World Bank                                                            |
-| 01_20       | Macroeconomics                     | Income Inequality                       | The World Bank                                                            |
-| 01_21       | Macroeconomics                     | Income Inequality                       | The World Bank                                                            |
-| 01_22       | Macroeconomics                     | Income Inequality                       | United Nations Development Programme (UNDP)                               |
-| 01_23       | Macroeconomics                     | Poverty                                 | United Nations Development Programme (UNDP)                               |
-| 01_24       | Macroeconomics                     | Poverty                                 | International Labor Organization (ILOSTAT)                                |
-| 01_25       | Macroeconomics                     | Income Disparities & Wage Gap           | Credit Suisse                                                             |
-| 01_26       | Macroeconomics                     | Income Disparities & Wage Gap           | World Economic Forum                                                      |
-| 01_27       | Macroeconomics                     | Income Disparities & Wage Gap           | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_28       | Macroeconomics                     | Currency Value Against USD              | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_29       | Macroeconomics                     | Minimum Wage                            | International Labor Organization (ILOSTAT)                                |
-| 01_30       | Macroeconomics                     | Labor Force Participation               | International Labor Organization (ILOSTAT)                                |
-| 01_31       | Macroeconomics                     | Labor Force Participation               | International Labor Organization (ILOSTAT)                                |
-| 01_32       | Macroeconomics                     | Household Dynamics                      | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_33       | Macroeconomics                     | Household Dynamics                      | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_34       | Macroeconomics                     | Household Dynamics                      | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_35       | Macroeconomics                     | Household Dynamics                      | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_36       | Macroeconomics                     | Household Dynamics                      | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_37       | Macroeconomics                     | Household Dynamics                      | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_38       | Macroeconomics                     | Household Dynamics                      | Organisation for Economic Co-operation and Development (OECD)             |
-| 01_39       | Macroeconomics                     | Non-performing Loans and Solvency       | International Monetary Fund (IMF)                                         |
-| 02_01       | Economic Indicators and Investment | Market and Consumer Indices             | Organisation for Economic Co-operation and Development (OECD)             |
-| 02_02       | Economic Indicators and Investment | Market and Consumer Indices             | Organisation for Economic Co-operation and Development (OECD)             |
-| 02_03       | Economic Indicators and Investment | Market and Consumer Indices             | The World Bank                                                            |
-| 02_04       | Economic Indicators and Investment | Investment Trends                       | Organisation for Economic Co-operation and Development (OECD)             |
-| 02_05       | Economic Indicators and Investment | Investment Trends                       | Organisation for Economic Co-operation and Development (OECD)             |
-| 02_06       | Economic Indicators and Investment | Economic Metrics                        | United Nations World Tourism Organization                                 |
-| 03_01       | Industrial and Trade               | Trade Patterns                          | International Monetary Fund (IMF)                                         |
-| 03_02       | Industrial and Trade               | Industrial Environmental Impact         | The World Bank                                                            |
-| 03_03       | Industrial and Trade               | Industrial Environmental Impact         | Our World in Data                                                         |
-| 03_04       | Industrial and Trade               | Industrial Environmental Impact         | Our World in Data                                                         |
-| 03_05       | Industrial and Trade               | Industrial Environmental Impact         | The World Bank                                                            |
-| 03_06       | Industrial and Trade               | Consumption of Electricity              | The World Bank                                                            |
-| 03_07       | Industrial and Trade               | Agriculture                             | The World Bank                                                            |
-| 04_01       | Environmental Health               | Air Quality and Pollution               | IQAir                                                                     |
-| 04_02       | Environmental Health               | Climate Change Indicators               | International Monetary Fund (IMF)                                         |
-| 04_03       | Environmental Health               | Climate Change Indicators               | International Monetary Fund (IMF)                                         |
-| 04_04       | Environmental Health               | Climate Change Indicators               | International Monetary Fund (IMF)                                         |
-| 04_05       | Environmental Health               | Climate Change Indicators               | International Monetary Fund (IMF)                                         |
-| 04_06       | Environmental Health               | Extreme Weather Conditions              | International Monetary Fund (IMF)                                         |
-| 04_07       | Environmental Health               | Extreme Weather Conditions              | Germanwatch                                                               |
-| 04_08       | Environmental Health               | Environmental Sustainability            | Yale University                                                           |
-| 04_09       | Environmental Health               | Environmental Sustainability            | Dual Citizen Inc.                                                         |
-| 04_10       | Environmental Health               | Environmental Sustainability            | Vision of Humanity                                                        |
-| 04_11       | Environmental Health               | Percentage of Renewable Resources       | The World Bank                                                            |
-| 05_01       | Political Sociology                | Corruption Overview                     | Transparency International                                                |
-| 05_02       | Political Sociology                | Political Landscape                     | Economist Intelligence Unit                                               |
-| 05_03       | Political Sociology                | Political Landscape                     | Freedom House                                                             |
-| 05_04       | Political Sociology                | War and Armed Conflicts                 | Vision of Humanity                                                        |
-| 05_05       | Political Sociology                | War and Armed Conflicts                 | Vision of Humanity                                                        |
-| 05_06       | Political Sociology                | War and Armed Conflicts                 | Vision of Humanity                                                        |
-| 05_07       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_08       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_09       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_10       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_11       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_12       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_13       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_14       | Political Sociology                | War and Armed Conflicts                 | Uppsala Universitet - Uppsala Conflict Data Program                       |
-| 05_15       | Political Sociology                | Political Inclinations                  | World Values Survey                                                       |
-| 05_16       | Political Sociology                | Democracy and Governance                | Electoral Integrity Global Report                                         |
-| 05_17       | Political Sociology                | Democracy and Governance                | Varieties of Democracy (V-Dem)                                            |
-| 06_01       | Health and Well-Being              | Health                                  | The World Bank                                                            |
-| 06_02       | Health and Well-Being              | Health                                  | The World Bank                                                            |
-| 06_03       | Health and Well-Being              | Health                                  | World Health Organization (WHO), NCD Risk Factor Collaboration (NCD-RisC) |
-| 06_04       | Health and Well-Being              | Health                                  | The World Bank                                                            |
-| 06_05       | Health and Well-Being              | Health                                  | MIMI                                                                      |
-| 06_06       | Health and Well-Being              | Health                                  | International Labor Organization (ILOSTAT)                                |
-| 06_07       | Health and Well-Being              | Health                                  | International Labor Organization (ILOSTAT)                                |
-| 06_08       | Health and Well-Being              | Global Burden of Disease                | The Institute for Health Metrics and Evaluation (IHME)                    |
-| 06_09       | Health and Well-Being              | Global Burden of Disease                | The Institute for Health Metrics and Evaluation (IHME)                    |
-| 06_10       | Health and Well-Being              | Global Burden of Disease                | The Institute for Health Metrics and Evaluation (IHME)                    |
-| 06_11       | Health and Well-Being              | Global Burden of Disease                | The Institute for Health Metrics and Evaluation (IHME)                    |
-| 06_12       | Health and Well-Being              | Well-Being                              | World Happiness Report                                                    |
-| 06_13       | Health and Well-Being              | Mental Health                           | World Health Organization (WHO)                                           |
-| 06_14       | Health and Well-Being              | Healthcare Access and Disparities       | World Health Organization (WHO)                                           |
-| 06_15       | Health and Well-Being              | Healthcare Access and Disparities       | The World Bank                                                            |
-| 06_16       | Health and Well-Being              | Substance Abuse                         | (blank)                                                                   |
-| 07_01       | Educational Development            | Worldwide Education Trends              | The World Bank                                                            |
-| 07_02       | Educational Development            | Education Disparities and Affordability | (blank)                                                                   |
-| 07_03       | Educational Development            | Education Disparities and Affordability | (blank)                                                                   |
-| 07_04       | Educational Development            | Maximum Degree of Studies               | Organisation for Economic Co-operation and Development (OECD)             |
-| 07_05       | Educational Development            | Maximum Degree of Studies               | Organisation for Economic Co-operation and Development (OECD)             |
-| 08_01       | Demographic Trends                 | Population Dynamics and Migration       | (blank)                                                                   |
-| 08_02       | Demographic Trends                 | Population Dynamics and Migration       | (blank)                                                                   |
-| 08_03       | Demographic Trends                 | Refugee Crisis                          | United Nations High Commissioner for Refugees (UNHCR)                     |
-| 08_04       | Demographic Trends                 | Displaced Persons & Asylum Seekers      | (blank)                                                                   |
-| 08_05       | Demographic Trends                 | Immigration and Integration             | Migrant Integration Policy Index (MIPEX)                                  |
-| 08_06       | Demographic Trends                 | Natality Index                          | The World Bank                                                            |
-| 08_07       | Demographic Trends                 | Life Conditions                         | The World Bank                                                            |
-| 08_08       | Demographic Trends                 | Mortality Index                         | The World Bank                                                            |
-| 08_09       | Demographic Trends                 | Total Population                        | The World Bank                                                            |
-| 08_10       | Demographic Trends                 | Population Density                      | The World Bank                                                            |
-| 08_11       | Demographic Trends                 | Religious Inclinations                  | (blank)                                                                   |
-| 08_12       | Demographic Trends                 | Race                                    | (blank)                                                                   |
-| 09_01       | Housing and Living Standards       | Housing Trends and Security             | (blank)                                                                   |
-| 09_02       | Housing and Living Standards       | Housing Trends and Security             | (blank)                                                                   |
-| 09_03       | Housing and Living Standards       | Housing Trends and Security             | (blank)                                                                   |
-| 09_04       | Housing and Living Standards       | Basic Amenities Access                  | (blank)                                                                   |
-| 09_05       | Housing and Living Standards       | Basic Amenities Access                  | (blank)                                                                   |
-| 10_01       | Social and Humanitarian Issues     | Violence and Crimes                     | (blank)                                                                   |
-| 10_02       | Social and Humanitarian Issues     | Violence and Crimes                     | (blank)                                                                   |
-| 10_03       | Social and Humanitarian Issues     | Violence and Crimes                     | Small Arms Survey                                                         |
-| 10_04       | Social and Humanitarian Issues     | Violence and Crimes                     | Small Arms Survey                                                         |
-| 10_05       | Social and Humanitarian Issues     | Violence and Crimes                     | (blank)                                                                   |
-| 10_06       | Social and Humanitarian Issues     | Violence and Crimes                     | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_07       | Social and Humanitarian Issues     | Violence and Crimes                     | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_08       | Social and Humanitarian Issues     | Violence and Crimes                     | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_09       | Social and Humanitarian Issues     | Violence and Crimes                     | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_10       | Social and Humanitarian Issues     | Drug-Related Metrics                    | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_11       | Social and Humanitarian Issues     | Drug-Related Metrics                    | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_12       | Social and Humanitarian Issues     | Drug-Related Metrics                    | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_13       | Social and Humanitarian Issues     | Drug-Related Metrics                    | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_14       | Social and Humanitarian Issues     | Drug-Related Metrics                    | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_15       | Social and Humanitarian Issues     | Drug-Related Metrics                    | United Nations Office on Drugs & Crime (UNODOC)                           |
-| 10_16       | Social and Humanitarian Issues     | Child Welfare                           | United Nations International Children's Emergency Fund (UNICEF)           |
-| 10_17       | Social and Humanitarian Issues     | Child Welfare                           | United Nations International Children's Emergency Fund (UNICEF)           |
-| 10_18       | Social and Humanitarian Issues     | Child Welfare                           | United Nations International Children's Emergency Fund (UNICEF)           |
-| 10_19       | Social and Humanitarian Issues     | Child Welfare                           | United Nations International Children's Emergency Fund (UNICEF)           |
-| 10_20       | Social and Humanitarian Issues     | Nuclear and Security                    | Federation of American Scientists (FAS)                                   |
-| 10_21       | Social and Humanitarian Issues     | Nuclear and Security                    | NTI Nuclear Security Index                                                |
-| 10_22       | Social and Humanitarian Issues     | Social Injustice and Rights             | Othering & Belonging Institute                                            |
-| 10_23       | Social and Humanitarian Issues     | Social Injustice and Rights             | Equaldex                                                                  |
-| 10_24       | Social and Humanitarian Issues     | Social Injustice and Rights             | United Nations Development Programme (UNDP)                               |
-| 10_25       | Social and Humanitarian Issues     | Social Injustice and Rights             | (blank)                                                                   |
-| 10_26       | Social and Humanitarian Issues     | Social Injustice and Rights             | (blank)                                                                   |
-| 10_27       | Social and Humanitarian Issues     | Social Injustice and Rights             | Reporters Without Borders (RSF)                                           |
-| 10_28       | Social and Humanitarian Issues     | Social Injustice and Rights             | CATO Institute                                                            |
-| 10_29       | Social and Humanitarian Issues     | Food Insecurity                         | Global Hunger Index                                                       |
-| 10_30       | Social and Humanitarian Issues     | Food Insecurity                         | Food & Agriculture Organization of the United Nations                     |
-| 10_31       | Social and Humanitarian Issues     | Food Insecurity                         | Economist Impact                                                          |
-| 10_32       | Social and Humanitarian Issues     | Organized Crime                         | OC Index                                                                  |
-| 10_33       | Social and Humanitarian Issues     | Travel Danger                           | US Department of State                                                    |
-###### Table: [socioeconomic, political & environmental metrics](https://gist.github.com/pabloagn/5c1e0154659156fe8e15cb71705e2771)
+You will find a detailed breakdown of the Segments, Subjects & Metrics here]().
 
 ---
 
