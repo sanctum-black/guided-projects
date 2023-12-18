@@ -60,7 +60,7 @@ For this series, we'll be mostly using [R](https://pabloagn.com/technologies/r/)
 
 # The state of news today
 
-## 1. Media Confidence
+## Media Confidence
 According to Reuters' Institute for the Study of Journalism [Digital News Report 2023](https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2023-06/Digital_News_Report_2023.pdf), only 10 out of 46 countries have a share of adult trust in news media as of February 2023 above 50%. This means that 78.2% of the surveyed countries have a trust share below 50%:
 
 01
@@ -104,12 +104,12 @@ In short, we can see that misinformation is a significant concern for a sufficie
 
 So which steps can we take in order to ensure that at least the information we're ingesting is reliable? 
 
-## 2. The QUIBBLE method
+## The QUIBBLE method
 There are a wide number of journalistic practices we can adopt as everyday newsreaders; the most important ones can be summarized into what I call the QUIBBLE method (*Questioning Underlying Information Before Believing, Learning, and Endorsing*). You see, when we're hit with news, the headline is often much more prevalent than the actual information contained in the article. This is because ["we live in a hypercompetitive world, and clickbait titles simply sell more news"](https://www.apa.org/monitor/2022/11/strain-media-overload).
 
 Thus, when the data arrives, we already have a certain predisposition, and more specifically, we already felt something. This not only causes a potential bias, but is increasingly affecting people emotionally, as observed by Dr. Steven Stosny in his [_Washington Post_ opinion piece in 2017](https://www.washingtonpost.com/news/inspired-life/wp/2017/02/06/suffering-from-headline-stress-disorder-since-trumps-win-youre-definitely-not-alone/).
 
-## 2. Breaking patterns
+## Breaking patterns
 So how can we bypass this initial reaction, and focus on weather the piece is valid in the first place? There are some techniques we can (*consciously*) practice whenever we're exposed to news articles:
 
 ### Verifying the primary source
@@ -138,28 +138,26 @@ I would argue that a big part of the misinformation comes from incorrect visuali
 - Ensure legends and labels are clear and accurate: As we mentioned, some times, the axis does not even have labels or units. This can cause misinterpretation or plain lack of understanding.
 
 ### Checking for Data Consistency and Timeliness
-- **Ensure the data is consistent internally and with other credible sources**: Aaa
-- **Confirm that the data is current or relevant to the time period being discussed**: Aaa
-
+- **Ensure the data is consistent internally and with other credible sources**: Socioeconomic data will many times be reported by more than one source, specially if we're talking about relevant metrics such as GDP, Inflation, Consumer Price Index, Unemployment Rate, etc. The trickier part comes where the metric is proprietary and was designed by a specific organization, the most common example being composite indexes (*although other metrics are also included here*). Some composite index examples include:
+	- [Global Peace Index by Vision of Humanity](https://www.visionofhumanity.org/maps/#/)
+	- [Global Green Economy Index (GGEI) by Dual Citizen](https://dualcitizeninc.com/global-green-economy-index/)
+	- [Freedom in the World by Freedom House](https://freedomhouse.org/report/freedom-world)
+- **Confirm that the data is current or relevant to the time period being discussed**: It's sometimes hard to get up-to-date data, specially for the more hermetic countries (*e.g., closed autocracies, dictatorships*), economies with ongoing political conflicts (*e.g., recent coups, temporal governments*), or economies with volatile political situations (*e.g., once reported but stopped due to change in political regime*). All of these cases are part of the bigger concept referred to as [data holes](https://bigthink.com/strange-maps/the-worlds-data-holes-quantified/) . Some examples include Afghanistan, North Korea, Venezuela, Syria, and more. What's more, some of these economies do not even belong to some of the reporting organizations such as the IMF, The World Bank, OECD, etc. This can create difficulties for gathering updated information, and if there is information but it's outdated, it can tell a whole different store from the actual facts.
 
 ### Reviewing Statistical Analysis Methods
-- **If a statistical analysis is included in the piece, check that said analysis is well-documented**: Most of the times, the analyses used will be referenced from external research papers, or created in-house and validated by a peer review process.
+- **If a statistical analysis is included in the piece, check that said analysis is well-documented**: Sometimes, the analyses used will be referenced from external research papers, or created in-house and validated by a peer review process. The most relevant organizations (*ILOSTAT, The World Bank, IMF, etc*) always provide a detailed breakdown of their statistical methods as footnotes. They will sometimes be accompanied by considerations & assumptions for the method(s) in question.
 - **Understand or at least have some notion of the statistical methods used to analyze the data**: This is of course not always possible, since some methods can be fairly technical. However, many authors sometimes make efforts in order to summarize the methods used in the executive summary or the body of the article.
-- **Check if the conclusions drawn are statistically valid and reasonably derived from the data**: This is specially relevant since, as we have discussed, statistics is a powerful tool that can be used to mislead (*purposefully or by ignorance*) from the very simple descriptive statistics such as mean & standard deviation.
-
-
-3. **Reviewing Statistical Analysis Methods**:
-
-4. **Considering Data Transparency and Reproducibility**:
-    - Determine if the data and methodologies are transparent enough for independent verification.
-    - Assess if the study or data analysis can be replicated or peer-reviewed.
+- **Check if the conclusions drawn are statistically valid and reasonably derived from the data**: This is specially relevant since, as we have discussed, statistics is a powerful tool that can be used to mislead (*purposefully or by ignorance*) by using very simple descriptive statistics such as mean & standard deviation, to more complex methods. In this series, we'll learn how to discern weather a given statistic makes sense under a given context.
 
 ## It happens to everyone, really
-As a Data Scientist, I've gone over countless occasions where information is presented incorrectly (*I myself am guilty of this error*).
+As a Data Scientist, I've gone over countless occasions where information contained one or more of the slips abovementioned (*I myself am guilty of this error*). It's easy to miss details, generate the wrong visualization, mess up the scales, use the wrong parameters for a statistical method, over-trust the source, etc.
 
+And this is fine since it's all part of the process. What's crucial is that we develop critical thinking in terms of how we consume & interpret information; we already know how data can be manipulated, and that there are tools we can use in order to come up with better hypothesis & conclusions. What's left now is practicing critical thinking again and again.
 
+Now that we know what to expect, let us start preparing our project.
 
 ---
+
 # Document structure
 Since we'll be managing a lot of information & results, we'll keep an organized structure throughout the article. The framework will be as follows:
 1. **Workspace setup using R & Python**: We'll be using both languages throughout this series. We'll focus on using R for the data transformations, statistic methods & visualizations. Python will be strongest when we start designing using Machine Learning models latter in the series. We'll create a project & environments for each case.
@@ -169,7 +167,7 @@ Since we'll be managing a lot of information & results, we'll keep an organized 
 	2. **Subjects**: Indicate a more specific topic, and contain a group of metrics.
 	3. **Metrics**: Measurements used to track and assess the status of a specific process. As we'll see soon, metrics can be classified into subgroups.
 
-You will find a detailed breakdown of the Segments, Subjects & Metrics here]().
+You can find a detailed breakdown of the Segments, Subjects & Metrics [here](https://github.com/ajourneythroughdatascience/guided-projects/blob/master/data-science/the-state-of-our-world-in-2023/resources/Indicator_List.csv).
 
 ---
 
@@ -189,26 +187,25 @@ We can try to group metrics under subgroups based on these attributes:
 - **Scale**: Scales are used to measure the intensity or frequency of certain phenomena and often involve a range of values. The Air Quality Index (AQI), for example, measures the level of air pollution on a scale from 0 to 500.
 - **Survey Results**: These are data collected directly from people, such as public opinion on government policies or satisfaction with public services.
 
-Why is this important to understand? Well, because whenever we hear about some metric in the news, we're not always presented with how its calculated:
-
-- Mistaking a composite index such as the Human Development Index (HDI) for a simple indicator like GDP per capita, drastically reduces the understanding of a country's development.
+Why is this important to understand? Well, because whenever we hear about some metric in the news, we're not always presented with how its calculated, which version is being used, what benchmarks are being considered, etc. This can lead to misinformation really quick. Below are some real examples:
+- Reporting an unemployment rate without context, such as failing to explain whether they're referring to the U-3 rate (*the most commonly reported rate, which counts people without jobs who are actively seeking work*) or the U-6 rate (*which includes part-time workers who want but can't find full-time work and people who have stopped looking for a job*) can significantly alter the perceived state of the economy.
 - Mentioning a literacy rate of 95%, without understanding the appropriate benchmark (*like the average literacy rate for its region or income group*) might completely bias the result towards a good outcome, when the real outcome when benchmarked correctly might be extremely low.
-- Interpreting a moderate score on an air quality index (AQI) as "safe", without understanding the specific pollutants measured and their health impacts, can lead to underestimating health risks.
-- Comparing GDPs between countries without [adjusting for Purchase Power Parity](https://ourworldindata.org/what-are-ppps), or simply using [Nominal GDP vs Real GDP](https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics/economic-iondicators-and-the-business-cycle/real-vs-nominal-gdp/a/lesson-summary-real-vs-nominal-gdp) without acknowledging that the first one includes an inflationary component.
-- Taking survey results at face value without considering potential biases in the survey design or the representativeness of the sample can lead to incorrect conclusions about public opinion. This is extremely common and often happens around political contexts, specifically at political polling (*[this Medium article](https://medium.com/@vanacorec/selection-bias-in-political-polling-9fd667e8e7f7) nicely explains this phenomenon*)
+- Interpreting a moderate score on an Air Quality Index (*AQI*) as "safe", without understanding the specific pollutants measured and their health impacts, can lead to underestimating health risks.
+- Comparing GDPs between countries without [adjusting for Purchase Power Parity](https://ourworldindata.org/what-are-ppps), or simply using [Nominal GDP vs Real GDP](https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics/economic-iondicators-and-the-business-cycle/real-vs-nominal-gdp/a/lesson-summary-real-vs-nominal-gdp) without acknowledging that the first one includes an inflationary component, can lead to unfair comparisons and a worst or better perception of a given economy than how it's really doing.
+- Taking survey results at face value without considering potential biases in the survey design or the representativeness of the sample can lead to incorrect conclusions about public opinion. This is extremely common and often happens around political contexts, specifically at political polling (*[this Medium article](https://medium.com/@vanacorec/selection-bias-in-political-polling-9fd667e8e7f7) nicely explains this phenomenon*), where the sample is poorly designed, the results are poorly processed, the estimators are poorly designed, etc.
 
 The bottom line is that statistics is a very powerful tool that can be used to gather insights, but also mislead people, purposefully or by accident. Knowing how metrics are designed & built is already an extremely valuable tool we can use [anytime Colgate decides to bring out a new advert on how good their product is](https://www.reuters.com/article/uk-britain-colgate-idUKL1654835620070117/).
 
-Of course, knowing our metrics and their components & classification is just the first step in 
+Of course, knowing our metrics and their components & classification is just the first step in. Throughout this series we'll try to explain every metric we explore in the most comprehensive way possible.
 
 ---
 
 # Preparing our workspace
-Now that the basic theory is all set, we can start by setting up our workspace. This will include:
+Now that the basic theory is set, we can start by setting up our workspace. This will include:
 - Setting up a folder structure.
 - Setting up an R project & environment.
 - Setting up a Python environment.
-- installing required packages for both parties.
+- Installing required packages for both parties.
 
 ## Folder structure set up
 Before we create our virtual environments, we'll set up our folder structure. Here's what we'll need:
@@ -275,18 +272,21 @@ Now, depending on our Project Root directory name, we should have a new file wit
 #### The R Environment
 We'll now proceed to create an R Environment specifically tailored for this project. From within RStudio we'll head to the R console and execute the following:
 
+##### **Code**
 ```R
 install.packages("renv")
 ```
 
 This will install the `renv` package if we don't have it already. We should get an output similar to the following:
 
+##### **Output**
 ```
 package ‘renv’ successfully unpacked and MD5 sums checked
 ```
 
 Once installed, we can activate our environment using the console:
 
+##### **Code**
 ```R
 renv::init()
 ```
@@ -298,23 +298,23 @@ If everything went well, we should end up with the following new files & folders
 
 #### Installing packages
 For this series we'll need several R packages:
-- Reading & writing
+- Reading & writing:
 	- [`readr`](https://readr.tidyverse.org/): Provides the capability to read from comma-separated value (`CSV`) and tab-separated value (`TSV`) files. We'll use this for reading mainly from `csv` files.
 	- [`readxl`](https://readxl.tidyverse.org/): Provides the capability to read Excel files, specifically tailored for well-known datasets (*faster, uses more RAM, only analyzes the first 1000 rows to determine the column types*). We'll use this for from Excel files.
 	- [`openxlsx`](https://cran.r-project.org/web/packages/openxlsx/index.html): Provides the capability to read Excel files, specifically for big files with unknown values (*does not have the first-1000-row-reading limitation*). We'll use this for reading from Excel files.
 	- [`writexl`](https://cran.r-project.org/web/packages/writexl/index.html): Provides a zero-dependency data frame to `xlsx` exporter based on `libxlsxwriter`. Fast and no Java or Excel required. We'll use this for our results exporting.
 	- [`arrow`](https://cran.r-project.org/web/packages/arrow/index.html): Provides an interface to the 'Arrow C++' library. We'll use this for reading & writing Parquet files, which we'll explore once we get to the Machine Learning part of this series.
-- Data manipulation
+- Data manipulation:
 	- [`dplyr`](https://dplyr.tidyverse.org/): Data manipulation & complex transformations.
 	- [`tidyr`](https://tidyr.tidyverse.org/): Changing the shape (*pivoting*) and hierarchy (*nesting and 'unnesting'*) of a dataset, by sticking to the tidy data framework: Each column is a variable, each row is an observation, and each cell contains a single value.
 	- [`data.table`](https://cran.r-project.org/web/packages/data.table/index.html): Provides fast aggregation of large data, fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns, and friendly and fast character-separated-value read/write. In short, a faster `data.frame` implementation.
 	- [`stringr`](https://stringr.tidyverse.org/): Provides a cohesive set of functions designed to make working with strings as easy as possible.
 	- [`lubridate`](https://lubridate.tidyverse.org/): Provides multiple methods for working easily with dates. This will be specially important in this series since we'll deal with a lot of time series analyses.
 	- [`purr`](https://www.rdocumentation.org/packages/purrr/versions/0.2.4): Provides various enhancements to R's functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors.
-- Statistical Analysis
+- Statistical analysis:
 	- [`car`](https://cran.r-project.org/web/packages/car/index.html): Provides a set of common & advanced statistical functions. We'll use this when we get to the statistical analysis part of this segment. 
 	- [`broom`](https://cran.r-project.org/web/packages/broom/index.html): Summarizes key information about statistical objects in tidy [tibbles](https://tibble.tidyverse.org/). This makes it easy to report results, create plots and consistently work with large numbers of models at once.
-- Data visualization
+- Data visualization:
 	- [`ggplot2`](https://ggplot2.tidyverse.org/): `ggplot2` is a system for declaratively creating graphics, based on [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl). This will be our core data visualization package.
 	- [`ggalt`](https://cran.r-project.org/web/packages/ggalt/index.html): A compendium of new geometries, coordinate systems, statistical transformations, scales and fonts for `ggplot2`. We'll use this to complement our visualizations.
 	- [`RColorBrewer`](https://cran.r-project.org/web/packages/RColorBrewer/index.html): Provides color schemes for maps (and other graphics) designed by Cynthia Brewer as described at http://colorbrewer2.org. We'll use this to create beautiful & consistent color maps.
@@ -333,6 +333,7 @@ Note: We'll install the [`tidyverse`](https://www.tidyverse.org/) package which 
 
 We'll create our first R file inside our Project Root folder. In this file, we'll declare the packages we'll use. We'll install them & import them. The script will be called `dependencies.R` and will contain the following:
 
+##### **Code**
 ```R
 # Define packages to install
 required_packages <- c("tidyverse",
@@ -363,21 +364,37 @@ This file will behave as a dependency control file, where each time we need to m
 
 Now that R is set up, we're ready to continue with Python.
 
-### 2.2 Python (PENDING)
+### 2.2 Python
+Similar to R, we'll also create a Python virtual environment. 
 
-Install `virtualenv` package:
+We'll start by installing the `virtualenv` package:
+
+##### **Code**
 ```PowerShell
 pip install virtualenv
 ```
 
-Create virtual env:
+We'll then create our virtual environment using `virtualenv`:
+
+##### **Code**
 ```PowerShell
-cd the-state-of-our-world-in-2023\src\Python; virtualenv venv --python='C:\Users\Pablo\AppData\Local\Programs\Python\Python310\python.exe'
+cd the-state-of-our-world-in-2023\src\Python; virtualenv venv --python='C:\Users\yourusername\AppData\Local\Programs\Python\Python310\python.exe'
 ```
 
-Create `requirements.txt`:
+We'll then create the `requirements.txt` for this project. We'll include the following packages:
+- [`pandas`](https://pandas.pydata.org/): Provides data structures and operations for manipulating numerical tables and time series. We'll use it as our main workhorse in Python for reading, transforming & writing data.
+- [`numpy`](https://numpy.org/): Provides support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays. We'll use this for several data transformation operations.
+- [`openpyxl`](https://pypi.org/project/openpyxl/): Provides methods for reading & writing Excel files. We'll use it for managing datasets that come in `.xlsx` format, as well as writing results.
+- [`scipy`](https://scipy.org/): Provides algorithms for optimization, integration, interpolation, eigenvalue problems, algebraic equations, differential equations, statistics and many other classes of problems. We'll use it for a handful of applications such as interpolating missing data and performing statistical computations along with `statsmodels`, among others.
+- [`matplotlib`](https://matplotlib.org/): Provides a huge set of methods for creating static, animated, and interactive visualizations. We'll use this as our base package for creating plots in the ML segment of this series.
+- [`seaborn`](https://seaborn.pydata.org/): Provides a high-level interface for drawing attractive and informative statistical graphics. We'll use it to complement `matplotlib` with visualizations.
+- [`scikit-learn`](https://scikit-learn.org/stable/): Provides a set of simple and efficient tools for predictive data analysis. This library will be our workhorse for the ML part of this series.
+- [`statsmodels`](https://www.statsmodels.org/stable/index.html): Provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests, and statistical data exploration. We'll use it for some simpler statistical computations, although R will be our workhorse for this task.
+- [`tensorflow`](https://www.tensorflow.org/): Provides several Machine Learning algorithms. We'll use them when we get to the ML part of this series.
+- [`ipykernel`](https://pypi.org/project/ipykernel/): Provides the IPython kernel for Jupyter. We'll use it for creating Jupyter notebooks later in this series.
+- [`arrow`](https://pypi.org/project/arrow/): Provides an interface to the 'Arrow C++' library. We'll use this for reading & writing Parquet files, which we'll explore once we get to the Machine Learning part of this series.
 
-```
+```txt
 pandas
 numpy
 xlsxwriter
@@ -390,10 +407,14 @@ tensorflow
 ipykernel
 ```
 
-Install requirements
+We'll finally install the requirements in our virtual environment:
+
+##### **Code**
 ```PowerShell
  .\venv\Scripts\Activate.ps1; pip install -r requirements.txt; deactivate
 ```
+
+And voila. Our workspace is ready.
 
 ---
 
