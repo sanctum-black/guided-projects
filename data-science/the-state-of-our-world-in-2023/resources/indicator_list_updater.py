@@ -1,6 +1,5 @@
 import pandas as pd
 import openpyxl
-import os
 from pathlib import Path
 
 # Get the absolute path to the directory where this script is located
