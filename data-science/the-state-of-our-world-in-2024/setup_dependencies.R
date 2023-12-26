@@ -4,7 +4,7 @@
 # GitHub: https://github.com/pabloagn
 # Website: https://pabloagn.com
 # Contact: https://pabloagn.com/contact
-# Part of Blog Article: the-state-of-our-world-in-2023
+# Part of Blog Article: the-state-of-our-world-in-2024
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -12,18 +12,20 @@
 # ------------------------------------------------------------------------------
 
 # Define packages to install
-required_packages <- c("tidyverse",
-                       "readxl",
-                       "openxlsx",
-                       "arrow",
-                       "writexl",
-                       "data.table",
-                       "car",
-                       "broom",
-                       "ggalt",
-                       "RColorBrewer",
-                       "extrafont",
-                       "viridis")
+required_packages <- c(
+  "tidyverse",
+  "readxl",
+  "openxlsx",
+  "arrow",
+  "writexl",
+  "data.table",
+  "car",
+  "broom",
+  "ggalt",
+  "RColorBrewer",
+  "extrafont",
+  "viridis"
+)
 
 for (package in required_packages) {
   # We will check if the package is loaded (hence installed)

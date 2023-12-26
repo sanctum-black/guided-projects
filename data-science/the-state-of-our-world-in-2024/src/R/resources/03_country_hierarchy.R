@@ -6,7 +6,7 @@
 # GitHub: https://github.com/pabloagn
 # Website: https://pabloagn.com
 # Contact: https://pabloagn.com/contact
-# Part of Blog Article: the-state-of-our-world-in-2023-pt-1
+# Part of Blog Article: the-state-of-our-world-in-2024-pt-1
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -57,13 +57,15 @@ df_countries <- df_countries %>%
 
 # Create simple country codes df
 df_countries <- df_countries %>%
-  select(country_name,
-         iso3166_1_alpha_3,
-         iso3166_1_numeric_code,
-         region,
-         region_numeric_code,
-         sub_region,
-         sub_region_numeric_code)
+  select(
+    country_name,
+    iso3166_1_alpha_3,
+    iso3166_1_numeric_code,
+    region,
+    region_numeric_code,
+    sub_region,
+    sub_region_numeric_code
+  )
 
 # International Organizations
 # ------------------------------------------------------------------------------
@@ -72,7 +74,7 @@ df_countries <- df_countries %>%
 sheet_names <- excel_sheets(file.path(utilDir, "International_Organizations.xlsx"))
 
 # Iterate over each sheet
-for(sheet in sheet_names) {
+for (sheet in sheet_names) {
   # Read the sheet
   sheet_data <- read_excel(file.path(utilDir, "International_Organizations.xlsx"), sheet = sheet)
   # Check if countries in df_countries are present in the sheet
@@ -90,7 +92,7 @@ df_country_classification <- read_excel(file.path(utilDir, "Country_Development_
 
 # Replace unexisting values with NaN
 df_country_classification <- df_country_classification %>%
-  mutate_all(~na_if(., ".."))
+  mutate_all(~ na_if(., ".."))
 
 # We'll only use the 2022 classification since most of the metrics will be from 2022
 df_country_classification <- df_country_classification[, c("iso3166_1_alpha_3", "2022")] %>%
@@ -98,9 +100,10 @@ df_country_classification <- df_country_classification[, c("iso3166_1_alpha_3", 
 
 # Left merge dataframes
 df_countries <- merge(df_countries,
-                      df_country_classification,
-                      by="iso3166_1_alpha_3",
-                      all.x = TRUE)
+  df_country_classification,
+  by = "iso3166_1_alpha_3",
+  all.x = TRUE
+)
 
 # Write to csv file
 # ------------------------------------------------------------------------------

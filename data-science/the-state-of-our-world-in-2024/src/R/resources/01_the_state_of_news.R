@@ -6,7 +6,7 @@
 # GitHub: https://github.com/pabloagn
 # Website: https://pabloagn.com
 # Contact: https://pabloagn.com/contact
-# Part of Blog Article: the-state-of-our-world-in-2023-pt-1
+# Part of Blog Article: the-state-of-our-world-in-2024-pt-1
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -42,14 +42,14 @@ color_gray <- "gray"
 color_scheme <- viridis::viridis(3)
 
 theme_set(theme_gray(base_size = 14) +
-            theme(
-              text = element_text(family = "Work Sans"),
-              axis.text = element_text(color = color_black),
-              plot.title = element_text(face = "plain", hjust = 0.5), # Reduced boldness of the title
-              panel.background = element_rect(fill = "gray90"),
-              panel.grid.major = element_line(color = "white"),
-              panel.grid.minor = element_line(color = "white")
-            ))
+  theme(
+    text = element_text(family = "Work Sans"),
+    axis.text = element_text(color = color_black),
+    plot.title = element_text(face = "plain", hjust = 0.5), # Reduced boldness of the title
+    panel.background = element_rect(fill = "gray90"),
+    panel.grid.major = element_line(color = "white"),
+    panel.grid.minor = element_line(color = "white")
+  ))
 
 # Create visualizations
 # ------------------------------------------------------------------------------
@@ -90,10 +90,10 @@ trust_news <- ggplot(df_trust_news, aes(y = country, x = general_news, xend = pl
 
 # Save the plot
 ggsave(file.path(w_FigDir, "dumbbell_plot.png"),
-       plot = trust_news,
-       width = 10,
-       height = 10,
-       dpi = 300
+  plot = trust_news,
+  width = 10,
+  height = 10,
+  dpi = 300
 )
 
 # EOF

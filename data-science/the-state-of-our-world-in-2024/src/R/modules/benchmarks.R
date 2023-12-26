@@ -6,7 +6,7 @@
 # GitHub: https://github.com/pabloagn
 # Website: https://pabloagn.com
 # Contact: https://pabloagn.com/contact
-# Part of Blog Article: the-state-of-our-world-in-2023-pt-1
+# Part of Blog Article: the-state-of-our-world-in-2024-pt-1
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -17,19 +17,19 @@
 # Top - Bottom Entries by Column
 get_top_bottom <- function(indicator, df, placement, year, n) {
   ## This function calculates top or bottom entries based on a selected metric
-  
+
   # Filter data.frame
   df <- df %>%
     filter(indicator_code == indicator)
-  
+
   year <- as.character(year)
-  
+
   # Get top or bottom
-  if (placement == 'T') {
+  if (placement == "T") {
     df <- df %>%
       arrange(desc(get(year))) %>%
       slice(1:n)
-  } else if (placement == 'B') {
+  } else if (placement == "B") {
     df <- df %>%
       arrange(get(year)) %>%
       slice(1:n)
@@ -67,11 +67,12 @@ get_avg_per <- function(df, indicator, base, fy, ly) {
   df <- df %>%
     filter(indicator_code == indicator) %>%
     rowwise() %>%
-    mutate(mean = mean(c_across(all_of(years)), na.rm = TRUE),
-           sd = sd(c_across(all_of(years)), na.rm = TRUE),
-           sd_neg = sd(c_across(all_of(years))[c_across(all_of(years)) < 0], na.rm = TRUE),
-           sd_pos = sd(c_across(all_of(years))[c_across(all_of(years)) > 0], na.rm = TRUE),
-           )
+    mutate(
+      mean = mean(c_across(all_of(years)), na.rm = TRUE),
+      sd = sd(c_across(all_of(years)), na.rm = TRUE),
+      sd_neg = sd(c_across(all_of(years))[c_across(all_of(years)) < 0], na.rm = TRUE),
+      sd_pos = sd(c_across(all_of(years))[c_across(all_of(years)) > 0], na.rm = TRUE),
+    )
   return(df)
 }
 

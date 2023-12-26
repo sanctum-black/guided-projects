@@ -4,7 +4,7 @@
 # GitHub: https://github.com/pabloagn
 # Website: https://pabloagn.com
 # Contact: https://pabloagn.com/contact
-# Part of Blog Article: the-state-of-our-world-in-2023-pt-1
+# Part of Blog Article: the-state-of-our-world-in-2024-pt-1
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -18,6 +18,8 @@ library(data.table)
 library(ggalt)
 library(RColorBrewer)
 library(viridis)
+library(car)
+library(lattice)
 
 # Define directories
 rDir <- "data/raw/"
@@ -150,6 +152,19 @@ unique_codes_head <- df_csv_dataframe %>%
 # Check object
 unique_codes_head
 
+# Calculating aggregations
+# ------------------------------------------------------------------------------
+# Load built-in data
+data("iris")
+iris$Species %>% unique()
+
+# Group by Species & calculate summary stats
+iris_summarized <- iris %>%
+  group_by(Species) %>%
+  summarize(Mean.Petal.Length = mean(Petal.Length),
+            Mean.Petal.Width = mean(Petal.Width))
+
+head(iris_summarized)
 
 # Using tidyr - pivot_longer
 # ------------------------------------------------------------------------------
@@ -328,8 +343,26 @@ rpois(n = n, lambda = 5)
 # Exponential
 rexp(n = n, rate = 1)
 
-# Correlation and Regression Analysis
+# Comparing real vs theoretical distributions
+# Load data
+data(USArrests)
 
+# Compare normal distribution with urban population variable
+# Calculate mean & sd
+mean_urbanpop <- mean(USArrests$UrbanPop)
+sd_urbanpop <- sd(USArrests$UrbanPop)
+
+# Plot a histogram
+ggplot(USArrests, aes(x = UrbanPop)) +
+  geom_histogram(aes(y = ..density..), binwidth = 5, fill = "lightblue", color = "black") +
+  stat_function(fun = dnorm, args = list(mean = mean_urbanpop, sd = sd_urbanpop), color = "red", size = 1) +
+  labs(title = "Histogram of Urban Population Percentage with Normal Distribution", 
+       x = "Urban Population Percentage", 
+       y = "Density") +
+  theme_gray()
+
+# Correlation and Regression Analysis
+# ------------------------------------------------------------------------------
 # Load data and check README
 data(swiss)
 ?swiss
@@ -342,10 +375,11 @@ names(swiss)
 cor(swiss)
 
 # Create pairs plot
-pairs(swiss, panel = panel.smooth, main = "Swiss Dataset")
+pairs(swiss, panel = panel.smooth, main = "Swiss Dataset Pair Plots")
 
 # Plotting
 # ------------------------------------------------------------------------------
+# Line chart
 # Recalling the head of our frame
 head(df_csv_dataframe_longer)
 
@@ -390,6 +424,21 @@ ggplot(data = df_csv_dataframe_longer,
        color = "Country") + 
   scale_x_continuous(breaks = pretty(df_csv_dataframe_longer$Year, n = 5))
 
+# Boxplot (Multiple)
+# Declare figure
+boxplot <- ggplot(data = iris,
+                  aes(x = Species, y = Sepal.Length)) + 
+  geom_boxplot(outlier.colour="black",
+               outlier.shape=16,
+               outlier.size=2,
+               notch=TRUE)
 
+# Print figure
+boxplot
 
+# Declare figure
+jitterplot <- boxplot + 
+  geom_jitter(shape=16, position=position_jitter(0.2))
 
+# Print figure
+jitterplot

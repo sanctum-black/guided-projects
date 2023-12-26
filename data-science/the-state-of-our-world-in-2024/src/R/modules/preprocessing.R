@@ -6,11 +6,9 @@
 # GitHub: https://github.com/pabloagn
 # Website: https://pabloagn.com
 # Contact: https://pabloagn.com/contact
-# Part of Blog Article: the-state-of-our-world-in-2023-pt-1
+# Part of Blog Article: the-state-of-our-world-in-2024-pt-1
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Statistics
-# This file contains functions for performing statistical computations.
+# Preprocessing
 # ------------------------------------------------------------------------------
-
