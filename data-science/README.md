@@ -6,6 +6,7 @@
 - [exploratory-data-analysis-pt-1](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-1.md)
 - [exploratory-data-analysis-pt-2](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-2.md)
 - [exploratory-data-analysis-pt-3](https://github.com/pabloagn/guided-projects/blob/master/data-science/exploratory-data-analysis/exploratory-data-analysis-3.md)
+- [the-state-of-our-world-in-2024](https://github.com/ajourneythroughdatascience/guided-projects/tree/master/data-science/the-state-of-our-world-in-2024)
 
 ## Navigate
 
