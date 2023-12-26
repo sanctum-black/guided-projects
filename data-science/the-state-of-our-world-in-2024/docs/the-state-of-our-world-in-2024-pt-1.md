@@ -1,6 +1,6 @@
 <article class="first">
   <div class="title">
-    <h1>The State of Our World in 2023, Pt. 1</h1>
+    <h1>The State of Our World in 2024, Pt. 1</h1>
   </div>
 </article>
 
@@ -8,7 +8,7 @@
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
-[![type](https://img.shields.io/static/v1?label=Type&message=guided-project&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-project/) [![category](https://img.shields.io/static/v1?label=Category&message=data-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python,%20R,%20RStudio,%20VS%20Code,%20PowerShell&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-projects/the-state-of-our-world-in-2023-pt-1/)
+[![type](https://img.shields.io/static/v1?label=Type&message=guided-project&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-project/) [![category](https://img.shields.io/static/v1?label=Category&message=data-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python,%20R,%20RStudio,%20VS%20Code,%20PowerShell&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-projects/the-state-of-our-world-in-2024-pt-1/)
 
 We live in an era where reliable data has become an invaluable asset. We're constantly bombarded with information from multiple sources, trying to grab our attention as quickly, effectively, and cheaply as possible. This has given rise to previously unheard phenomena that have been emerging over the past few years: anxiety-induced headlines & news fatigue, information overload, the surge of deepfakes, the perpetuation of clickbait culture, and many others. As we'll explore, this trend has resulted in unstable confidence levels in traditional & non-traditional news sources.
 
@@ -16,7 +16,7 @@ This has allowed providers to search for alternative solutions; some examples in
 
 But despite this, the news platforms will cover only a portion of the whole picture. For example, discussing an increase in inflation without addressing underlying causes such as global market dynamics or monetary policies, covering natural disasters focusing solely on immediate impacts, without including root causes such as climate change driven by fossil fuel burning, or even highlighting technological advancements in the healthcare industry without considering the accessibility or affordability challenges for vulnerable groups.
 
-This is precisely where this series, _The State of Our World in 2023_, comes into play. Throughout a collection of blog articles & guided projects, we'll go over a detailed snapshot of our current global situation, attacking from multiple fronts:
+This is precisely where this series, _The State of Our World in 2024_, comes into play. Throughout a collection of blog articles & guided projects, we'll go over a detailed snapshot of our current global situation, attacking from multiple fronts:
 - General Macroeconomics
 - Industry & Trade
 - Environmental Health
@@ -32,7 +32,7 @@ In this first Guided Project, we'll explain the why and how of this series. We'l
 
 Finally, we'll start by building our country hierarchy from public databases. This framework will set the building blocks of all the analyses we'll be performing throughout this series.
 
-We'll be using R scripts, which can be found in the [Guided Project Repo](https://github.com/ajourneythroughdatascience/guided-projects/tree/master/data-science/the-state-of-our-world-in-2023).
+We'll be using R scripts, which can be found in the [Guided Project Repo](https://github.com/ajourneythroughdatascience/guided-projects/tree/master/data-science/the-state-of-our-world-in-2024).
 
 ---
 
@@ -86,14 +86,14 @@ According to Reuters' Institute for the Study of Journalism [Digital News Report
 This can be due to multiple reasons and often depends on region-specific circumstances. For example, according to a [2022 Poll conducted by Gallup](https://news.gallup.com/poll/403166/americans-trust-media-remains-near-record-low.aspx), the United States presented a significant decline in trust in media outlets during the time Donald Trump was in his presidential campaign, but has been showing a decline in high-trust levels (_% Great deal/Fair amount_) since the Poll's first appearance in 1972:
 
 02
-###### Figure 2: [Americans' Trust In Media, 2022, Gallup](https://news.gallup.com/poll/403166/americans-trust-media-remains-near-record-low.aspx)
+###### *Figure 2: [Americans' Trust In Media, 2022, Gallup](https://news.gallup.com/poll/403166/americans-trust-media-remains-near-record-low.aspx)*
 
-If we look at alternative platforms such as social media & search engines, we can see that according to the Reuters Institute, people in Brazil, India, the UK & the US still trust traditional news outlets more than social networks such as Facebook, Instagram, TikTok, & Twitter.
+If we look at alternative platforms such as social media & search engines, we can see that according to the Reuters Institute, people in Brazil, India, the UK & the US still trust traditional news outlets more than social networks such as Facebook, Instagram, TikTok, & Twitter (*now X*).
 
-According to [a study published by the Reuters Institute & the University of Oxford in 2022](https://reutersinstitute.politics.ox.ac.uk/trust-gap-how-and-why-news-digital-platforms-viewed-more-sceptically-versus-news-general), the gap between trust in news on platforms vs. trust in news, in general, is significant for most of the platforms under study for the four economies. In general, people from these four countries tend to trust alternative sources, specifically social networks, less than traditional outlets:
+According to [a study published by the Reuters Institute & the University of Oxford in 2022](https://reutersinstitute.politics.ox.ac.uk/trust-gap-how-and-why-news-digital-platforms-viewed-more-sceptically-versus-news-general), the gap between trust in news on platforms vs. trust in news, in general, is significant for most of the platforms under study for the four economies. In general, people from these four countries tend to trust alternative sources, specifically social networks, less than traditional outlets (*blue are news from platforms, purple are news from traditional outlets*):
 
 03
-###### Figure 3: [Percentage who trust information in the news media in general versus news on each platform in each country, Reuters Institute, Reproduced by Pablo Aguirre](https://reutersinstitute.politics.ox.ac.uk/trust-gap-how-and-why-news-digital-platforms-viewed-more-sceptically-versus-news-general)
+###### *Figure 3: [Percentage who trust information in the news media in general versus news on each platform in each country, Reuters Institute, Reproduced by Pablo Aguirre](https://reutersinstitute.politics.ox.ac.uk/trust-gap-how-and-why-news-digital-platforms-viewed-more-sceptically-versus-news-general)*
 
 However, there are still some alternative news sources whose content is often not rigorously verified and whose gap vs. traditional news confidence is not that significant (_i.e., people in the selected countries trust them more than traditional news outlets_). One example is Google, which, according to [Statista](https://www.statista.com/statistics/1093781/distribution-of-googles-revenues-by-segment/), perceived roughly 80% of its revenue from advertising in 2020 (_the lowest since 2017_). Another great example is YouTube falling under a similar scenario, where it's publicly known that [the majority of its revenue comes from advertising](https://www.youtube.com/howyoutubeworks/our-commitments/sharing-revenue/).
 
@@ -103,14 +103,14 @@ So now that we know a bit about how people perceive traditional & alternative ne
 According to [a study conducted by The Lloyd's Register Foundation](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/), 57% of internet users across all parts of the world, socioeconomic groups, and all ages regard false information, or "_fake news_", as a major concern. According to the same study, concern is more prevalent in regions of high economic inequality and where ethnic, religious, or political polarization exists, leading to the weakening of social cohesion and trust. However, there is still a relevant number of developed countries with high percentages:
 
 04_merged
-###### Figure 4: [Choropleth map of share of Internet users who see misinformation on the Internet as a threat, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)
+###### *Figure 4: [Choropleth map of share of Internet users who see misinformation on the Internet as a threat, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)*
 
 We can see that this figure reveals some regional patterns; people in Eastern Europe (_46.9%, average_) and Central Asia (_38.1%, average_) express low levels of concern. In contrast, Western and Northern Europe present higher numbers (_64.5%, average_). If we go to the Americas, we see that most countries stand out as regions where concern for misinformation is relatively high, particularly North America (_67.4%, average_) & the Caribbean Countries (_74.2%, average_).
 
 Interestingly, The Harvard Kennedy School also performed [a country-level correlational study](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/) between variables found in the [V-DEM dataset](https://v-dem.net/data/the-v-dem-dataset/) and the percentage of people who express concern regarding misinformation. They used a logistic regression model to model which variables predict risk perception of misinformation and published the results in their peer-reviewed article [Who is afraid of fake news?](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/):
 
 05
-###### Figure 5: [Results from a logistic regression model describing the effect of individual-level demographic variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)
+###### *Figure 5: [Results from a logistic regression model describing the effect of individual-level demographic variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)*
 
 From the figure above, we can suggest that:
 - As discussed previously, there is a clear pattern when talking about regional-level likelihoods.
@@ -120,7 +120,7 @@ From the figure above, we can suggest that:
 - In contrast, electoral autocracies have a fairly higher percentage of likelihood, with liberal democracy having the highest.
 
 06
-###### Figure 6: [Results from a logistic regression model describing the effect of national-level variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)
+###### *Figure 6: [Results from a logistic regression model describing the effect of national-level variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)*
 
 From the figure above, we can see that:
 - Older people tend to express less concern about misinformation. This change is statistically significant and presents a clear trend from younger to older people.
@@ -138,11 +138,9 @@ There are many journalistic practices we can adopt as everyday newsreaders; the 
 Thus, when the data arrives, we already have a certain predisposition. This not only causes a potential bias but also affects people emotionally, as observed by Dr. Steven Stosny in his [_Washington Post_ opinion piece in 2017](https://www.washingtonpost.com/news/inspired-life/wp/2017/02/06/suffering-from-headline-stress-disorder-since-trumps-win-youre-definitely-not-alone/).
 
 ## Breaking patterns
-
 So, how can we bypass this initial reaction and focus on whether the piece is valid in the first place? There are some techniques we can (_consciously_) practice whenever we're exposed to news articles and general information:
 
 ### Verifying the primary source
-
 - **Ensure the primary source is credible and authoritative**: This includes trusted authors, credible research institutions, and peer-reviewed material.
 - **Check if the sources are cited correctly, actually exist, and are accessible to the public**: This one is a bit tricky since studies can sometimes reference data sources (_most of the time, this happens for secondary sources_) provided by organizations that require registration, that have paywalls, or that require an application procedure for us to be able to access the data. However, most socioeconomic data sources (_public organizations such as The World Bank, ILOSTAT, OECD, IMF, etc_.) are free for public consultation and even offer well-documented public APIs (s_ome private organizations offer composite indexes or preprocessed data, and those can charge for subscription fees_).
 - **Confirm that the data matches the information provided by the sources**: Sometimes, the author may include a reference (_by mistake or purposefully_) that does not match the data being displayed. This can be caused by negligence, bad URLs, or even mistakes when writing the piece.
@@ -418,7 +416,7 @@ We'll then create our virtual environment using `virtualenv`:
 
 ##### **Code**
 ```PowerShell
-cd the-state-of-our-world-in-2023\src\Python; virtualenv venv --python='C:\Users\yourusername\AppData\Local\Programs\Python\Python310\python.exe'
+cd the-state-of-our-world-in-2024\src\Python; virtualenv venv --python='C:\Users\yourusername\AppData\Local\Programs\Python\Python310\python.exe'
 ```
 
 We'll then create the `requirements.txt` for this project. We'll include the following packages:
@@ -609,7 +607,7 @@ class(df_csv_dataframe)
 ```
 
 ### Reading csv files into data.table objects
-We can also read `csv` files into `data.table` objects using the following syntax:
+We can also read `.csv` files into `data.table` objects using the following syntax:
 
 ##### **Code**
 ```R
@@ -629,7 +627,7 @@ class(df_csv_datatable)
 ```
 
 ### Reading xlsx files
-We can read `xlsx` files into `data.frame` objects using the following syntax:
+We can read `.xlsx` files into `data.frame` objects using the following syntax:
 
 ##### **Code**
 ```R
@@ -1314,18 +1312,6 @@ This approach has three main advantages that we'll greatly leverage throughout t
 - It fits seamlessly with `dplyr`.
 - We can use any function, including custom functions (*of course, not just necessarily for merging*).
 
-
-
-
-
-
-# GRAMMARLY FROM HERE
-
-
-
-
-
-
 ## Classical statistics
 This mini tutorial would not be complete without going over some of the very basic classical statistics concepts in R, given that R is a statistics-oriented programming language, and we'll be making fairly extensive use of some of the methods included. Please keep in mind that this is in no way a comprehensive review of classical statistics theory. Instead, it's a very quick mention of the most relevant methods in R and how we'll implement them in our analyses.
 
@@ -1436,7 +1422,7 @@ rexp(n = n, rate = 1)
 [1] 0.0581296 0.7856057 2.5060449 2.0419846 0.5936905 0.1878208 2.4909209 1.4005595 3.4965515 0.4754702
 ```
 
-Distributions are often used in order to model real world phenomena, such as population growth, crime rates, demographic distributions, etc. We can, for example, make a comparison between a real and a theoretical distribution. For this example we can use the built-in `USArrests` dataset that contains an `UrbanPop` column containing urban population per state in the US. We'll also plot a normal distribution with the mean and standard deviation of our real data. This way, the overlapping of real data vs theoretical distribution is clear:
+Distributions are often used to model real-world phenomena, such as population growth, crime rates, demographic distributions, etc. We can, for example, make a comparison between a real and a theoretical distribution. For this example, we can use the built-in `USArrests` dataset that contains an `UrbanPop` variable with the urban population per state in the US. We'll also plot a normal distribution with our real data's mean and standard deviation. This way, the overlapping of real data vs theoretical distribution is clear:
 
 ##### **Code**
 ```R
@@ -1463,12 +1449,12 @@ ggplot(USArrests, aes(x = UrbanPop)) +
 
 ###### *Figure 7: Histogram of Urban population Across US States vs Theoretical Normal Distribution*
 
-Note that the assumption of a normal distribution for this case is made for the purpose of illustrating statistical concepts and does not imply that the entire population across states follows a normal distribution. In reality, demographic variables like the percentage of the population living in urban areas are often influenced by complex factors, and their distributions may not precisely conform to a normal distribution.
+Note that the assumption of a normal distribution for this case is made to illustrate statistical concepts and does not imply that the entire population across states follows a normal distribution. In reality, demographic variables like the percentage of the population living in urban areas are often influenced by complex factors, and their distributions may not precisely conform to a normal distribution.
 
-This is a simple example, but gives you an idea of what can be done with probabilistic distributions and real world phenomena.
+This is a simple example, but gives you an idea of what can be done with probabilistic distributions and real-world phenomena.
 
 ### Correlation and Regression Analysis
-Lastly, we discuss correlation & regression analysis. In statistics, correlation or dependence is any statistical relationship, whether causal or not, between two random variables or bivariate data. Correlations are extremely useful when we're trying to find relationships between one variable and another in order to:
+Lastly, we discuss correlation & regression analysis. In statistics, correlation or dependence is any statistical relationship between two random variables or bivariate data, whether causal or not. Correlations are extremely useful when we're trying to find relationships between one variable and another to do the following:
 - Understand phenomena
 - Make predictions
 
@@ -1480,7 +1466,7 @@ Two or more variables can have some type or no relation between each other:
 We measure the degree of relationship by calculating correlation coefficients. These vary depending on the variables we're studying. Below are some examples:
 - **Pearson Product-Moment Correlation Coefficient**:
 	- Parametric.
-	- It measures the strength and direction of the linear relationship between two variables, and is defined as the covariance of the variables divided by the product of their standard deviations.
+	- It measures the strength and direction of the linear relationship between two variables and is defined as the covariance of the variables divided by the product of their standard deviations.
 - **Spearman’s Rank Correlation Coefficient (_Kendall’s tau-b_)**:
 	- Non-parametric.
 	- It measures how well the relationship between two variables can be described by a [monotonic function](https://mathworld.wolfram.com/MonotonicFunction.html).
@@ -1488,15 +1474,15 @@ We measure the degree of relationship by calculating correlation coefficients. T
 	- Non-parametric.
 	- It measures the ordinal association (*rank correlation*) between two measured quantities.
 
-Each coefficient has assumptions that in theory need to be met in order for us to be able to use it under that specific scenario. If the conditions are not met, we can probably use an alternative coefficient.
+Each coefficient has assumptions that, in theory, need to be met for us to use it under that specific scenario. We can probably use an alternative coefficient if the conditions are not met _(however, this is not black & white since, in reality, it will be difficult for all conditions to be met. Here, we must use our domain knowledge to discern whether a coefficient is good enough for our requirements_).
 
-We'll use correlation studies throughout this series in order to:
+We'll use correlation studies throughout this series to do the following:
 - Understand the relationship between metrics.
-- Make predictions based on potential relationships. 
+- Make predictions based on potential relationships. 
 
-We'll briefly take a loot at the basics of correlational analysis using the Swiss Dataset.
+We'll briefly examine the basics of correlational analysis using the Swiss Dataset.
 
-First, we load the required dataset and check properties:
+First, we load the required dataset and check some basic properties:
 
 ##### **Code**
 ```R
@@ -1510,11 +1496,11 @@ From the `README`, we can see that we have the following description:
 
 With the following columns:
 1. `Fertility`: Common standardized fertility measure.
-2. `Agriculture`: % of males involved in agriculture as occupation.
-4. `Examination`: % draftees receiving highest mark on army examination.
+2. `Agriculture`: % of males involved in agriculture as an occupation.
+4. `Examination`: % draftees receiving the highest marks on the army examination.
 5. `Education`: % education beyond primary school for draftees.
-6. `Catholic`: % ‘catholic’ (as opposed to ‘protestant’).
-7. `Infant.Mortality`: Live births who live less than 1 year.
+6. `Catholic`: % ‘catholic’ (_as opposed to ‘protestant’_).
+7. `Infant.Mortality`: Live births who live less than one year.
 
 We can check the dimensions of out dataset:
 
@@ -1558,7 +1544,7 @@ From J. Ferré in [Comprehensive Chemometrics, 2009](https://www.sciencedirect.c
 
 "*The correlation matrix is a (K × K) square and symmetrical matrix whose ij entry is the correlation between the columns i and j of **X**. Large values in this matrix indicate serious [collinearity](https://www.sciencedirect.com/topics/mathematics/collinearity "Learn more about collinearity from ScienceDirect's AI-generated Topic Pages") between the variables involved.*"
 
-In simpler terms, a correlation matrix tells us the degree of linear relation between two variables. The correlation is expressed as the coordinate in the matrix. The diagonal of this matrix will always be 1, since we're correlating a variable with itself; it has a perfect relation.
+In simpler terms, a correlation matrix tells us the degree of linear relation between two variables. The correlation is expressed as the coordinate in the matrix. The diagonal of this matrix will always be 1 since we're correlating a variable with itself; it has a perfect relation.
 
 The values we can find are the following:
 - **1**: Perfect positive linear correlation.
@@ -1567,7 +1553,7 @@ The values we can find are the following:
 - **<0**: Denotes a negative linear relation.
 - **-1**: Perfect negative linear correlation.
 
-The `cor()` function is useful, but it gives us a matrix instead of a plot, and it does not provide variance neither covariance. We can use an alternative method called [`pairs()`](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/pairs). This method will create a matrix of scatterplots, where we can look at all the variable pairs graphically in one figure instead of looking at a matrix of single numbers.
+The `cor()` function is useful, but it gives us a matrix instead of a plot, and it does not provide [variance](https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch12/5214891-eng.htm) neither [covariance](https://mathworld.wolfram.com/Covariance.html). We can use an alternative method called [`pairs()`](https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/pairs). This method will create a matrix of scatterplots, where we can look at all the variable pairs graphically in one figure instead of looking at a matrix of single numbers.
 
 We can use the `pairs()` method as follows:
 
@@ -1582,18 +1568,18 @@ pairs(swiss, panel = panel.smooth, main = "Swiss Dataset")
 
 ###### *Figure 8: A matrix of scatterplots for each of the variables in the swiss dataset*
 
-The `pairs()` function will plot all values of all pairs of variables. The `panel` parameter provides the way R will plot the variables. For example, `panel.smooth` is part of the lattice graphics system and is commonly employed to add smoothed curves (*[loess curves](https://www.statsdirect.com/help/nonparametric_methods/loess.htm)*) to scatterplots.
+The `pairs()` function will plot all values for all pairs of variables. The `panel` parameter provides the way R will plot the variables. For example, `panel.smooth` is part of the lattice graphics system and is commonly employed to add smoothed curves (*[loess curves](https://www.statsdirect.com/help/nonparametric_methods/loess.htm)*) to scatterplots.
 
-From this figure we can see that the strongest relation could come from Education & Examination (*coordinate: 4, 3*) with a Pearson correlation coefficient of around 0.698.
+From this figure, the strongest relation could come from Education & Examination (*coordinate: 4, 3*) with a Pearson correlation coefficient of around 0.698.
 
-This is just a simple entry pint to correlational studies, but the reality is that there are many more methods we can use. We'll discuss them when we arrive at the statistical analysis modules.
+This is just a simple entry point to correlational studies, but the reality is that there are many more methods we can use. We'll discuss them when we arrive at the statistical analysis modules.
 
 ## Plotting
 We already saw some visualizations when discussing probability distributions & correlational analyses, but here we'll formally discuss how to create plots using the `ggplot2` package.
 
 Generating visuals in R is slightly different than doing the same in Python. R has some core components we need to familiarize ourselves with:
 - **Layer**: A layer combines data, aesthetic mappings, geoms (*geometric object*), stats (*statistical transformation*), and position adjustments. Below are all the components in more detail:
-	- **Data**: Dataset that we wish to use for our visualization.
+	- **Data**: Dataset we wish to use for our visualization.
 	- **Mapping**: Aesthetic mappings describe how variables in the data are mapped to visual properties (*aesthetics*) of geoms.
 	- **Geoms**: Geometric objects that will be contained in our visual.
 	- **Stats**: Stats define statistical transformations that can happen within our visual.
@@ -1606,7 +1592,7 @@ Generating visuals in R is slightly different than doing the same in Python. R h
 Let us go over some examples.
 
 ### Plotting a simple line chart
-We'll use the `ggplot` library in order to plot our first line chart. We'll use the tidy dataframe we already have in our hands:
+We'll use the `ggplot` library to plot our first line chart. We'll use the tidy data.frame object we already have in our hands:
 
 ##### **Code**
 ```R
@@ -1692,13 +1678,13 @@ ggplot(data = df_csv_dataframe_longer,
 ```
 
 Let us explain this in more detail:
-- The first argument is always the dataframe, in our case, `df_csv_dataframe_longer`.
-- The second argument is `mapping`. As we already mentioned, `mapping` is responsible for assigning variables to components in a `ggplot2` figure. It does this by the help of `aes` (*aesthetics*).
-- The next components are added by using a plus sign `+`, and if we pay close attention, are declared after we close the `ggplot` expression. Any additional component will follow this rule.
+- The first argument is always the data.frame object, in our case, `df_csv_dataframe_longer`.
+- The second argument is `mapping`. As we already mentioned, `mapping` is responsible for assigning variables to components in a `ggplot2` figure. It does this with the help of `aes` (*aesthetics*).
+- The next components are added by using a plus sign `+`, and if we pay close attention, they are declared after we close the `ggplot` expression. Any additional component will follow this rule.
 	- We include a geom, specifically a line, by using `geom_line()`. A complete list of available themes can be found [here](https://ggplot2.tidyverse.org/reference/#geoms).
 	- We also include a theme, which in our case is `theme_gray()`. A complete list of available themes can be found [here](https://ggplot2.tidyverse.org/reference/ggtheme.html).
 	- Next, we include labels using `labs`. A complete list of possible parameters can be found [here](https://ggplot2.tidyverse.org/reference/labs.html).
-	- Lastly, we include a scale for the x axis. This is not required in all cases, however in our case, since we want to have more control over the `Year` variable (*cannot be displayed as decimal*), the `scale_x_continuous` will tell R to use breaks provided by the `pretty(Years, n = 5)` method. In short, it will automatically calculate the years to display based on the required number of breaks (*n = 5*).
+	- Lastly, we include a scale for the x-axis. This is not required in all cases; however, in our case, since we want to have more control over the `Year` variable (*cannot be displayed as decimal*), the `scale_x_continuous` will tell R to use breaks provided by the `pretty(Years, n = 5)` method. In short, it will automatically calculate the years to display based on the required number of breaks (*n = 5*).
 
 ##### **Output**
 09.png
@@ -1706,9 +1692,9 @@ Let us explain this in more detail:
 ###### *Figure 9: GDP Per Capita, PPP (current international $), per Country, 3 countries*
 
 ### Plotting a boxplot
-Boxplots are key when it comes to descriptive statistics. They provide information about the locality, spread and skewness groups of numerical data through their quartiles. We'll be using boxplots & similar visualizations a lot in this series.
+Boxplots are key when it comes to descriptive statistics. They provide information about the locality, spread, and skewness of groups of numerical data through their quartiles. We'll be using boxplots & similar visualizations a lot in this series.
 
-Let us use the `iris` dataset in order to exemplify. We can plot multiple boxplots in a single figure in order to compare side by side. We can leverage the `Species` column in order to compare:
+Let us use the `iris` dataset to exemplify. We can plot multiple boxplots in a single figure to compare them side by side. We can leverage the `Species` column to compare:
 
 ##### **Code**
 ```R
@@ -1725,9 +1711,9 @@ boxplot
 ```
 
 What we're doing here is:
-- Plotting using `iris` as out dataset.
+- Plotting using `iris` as our dataset.
 - Adding an aesthetic mapping, where x = `Species` and y = `Sepal.Length`.
-- Adding a geom, in this case a boxplot (`geom_boxplot`) with the following parameters:
+- Adding a geom, in this case, a boxplot (`geom_boxplot`) with the following parameters:
 	- The outlier color (black)
 	- The outlier geometry (dot)
 	- The outlier size
@@ -1742,7 +1728,7 @@ The end result is the following:
 ###### *Figure 10: Boxplots of Sepal Lengths for Each of the Species*
 
 ### Plotting a jitter plot
-A [jitter plot](https://datavizproject.com/data-type/jitter-plot/) is a variant of the [strip plot](https://datavizproject.com/data-type/strip-plot/) with a better view of overlapping data points, used to visualize the distribution of many individual one-dimensional values. A jitter plot can be overlapped with a boxplot in order to provide a more complete picture of the distribution of our data as well as the location of the individual data points. The great thing about `ggplot2`, is that it allows us to add attributes to our already defined plot variable (`boxplot`):
+A [jitter plot](https://datavizproject.com/data-type/jitter-plot/) is a variant of the [strip plot](https://datavizproject.com/data-type/strip-plot/) with a better view of overlapping data points, used to visualize the distribution of many individual one-dimensional values. A jitter plot can be overlapped with a boxplot to provide a more complete picture of the distribution of our data as well as the location of the individual data points. The great thing about `ggplot2` is that it allows us to add attributes to our already defined plot variable (`boxplot`):
 
 ##### **Code**
 ```R
@@ -1754,29 +1740,68 @@ jitterplot <- boxplot +
 jitterplot
 ```
 
-Here, the `position` argument will dictate the horizontal separation of each of the datapoints. this is always used in jitter plots in order to avoid cluttering between datapoints, since here, all points are plotted:
+Here, the `position` argument will dictate the horizontal separation of each of the data points. This is always used in jitter plots to avoid cluttering between data points since here, all points are plotted:
 
 ##### **Output**
 11.png
 
 ###### *Figure 11: Boxplots overlapped with Jitter Plots of Sepal Lengths for Each of the Species*
 
-These are just the very basics for using `ggplot2`, and sometimes this does the trick. Of course, ggplot2 is much more powerful and we'll put it to its limits in this series. Not to worry, we'll discuss more visuals as we navigate through the actual metrics.
+These are just the basics for using `ggplot2`; sometimes, this does the trick. Of course, `ggplot2` is much more powerful, and we'll put it to its limits in this series. Not to worry, we'll discuss more visuals as we navigate through the actual metrics.
 
-Now that we know the very basics of R for Data Science, we can 
+Now that we know the very basics of R for Data Science, we can start building our country hierarchy.
 
 ---
 
-# Building the country hierarchy
-Let us start by building our country hierarchy. We need to define the following:
-- Country Names
-- Country Codes
-- Continent Names
-- Region Names
-- International Organizations (*if any*)
-- Classification by Income
+# GRAMMARLY FROM HERE
 
-This information can be extracted from [this dataset](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv) by [lukes](https://github.com/lukes). The `csv` file contains the following columns:
+# Building the country hierarchy
+## A word on dimensions & hierarchies
+A hierarchy in the context of data, is a structured view of one or more dimensions of our data set. For example, let us imagine a manufacturer that produces consumable products in the "*Sweets*" & "Drinks" categories:
+
+If we think of this hierarchically, we can organize our manufacturer's structure as follows:
+- **Category**: A segment that our manufacturer uses to classify its products based on the type of product.
+	- Sweets
+- **Manufacturer**: The name of our manufacturer. Can have one or more brands.
+	- ABC International
+- **Brand**: Subsets of our manufacturer in charge of producing different lines of products.
+	- Milky Sweets
+	- Coolest Drinks
+- **Product Code**: Uniquely identifiable codes used to tag individual products. Each product belongs to a Brand.
+	- 25820495
+	- 25834760
+	- 09828354
+	- 20785340
+
+Here, we're doing two things:
+- We're defining what a category, a manufacturer, a brand and a product are.
+- We're then organizing all variables hierarchically (*e.g., products are launched under brands, brands belong to our manufacturer, etc*).
+
+This is called hierarchization, and is an extremely valuable concept in Data Analysis & Data Science, since a lot of the variables we encounter on the real world can be organized hierarchically. In fact, relational databases count on our data being at least dimensionally separated (each component is a dimension), and these dimensions might be hierarchical or not, depending on the case.
+
+Below are some real-life examples of hierarchization:
+- **Financial Hierarchy in Banking**:
+	- **Levels**: Bank, Branch, Account Type, Account.
+	- **Description**: Banks use hierarchies to organize financial data, starting with the overall bank, breaking down to branches, then to different account types and individual accounts.
+- **Product Lifecycle in Manufacturing**:
+    - **Levels**: Product Line, Model, Version, Component.
+    - **Description**: Manufacturing industries often organize their product data hierarchically, tracking products from the overall line down to specific components within each model and version.
+- **Educational Hierarchy in Institutions**:
+    - **Levels**: University, College, Department, Course, Student
+    - **Description**: Educational institutions use hierarchies to structure data, moving from the university level to specific colleges, departments, courses, and individual students.
+
+## Building our country hierarchy
+Let us start by building our country hierarchy from bottom to top. We'll base our structure on the [ISO 3166 standard](https://en.wikipedia.org/wiki/ISO_3166).
+
+We need to define the following:
+- **Country Names**: The name of the country.
+- **Country Codes**: A standardized way to identify our country. Think of this as a product's barcode for countries.
+- **Region Names**: Regions can be defined as collections of countries defined based on their location.
+- **Continent Names**: This is the next abstraction layer, and will help us provide metrics on a continent level.
+- International Organizations (*if any*): A country can belong to zero or more international organizations. These organizations are relevant since they can sometimes represent economical & political ties based on similar economies.
+- **Classification by Income**: This is another possible layer that will help us classify our countries based on their income level.
+
+The country hierarchy can be extracted from [this dataset](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv) by [lukes](https://github.com/lukes). The `csv` file contains the following columns:
 - `name`
 - `alpha-2`
 - `alpha-3`
@@ -1789,7 +1814,7 @@ This information can be extracted from [this dataset](https://github.com/lukes/I
 - `sub-region-code`
 - `intermediate-region-code`
 
-We will use these specific country names throughout the entire series, since some datasets present different names with slight variations, and we want to ensure that the names are consistent throughout our visuals. We will use the [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code framework, specifically the Alpha-3 field as key for the merging operations between datasets.
+We will use these specific country names throughout the entire series, since some datasets present different names with slight variations, and we want to ensure that the names are consistent throughout our visuals. We will use the ISO 3166 Alpha-3 field as key for the merging operations between datasets.
 
 We will also use a mapping of relevant international organizations per each country so that we can later aggregate countries by organizations. This will give us an extra layer for analysis.
 
@@ -1809,13 +1834,12 @@ library(stringr)
 library(lubridate)
 ```
 
-Next, we'll set some variables: 
+Next, we'll set some variables:
 
 ##### **Code**
 ```R
 # Directories
 rDir <- "data/raw/"
-w_FigDir <- "outputs/figures"
 utilDir <- file.path(rDir, "Utilities")
 ```
 
@@ -1828,7 +1852,6 @@ df_countries <- read.csv(file.path(utilDir, "Country_Codes.csv"))
 colnames(df_countries)
 
 # Change column names
-# https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 df_countries <- df_countries %>%
   rename(
     "country_name" = "name",
@@ -1843,7 +1866,7 @@ df_countries <- df_countries %>%
     "intermediate_region_code" = "intermediate.region.code"
   )
 
-# Create simple country codes df
+# Create simple country codes df (includes required columns only)
 df_countries <- df_countries %>%
   select(country_name,
          iso3166_1_alpha_3,
@@ -1902,7 +1925,7 @@ colnames(df_countries)
 [26] "pacific_islands_forum"
 ```
 
-Next, we'll load the country classifications file and merge it with our `df_countries` object. We'll only use the classifications for 2022 since most of our analysis will be based on 2022:
+Next, we'll load the country classifications file and merge it with our `df_countries` object. We'll only use the classifications for 2022:
 
 ##### **Code**
 ```R

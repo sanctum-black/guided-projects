@@ -1,5 +1,3 @@
-# BOF
-
 # ------------------------------------------------------------------------------
 # Created on Sat Nov 25 18:46:10 2023
 # @author: Pablo Aguirre
@@ -29,8 +27,8 @@ library(lubridate)
 # Define Global Variables & Parameters
 # ------------------------------------------------------------------------------
 # Directories
-rDir <- "data/raw/"
-utilDir <- file.path(rDir, "Utilities")
+rDir <- "resources/"
+utilDir <- file.path(rDir, "country_hierarchy")
 
 # Country List
 # ------------------------------------------------------------------------------
@@ -39,7 +37,7 @@ utilDir <- file.path(rDir, "Utilities")
 df_countries <- read.csv(file.path(utilDir, "Country_Codes.csv"))
 colnames(df_countries)
 
-# Change column names
+# Change column names (includes required columns only)
 # https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 df_countries <- df_countries %>%
   rename(
@@ -108,5 +106,3 @@ df_countries <- merge(df_countries,
 # Write to csv file
 # ------------------------------------------------------------------------------
 write.csv(df_countries, file.path(utilDir, "Countries_Baseline.csv"), row.names = FALSE)
-
-# EOF
