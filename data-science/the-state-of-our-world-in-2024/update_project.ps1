@@ -4,14 +4,14 @@
 # GitHub: https://github.com/pabloagn
 # Website: https://pabloagn.com
 # Contact: https://pabloagn.com/contact
-# Part of Blog Article: the-state-of-our-world-in-2023
+# Part of Blog Article: the-state-of-our-world-in-2024
 # ------------------------------------------------------------------------------
 
 # This file will update CSV indicator list from Excel file and commit any changes in Guided Project.
 
 # Define paths
 $gitRepoPath = "D:/OneDrive/Documents/Professional Projects/A Journey Through Data Science/Guided Projects/data-science"
-$pythonScriptPath = "$gitRepoPath/the-state-of-our-world-in-2023/resources/indicator_list_updater.py"
+$pythonScriptPath = "$gitRepoPath/the-state-of-our-world-in-2024/resources/indicator_list_updater.py"
 
 # Navigate to the Git repository directory
 Push-Location -Path $gitRepoPath
