@@ -1839,8 +1839,8 @@ Next, we'll set some variables:
 ##### **Code**
 ```R
 # Directories
-rDir <- "data/raw/"
-utilDir <- file.path(rDir, "Utilities")
+rDir <- "resources/"
+utilDir <- file.path(rDir, "country_hierarchy")
 ```
 
 Now we can read the datasets and perform some transformations so that in the end we have one `data.frame` object with all the relevant fields. We'll start with the country codes:
@@ -1876,7 +1876,7 @@ df_countries <- df_countries %>%
          sub_region_code)
 ```
 
-Next, we'll proceed with the international organizations file. The main organizations we'll include are the following:
+Next, we'll proceed with the international organizations file, which can be found [here](https://github.com/ajourneythroughdatascience/guided-projects/blob/master/data-science/the-state-of-our-world-in-2024/resources/country_hierarchy/International_Organizations.xlsx). The main organizations we'll include are the following:
 - UN
 - EU
 - EEA
@@ -1925,7 +1925,7 @@ colnames(df_countries)
 [26] "pacific_islands_forum"
 ```
 
-Next, we'll load the country classifications file and merge it with our `df_countries` object. We'll only use the classifications for 2022:
+Next, we'll load the country classifications file, which can be found [here](https://github.com/ajourneythroughdatascience/guided-projects/blob/master/data-science/the-state-of-our-world-in-2024/resources/country_hierarchy/Country_Development_Classifications.xlsx), and merge it with our `df_countries` object. We'll only use the classifications for 2022:
 
 ##### **Code**
 ```R
@@ -1954,7 +1954,7 @@ Now, we can simply export our `data.frame` object as `csv` file. We'll use it as
 write.csv(df_countries, file.path(utilDir, "Countries_Baseline.csv"), row.names = FALSE)
 ```
 
-The final dataset can be found [here]().
+The final dataset can be found [here](https://github.com/ajourneythroughdatascience/guided-projects/blob/master/data-science/the-state-of-our-world-in-2024/resources/country_hierarchy/Countries_Baseline.csv).
 
 ---
 
