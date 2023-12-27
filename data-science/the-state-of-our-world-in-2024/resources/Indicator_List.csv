@@ -1,45 +1,45 @@
 Metric Code,Segment,Subject,Metric,Source
-01_01_01,Macroeconomics,Economic Output,Nominal GDP,The World Bank
-01_01_02,Macroeconomics,Economic Output,GDP (PPP),The World Bank
-01_01_03,Macroeconomics,Economic Output,GDP per Capita (PPP),The World Bank
-01_01_04,Macroeconomics,Economic Output,GDP Growth Rate,The World Bank
-01_01_05,Macroeconomics,Economic Output,GDP per Capita Growth Rate,The World Bank
-01_01_06,Macroeconomics,Economic Output,Gross National Income (GNI) PPP Per Capita,The World Bank
-01_01_07,Macroeconomics,Economic Output,Adjusted Net National Income Per Capita (current US$),The World Bank
-01_01_08,Macroeconomics,Economic Output,GDP Composition by Sector of Origin,The World Bank
-01_02_01,Macroeconomics,Economic Metrics,Consumer Price Index (CPI),International Monetary Fund (IMF)
-01_02_02,Macroeconomics,Economic Metrics,"Inflation, Consumer Prices",The World Bank
-01_02_03,Macroeconomics,Economic Metrics,Informal Employment % of Total Employment,The World Bank
-01_02_04,Macroeconomics,Economic Metrics,Big Mac Index,The Economist
-01_02_05,Macroeconomics,Economic Metrics,Inclusive Wealth Index (IWI),United Nations Environment Programme (UNEP)
-01_02_06,Macroeconomics,Economic Metrics,Genuine Progress Indicator (GPI),
-01_03_01,Macroeconomics,Unemployment & Underemployment,Unemployment (% of Total Labor Force) (Modeled ILO Estimate),The World Bank
-01_03_02,Macroeconomics,Unemployment & Underemployment,Youth Unemployment Rate,The World Bank
-01_03_03,Macroeconomics,Unemployment & Underemployment,Underemployment Rate,International Labor Organization (ILOSTAT)
-01_04_01,Macroeconomics,Labor Force Participation,Labor Force Participation Rate,International Labor Organization (ILOSTAT)
-01_04_02,Macroeconomics,Labor Force Participation,Proportion of Informal Employment,International Labor Organization (ILOSTAT)
-01_05_01,Macroeconomics,Income Disparities & Wage Gap,Median & Mean Net Worth,Credit Suisse
-01_05_02,Macroeconomics,Income Disparities & Wage Gap,Income Distribution (IDD),Organisation for Economic Co-operation and Development (OECD)
-01_05_03,Macroeconomics,Income Disparities & Wage Gap,Gender Gap,World Economic Forum
-01_06_01,Macroeconomics,Income Inequality,Gini Coefficient,The World Bank
-01_06_02,Macroeconomics,Income Inequality,Human Development Index (HDI),United Nations Development Programme (UNDP)
-01_06_03,Macroeconomics,Income Inequality,Shared Prosperity Ratio,The World Bank
-01_06_04,Macroeconomics,Income Inequality,Prosperity Gap,The World Bank
-01_07_01,Macroeconomics,Poverty,Multidimensional Poverty Index,United Nations Development Programme (UNDP)
-01_07_02,Macroeconomics,Poverty,Working Poverty Rate,International Labor Organization (ILOSTAT)
-01_08_01,Macroeconomics,Minimum Wage,Statutory Nominal Gross Monthly Minimum Wage | Annual,International Labor Organization (ILOSTAT)
-01_09_01,Macroeconomics,Household Dynamics,Household Disposable Income,Organisation for Economic Co-operation and Development (OECD)
-01_09_02,Macroeconomics,Household Dynamics,Household Savings,Organisation for Economic Co-operation and Development (OECD)
-01_09_03,Macroeconomics,Household Dynamics,Household Spending,Organisation for Economic Co-operation and Development (OECD)
-01_09_04,Macroeconomics,Household Dynamics,Household Debt,Organisation for Economic Co-operation and Development (OECD)
-01_09_05,Macroeconomics,Household Dynamics,Household Net Worth,Organisation for Economic Co-operation and Development (OECD)
-01_09_06,Macroeconomics,Household Dynamics,Nominal Housing Prices,Organisation for Economic Co-operation and Development (OECD)
-01_09_07,Macroeconomics,Household Dynamics,Real Housing Prices,Organisation for Economic Co-operation and Development (OECD)
-01_10_01,Macroeconomics,Non-Performing Loans and Solvency,Non-Performing Loans Ratio,International Monetary Fund (IMF)
-01_11_01,Macroeconomics,Debt & Deficit,General Government Net Debt,International Monetary Fund (IMF)
-01_11_02,Macroeconomics,Debt & Deficit,Debt-to-GDP Ratio,International Monetary Fund (IMF)
-01_11_03,Macroeconomics,Debt & Deficit,Current Account Balance,Central Intelligence Agency (CIA)
-01_12_01,Macroeconomics,Currency Value Against USD,Exchange Rates Against USD,Organisation for Economic Co-operation and Development (OECD)
+01_01_01,Macroeconomic Overview,Economic Output,Nominal GDP,The World Bank
+01_01_02,Macroeconomic Overview,Economic Output,GDP (PPP),The World Bank
+01_01_03,Macroeconomic Overview,Economic Output,GDP per Capita (PPP),The World Bank
+01_01_04,Macroeconomic Overview,Economic Output,GDP Growth Rate,The World Bank
+01_01_05,Macroeconomic Overview,Economic Output,GDP per Capita Growth Rate,The World Bank
+01_01_06,Macroeconomic Overview,Economic Output,Gross National Income (GNI) PPP Per Capita,The World Bank
+01_01_07,Macroeconomic Overview,Economic Output,Adjusted Net National Income Per Capita (current US$),The World Bank
+01_01_08,Macroeconomic Overview,Economic Output,GDP Composition by Sector of Origin,The World Bank
+01_02_01,Macroeconomic Overview,Economic Metrics,Consumer Price Index (CPI),International Monetary Fund (IMF)
+01_02_02,Macroeconomic Overview,Economic Metrics,"Inflation, Consumer Prices",The World Bank
+01_02_03,Macroeconomic Overview,Economic Metrics,Informal Employment % of Total Employment,The World Bank
+01_02_04,Macroeconomic Overview,Economic Metrics,Big Mac Index,The Economist
+01_02_05,Macroeconomic Overview,Economic Metrics,Inclusive Wealth Index (IWI),United Nations Environment Programme (UNEP)
+01_02_06,Macroeconomic Overview,Economic Metrics,Genuine Progress Indicator (GPI),
+01_03_01,Macroeconomic Overview,Unemployment & Underemployment,Unemployment (% of Total Labor Force) (Modeled ILO Estimate),The World Bank
+01_03_02,Macroeconomic Overview,Unemployment & Underemployment,Youth Unemployment Rate,The World Bank
+01_03_03,Macroeconomic Overview,Unemployment & Underemployment,Underemployment Rate,International Labor Organization (ILOSTAT)
+01_04_01,Macroeconomic Overview,Labor Force Participation,Labor Force Participation Rate,International Labor Organization (ILOSTAT)
+01_04_02,Macroeconomic Overview,Labor Force Participation,Proportion of Informal Employment,International Labor Organization (ILOSTAT)
+01_05_01,Macroeconomic Overview,Income Disparities & Wage Gap,Median & Mean Net Worth,Credit Suisse
+01_05_02,Macroeconomic Overview,Income Disparities & Wage Gap,Income Distribution (IDD),Organisation for Economic Co-operation and Development (OECD)
+01_05_03,Macroeconomic Overview,Income Disparities & Wage Gap,Gender Gap,World Economic Forum
+01_06_01,Macroeconomic Overview,Income Inequality,Gini Coefficient,The World Bank
+01_06_02,Macroeconomic Overview,Income Inequality,Human Development Index (HDI),United Nations Development Programme (UNDP)
+01_06_03,Macroeconomic Overview,Income Inequality,Shared Prosperity Ratio,The World Bank
+01_06_04,Macroeconomic Overview,Income Inequality,Prosperity Gap,The World Bank
+01_07_01,Macroeconomic Overview,Poverty,Multidimensional Poverty Index,United Nations Development Programme (UNDP)
+01_07_02,Macroeconomic Overview,Poverty,Working Poverty Rate,International Labor Organization (ILOSTAT)
+01_08_01,Macroeconomic Overview,Minimum Wage,Statutory Nominal Gross Monthly Minimum Wage | Annual,International Labor Organization (ILOSTAT)
+01_09_01,Macroeconomic Overview,Household Dynamics,Household Disposable Income,Organisation for Economic Co-operation and Development (OECD)
+01_09_02,Macroeconomic Overview,Household Dynamics,Household Savings,Organisation for Economic Co-operation and Development (OECD)
+01_09_03,Macroeconomic Overview,Household Dynamics,Household Spending,Organisation for Economic Co-operation and Development (OECD)
+01_09_04,Macroeconomic Overview,Household Dynamics,Household Debt,Organisation for Economic Co-operation and Development (OECD)
+01_09_05,Macroeconomic Overview,Household Dynamics,Household Net Worth,Organisation for Economic Co-operation and Development (OECD)
+01_09_06,Macroeconomic Overview,Household Dynamics,Nominal Housing Prices,Organisation for Economic Co-operation and Development (OECD)
+01_09_07,Macroeconomic Overview,Household Dynamics,Real Housing Prices,Organisation for Economic Co-operation and Development (OECD)
+01_10_01,Macroeconomic Overview,Non-Performing Loans and Solvency,Non-Performing Loans Ratio,International Monetary Fund (IMF)
+01_11_01,Macroeconomic Overview,Debt & Deficit,General Government Net Debt,International Monetary Fund (IMF)
+01_11_02,Macroeconomic Overview,Debt & Deficit,Debt-to-GDP Ratio,International Monetary Fund (IMF)
+01_11_03,Macroeconomic Overview,Debt & Deficit,Current Account Balance,Central Intelligence Agency (CIA)
+01_12_01,Macroeconomic Overview,Currency Value Against USD,Exchange Rates Against USD,Organisation for Economic Co-operation and Development (OECD)
 02_01_01,Economic Indicators and Investment,Market and Consumer Indices,Producer Price Index (PPI),Organisation for Economic Co-operation and Development (OECD)
 02_01_02,Economic Indicators and Investment,Market and Consumer Indices,Consumer Confidence Index (CCI),Organisation for Economic Co-operation and Development (OECD)
 02_01_03,Economic Indicators and Investment,Market and Consumer Indices,International Tourist Arrivals,The World Bank

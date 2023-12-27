@@ -8,7 +8,7 @@
 
 [![made-with badge](https://img.shields.io/static/v1?label=Made%20with&message=Obsidian&color=7d5bed&logo=obsidian&labelColor=1a1a1a&style=flat)](https://obsidian.md/)
 
-[![type](https://img.shields.io/static/v1?label=Type&message=guided-project&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-project/) [![category](https://img.shields.io/static/v1?label=Category&message=data-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python,%20R,%20RStudio,%20VS%20Code,%20PowerShell&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-projects/the-state-of-our-world-in-2024-pt-1/)
+[![type](https://img.shields.io/static/v1?label=Type&message=guided-project&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAi0lEQVRIS+2WMQ7AIAhF/UNXrtP7rz2OYxeqTWxMTBUSxQVXfnzyQQKC8YExL7zAGCNbgIkIsIKVhBw4vbR7unR6Gp0LvwxXd2v+EvkdDpxWXpWlRTyi9/pABRyBJHEHSlxSadxSlV0SsVsqcUml2W/pynWxnsXNisHMRxrCl8qvH3ECnQDuOmy+0zwB4WNxmUKgwwAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-project/) [![category](https://img.shields.io/static/v1?label=Category&message=data-science&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAB9UlEQVRIS6VWMU7DQBDkDAQEdrAoCISCAomCL1DxC95Azy9oeQS/oOIHVFAgREFoCHGCRSzZzEU+63LZ9W6CO/vudmZ2d9Zn1pTPaDSqut2usduHw+FpFEUv7t1fk8LNAkiPDWj3+ADuTPjNvXMxWwGzLCuqqtqwh5MkiY0xEwfOAfrEKFAWUBO4DZQDXgCEqjuouvbZUanUrocpngMMVUkKtKC+WhFQUudAUd8r1PkepJ/w7Tysn4uzkNJlascF9WOASAki6w0xrn19b3Gpps5y3kRfJADPZgr9gJSP0EgDHDiQ/Mp50PfxAmDtuQhsZmb/z0OVhwSkmGrSGp5bGRDp3EFaJ5JaiahdZ2vYNj/JkWVMgW7sgNw2yOW+99gacp7TeFE72OcUrgo4Ho93+/3+D5T9QmGHm0BNSnHgMI7jj9Ai2tElZGCK9S3S+GA4BcNNydBaIuEstu/iLJWCa+pLDm+Nz+xQAsBenucnRVG8asFq0s/Yf9YoVAI21wyn3N4I7M1A8ijWHwB42XrFqIO9YfMRlVqqyXC5ukED3nIEVJcoBXv1lmWa5gIpeeQioyTWVj1uXf0DpgKUZbmfpunXKnVnU9rWDKiTHRSDNkDu36iqIQK/Q+mxU8sBYniL/1EVoJ9Wqwo/5x6Cf9YKv6Em1XbNH5bGfSwvuRe1AAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/categories/data-science/) [![technologies](https://img.shields.io/static/v1?label=Technologies&message=Python,%20R,%20RStudio,%20PowerShell&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nM2RMW7CUBBEnUikIQUIlBJxrrQgJG7ABRBnoUkaWhpoUgWJlgNYbvz/G1dUi1ayoy87rpOtVrszs6OdLPtXlef5UNJXjHHcCwohjMzsKZ3FGN+Bq/e+c0xHGfiWtEznkg6SNnW/dIxjs0YJ2AMnM3tJSFPgHkKY17gBcAQ+zOw5A3aSbsCkdW0NnNOZY2rstpcInJ3cS/SzwGdqtSzLmdusquqtIXWsehVF8QpcJK1qmxt/TMv6wjE/z0leP27i8Ag8inT/axxtAQ+9o/zn9QD3JOiyTjnQEQAAAABJRU5ErkJggg==&labelColor=1a1a1a&style=flat)](https://pabloagn.com/technologies/) [![website article](https://img.shields.io/static/v1?label=Website&message=Post%20Link&color=e60048&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2VOYgUURCGR/BAI4MN1EwjI89EMDYQvNBNNNlcE0VBUdlUUSMjj2BF2UDRePDAwGzNF2GNPIYd8Hjv/6YnEHSf/FIDPTJiu4nJFBTd1Kv6/nrVBd1q/S8DJiU9AmaBm5LOSjoATPwDY0LSQUnnzDArmJOjkqclvQceSHohaR6oJC1JeiPprqT9pZSVg5pSyirH4sw5S1EzbwZwP5jTIwWBdj1meEppZ6/XOyXpCdCX9Am4Fv45Yo+Bk1VV7ag3FNz2kKC7yznvHiX4u3U6nXU55xPAW7vfHfvLmNtmW8NaFux67k0Ea03esTfJJQTj23bHgiNtPNK6jZem3Wpg46Wp23hp2q0GNl6axksjaRGYkXRF0mnHq6ra2HSk/X5/k6RDks6YEazFPwnuBS5KuirptqTnkj4CJZ4zwNFSytqBoP/2wDHgXi33A/BM0i2zzDR7SBC4LGlPr9fb5huVUlYMus45b5E0FYJfgQS8C8/Al7jJVEpp86DODLPMNDs0up7xXBQZVKLLb8CCpIfA+ZzzvpTS+lLKGuAI8DT8cClltc+c49yoWQjGL140ao25oW8QXW1IKe3KOR8Hbkh66ZtI+i7plaG+iR244JjP3HDkXnetGWbVp9XYopHtHgvwWtIPu9+BSx7bssBNDdhqX07xT/Jbz1SBBDGHAAAAAElFTkSuQmCC&labelColor=1a1a1a&style=flat)](https://pabloagn.com/guided-projects/the-state-of-our-world-in-2024-pt-1/)
 
 We live in an era where reliable data has become an invaluable asset. We're constantly bombarded with information from multiple sources, trying to grab our attention as quickly, effectively, and cheaply as possible. This has given rise to previously unheard phenomena that have been emerging over the past few years: anxiety-induced headlines & news fatigue, information overload, the surge of deepfakes, the perpetuation of clickbait culture, and many others. As we'll explore, this trend has resulted in unstable confidence levels in traditional & non-traditional news sources.
 
@@ -37,9 +37,70 @@ We'll be using R scripts, which can be found in the [Guided Project Repo](https
 ---
 
 # Table of Contents
-- [Legibility](#legibility)
-	- [Authoring](#1-authoring)
-	- [Comments](#2-comments)
+- About this series]()
+- What to expect]()
+- The state of news today]()
+	- Media Confidence]()
+	- Misinformation]()
+	- The QUIBBLE method]()
+	- Breaking patterns]()
+		- Verifying the primary source]()
+		- Understanding source bias and funding]()
+		- Analyzing the metrics used]()
+		- Evaluating data collection methods]()
+		- Inspecting Data Visualization Techniques]()
+		- Checking for Data Consistency and Timeliness]()
+		- Reviewing Statistical Methods]()
+	- It happens to everyone, really]()
+- Document structure]()
+- A word on metrics]()
+- Preparing our workspace]()
+	- Folder structure set up]()
+	- Environment set up]()
+		- R]()
+			- The R Project]()
+			- The R Environment]()
+			- Installing packages]()
+		- Python]()
+- A brief introduction to R for Data Science]()
+	- What is R?]()
+	- Importing modules]()
+	- An introduction to functions]()
+	- Declaring custom functions]()
+	- Reading data]()
+		- Reading csv files into data.frame objects]()
+		- Reading csv files into data.table objects]()
+		- Reading xlsx files]()
+	- An introduction to dplyr]()
+		- The dplyr verbs]()
+		- select()]()
+		- filter()]()
+		- mutate()]()
+		- arrange()]()
+		- summarize()]()
+	- Data transformations & dplyr]()
+		- Transformations using a single verb]()
+		- Transforming using multiple verbs (*the pipe operator*)]()
+		- Transforming using other functions]()
+		- Calculating aggregations]()
+	- Data tidying & tidyr]()
+		- Generating tidy data]()
+		- Generating untidy data]()
+	- Merging objects]()
+		- Merging using Base R]()
+		- Merging using dplyr]()
+		- Merging using purr]()
+	- Classical statistics]()
+		- Descriptive statistics]()
+		- Probability distributions]()
+		- Correlation and regression analysis]()
+	- Plotting]()
+		- Plotting a simple line chart]()
+		- Plotting a boxplot]()
+		- Plotting a jitter plot]()
+	- Building the country hierarchy]()
+		- A word on dimensions & hierarchies]()
+		- Building our country hierarchy]()
 - [Conclusions](#conclusions)
 - [References](#references)
 - [Copyright](#copyright)
@@ -77,7 +138,7 @@ For this series, we'll mostly use [R](https://pabloagn.com/technologies/r/) &�
 # The state of news today
 How are people perceiving news today? How does this trust affect how people react toward national and worldwide conflicts? Which are the main sources of information consulted by people of different demographics?
 
-## Media Confidence
+## 1. Media Confidence
 According to Reuters' Institute for the Study of Journalism [Digital News Report 2023](https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2023-06/Digital_News_Report_2023.pdf), only 10 out of 46 countries have a share of adult trust in news media as of February 2023 above 50%. This means that 78.2% of the surveyed countries have a trust share below 50%:
 
 01
@@ -99,7 +160,7 @@ However, there are still some alternative news sources whose content is often no
 
 So now that we know a bit about how people perceive traditional & alternative news sources, how do people feel about misinformation as a perceived threat?
 
-## Misinformation
+## 2. Misinformation
 According to [a study conducted by The Lloyd's Register Foundation](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/), 57% of internet users across all parts of the world, socioeconomic groups, and all ages regard false information, or "_fake news_", as a major concern. According to the same study, concern is more prevalent in regions of high economic inequality and where ethnic, religious, or political polarization exists, leading to the weakening of social cohesion and trust. However, there is still a relevant number of developed countries with high percentages:
 
 04_merged
@@ -132,31 +193,31 @@ In short, misinformation appears to be a significant concern for a sufficient se
 
 So, what steps can we take to ensure the information we're ingesting is reliable?
 
-## The QUIBBLE method
+## 3. The QUIBBLE method
 There are many journalistic practices we can adopt as everyday newsreaders; the most important ones can be summarized into what I call the QUIBBLE method (_Questioning Underlying Information Before Believing, Learning, and Endorsing_). You see, when we're hit with news, the headline is often much more prevalent than the actual information contained in the article. This is mostly because ["we live in a hypercompetitive world, and clickbait titles simply sell more news"](https://www.apa.org/monitor/2022/11/strain-media-overload).
 
 Thus, when the data arrives, we already have a certain predisposition. This not only causes a potential bias but also affects people emotionally, as observed by Dr. Steven Stosny in his [_Washington Post_ opinion piece in 2017](https://www.washingtonpost.com/news/inspired-life/wp/2017/02/06/suffering-from-headline-stress-disorder-since-trumps-win-youre-definitely-not-alone/).
 
-## Breaking patterns
+## 4. Breaking patterns
 So, how can we bypass this initial reaction and focus on whether the piece is valid in the first place? There are some techniques we can (_consciously_) practice whenever we're exposed to news articles and general information:
 
-### Verifying the primary source
+### 4.1 Verifying the primary source
 - **Ensure the primary source is credible and authoritative**: This includes trusted authors, credible research institutions, and peer-reviewed material.
-- **Check if the sources are cited correctly, actually exist, and are accessible to the public**: This one is a bit tricky since studies can sometimes reference data sources (_most of the time, this happens for secondary sources_) provided by organizations that require registration, that have paywalls, or that require an application procedure for us to be able to access the data. However, most socioeconomic data sources (_public organizations such as The World Bank, ILOSTAT, OECD, IMF, etc_.) are free for public consultation and even offer well-documented public APIs (s_ome private organizations offer composite indexes or preprocessed data, and those can charge for subscription fees_).
+- **Check if the sources are cited correctly, actually exist, and are accessible to the public**: This one is a bit tricky since studies can sometimes reference data sources (_most of the time, this happens for secondary sources_) provided by organizations that require registration, that have paywalls, or that require an application procedure for us to be able to access the data. However, most socioeconomic data sources (_public organizations such as The World Bank, ILOSTAT, OECD, IMF, etc_.) are free for public consultation and even offer well-documented public APIs (_some private organizations offer composite indexes or preprocessed data, and those can charge for subscription fees_).
 - **Confirm that the data matches the information provided by the sources**: Sometimes, the author may include a reference (_by mistake or purposefully_) that does not match the data being displayed. This can be caused by negligence, bad URLs, or even mistakes when writing the piece.
 
-### Understanding source bias and funding
+### 4.2 Understanding source bias and funding
 - **Research the inclinations or biases of the source**: This is especially relevant since some news outlets can have mild to strong political inclinations and can even be partially or completely funded by governmental organs or for-profit private institutions. This is normal and does not necessarily mean that there will be a conflict of interest; however, we must consider balancing the sources we consult.
 - **Identify the funding behind the research or data collection**: This helps uncover potential conflicts of interest. Of course, this is not always possible since private organizations can partially or fully fund public organizations (_same as above, this is not always a problem. In fact, it's sometimes beneficial since domain expertise is often required; the trick lies in simply knowing this fact before fully committing to an opinion_). Common examples of this phenomenon include pharmaceutical companies funding medical studies and digital privacy studies funded by technology companies, among others.
 
-### Analyzing the metrics used
+### 4.3 Analyzing the metrics used
 - **Understand the metrics or indicators being used and how they are defined**: Having at least a general notion of which metrics are being used to present conclusions is relevant since, for example, apparently similar metrics can have drastically different considerations or can even be measured in different units.
 - **Assess the appropriateness & validness of the metrics**: A given metric might not be adequate for measuring given phenomena, and often, a single metric will not fully explain the real-world situation being described. This is why the study of socioeconomic, political, and environmental phenomena is often tackled from multiple angles.
 
-### Evaluating data collection methods
+### 4.4 Evaluating data collection methods
 - **Examine how the data was collected and if there could be any errors in this process**: Oftentimes, the authors will cite how the data was collected (_e.g., surveys, experiments, administrative data_), accompanied by the parameters of said collection. This is relevant when talking about surveys & polls; for example, incorrect sample sizes and unstratified sampling techniques under the wrong contexts can drastically skew the study's outcome. This is especially detrimental if these considerations are withheld and not made known to the public when presenting the results.
 
-### Inspecting Data Visualization Techniques
+### 4.5 Inspecting Data Visualization Techniques
 I would argue that a big part of a misinformed opinion can come from incorrect visualization practices since it's fairly easy to make mistakes or purposefully lie to the public using this technique; a simple change in the axis scales can completely transform how the audience perceives data. Below are a couple of nice resources with examples of what not to do when visualizing data:
 - [Misleading Graphs: Real Life Examples, Statistics How To](https://www.statisticshowto.com/probability-and-statistics/descriptive-statistics/misleading-graphs/)
 - [Bad Data Visualizations, Real Life Examples Out There in the Wild, Tom Ellyatt](https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb0)
@@ -164,19 +225,19 @@ I would argue that a big part of a misinformed opinion can come from incorrect v
 - **Assess whether the scales (_linear, logarithmic_) are appropriate and not misleading**: This can be a major source of confusion since many data sources don't even report the units they're using. Another nice example widely found in line charts is what's known as "_exaggerated scaling_", where the minimum or maximum values of a given scale are exaggerated to reduce or increase apparent change.
 - **Ensure legends and labels are clear and accurate**: As we mentioned, sometimes, a given axis might not have labels or units. This can cause misinterpretation or plain lack of understanding.
 
-### Checking for Data Consistency and Timeliness
+### 4.6 Checking for Data Consistency and Timeliness
 - **Ensure the data is consistent internally and with other credible sources**: Socioeconomic data will often be reported by multiple sources, especially if we're talking about relevant metrics such as GDP, Inflation, Consumer Price Index, Unemployment Rate, etc. The trickier part comes when the metric was designed by a single organization, the most common example being composite indexes (_although other metrics are also included here_). Composite indexes are metrics built from multiple indicators. Some composite index examples include:
 	- [Global Peace Index by Vision of Humanity](https://www.visionofhumanity.org/maps/#/)
 	- [Global Green Economy Index (GGEI) by Dual Citizen](https://dualcitizeninc.com/global-green-economy-index/)
 	- [Freedom in the World by Freedom House](https://freedomhouse.org/report/freedom-world)
 - **Confirm that the data is current or relevant to the time period being discussed**: It's sometimes hard to get up-to-date data, especially for the more airtight countries (_e.g., closed autocracies, dictatorships_), economies with ongoing political conflicts (_e.g., recent coups, temporal governments_), or economies with volatile political situations (_e.g., once reported but stopped due to change in political regime_). These cases are part of the bigger concept referred to as [data holes](https://bigthink.com/strange-maps/the-worlds-data-holes-quantified/). Some examples include Afghanistan, North Korea, Venezuela, and Syria. Moreover, some of these economies do not even belong to international reporting organizations such as the IMF, The World Bank, OECD, etc. This can create difficulties in gathering updated information, and if there is information but it's outdated, it can tell a whole different story from the actual facts.
 
-### Reviewing Statistical Methods
+### 4.7 Reviewing Statistical Methods
 - **If a statistical analysis is included in the piece, check that said analysis is well-documented**: Sometimes, the analyses used will be referenced from external research papers or created in-house and validated by a careful peer review process (*this is the best scenario, but it's not always possible*). The most relevant organizations (_ILOSTAT, The World Bank, IMF, etc_.) will, most of the time, provide a detailed breakdown of their statistical methods as footnotes. They will sometimes be accompanied by considerations, assumptions & warnings for the method(s) in question. Examples include estimates for unknown data, sample design & collection techniques, predictive models, etc.
 - **Understand or at least have some notion of the statistical methods used to analyze the data**: This is not always possible since some methods can be fairly technical. However, many authors often try to summarize the methods used in the executive summary or the body of the article. If in question, we can always make direct inquiries to the author(s).
 - **Check if the conclusions drawn are statistically valid and reasonably derived from the data**: This is especially relevant since, as we have discussed, statistics is a powerful tool that can be used to mislead (_purposefully or by ignorance_) by using very simple descriptive statistics such as mean & standard deviation (_e.g., skewness by outliers, scarce data points, etc._), to more complex methods such as estimators, hypothesis tests or predictive models (_e.g., the underlying assumptions are not met, the results are cherry-picked, the model is overfit and can't be generalized_). In this series, we'll learn to discern whether a given statistic makes sense under a given context and which statistics need the support of other statistics to get a more comprehensive picture (_e.g., averages can often come with the count of observations, a quartile breakdown & the variance or standard deviation_). We'll also learn how to deal with assumptions, their importance, how to report if a given assumption for a given model is not met, and how to measure the implications of assumptions to our overall results.
 
-## It happens to everyone, really
+## 5. It happens to everyone, really
 As a Data Scientist, I've gone through countless occasions where the information had one or more of the slips abovementioned (_I myself am guilty of this error_). It's easy to miss details, generate the wrong visualization, mess up the scales, use the wrong parameters for a statistical method, over-trust the source, and even come up with wrong conclusions due to lack of domain knowledge.
 
 And this is fine since it's all part of the process. What's crucial is that we develop critical thinking in terms of how we consume & interpret information; we already know how data can be manipulated and that there are tools we can use to come up with better hypotheses & conclusions. What's left now is practicing critical thinking again and again.
@@ -234,7 +295,7 @@ After reading all my gibberish, the time has come to actually start doing someth
 - Setting up a Python environment.
 - Installing required packages for both parties.
 
-## Folder structure set up
+## 1. Folder structure set up
 We'll set up a simple folder structure. Here's what we'll need:
 - A `data` folder: This will contain all our input files.
 	- With a subfolder for raw data for our extractions.
@@ -275,11 +336,10 @@ Project Root
 └── .gitignore (To exclude files/folders from Git)
 ```
 
-## Environment set up
-
+## 2. Environment set up
 We can set up our environments once we have clarity on our project's directory structure. We'll start with R and then move on with Python.
 
-### R
+### 2.1 R
 Throughout this segment, we'll mostly be using Posit's [RStudio Desktop](https://posit.co/download/rstudio-desktop/). A detailed step-by-step installation tutorial can be found [here](https://rstudio-education.github.io/hopr/starting.html).
 
 We'll set up two different components in R:
@@ -287,8 +347,7 @@ We'll set up two different components in R:
 - **An R Environment**: This will help us manage R dependencies.
 - **Multiple R Scripts**: These will be the core of our project. They will contain all the code we'll use throughout this segment.
 
-#### The R Project
-
+#### 2.1.1 The R Project
 We'll start by creating our project. For this, we'll use the Project Root directory we selected previously:
 1. **Open RStudio**.
 2. **Go to `File` > `New Project`**.
@@ -298,7 +357,7 @@ We'll start by creating our project. For this, we'll use the Project Root direct
 
 Depending on our Project Root directory name, we should have a new file with the `.Rproj` extension. This file works as a configuration file and sets the context for our project.
 
-#### The R Environment
+#### 2.1.2 The R Environment
 We'll now create an R Environment specifically tailored for this project. From within RStudio, we'll head to the R console and execute the following:
 
 ##### **Code**
@@ -331,7 +390,7 @@ If everything goes well, we should end up with the following new files & folders
 - `renv.lock`: This file is created by the `renv` package. It's a lockfile that records the exact versions of R packages used in your project.
 - `renv`: This is the folder containing our new environment, similar to what happens with Python `venv` or `virtualenv`.
 
-#### Installing packages
+#### 2.1.3 Installing packages
 For this series, we'll need several R packages:
 - Reading & writing:
 	- [`readr`](https://readr.tidyverse.org/): Provides the capability to read from comma-separated value (CSV) and tab-separated value (TSV) files. We'll use this for reading mainly from csv files.
@@ -459,7 +518,7 @@ And voila. Our workspace is ready.
 # A brief introduction to R for Data Science
 As we mentioned, this series will be heavily focused on reading & transforming data, producing descriptive statistics, designing statistical experiments, and creating visualizations using R. Because of this, we'll quickly go over the basics in the context of Data Science. We will not go over the absolute basics of R since that is out of the scope of this series. However, a comprehensive beginner's tutorial can be found [here](https://www.statmethods.net/r-tutorial/index.html). You can skip to the **Building the country hierarchy** section if you're familiar with R for Data Science.
 
-## What is R?
+## 1. What is R?
 R is a dynamically typed functional programming language designed by statisticians for statisticians. Unlike languages such as Python, Java, or C++, R is not a general-purpose language. Instead, it's a domain-specific language (DSL), meaning its functions and use are designed for a specific area of use or domain. In R's case, that's statistical computing and analysis.
 
 So why R? Why not stick with Python if R is so specific?
@@ -475,7 +534,7 @@ One thing is clear under our specific context: R excels at statistical computing
 - Implement advanced Machine Learning algorithms.
 - Visualize our data.
 
-## Importing modules
+## 2. Importing modules
 Once we have a library installed, importing it in R is straightforward. We can use the `library()` function to import the library to our current project:
 
 ##### **Code**
@@ -499,7 +558,7 @@ library(viridis)
 library(car)
 ```
 
-## An introduction to functions
+## An 3. introduction to functions
 Functions are key in maintaining our code modular, and they can save us a lot of time when preprocessing & transforming similar datasets. A function in R works similarly to a function in Python.
 
 A function will:
@@ -517,7 +576,7 @@ Additionally, R functions have features like:
 - **Lazy Evaluation**: Arguments in R are lazily evaluated, meaning they are not computed until they are used inside the function.
 - **First-class Objects**: Functions in R are first-class objects, meaning they can be treated like any other R object. They can be assigned to variables, passed as arguments to other functions, and even returned from other functions.
 
-## Declaring custom functions
+## 4. Declaring custom functions
 We can declare custom functions in a similar fashion to what we would do in Python:
 
 ##### **Code**
@@ -560,7 +619,7 @@ outside_fun(inside_fun, 2, 4)
 [1] 8
 ```
 
-## Reading data
+## 5. Reading data
 In R, we can import data to our workspace by reading it from a physical file, using an API, or using one of the included R datasets. In our case, we'll focus on reading data from existing files, specifically `.csv,` `.xlsx`, & `.parquet` files (*the latter we'll leave for later since we'll not use it for the initial steps*). Once we read a file in R, we can save our data in different data objects, depending on our requirements. There are three main data objects we'll use in this series:
 - `data.frame`: They are tightly coupled collections of variables that share many of the properties of matrices and lists, used as the fundamental data structure by most of R's modeling software.
 - `data.table`: They are an enhanced version of a `data.frame` object, the standard data structure for storing data in `base` R.
@@ -580,7 +639,7 @@ There are four main methods we'll be using to read from the defined file types t
 - Reading `.xlsx` files into `data.frame` objects.
 - Reading `.xlsx` files into `data.frame` objects and transforming them to `data.table` objects.
 
-### Reading csv files into data.frame objects
+### 5.1 Reading csv files into data.frame objects
 We can read `csv` files into `data.frame` objects using the following syntax:
 
 ##### **Code**
@@ -606,7 +665,7 @@ class(df_csv_dataframe)
 [1] "data.frame"
 ```
 
-### Reading csv files into data.table objects
+### 5.2 Reading csv files into data.table objects
 We can also read `.csv` files into `data.table` objects using the following syntax:
 
 ##### **Code**
@@ -626,7 +685,7 @@ class(df_csv_datatable)
 [1] "data.table" "data.frame"
 ```
 
-### Reading xlsx files
+### 5.3 Reading xlsx files
 We can read `.xlsx` files into `data.frame` objects using the following syntax:
 
 ##### **Code**
@@ -664,7 +723,7 @@ class(df_xlsx_datatable)
 
 Once we have our data objects available, we can get information about our data and transform our objects using different operations.
 
-## An introduction to dplyr
+## 6. An introduction to dplyr
 [`dplyr`](https://dplyr.tidyverse.org/) is a package included in [`tidyverse`](https://www.tidyverse.org/), a collection of R packages specifically designed for data science-related tasks. In the words of the maintainers, `dplyr` is a grammar of data manipulation, providing a consistent set of verbs that help solve the most common data manipulation challenges (*it's important to mention that, while `dplyr` offers alternative methods for several base R implementations, it does not completely substitute it in most cases, so a hybrid approach is sometimes recommended*):
 - `mutate()`: Adds new variables that are functions of existing variables
 - `select()`: Picks variables based on their names.
@@ -685,17 +744,17 @@ Below are some key points regarding `dplyr`:
 - When possible, the data object will always be the first argument in any method.
 - When possible, the output of a method will be a `data.frame`. This allows us to pipe methods sequentially, as we'll see in a minute.
 
-### The dplyr verbs
+### 6.1 The dplyr verbs
 At its core, `dplyr` supports five verbs or transformations. We already mentioned them in the previous section, but here we'll take a more detailed look at how to use them.
 
-#### select()
+#### 6.1.1 select()
 [`select()`](https://dplyr.tidyverse.org/reference/select.html) will be responsible for transforming columns (*variables*) based on their names. With `select()` we can:
 - Extract a column.
 - Reorder columns.
 - Rename columns.
 - Remove columns.
 
-#### filter()
+#### 6.1.2 filter()
 [`filter()`](https://dplyr.tidyverse.org/reference/filter.html) is used on a per-row basis to subset a data frame. With `filter()` we can:
 - Remove `NaN` values.
 - Filter by entry name on a given column.
@@ -707,24 +766,24 @@ At its core, `dplyr` supports five verbs or transformations. We already mentione
 - Filter by using our own functions for evaluation.
 - And much more.
 
-#### mutate()
+#### 6.1.3 mutate()
 [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html) is used to apply transformations to existing columns in our data frame. The result can then be saved to the original column or added as a new column to our data frame. With `mutate()` we can:
 - Apply a mathematical function to an existing column.
 - Assign a rank based on a given column's values.
 - Apply transformations using conditional constructs.
 - And much more.
 
-#### arrange()
+#### 6.1.4 arrange()
 [`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html) is used to order the rows of a data frame by the values of selected columns.
 
-#### summarize()
+#### 6.1.5 summarize()
 [`summarize()`](https://dplyr.tidyverse.org/reference/summarise.html) is used to perform summary statistics on a column basis. With `summarize()` we can:
 - Get the mean of the values on a given column.
 
-## Data transformations & dplyr
+## 7. Data transformations & dplyr
 `dplyr` is strongest in the data transformation area. We can combine verbs & methods to do practically most of the transformation & preprocessing work we need for this series. Let us now illustrate `dplyr`'s capabilities with some hands-on examples.
 
-### Transformations using a single verb
+### 7.1 Transformations using a single verb
 We can start by illustrating how a transformation with a single verb can be defined:
 
 ##### **Code**
@@ -784,7 +843,7 @@ head(metrics_2005)
 
 But wouldn't it be nice to do this on a single expression? I mean, assigning & reassigning variables is tedious. Well, turns out `dplyr` has an implementation that solves this problem.
 
-### Transforming using multiple verbs (*the pipe operator*)
+### 7.2 Transforming using multiple verbs (*the pipe operator*)
 Complex data transformations using single expressions with `dplyr` can be achieved by using the pipe operator `%>%`. People with functional programming backgrounds and SQL users will find this approach very familiar; at its core, the pipe operator serves as an interface between one input and one output. It accepts one input and evaluates the next function with it:
 
 ```
@@ -826,7 +885,7 @@ Note that:
 - We can break lines at the end of each pipe operator, making the expression highly readable.
 - We can use vectors of column names inside `select()`.
 
-### Transforming using other functions
+### 7.3 Transforming using other functions
 We can also pipe our data to other functions, such as:
 - [`unique()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/unique): Returns a vector, data frame or array like entry object but with duplicate elements/rows removed.
 - [`count()`](https://www.rdocumentation.org/packages/dplyr/versions/1.0.10/topics/count): Returns an object of the same type as the entry object with the count of unique values of one or more variables.
@@ -891,7 +950,7 @@ unique_codes_head
 10          VIR
 ```
 
-### Calculating aggregations
+### 7.4 Calculating aggregations
 Aggregations are a key aspect of data analysis & data science. They let us look at summarized version(s) of the data when we have, for example, a variable that we wish to group by. Having said this, we also need to be careful when summarizing data; some metrics cannot be directly summarized due to the nature of their calculation. We have three main scenarios where this can happen:
 - The calculation is arithmetically or statistically incorrect.
 - The calculation is arithmetically or statistically correct, but the metric should not undertake the given calculation since it changes its meaning.
@@ -953,7 +1012,7 @@ The result is a `tibble` object of the specified dimensions:
 
 The `mean()` function is just one option, but we can use whichever aggregate function we need, including, of course, custom functions.
 
-## Data tidying & tidyr
+## 8. Data tidying & tidyr
 As mentioned previously, `tidyr` is also included in the `tidyverse` package. Its main use case is to create tidy data. [According to the official documentation](https://tidyr.tidyverse.org/), tidy data is data where:
 - Every column is a variable.
 - Every row is an observation.
@@ -1000,7 +1059,7 @@ Going back to the previous example, imagine plotting a time series for this metr
 
 So in short, using tidy data in `tidyverse` is always recommended; we'll always use tidy data in this series when creating visual objects, and also sometimes when performing transformations.
 
-### Generating tidy data
+### 8.1 Generating tidy data
 `tidy` has a ton of functions; we'll not be using all of them, of course. In this series, we'll mostly be using the following:
 - `pivot_longer`: Transform from wide to long.
 - `pivot_wider`: Transform from long to wide.
@@ -1111,7 +1170,7 @@ Let us break this down in more detail:
 - Lastly, we call `pivot_longer`, but instead of indicating a set of columns to pivot, we declare all columns except the base columns.
 - The rest stays exactly the same.
 
-### Generating untidy data
+### 8.2 Generating untidy data
 Of course, we can do the inverse operation as we did in the last example and make our data object wider by pivoting column values as new variables. This comes in handy when we get a dataset that has the following columns:
 - Variable: A set of variables.
 - Value: A set of values corresponding to each of the variables.
@@ -1176,7 +1235,7 @@ head(df_wider)
 
 And that's it; we've transformed our original dataset into a tidy set by using `tidy` & `dplyr.`
 
-## Merging objects
+## 9. Merging objects
 Merging is a crucial part of data manipulation, and we'll be doing a lot in this series. Merging works very similarly to other languages, such as Python. There are different types of merge operations, depending on the underlying set theory implementation we'd like to use.
 
 Merging in R can be executed using multiple libraries. However, we'll use three in this series:
@@ -1184,7 +1243,7 @@ Merging in R can be executed using multiple libraries. However, we'll use three 
 - `dplyr`
 - `tidyverse`
 
-### Merging using Base R
+### 9.1 Merging using Base R
 Base R provides us with a `merge()` function. We can use it to perform the following join operations:
 - outer
 - left
@@ -1252,7 +1311,7 @@ head(df_left_base)
 4         SEN        Senegal   124390    89245
 ```
 
-### Merging using dplyr
+### 9.2 Merging using dplyr
 We already saw that `dplyr` has very nice transformation functions. Additionally, it also provides merge functions. However, these vary with regards to the join operation we're trying to perform:
 
 ##### **Code**
@@ -1275,7 +1334,7 @@ head(df_left_dplyr)
 4         GBR United Kingdom    25345    49584
 ```
 
-### Merging using purr
+### 9.3 Merging using purr
 At last, we have the [`reduce()`](https://www.rdocumentation.org/packages/purrr/versions/0.2.4/topics/reduce) function from the `purr` package. The `reduce()` function is not just a merge function; it's much more than that. The `reduce()` function is a commonly used method in functional programming. In fact, it's one of the staples of any FP language along with `map()` and `mapreduce()`.
 
 The `reduce()` function will reduce a list of objects to a single object by iteratively applying a function. We have two flavors:
@@ -1312,10 +1371,10 @@ This approach has three main advantages that we'll greatly leverage throughout t
 - It fits seamlessly with `dplyr`.
 - We can use any function, including custom functions (*of course, not just necessarily for merging*).
 
-## Classical statistics
+## 10. Classical statistics
 This mini tutorial would not be complete without going over some of the very basic classical statistics concepts in R, given that R is a statistics-oriented programming language, and we'll be making fairly extensive use of some of the methods included. Please keep in mind that this is in no way a comprehensive review of classical statistics theory. Instead, it's a very quick mention of the most relevant methods in R and how we'll implement them in our analyses.
 
-### Descriptive Statistics
+### 10.1 Descriptive statistics
 Descriptive statistics are a key aspect of Data Science & Data Analysis. They provide ways of summarizing & describing data and are used extensively in Exploratory Data Analysis (*EDA*) since they often provide a friendly & comprehensive entry point where our data is extensive.
 
 In the words of [Jennifer L. Green et al.](https://www.sciencedirect.com/topics/social-sciences/descriptive-statistics), descriptive statistics summarize the characteristics and distribution of values in one or more datasets. Classical descriptive statistics allow us to have a quick glance at the central tendency and the degree of dispersion of values in datasets. They are useful in understanding a data distribution and in comparing data distributions.
@@ -1373,7 +1432,7 @@ As we can see here, `summary()` will give us the most relevant summary statistic
 
 We can also use visualizations such as boxplots & histograms to get more than one summary statistic visually. We'll see this in more detail when we get to Plotting.
 
-### Probability Distributions
+### 10.2 Probability distributions
 In probability theory and statistics, a probability distribution is a mathematical function that provides the probabilities of occurrence of different possible outcomes for an experiment. The most common distributions are:
 - Normal (*Gaussian*)
 - Binomial
@@ -1453,7 +1512,7 @@ Note that the assumption of a normal distribution for this case is made to illus
 
 This is a simple example, but gives you an idea of what can be done with probabilistic distributions and real-world phenomena.
 
-### Correlation and Regression Analysis
+### 10.3 Correlation and regression analysis
 Lastly, we discuss correlation & regression analysis. In statistics, correlation or dependence is any statistical relationship between two random variables or bivariate data, whether causal or not. Correlations are extremely useful when we're trying to find relationships between one variable and another to do the following:
 - Understand phenomena
 - Make predictions
@@ -1574,7 +1633,7 @@ From this figure, the strongest relation could come from Education & Examination
 
 This is just a simple entry point to correlational studies, but the reality is that there are many more methods we can use. We'll discuss them when we arrive at the statistical analysis modules.
 
-## Plotting
+## 11. Plotting
 We already saw some visualizations when discussing probability distributions & correlational analyses, but here we'll formally discuss how to create plots using the `ggplot2` package.
 
 Generating visuals in R is slightly different than doing the same in Python. R has some core components we need to familiarize ourselves with:
@@ -1591,7 +1650,7 @@ Generating visuals in R is slightly different than doing the same in Python. R h
 
 Let us go over some examples.
 
-### Plotting a simple line chart
+### 11.1 Plotting a simple line chart
 We'll use the `ggplot` library to plot our first line chart. We'll use the tidy data.frame object we already have in our hands:
 
 ##### **Code**
@@ -1691,7 +1750,7 @@ Let us explain this in more detail:
 
 ###### *Figure 9: GDP Per Capita, PPP (current international $), per Country, 3 countries*
 
-### Plotting a boxplot
+### 11.2 Plotting a boxplot
 Boxplots are key when it comes to descriptive statistics. They provide information about the locality, spread, and skewness of groups of numerical data through their quartiles. We'll be using boxplots & similar visualizations a lot in this series.
 
 Let us use the `iris` dataset to exemplify. We can plot multiple boxplots in a single figure to compare them side by side. We can leverage the `Species` column to compare:
@@ -1727,7 +1786,7 @@ The end result is the following:
 
 ###### *Figure 10: Boxplots of Sepal Lengths for Each of the Species*
 
-### Plotting a jitter plot
+### 11.3 Plotting a jitter plot
 A [jitter plot](https://datavizproject.com/data-type/jitter-plot/) is a variant of the [strip plot](https://datavizproject.com/data-type/strip-plot/) with a better view of overlapping data points, used to visualize the distribution of many individual one-dimensional values. A jitter plot can be overlapped with a boxplot to provide a more complete picture of the distribution of our data as well as the location of the individual data points. The great thing about `ggplot2` is that it allows us to add attributes to our already defined plot variable (`boxplot`):
 
 ##### **Code**
@@ -1753,16 +1812,14 @@ Now that we know the very basics of R for Data Science, we can start building ou
 
 ---
 
-# GRAMMARLY FROM HERE
-
 # Building the country hierarchy
-## A word on dimensions & hierarchies
-A hierarchy in the context of data, is a structured view of one or more dimensions of our data set. For example, let us imagine a manufacturer that produces consumable products in the "*Sweets*" & "Drinks" categories:
+## 1. A word on dimensions & hierarchies
+In the context of data, a hierarchy is a structured view of one or more dimensions of our data set. For example, let us imagine a manufacturer that produces consumable products in the "*Sweets*" & "Drinks" categories:
 
 If we think of this hierarchically, we can organize our manufacturer's structure as follows:
-- **Category**: A segment that our manufacturer uses to classify its products based on the type of product.
+- **Category**: A segment our manufacturer uses to classify its products based on the product type.
 	- Sweets
-- **Manufacturer**: The name of our manufacturer. Can have one or more brands.
+- **Manufacturer**: The name of our manufacturer. It can have one or more brands.
 	- ABC International
 - **Brand**: Subsets of our manufacturer in charge of producing different lines of products.
 	- Milky Sweets
@@ -1774,15 +1831,15 @@ If we think of this hierarchically, we can organize our manufacturer's structure
 	- 20785340
 
 Here, we're doing two things:
-- We're defining what a category, a manufacturer, a brand and a product are.
-- We're then organizing all variables hierarchically (*e.g., products are launched under brands, brands belong to our manufacturer, etc*).
+- We're defining what a category, a manufacturer, a brand, and a product are.
+- We're then organizing all variables hierarchically (*e.g., products are launched under brands, brands belong to our manufacturer, etc.*).
 
-This is called hierarchization, and is an extremely valuable concept in Data Analysis & Data Science, since a lot of the variables we encounter on the real world can be organized hierarchically. In fact, relational databases count on our data being at least dimensionally separated (each component is a dimension), and these dimensions might be hierarchical or not, depending on the case.
+This is called hierarchization and is an extremely valuable concept in Data Analysis & Data Science since many of the variables we encounter in the real world can be organized hierarchically. In fact, relational databases count on our data being at least dimensionally separated (each component is a dimension), and these dimensions might be hierarchical or not, depending on the case.
 
 Below are some real-life examples of hierarchization:
 - **Financial Hierarchy in Banking**:
 	- **Levels**: Bank, Branch, Account Type, Account.
-	- **Description**: Banks use hierarchies to organize financial data, starting with the overall bank, breaking down to branches, then to different account types and individual accounts.
+	- **Description**: Banks use hierarchies to organize financial data, starting with the overall bank, breaking down to branches, and then to different account types and individual accounts.
 - **Product Lifecycle in Manufacturing**:
     - **Levels**: Product Line, Model, Version, Component.
     - **Description**: Manufacturing industries often organize their product data hierarchically, tracking products from the overall line down to specific components within each model and version.
@@ -1790,15 +1847,15 @@ Below are some real-life examples of hierarchization:
     - **Levels**: University, College, Department, Course, Student
     - **Description**: Educational institutions use hierarchies to structure data, moving from the university level to specific colleges, departments, courses, and individual students.
 
-## Building our country hierarchy
+## 2. Building our country hierarchy
 Let us start by building our country hierarchy from bottom to top. We'll base our structure on the [ISO 3166 standard](https://en.wikipedia.org/wiki/ISO_3166).
 
 We need to define the following:
 - **Country Names**: The name of the country.
 - **Country Codes**: A standardized way to identify our country. Think of this as a product's barcode for countries.
 - **Region Names**: Regions can be defined as collections of countries defined based on their location.
-- **Continent Names**: This is the next abstraction layer, and will help us provide metrics on a continent level.
-- International Organizations (*if any*): A country can belong to zero or more international organizations. These organizations are relevant since they can sometimes represent economical & political ties based on similar economies.
+- **Continent Names**: This is the next abstraction layer and will help us provide metrics on a continent level.
+- International Organizations (*if any*): A country can belong to zero or more international organizations. These organizations are relevant since they can sometimes represent economic & political ties based on similar economies.
 - **Classification by Income**: This is another possible layer that will help us classify our countries based on their income level.
 
 The country hierarchy can be extracted from [this dataset](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv) by [lukes](https://github.com/lukes). The `csv` file contains the following columns:
@@ -1814,11 +1871,11 @@ The country hierarchy can be extracted from [this dataset](https://github.com/lu
 - `sub-region-code`
 - `intermediate-region-code`
 
-We will use these specific country names throughout the entire series, since some datasets present different names with slight variations, and we want to ensure that the names are consistent throughout our visuals. We will use the ISO 3166 Alpha-3 field as key for the merging operations between datasets.
+We will use these specific country names throughout the entire series since some datasets present different names with slight variations, and we want to ensure that the names are consistent throughout our visuals. We will use the ISO 3166 Alpha-3 field as the key for merging operations between datasets.
 
-We will also use a mapping of relevant international organizations per each country so that we can later aggregate countries by organizations. This will give us an extra layer for analysis.
+We will also use a mapping of relevant international organizations per country to aggregate countries by organizations later. This will give us an extra layer for analysis.
 
-Finally, we will also add development classifications to each country. This will establish a baseline in terms of the degree of development, providing yet another extra layer for analysis.
+Finally, we will also add development classifications to each country. This will establish a baseline regarding the degree of development, providing yet another extra layer for analysis.
 
 Let us first import the required libraries:
 
@@ -1843,7 +1900,7 @@ rDir <- "resources/"
 utilDir <- file.path(rDir, "country_hierarchy")
 ```
 
-Now we can read the datasets and perform some transformations so that in the end we have one `data.frame` object with all the relevant fields. We'll start with the country codes:
+Now, we can read the datasets and perform some transformations so that, in the end, we have one `data.frame` object with all the relevant fields. We'll start with the country codes:
 
 ##### **Code**
 ```R
@@ -1877,27 +1934,27 @@ df_countries <- df_countries %>%
 ```
 
 Next, we'll proceed with the international organizations file, which can be found [here](https://github.com/ajourneythroughdatascience/guided-projects/blob/master/data-science/the-state-of-our-world-in-2024/resources/country_hierarchy/International_Organizations.xlsx). The main organizations we'll include are the following:
-- UN
-- EU
-- EEA
-- EFTA
-- OECD
-- IMF
-- IBRD
-- NATO
-- BRICS
-- WTO
-- Commonwealth
-- African Union
-- ASEAN
-- Arab League
-- OPEC
-- G7
-- G20
-- Schengen Area
-- Pacific Islands Forum
+- [**UN**](https://www.un.org/): United Nations.
+- [**EU**](https://european-union.europa.eu/index_en): European Union.
+- [**EEA**](https://www.gov.uk/eu-eea): European Economic Area.
+- [**EFTA**](https://www.efta.int/): European Free Trade Association.
+- [**OECD**](https://www.oecd.org/): Organization for Economic Co-operation and Development.
+- [**IMF**](https://www.imf.org/): International monetary Fund.
+- [**IBRD**](https://www.worldbank.org/en/who-we-are/ibrd): International Bank for Reconstruction and Development.
+- [**NATO**](https://www.nato.int/): North Atlantic Treaty Organization.
+- [**BRICS**](https://infobrics.org/): Brazil, Russia, India, China, and South Africa.
+- [**WTO**](https://www.wto.org/): World Trade Organization.
+- [**Commonwealth**](https://thecommonwealth.org/): The Commonwealth of Nations, including 56 member states,  the vast majority of which are former territories of the British Empire from which it developed.
+- [**African Union**](https://au.int/): A continental union consisting of 55 member states located on the continent of Africa.
+- [**ASEAN**](https://asean.org/): Association of Southeast Asian Nations.
+- [**Arab League**](https://www.cfr.org/backgrounder/arab-league): Formally the League of Arab States, is a regional organization in the Arab world, which is located in North Africa, West Asia, and part of East Africa
+- [**OPEC**](https://www.opec.org/opec_web/en/): The Organization of the Petroleum Exporting Countries.
+- [**G7**](https://www.cfr.org/backgrounder/what-does-g7-do): The Group of 7.
+- [**G20**](https://www.g20.org/): The Group of 20.
+- [**Schengen Area**](https://www.schengenvisainfo.com/schengen-visa-countries-list/): An area comprising 27 European countries that have officially abolished passports and many other types of border control at their mutual borders.
+- [**Pacific Islands Forum**](https://www.forumsec.org/): An inter-governmental organization that aims to enhance cooperation between countries and territories of Oceania.
 
-We'll load our International Organizations Excel file and create new columns in `df_countries` that indicate us weather a given country belongs to the organization under study:
+We'll load our International Organizations Excel file and create new columns in `df_countries` that indicate to us weather a given country belongs to the organization under study:
 
 ##### **Code**
 ```R
@@ -1958,173 +2015,27 @@ The final dataset can be found [here](https://github.com/ajourneythroughdatascie
 
 ---
 
-# Macroeconomics
-According to Britannica, macroeconomics is the study of the behaviour of a national or regional economy as a whole. It is concerned with understanding economy-wide events such as the total amount of goods and services produced, the level of unemployment, and the general behaviour of prices.
-
-Depending on who we ask, there are around 7 schools of macroeconomic thought. If we base ourselves on Edmund S. Phelps' [Seven Schools of Macroeconomic Thought](https://academic.oup.com/book/2854), we can find the following:
-- **Keynesian**: The central tenet of this school of thought is that government intervention can stabilize the economy via monetary policies & other actions.
-- **Monetarist**: This school maintains that the money supply (*the total amount of money in an economy, in the form of coin, currency, and bank deposits*) is the chief determinant on the demand side of short-run economic activity.
-- **New Classical**: This school takes the view that short-run fluctuations in the aggregate economy—the business cycle—can be understood within an equilibrium framework of rational, forward-looking agents.
-- **New Keynesian**: This school is an evolution of the Keynesian movement. It comes with two main assumptions. First, that people and companies behave rationally and with rational expectations. Second, it assumes a variety of market inefficiencies – including sticky wages and imperfect competition.
-- **Supply-side**: Focuses on influencing the supply of labour and goods, using tax cuts and benefit cuts as incentives to work and produce goods.
-- **Neoclassical & Neo-Classical Real Business Cycle**: This theory suggests that business cycles are a result of technological changes and the availability of resources, both of which influence productivity and cause changes in the long-run aggregate supply.
-- **Structuralist**: This school emphasizes the importance of taking into account structural features (*typically*) when undertaking economic analysis.
-
-Macroeconomics is not simply explained by a couple of metrics; we're talking about a complex system, so we need to look at it from different optics. This is where metrics under this context come into place; they help us assess the current state of the macroeconomic system, and evaluate on how to move forward.
-
-Some of the most relevant subjects that can help explain & influence macroeconomic phenomena are:
-- Fluctuation in Interest Rates
-- Productive Output (GPD)
-- Aggregate Supply & Demand
-- Consumer Prices (CPI)
-- Poverty (Poverty Rates)
-- Monetary Policies
-- Fiscal Policies
-- External Debt
-
-In this section we'll take a look at the most relevant. We'll first prepare our document:
-
-We'll import the following libraries:
-
-##### **Code**
-```R
-library(readr)
-library(readxl)
-library(writexl)
-library(openxlsx)
-library(dplyr)
-library(tidyr)
-library(data.table)
-library(stringr)
-library(lubridate)
-library(car)
-library(broom)
-library(ggplot2)
-library(ggalt)
-library(RColorBrewer)
-library(extrafont)
-library(viridis)
-```
-
-Next, we'll define some variables & parameters:
-
-```R
-# Directories
-rDir <- "data/raw/"
-w_FigDir <- "outputs/figures"
-utilDir <- file.path(rDir, "Utilities")
-
-# Plotting
-color_black <- "#1a1a1a"
-color_white <- "#f2f2f2"
-color_gray <- "gray"
-
-# Set up scheme as Viridis, with n colors
-color_scheme <- viridis::viridis(3)
-
-# Set up visualizations theme
-theme_set(theme_gray(base_size = 14) +
-  theme(
-    text = element_text(family = "Work Sans"),
-    axis.text = element_text(color = color_black),
-    plot.title = element_text(face = "plain", hjust = 0.5), # Reduced boldness of the title
-    panel.background = element_rect(fill = "gray90"),
-    panel.grid.major = element_line(color = "white"),
-    panel.grid.minor = element_line(color = "white")
-  ))
-```
-
-Finally, we'll load all our datasets:
-
-```R
-# Load data
-df_gdp_nominal <- read_csv(file.path(rDir, "GDP_Nominal/API_NY.GDP.MKTP.CD_DS2_en_csv_v2_6011335.csv"), show_col_types = FALSE)
-df_gdp_ppp <- read_csv(file.path(rDir, "GDP_PPP/API_NY.GDP.MKTP.PP.CD_DS2_en_csv_v2_5996066.csv"), show_col_types = FALSE)
-df_gdp_pc <- read_csv(file.path(rDir, "GDP_Per_Capita/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_6011310.csv"), show_col_types = FALSE)
-df_gdp_gr <- read_csv(file.path(rDir, "GDP_Growth/API_NY.GDP.MKTP.KD.ZG_DS2_en_csv_v2_5994650.csv"), show_col_types = FALSE)
-df_gdp_pc_gr <- read_csv(file.path(rDir, "GDP_Per_Capita_Growth/API_NY.GDP.PCAP.KD.ZG_DS2_en_csv_v2_5994795.csv"), show_col_types = FALSE)
-```
-
-We can now start discussing each indicator.
-
-## 1. GDP
-Gross Domestic Product (GDP) has been one of the key metrics used by economists & policy makers throughout the years. So much so that a period of recession is marked by changes in GDP. Roughly speaking, it measures the productive output of a given economy under a given span of time, usually annually. Of course, GDP does not tell the whole story of an economy's performance, and economists figured this out long ago. Nonetheless, GDP is still widely used as a main marker for probing an economy.
-
-### 1.1 Nominal GDP 
-- **Description**: The Nominal Gross Domestic Product (*Nominal GDP*) is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in current U.S. dollars. Dollar figures for GDP are converted from domestic currencies using single year official exchange rates.
-- **Source**: [The World Bank](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD)
-- **Indicator Code**: NY.GDP.MKTP.CD
-
-We can start by taking a look at the 10 top & bottom countries in terms of Nominal GDP in 2022:
-
-
-
-
-### 1.2 GDP (PPP)
-
-
-### 1.3 GDP per Capita (PPP)
-
-
-### 1.4 GDP Growth Rate
-
-
-### 1.5 GDP per Capita Growth Rate
-
-### 1.6 GNI Star (GNI*)
-
-
-### Exploring the outliers
-- [**Ireland**](https://www.politico.eu/article/ireland-gdp-growth-multinationals-misleading/)
-	- Even with PPP adjustment, Ireland's GPD has consistently been in the 3 highest spots throughout the last decade, not only in Europe, but in the world. The problem with this approach is that, as we already mentioned, GDP does not strictly account for the money that goes out of the country to other economies. GDP calculates the monetary value of all finished goods and services made within a country during a specific period, and while this monetary value can very well be produced from within an economy, it can go out to other economies as well, and this is not accounted for in GDP.
-	- Turns out that there are 1,500+ multinational companies operating in Ireland because of the lax corporate taxation scheme. This is similar to what happens in Luxembourg, which we'll review in a second.
-	- Moreover, a big fraction of these companies are actually healthcare companies. It makes sense then that Ireland was one of the counted economies that had a positive change in GDP per Capita from 2019 to 2020 (*5.10% increase*).
-	- This can be due to:
-		- Shift of HQs
-		- Shift of capital assets such as technology patents & aircraft fleets.
-	- The problems:
-		- This provides a misleading picture.
-		- Credit ratings agencies assess risk of default, in part, by citing a country’s debt-to-GDP ratio; the lower the ratio, the lower the interest rates, and the higher the capacity for an economy to refinance much of its national debt at record-low rates.
-	- Let us explore more in detail which are the main companies by sector.
-- [**Guyana**](https://www.reuters.com/world/americas/oil-rich-guyana-expects-annual-economic-growth-over-25-coming-years-2023-02-16/)
-	- Guyana has been the subject of international news this year due to Venezuela's President Nicolás Maduro putting increased pressure on reclaiming Essequibo, [a region discovered to have massive oil deposits in 2015](https://www.bbc.com/news/world-latin-america-67610200).
-	- It has also been subject of international attention due to its unusual growth in GDP per Capita. This is directly linked to oil deposit discovery, and particularly in 2020 to the [start-up of its oil export industry](https://repositorio.cepal.org/server/api/core/bitstreams/7bfd0d40-230f-445a-a61b-8318a7ecdc19/content).
-- [Libya](https://www.bmz.de/en/countries/libya/economic-situation-152402)
-	- Libya is also a particular case due to its rapid but volatile GDP per Capita Growth Rate in recent years. If we look at the average growth over the last 10 years, we see around 6.25%, but when we take a look at the standard deviation of these percentual changes (*around 36%*), the history is more interesting. Libya has two main highlights:
-		- **Libyan civil war (2014–2020)**: This caused heavy fluctuations in the production capacity...
-		- **Almost total dependence on oil & gas**: Libyan economy is strongly made up of oil & gas industry; hydrocarbon production currently makes up around 95% of exports and government revenue, and [about 60% of GDP](https://www.bmz.de/en/countries/libya/economic-situation-152402). This means that a generous part of the monetized productive output of the country is based on oil prices; if prices go up, oil-centric countries perceive profits much closer than other countries with more widely-spread productive activities. On contrast, if prices go down, the economy becomes extremely vulnerable. This is very clear if we see that on 2020, the GDP per Capita Growth Rate was around -30.1%. This matches with the [initial & agressive plummeting of oil prices due to the COVID pandemic](https://www.investopedia.com/articles/investing/100615/will-oil-prices-go-2017.asp). Next, 2021 arrives & a surge in oil demand accompanied by a short of supply due to the Russian-Ukrainian war. This creates a strong increase in GDP PC Growth Rate (*around 29.80%*) and is even more pronounced due to 2020's drastically low numbers.
-
-
-	- If we base our conclusions regarding economic growth & prosperity on one single indicator (*such as GDP or GDP PC*), we risk   
-
----
-
 # Conclusions
-Aaa
+In this segment, we discussed the purpose of this series, talked about expectations, and provided a rough outline of how we'll be approaching this study. We also discussed our project structure, set up our folder configuration, and created the required R & Python environments. We installed all the needed packages and briefly talked about dependency management. We also introduced R as our main language and talked about how we can use it in the context of Data Science. Finally, we built our country hierarchy and explained a bit about what dimensions and hierarchies are in the context of data structures.
+
+We now have everything we need to start reviewing each segment formally. In the next part of this series, we'll discuss the current macroeconomic overview. We'll start by defining what Macroeconomics is and which subjects we can use to approach it. We'll talk about economic output, unemployment, labor force participation, income disparities, poverty, minimum wage, household dynamics, debt and deficit, and currency value against the USD.
+
+We'll also use this segment as an entry point to all the other segments since it will give us a fair panorama of how our world is doing in terms of macroeconomic activity.
 
 ---
 
 # References
-- https://junkcharts.typepad.com/numbersruleyourworld/
-- https://junkcharts.typepad.com/
-- TAKE ALL WEBSITES FROM HYPERLINKS IN ARTICLE AND PUT THEM HERE
-- https://ggplot2.tidyverse.org/reference/
-- https://www.britannica.com/money/topic/macroeconomics
-- https://www.imf.org/external/pubs/ft/fandd/2014/09/basics.htm
-- https://www.britannica.com/money/topic/monetarism
-- https://www.encyclopedia.com/social-sciences/applied-and-social-sciences-magazines/economics-new-classical
-- https://corporatefinanceinstitute.com/resources/economics/new-keynesian-economics/
-- https://www.britannica.com/money/supply-side-economics
-- https://www.politico.eu/article/ireland-gdp-growth-multinationals-misleading/
-- https://www.youtube.com/watch?v=rm0BQSWoJlc&list=PLyogaPCPr32W9wbszOANRJiAvUbbymcCS
-- https://www.datacamp.com/blog/all-about-r
-- https://r4ds.had.co.nz/index.html
-- https://baselinesupport.campuslabs.com/hc/en-us/articles/204305665-Types-of-Descriptive-Statistics
-- https://mathworld.wolfram.com/MonotonicFunction.html
-- https://bachfischer.me/posts/2021/03/analysis_of_swiss_dataset_in_r
-- https://support.minitab.com/en-us/minitab/21/help-and-how-to/statistics/basic-statistics/supporting-topics/basics/linear-nonlinear-and-monotonic-relationships/
-- https://www.sciencedirect.com/topics/mathematics/correlation-matrix
-- https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/USArrests
+- [Numbers Rule Your World, Junk Charts](https://junkcharts.typepad.com/numbersruleyourworld/)
+- [ggplot2 function reference, R Documentation](https://ggplot2.tidyverse.org/reference/)
+- [Introduction to dplyr, Dynamic Data Script](https://www.youtube.com/watch?v=rm0BQSWoJlc&list=PLyogaPCPr32W9wbszOANRJiAvUbbymcCS)
+- [DataCamp, All About R](https://www.datacamp.com/blog/all-about-r)
+- [R for Data Science, O'Reilly](https://r4ds.had.co.nz/index.html)
+- [Types of Descriptive Statistics, Campus Labs](https://baselinesupport.campuslabs.com/hc/en-us/articles/204305665-Types-of-Descriptive-Statistics)
+- [Monotonic Functions, Wolfram](https://mathworld.wolfram.com/MonotonicFunction.html)
+- [Analysis of Swiss Dataset in R, Bach Fischer](https://bachfischer.me/posts/2021/03/analysis_of_swiss_dataset_in_r)
+- [Linear & Monotonic Relationships, Minitab](https://support.minitab.com/en-us/minitab/21/help-and-how-to/statistics/basic-statistics/supporting-topics/basics/linear-nonlinear-and-monotonic-relationships/)
+- [Correlation Matrix, J. Ferré, in Comprehensive Chemometrics, 2009](https://www.sciencedirect.com/topics/mathematics/correlation-matrix)
+- [USArrests Dataset, RDocumentation](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/USArrests)
 
 ---
 
