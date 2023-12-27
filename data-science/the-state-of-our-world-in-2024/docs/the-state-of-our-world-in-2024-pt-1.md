@@ -145,7 +145,7 @@ According to Reuters' Institute for the Study of Journalism [Digital News Report
   <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_01_.png">
 </p>
 
-###### Figure 1: [Share of adults who trust news media most of the time in selected countries worldwide as of February 2023, Reuters Institute for the Study of Journalism](https://www.statista.com/statistics/308468/importance-brand-journalist-creating-trust-news/)
+###### *Figure 1: [Share of adults who trust news media most of the time in selected countries worldwide as of February 2023, Reuters Institute for the Study of Journalism](https://www.statista.com/statistics/308468/importance-brand-journalist-creating-trust-news/)*
 
 This can be due to multiple reasons and often depends on region-specific circumstances. For example, according to a [2022 Poll conducted by Gallup](https://news.gallup.com/poll/403166/americans-trust-media-remains-near-record-low.aspx), the United States presented a significant decline in trust in media outlets during the time Donald Trump was in his presidential campaign, but has been showing a decline in high-trust levels (_% Great deal/Fair amount_) since the Poll's first appearance in 1972:
 
@@ -526,7 +526,7 @@ We'll finally install the requirements in our virtual environment:
 
 ##### **Code**
 ```PowerShell
- .\venv\Scripts\Activate.ps1; pip install -r requirements.txt; deactivate
+.\venv\Scripts\Activate.ps1; pip install -r requirements.txt; deactivate
 ```
 
 And voila. Our workspace is ready.
@@ -1078,7 +1078,7 @@ Going back to the previous example, imagine plotting a time series for this metr
 So in short, using tidy data in `tidyverse` is always recommended; we'll always use tidy data in this series when creating visual objects, and also sometimes when performing transformations.
 
 ### 8.1 Generating tidy data
-`tidy` has a ton of functions; we'll not be using all of them, of course. In this series, we'll mostly be using the following:
+`tidyr` has a ton of functions; we'll not be using all of them, of course. In this series, we'll mostly be using the following:
 - `pivot_longer`: Transform from wide to long.
 - `pivot_wider`: Transform from long to wide.
 
@@ -1121,7 +1121,7 @@ Let us break this down in more detail:
 Well this is nice, but how do we get rid of the `X` prefix? (*This happens because when loading datasets, R sometimes prepends numeric columns with a string character `X`.*) We don't want this in our dataset, right? Turns out `tidyr` devs thought of this already, and implemented a nice `names_prefix` argument we can use to get rid of any prefix in our names column:
 
 ##### **Code**
-```
+```R
 # Tidy data (use year cols)
 df_csv_dataframe_longer <- df_csv_dataframe %>%
   pivot_longer(cols = starts_with('X'),
@@ -1251,7 +1251,7 @@ head(df_wider)
 1     10    20           102.           102.
 ```
 
-And that's it; we've transformed our original dataset into a tidy set by using `tidy` & `dplyr.`
+And that's it; we've transformed our original dataset into a tidy set by using `tidyr` & `dplyr.`
 
 ## 9. Merging objects
 Merging is a crucial part of data manipulation, and we'll be doing a lot in this series. Merging works very similarly to other languages, such as Python. There are different types of merge operations, depending on the underlying set theory implementation we'd like to use.
@@ -1458,7 +1458,7 @@ In probability theory and statistics, a probability distribution is a mathematic
 - Poisson
 - Exponential
 
-Visual representations of the PDFs (*Probability Density Functions*) for the most relevant distributions can be found [here](https://www.fil.ion.ucl.ac.uk/~wpenny/course/appendixDE.pdf)
+Visual representations of the PDFs (*Probability Density Functions*) for the most relevant distributions can be found [here](https://www.fil.ion.ucl.ac.uk/~wpenny/course/appendixDE.pdf).
 
 Although we'll not use distributions in this series as strongly as descriptive statistics, we'll still employ them when we start making more advanced analyses. Because of this, it's relevant to see how we can use them in R.
 
