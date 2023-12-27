@@ -141,19 +141,28 @@ How are people perceiving news today? How does this trust affect how people reac
 ## 1. Media Confidence
 According to Reuters' Institute for the Study of Journalism [Digital News Report 2023](https://reutersinstitute.politics.ox.ac.uk/sites/default/files/2023-06/Digital_News_Report_2023.pdf), only 10 out of 46 countries have a share of adult trust in news media as of February 2023 above 50%. This means that 78.2% of the surveyed countries have a trust share below 50%:
 
-01
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_01_.png">
+</p>
+
 ###### Figure 1: [Share of adults who trust news media most of the time in selected countries worldwide as of February 2023, Reuters Institute for the Study of Journalism](https://www.statista.com/statistics/308468/importance-brand-journalist-creating-trust-news/)
 
 This can be due to multiple reasons and often depends on region-specific circumstances. For example, according to a [2022 Poll conducted by Gallup](https://news.gallup.com/poll/403166/americans-trust-media-remains-near-record-low.aspx), the United States presented a significant decline in trust in media outlets during the time Donald Trump was in his presidential campaign, but has been showing a decline in high-trust levels (_% Great deal/Fair amount_) since the Poll's first appearance in 1972:
 
-02
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_02.png">
+</p>
+
 ###### *Figure 2: [Americans' Trust In Media, 2022, Gallup](https://news.gallup.com/poll/403166/americans-trust-media-remains-near-record-low.aspx)*
 
 If we look at alternative platforms such as social media & search engines, we can see that according to the Reuters Institute, people in Brazil, India, the UK & the US still trust traditional news outlets more than social networks such as Facebook, Instagram, TikTok, & Twitter (*now X*).
 
 According to [a study published by the Reuters Institute & the University of Oxford in 2022](https://reutersinstitute.politics.ox.ac.uk/trust-gap-how-and-why-news-digital-platforms-viewed-more-sceptically-versus-news-general), the gap between trust in news on platforms vs. trust in news, in general, is significant for most of the platforms under study for the four economies. In general, people from these four countries tend to trust alternative sources, specifically social networks, less than traditional outlets (*blue are news from platforms, purple are news from traditional outlets*):
 
-03
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_03_.png">
+</p>
+
 ###### *Figure 3: [Percentage who trust information in the news media in general versus news on each platform in each country, Reuters Institute, Reproduced by Pablo Aguirre](https://reutersinstitute.politics.ox.ac.uk/trust-gap-how-and-why-news-digital-platforms-viewed-more-sceptically-versus-news-general)*
 
 However, there are still some alternative news sources whose content is often not rigorously verified and whose gap vs. traditional news confidence is not that significant (_i.e., people in the selected countries trust them more than traditional news outlets_). One example is Google, which, according to [Statista](https://www.statista.com/statistics/1093781/distribution-of-googles-revenues-by-segment/), perceived roughly 80% of its revenue from advertising in 2020 (_the lowest since 2017_). Another great example is YouTube falling under a similar scenario, where it's publicly known that [the majority of its revenue comes from advertising](https://www.youtube.com/howyoutubeworks/our-commitments/sharing-revenue/).
@@ -163,14 +172,20 @@ So now that we know a bit about how people perceive traditional & alternative ne
 ## 2. Misinformation
 According to [a study conducted by The Lloyd's Register Foundation](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/), 57% of internet users across all parts of the world, socioeconomic groups, and all ages regard false information, or "_fake news_", as a major concern. According to the same study, concern is more prevalent in regions of high economic inequality and where ethnic, religious, or political polarization exists, leading to the weakening of social cohesion and trust. However, there is still a relevant number of developed countries with high percentages:
 
-04_merged
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_04_merged.png">
+</p>
+
 ###### *Figure 4: [Choropleth map of share of Internet users who see misinformation on the Internet as a threat, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)*
 
 We can see that this figure reveals some regional patterns; people in Eastern Europe (_46.9%, average_) and Central Asia (_38.1%, average_) express low levels of concern. In contrast, Western and Northern Europe present higher numbers (_64.5%, average_). If we go to the Americas, we see that most countries stand out as regions where concern for misinformation is relatively high, particularly North America (_67.4%, average_) & the Caribbean Countries (_74.2%, average_).
 
 Interestingly, The Harvard Kennedy School also performed [a country-level correlational study](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/) between variables found in the [V-DEM dataset](https://v-dem.net/data/the-v-dem-dataset/) and the percentage of people who express concern regarding misinformation. They used a logistic regression model to model which variables predict risk perception of misinformation and published the results in their peer-reviewed article [Who is afraid of fake news?](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/):
 
-05
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_05.png">
+</p>
+
 ###### *Figure 5: [Results from a logistic regression model describing the effect of individual-level demographic variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)*
 
 From the figure above, we can suggest that:
@@ -180,7 +195,10 @@ From the figure above, we can suggest that:
 	- [Fake News for All: How Citizens Discern Disinformation in Autocracies, Anton Shirikov](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3944011)
 - In contrast, electoral autocracies have a fairly higher percentage of likelihood, with liberal democracy having the highest.
 
-06
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_06.png">
+</p>
+
 ###### *Figure 6: [Results from a logistic regression model describing the effect of national-level variables on the likelihood of expressing concern about misinformation, Harvard Kennedy School](https://misinforeview.hks.harvard.edu/article/who-is-afraid-of-fake-news-modeling-risk-perceptions-of-misinformation-in-142-countries/)*
 
 From the figure above, we can see that:
@@ -1505,6 +1523,9 @@ ggplot(USArrests, aes(x = UrbanPop)) +
 
 ##### **Output**
 
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_07.png">
+</p>
 
 ###### *Figure 7: Histogram of Urban population Across US States vs Theoretical Normal Distribution*
 
@@ -1623,7 +1644,10 @@ pairs(swiss, panel = panel.smooth, main = "Swiss Dataset")
 ```
 
 ##### **Output**
-08.png
+
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_08.png">
+</p>
 
 ###### *Figure 8: A matrix of scatterplots for each of the variables in the swiss dataset*
 
@@ -1746,7 +1770,10 @@ Let us explain this in more detail:
 	- Lastly, we include a scale for the x-axis. This is not required in all cases; however, in our case, since we want to have more control over the `Year` variable (*cannot be displayed as decimal*), the `scale_x_continuous` will tell R to use breaks provided by the `pretty(Years, n = 5)` method. In short, it will automatically calculate the years to display based on the required number of breaks (*n = 5*).
 
 ##### **Output**
-09.png
+
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_09.png">
+</p>
 
 ###### *Figure 9: GDP Per Capita, PPP (current international $), per Country, 3 countries*
 
@@ -1782,7 +1809,9 @@ The end result is the following:
 
 ##### **Output**
 
-10.png
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_10.png">
+</p>
 
 ###### *Figure 10: Boxplots of Sepal Lengths for Each of the Species*
 
@@ -1802,7 +1831,10 @@ jitterplot
 Here, the `position` argument will dictate the horizontal separation of each of the data points. This is always used in jitter plots to avoid cluttering between data points since here, all points are plotted:
 
 ##### **Output**
-11.png
+
+<p align="center">
+  <img src="https://pabloagn.com/wp-content/uploads/2023/12/G004_11.png">
+</p>
 
 ###### *Figure 11: Boxplots overlapped with Jitter Plots of Sepal Lengths for Each of the Species*
 
